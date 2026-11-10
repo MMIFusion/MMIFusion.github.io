@@ -110,7 +110,7 @@ html[data-motion=off] .luck-confetti{display:none}
 .live-date [data-live-date]{font-size:17px;font-weight:550;line-height:1.6;color:#f2edfc;grid-column:1;grid-row:2;letter-spacing:.01em;text-align:center;justify-self:center}
 .live-date [data-live-clock]{display:flex;align-items:center;justify-content:center;justify-self:center;grid-column:2;grid-row:1/3;font:600 34px var(--display);font-variant-numeric:tabular-nums;letter-spacing:-1px;line-height:1.35;white-space:nowrap;width:100%;min-height:64px;color:#bdeeea;text-shadow:0 0 22px #a8e8e422;border:1px solid #c0a7e12e;border-radius:10px;background:radial-gradient(ellipse at 50% 100%,#b6a3ed10,transparent 75%),#171b351f;box-shadow:inset 0 1px 0 #fff04}
 .clock-digit{display:inline-block;width:.63em;text-align:center;will-change:transform;transform-origin:center}
-.page-index .live-date [data-live-clock]{border:0;background:none;box-shadow:none}
+.live-date [data-live-clock]{border:0;background:none;box-shadow:none}
 .clock-separator{display:inline-block;width:.25em;text-align:center;color:#bda7f0;animation:status-clock-breathe 2s ease-in-out infinite}
 .visit-meter{display:flex;align-items:center;justify-content:center;gap:9px;padding:11px 17px;background:#ffffff06;border:1px solid #b4a4ce35;border-radius:13px;font-size:17px;white-space:nowrap;min-width:0;min-height:90px;position:relative;box-shadow:inset 0 1px 0 #fff05}
 .visit-label{font-size:17px;font-weight:550;color:#e0d5f1}.visit-meter [data-visit-unit]{font-size:16px;color:#d3c4e7}
