@@ -48,6 +48,18 @@ for name,page in pages.items():
             errors.append(f'{name}: missing anchor {link}')
 assert set(pages['papers.html'].articles)==set(ids), 'Full archive is incomplete'
 
+# Historical WeChat engagement remains separate from live website PV and local saves.
+stats = json.loads((ROOT/'data/article-stats.json').read_text())
+assert stats['snapshotDate'] == json.loads((ROOT/'data/articles.json').read_text())['snapshotDate']
+assert stats['favoritesAvailable'] is False
+assert stats['sourceColumns'] == {'reads':'J','likes':'K','watching':'N','shares':'O'}
+assert len(stats['records']) == len(ids)
+assert {r['id'] for r in stats['records']} == set(ids)
+for record in stats['records']:
+    for metric in ('reads','likes','watching','shares'):
+        assert record[metric] is None or (type(record[metric]) is int and record[metric] >= 0)
+assert len([r for r in stats['records'] if r['reads'] is not None]) >= 10
+
 # Calendar files must encode real UTC instants or explicit all-day dates,
 # preserve Unicode folding, and agree with the source records.
 from datetime import datetime, timezone

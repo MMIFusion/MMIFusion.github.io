@@ -4,16 +4,18 @@
 
 | 页面 | 数据来源与用途 |
 | --- | --- |
-| 首页 | 文章总数、最新文章、八个栏目入口 |
+| 首页 | 文章总数、最新文章、四种前十榜单、九个栏目入口 |
 | 论文阅读 | `data/articles.json` 全部文章 |
-| 数据集 | 链接既有独立站，不复制它的数据 |
+| 数据资源 | 链接既有独立站，不复制它的数据 |
 | 评估指标 | EN / SD / SF 试算及评估专题阅读 |
 | 融合团队 | `portal.json` 官方团队档案 |
-| 会议时间 | `portal.json` 官方日程、时区与 ICS |
-| 会议期刊推荐 | `portal.json` 官方范围、整理建议与对比 |
+| 会议日历 | `portal.json` 官方日程、时区与 ICS |
+| 投稿推荐 | `portal.json` 官方范围、整理建议与对比 |
 | 导师招生 | `portal.json` 官方招募信息 |
 | 配色模板 | `community.json` 色板、原创下载模板与公众号文章 |
 | 推荐资源 | 本地生成草稿，由访客确认后前往 GitHub 提交 |
+| 广告合作 | 合作类型与已有微信联系入口，不填写虚构客户、价格或承诺 |
+| 投稿日历 | 科研趣味日签，与官方会议截止日期独立 |
 
 ## 文章
 
@@ -77,6 +79,8 @@ git config user.email 276543646+MMIFusion@users.noreply.github.com
 
 保存 / 点开图片会使用未裁切原图。交流码是添加好友入口，文案为添加 `MMIFusion_` 后咨询入群，不表示扫码自动进入微信群。
 
+公众号二维码中心用 `assets/community.css` 的 `.qr-center-avatar` 覆盖原有图标区域，显示圆形公众号头像；尺寸只覆盖原中心图标，不触碰识别定位块或白边。原 PNG 不改动，保存仍是原图。当前 208 px 页面截图经过识别核对，内容与原码一致。更新后重新测试桌面、手机和弹窗。
+
 
 ## 视觉主题与动效
 
@@ -89,3 +93,13 @@ git config user.email 276543646+MMIFusion@users.noreply.github.com
 网页字体来自 Google Fonts 官方仓库的 Noto Sans SC 和 Space Grotesk，OFL 文本与字体一同放在 `assets/fonts/`。字体已按本站文本做 WOFF2 子集，日常构建无需依赖字体工具；新增汉字若未包含会使用系统字体回退。需要刷新字形时，安装 `fonttools[woff]` 并运行 `python scripts/build_fonts.py`，再重新构建网页。原字体缓存在忽略的 `outputs/font-sources/`。
 
 首页数据集图来自现有独立站资料，原图保存在 `assets/datasets/`，只作资源预览。论文卡片封面和融合首屏为本站原创概念设计，不是论文模型图或真实融合结果。
+
+## 人气榜、访问统计与趣味互动
+
+`scripts/community.py` 生成首页榜单、状态栏、广告合作与趣味日历；`assets/community.css` / `community.js` 管理样式和交互，`community-core.js` 只包含北京时间日期及确定性的日签规则。
+
+- 榜单数据：`data/article-stats.json`。先导入文章，再对同一份 XLSX 运行 `python3 scripts/import_stats.py /path/to/export.xlsx`。脚本核对 `sourceRow` 和标题，只读 J 阅读、K 点赞、N 在看、O 转发；缺值不转成 0。按主指标、阅读数降序，再按文章 ID 升序取前 10。当前快照为 2026-10-28。收藏数不存在，不推定；收藏按钮继续使用 `mmifusion-bookmarks-v1`。分享优先系统分享面板，不支持时复制标题与微信原文链接，不改动历史转发数。
+- 网站 PV：使用官方不蒜子脚本，仅在 `mmifusion.github.io` 运行；本地预览与隔离测试不计数。通过隐藏返回节点读取真实总值后做数字动画，超时显示 `—` 并提供不可用状态。不能以浏览器 localStorage 或随机数冒充全站访问量。上线验证会产生少量真实访问，旧站访问不能追溯补齐。
+- 日期统一使用 `Asia/Shanghai`，每秒更新；跨北京时间午夜刷新今日标识。趣味日签由日期字符串确定，没有接入传统黄历，也不预测录用。改文案可编辑 `community-core.js`，不要改真实会议数据来配合趣味内容。
+- 好运数与检查清单仅存本机（`mmifusion-luck-v1`、`mmifusion-submission-checks-v1`），好运按北京时间每日归零。动效遵循全站暂停与系统减少动态效果设置，键盘和关闭操作应保持可用。
+- 验证：`node scripts/test_community.cjs` 检查跨年、午夜与闰年；浏览器检查导航跟随、四榜顺序、收藏同步、分享、日历翻月、好运领取与 QR 扫描。
