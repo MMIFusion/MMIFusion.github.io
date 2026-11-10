@@ -1,0 +1,17 @@
+const assert = require('node:assert/strict');
+const {status} = require('../assets/calendar-core.js');
+const deadline = {kind:'deadline',at:'2026-11-16T23:59:00-12:00'};
+assert.equal(status(deadline,new Date('2026-11-17T11:58:59Z')).ended,false);
+assert.equal(status(deadline,new Date('2026-11-17T11:59:00Z')).ended,true);
+assert.equal(status(deadline,new Date('2026-11-14T11:59:00Z')).imminent,true);
+assert.equal(status(deadline,new Date('2026-11-14T11:58:59Z')).imminent,false);
+const singleDate = {kind:'date',start:'2026-11-18',endExclusive:'2026-11-19'};
+assert.equal(status(singleDate,new Date('2026-11-19T11:59:59Z')).ended,false);
+assert.equal(status(singleDate,new Date('2026-11-19T12:00:00Z')).ended,true);
+assert.equal(status(singleDate).remaining,null);
+const multiDay = {kind:'date',start:'2027-08-02',endExclusive:'2027-08-05'};
+assert.equal(status(multiDay,new Date('2027-08-04T23:00:00Z')).ended,false);
+assert.equal(status(multiDay,new Date('2027-08-05T12:00:00Z')).ended,true);
+const leapDate = {kind:'date',start:'2028-02-29',endExclusive:'2028-03-01'};
+assert.equal(status(leapDate,new Date('2028-03-01T11:59:00Z')).ended,false);
+console.log('PASS: exact AoE cutoff, 72-hour reminder boundary, conservative floating-date archive, multi-day and leap-day events.');

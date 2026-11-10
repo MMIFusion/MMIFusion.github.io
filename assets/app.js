@@ -10,7 +10,13 @@
     $('#primary-nav').classList.toggle('open', open);
   });
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && menu?.getAttribute('aria-expanded') === 'true') menu.click();
+    if (event.key === 'Escape' && menu?.getAttribute('aria-expanded') === 'true') {
+      menu.click();
+      menu.focus({preventScroll:true});
+    }
+  });
+  document.addEventListener('pointerdown', event => {
+    if (menu?.getAttribute('aria-expanded') === 'true' && !event.target.closest('.site-header')) menu.click();
   });
   let toastTimer;
   const toast = (message) => {
@@ -20,6 +26,15 @@
     clearTimeout(toastTimer);
     toastTimer = setTimeout(() => $('#toast').classList.remove('visible'), 2800);
   };
+  // One live region and timer across features, including modal dialogs.
+  window.MMIFusionUI = {notify: toast};
+  document.querySelectorAll('dialog').forEach(dialog => dialog.addEventListener('close', () => {
+    if (dialog.contains($('#toast'))) {
+      clearTimeout(toastTimer);
+      $('#toast').classList.remove('visible');
+      document.body.append($('#toast'));
+    }
+  }));
   document.querySelectorAll('[data-copy]').forEach(button => {
     button.addEventListener('click', async () => {
       const text = button.dataset.copy;

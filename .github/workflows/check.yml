@@ -21,5 +21,7 @@ jobs:
         run: node scripts/test_metrics.cjs
       - name: Check calendar dates and playful cards
         run: node scripts/test_community.cjs
+      - name: Check real deadline and date-only boundaries
+        run: node scripts/test_calendar.cjs
       - name: Check generated pages are up to date
         run: git diff --exit-code -- '*.html' robots.txt sitemap.xml downloads

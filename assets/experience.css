@@ -34,3 +34,24 @@ html[data-motion=off] *,html[data-motion=off] *:before,html[data-motion=off] *:a
 @media(prefers-reduced-motion:reduce){html:not([data-motion=on]) *,html:not([data-motion=on]) *:before,html:not([data-motion=on]) *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}html:not([data-motion=on]) .fusion-scene{transform:none!important}}
 
 .no-js .signal-modes,.no-js .scene-hint{display:none}.no-js .fusion-hero *{animation:none!important}
+/* Finishing details: dates remain legible, controls stay within reach. */
+.calendar-view-options{display:flex;align-items:center;flex-wrap:wrap;gap:14px 22px;padding:18px 22px;margin-bottom:24px;border:1px solid var(--line);border-radius:12px;background:var(--wash)}
+.calendar-view-options label{display:inline-flex;align-items:center;gap:9px;font-size:16px;font-weight:600;cursor:pointer}
+.calendar-view-options p{font-size:15px;color:var(--red)}
+.calendar-view-options>span{font-size:14px;color:var(--muted)}
+.event-row{scroll-margin-top:112px}
+.event-imminent .countdown,.deadline-teaser.event-imminent strong{color:#a44522}
+.event-imminent .event-actions:before{content:'即将截止';display:block;margin-bottom:4px;font-size:13px;color:#a44522;font-weight:650}
+.event-ended h3{color:var(--muted)}
+.deadline-empty{grid-column:span 3;padding:24px;font-size:16px;color:var(--muted)}
+.deadline-empty a{display:block;margin-top:8px;color:var(--red)}
+.source-line .source-feedback{color:var(--red);white-space:nowrap}
+.palette-actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px 20px;margin-top:18px;padding-top:14px;border-top:1px solid var(--line)}
+.palette-actions a,.palette-info .palette-actions .text-link{position:static;margin:0;font-size:15px;color:var(--red);min-height:32px;display:inline-flex;align-items:center}
+.compare-modal-open{overflow:hidden}
+.portal-dialog{overscroll-behavior:contain}
+.portal-dialog .dialog-heading{position:sticky;top:-28px;background:#fff;padding-block:12px;z-index:1}
+.portal-dialog .dialog-heading button{min-width:44px;min-height:44px;border-radius:50%;background:var(--wash)}
+.submission-preview textarea{scroll-margin-top:120px}
+@media(max-width:640px){.submission-preview textarea{height:300px;min-height:0}}
+@media(max-width:640px){.calendar-view-options{padding:18px}.calendar-view-options>span{flex-basis:100%}.deadline-empty{grid-column:1/-1}.event-imminent .event-actions{flex-wrap:wrap}.event-imminent .event-actions:before{flex-basis:100%;margin-bottom:0}.portal-dialog .dialog-heading{top:-18px}}

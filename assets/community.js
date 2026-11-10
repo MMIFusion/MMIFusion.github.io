@@ -6,12 +6,7 @@
   const motion = () => root.dataset.motion !== 'off';
   const store = {read(key, fallback) {try {return JSON.parse(localStorage.getItem(key)) ?? fallback;} catch {return fallback;}},
     write(key, value) {try {localStorage.setItem(key,JSON.stringify(value)); return true;} catch {return false;}}};
-  const announce = text => {
-    const box = $('#toast'); if (!box) return;
-    (document.querySelector('dialog[open]') || document.body).append(box);
-    box.textContent = text; box.classList.add('visible');
-    clearTimeout(announce.timer); announce.timer = setTimeout(() => box.classList.remove('visible'),3000);
-  };
+  const announce = text => window.MMIFusionUI.notify(text);
   const running = new Set();
   const animate = (element, frames, options) => {
     if (!motion() || !element?.animate) return null;

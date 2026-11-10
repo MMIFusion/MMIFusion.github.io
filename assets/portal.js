@@ -3,9 +3,44 @@
   'use strict';
   const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
   const norm = s => String(s).normalize('NFKC').toLowerCase().trim();
-  const notify = message => { const el = $('#toast'); el.textContent = message; el.classList.add('visible'); setTimeout(() => el.classList.remove('visible'), 3000); };
+  const notify = message => window.MMIFusionUI.notify(message);
   const copy = async text => { try { await navigator.clipboard.writeText(text); notify('已复制'); } catch { window.prompt('请复制以下内容：', text); } };
   $$('[data-copy-link]').forEach(el => el.addEventListener('click', () => copy(new URL(el.dataset.copyLink, location.href).href)));
+
+  const upcoming = $('#calendar-upcoming'), refreshDirectories = [];
+  if (upcoming) upcoming.checked = new URLSearchParams(location.search).get('upcoming') === '1';
+  const calendarEvents = $$('[data-calendar-event]').map(node => ({node,event:JSON.parse(node.dataset.calendarEvent)}));
+  const refreshEvents = () => {
+    const now = new Date();
+    calendarEvents.forEach(record => {
+      record.status = window.MMIFusionCalendar.status(record.event,now);
+      const {node,event,status} = record;
+      node.classList.toggle('event-ended',status.ended);
+      node.classList.toggle('event-imminent',status.imminent);
+      if (node.classList.contains('event-row')) node.hidden = !!upcoming?.checked && status.ended;
+      const counter = node.querySelector('[data-countdown]');
+      if (counter) {
+        const minutes = Math.floor(Math.max(0,status.remaining) / 60000), hours = Math.floor(minutes / 60);
+        counter.textContent = status.ended ? '已截止' : minutes === 0 ? '不足 1 分钟' : `${Math.floor(hours / 24)} 天 ${hours % 24} 时 ${minutes % 60} 分`;
+        counter.classList.toggle('expired',status.ended);
+      }
+      const dateLabel = node.querySelector('.date-only');
+      if (dateLabel) dateLabel.textContent = status.ended ? '日期已过' : '按官方日期显示';
+      const note = node.querySelector('small');
+      if (note && node.classList.contains('deadline-teaser') && event.kind === 'deadline') note.textContent = status.imminent ? '72 小时内截止 · 请留足上传时间' : '距离截止 · 实时更新';
+    });
+    const teasers = calendarEvents.filter(({node}) => node.classList.contains('deadline-teaser'));
+    const selected = teasers.filter(r => !r.status.ended).sort((a,b) => a.status.order-b.status.order).slice(0,3);
+    const selectedNodes = selected.map(r => r.node);
+    teasers.forEach(({node}) => {node.hidden = !selectedNodes.includes(node);});
+    const displayed = $$('.deadline-teaser').filter(node => !node.hidden);
+    // Avoid detaching a focused link on each timer tick when its order is unchanged.
+    if (displayed.some((node,index) => node !== selectedNodes[index])) {
+      selectedNodes.forEach(node => $('.deadline-strip').append(node));
+    }
+    if ($('.deadline-empty')) $('.deadline-empty').hidden = selected.length > 0;
+  };
+  refreshEvents();
 
   $$('[data-directory]').forEach(directory => {
     const cards = [...directory.querySelectorAll('[data-directory-card]')];
@@ -18,31 +53,41 @@
       const terms = norm(search.value).split(/\s+/).filter(Boolean);
       let count = 0;
       cards.forEach(card => {
-        const show = terms.every(t => norm(card.dataset.search).includes(t)) && selects.every(s => !s.value || JSON.parse(card.dataset[s.dataset.cardFilter]).includes(s.value));
+        const available = !upcoming?.checked || directory.dataset.directory !== 'calendar' || [...card.querySelectorAll('.event-row')].some(row => !row.hidden);
+        const show = available && terms.every(t => norm(card.dataset.search).includes(t)) && selects.every(s => !s.value || JSON.parse(card.dataset[s.dataset.cardFilter]).includes(s.value));
         card.hidden = !show; if (show) count++;
       });
-      directory.querySelector('.directory-count').textContent = `显示 ${count} / ${cards.length} 项`;
+      const countLabel = directory.querySelector('.directory-count'), countText = `显示 ${count} / ${cards.length} 项`;
+      if (countLabel.textContent !== countText) countLabel.textContent = countText;
       directory.querySelector('.directory-empty').hidden = count > 0;
+      if (directory.dataset.directory === 'calendar') {
+        const visible = calendarEvents.filter(({node}) => !node.hidden && !node.closest('.conference-card').hidden);
+        const summary = `显示 ${visible.length} 个节点 · ${visible.filter(r => !r.status.ended).length} 个未结束`;
+        if ($('#calendar-event-summary').textContent !== summary) $('#calendar-event-summary').textContent = summary;
+      }
       if (save) {
         const query = new URLSearchParams();
         if (search.value) query.set('q', search.value);
         selects.forEach(s => { if (s.value) query.set(s.dataset.cardFilter, s.value); });
+        if (upcoming?.checked) query.set('upcoming','1');
         history.replaceState(null, '', location.pathname + (query.size ? '?' + query : '') + location.hash);
       }
     };
     search.addEventListener('input', () => render());
     selects.forEach(s => s.addEventListener('change', () => render()));
-    directory.querySelectorAll('[data-card-reset]').forEach(b => b.addEventListener('click', () => { search.value = ''; selects.forEach(s => s.value = ''); render(); }));
+    directory.querySelectorAll('[data-card-reset]').forEach(b => b.addEventListener('click', () => { search.value = ''; selects.forEach(s => s.value = ''); if (upcoming) {upcoming.checked=false;refreshEvents();} render(); }));
+    if (directory.dataset.directory === 'calendar') {
+      upcoming.addEventListener('change', () => {refreshEvents();render();});
+      refreshDirectories.push(() => render(false));
+    }
     render(false);
   });
 
-  const countdown = () => $$('[data-countdown]').forEach(el => {
-    const delta = new Date(el.dataset.countdown).getTime() - Date.now();
-    if (delta <= 0) { el.textContent = '已截止'; el.classList.add('expired'); return; }
-    const minutes = Math.floor(delta / 60000), hours = Math.floor(minutes / 60), days = Math.floor(hours / 24);
-    el.textContent = `${days} 天 ${hours % 24} 时 ${minutes % 60} 分`;
-  });
-  countdown(); if ($('[data-countdown]')) setInterval(countdown, 30000);
+  const refreshCalendar = () => {refreshEvents();refreshDirectories.forEach(render => render());};
+  if (calendarEvents.length) {
+    setInterval(refreshCalendar,30000);
+    document.addEventListener('visibilitychange', () => {if (!document.hidden) refreshCalendar();});
+  }
   const timezone = $('#calendar-timezone');
   if (timezone) {
     const renderTimes = () => $$('[data-local-time]').forEach(el => {
@@ -68,6 +113,11 @@
         container.append(clone);
       });
       dialog.showModal();
+      document.documentElement.classList.add('compare-modal-open');
+    });
+    dialog.addEventListener('close', () => {
+      document.documentElement.classList.remove('compare-modal-open');
+      $('#compare-open').focus({preventScroll:true});
     });
     dialog.querySelector('[data-close-dialog]').addEventListener('click', () => dialog.close());
     dialog.addEventListener('click', event => { if (event.target === dialog) { const r = dialog.getBoundingClientRect(); if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) dialog.close(); } });
@@ -124,9 +174,17 @@
 
   const form = $('#contribution-form');
   if (form) {
-    const type = form.elements.type, initial = new URLSearchParams(location.search).get('type');
+    const params = new URLSearchParams(location.search);
+    const type = form.elements.type, initial = params.get('type');
     if ([...type.options].some(o => o.value === initial)) type.value = initial;
     const source = form.elements.source;
+    for (const key of ['title','source']) {
+      if (params.has(key)) form.elements[key].value = params.get(key).slice(0,form.elements[key].maxLength);
+    }
+    if (initial === '内容勘误' && params.has('source')) {
+      form.elements.description.placeholder = '请说明哪里有误、建议如何修改；如有新的官方说明，请一并附上链接。';
+      $('#submission-help').textContent = '已带入反馈页面或原始来源，请补充需要更正的内容。';
+    }
     source.addEventListener('input', () => source.setCustomValidity(''));
     form.addEventListener('input', () => {
       $('#submission-actions').hidden = true;
@@ -142,6 +200,11 @@
       $('#submission-text').value = text; $('#submission-text').hidden = false; $('#submission-actions').hidden = false;
       $('#submission-help').textContent = '草稿已生成。请检查来源与内容，再复制或继续提交。';
       $('#submission-github').href = 'https://github.com/MMIFusion/MMIFusion.github.io/issues/new?' + new URLSearchParams({title:`[${type.value}] ${title}`, body:text});
+      const preview = $('#submission-text');
+      if (matchMedia('(max-width: 900px)').matches) {
+        preview.scrollIntoView({behavior:document.documentElement.dataset.motion === 'off' ? 'instant' : 'smooth',block:'center'});
+      }
+      preview.focus({preventScroll:true});
     });
     $('#submission-copy').addEventListener('click', () => copy($('#submission-text').value));
   }

@@ -47,6 +47,12 @@ for name,page in pages.items():
         if parsed.fragment and target in pages and parsed.fragment not in pages[target].ids:
             errors.append(f'{name}: missing anchor {link}')
 assert set(pages['papers.html'].articles)==set(ids), 'Full archive is incomplete'
+palettes=json.loads((ROOT/'data/community.json').read_text())['palettes']
+for index, palette in enumerate(palettes,1):
+    for extension in ('svg','json'):
+        assert f'downloads/palette-{index}.{extension}' in pages['palettes.html'].links, 'Palette download missing'
+    download=json.loads((OUT/'downloads'/f'palette-{index}.json').read_text())
+    assert download['colors']==palette['colors'] and download['name']==palette['name']
 
 # Historical WeChat engagement remains separate from live website PV and local saves.
 stats = json.loads((ROOT/'data/article-stats.json').read_text())
@@ -81,6 +87,7 @@ for conference in portal['conferences']:
             assert 'DTSTART;VALUE=DATE:'+event['start'].replace('-','') in content
             assert 'DTEND;VALUE=DATE:'+event['endExclusive'].replace('-','') in content
 assert len(event_ids)==len(set(event_ids))
+assert set(event_ids).issubset(pages['calendar.html'].ids), 'Calendar deep links incomplete'
 combined=(OUT/'downloads/mmifusion-calendar.ics').read_text()
 assert combined.count('BEGIN:VEVENT')==len(event_ids)
 assert 'DTSTART:20261117T115900Z' in (OUT/'downloads/cvpr2027-paper.ics').read_text()
