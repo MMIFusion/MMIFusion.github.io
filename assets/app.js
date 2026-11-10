@@ -14,6 +14,7 @@
   });
   let toastTimer;
   const toast = (message) => {
+    (document.querySelector('dialog[open]') || document.body).append($('#toast'));
     $('#toast').textContent = message;
     $('#toast').classList.add('visible');
     clearTimeout(toastTimer);

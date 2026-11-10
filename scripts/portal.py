@@ -26,8 +26,8 @@ def deadline_strip():
     return '<section class="wrap deadline-strip" aria-label="近期学术节点"><div class="deadline-caption"><span class="red-dot"></span><strong>学术日历</strong><a href="calendar.html">查看全部 →</a></div>'+items+'</section>'
 
 def dataset_showcase():
-    cards=''.join(f'<article class="dataset-preview"><p class="eyebrow">{E(d["label"])}</p><h3>{E(d["name"])}</h3><p>{E(d["description"])}</p><div class="card-actions">{link(d["catalog"],"查看数据档案")}{link(d["source"],"原始项目")}</div></article>' for d in P['datasets'])
-    return f'<section class="wrap section"><div class="section-heading"><div><p class="eyebrow">FROM PAPER TO EXPERIMENT</p><h2>为下一次实验，找到数据。</h2><p>从三个常用入口开始，完整介绍与下载信息由数据集独立站维护。</p></div>{link("https://mmifusion.github.io/Datasets/","全部数据集")}</div><div class="dataset-previews">{cards}</div></section>'
+    cards=''.join(f'<article class="dataset-preview"><a class="dataset-visual dataset-{d["id"]}" href="{E(d["catalog"])}" target="_blank" rel="noopener noreferrer"><img src="assets/datasets/{d["id"]}.png" alt="{E(d["name"])} 数据集红外与可见光图像示例" loading="lazy"><span>{E(d["label"])}<b>↗</b></span></a><div class="dataset-body"><p class="eyebrow">OPEN DATA / {E(d["id"].upper())}</p><h3>{E(d["name"])}</h3><p>{E(d["description"])}</p><div class="card-actions">{link(d["catalog"],"查看数据档案")}{link(d["source"],"原始项目")}</div></div></article>' for d in P['datasets'])
+    return f'<section class="wrap section dataset-section"><div class="section-heading"><div><p class="eyebrow">03 / FROM PAPER TO EXPERIMENT</p><h2>找到数据，让想法落地。</h2><p>真实场景，多种模态。完整介绍与下载信息由独立站维护。</p></div>{link("https://mmifusion.github.io/Datasets/","全部数据集")}</div><div class="dataset-previews">{cards}</div><p class="reading-provenance">示例图来自已收录的数据集介绍，权利归原作者；详情、许可及使用条件见原始项目。</p></section>'
 
 def calendar():
     cards=[]

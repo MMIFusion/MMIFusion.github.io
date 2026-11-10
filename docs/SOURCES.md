@@ -42,3 +42,11 @@
 ## 下载模板
 
 色板与双模态框架 SVG 为本站原创，CC BY 4.0；绘图与评估 Python 代码采用 MIT License。绘图脚本的数值和框架图仅为演示，需替换成自己的方法与实验。原公众号文章和头像不因模板许可而改变其权属。
+
+
+## 视觉改版资源（2026-11-11）
+
+- 字体：[Noto Sans SC](https://github.com/google/fonts/tree/main/ofl/notosanssc)、[Space Grotesk](https://github.com/google/fonts/tree/main/ofl/spacegrotesk)，使用官方文件制作网页字形子集，保留各自 SIL Open Font License。字体随本站分发，访问网站时不请求第三方字体服务。
+- 数据集样例图沿用本站维护的数据集独立站目录：MSRS 对应 `46ac6691890dd24b.png`，M3FD 对应 `d93037bdb9110e73.png`，RoadScene 对应 `56ef0c4862636198.png`。源索引为 `MMIFusion/Datasets/docs/data/datasets.json`，与各自原始项目 / 数据档案关联。第三方示例图不包含在本站原创代码许可内。
+- 融合光轨、立体模块、论文主题封面与工具插画为本站代码绘制。它们是概念表达，不展示算法性能或实验结论。
+- 论文专题与方向计数直接从现有公众号索引计算，不新增未经核实的论文录用或性能声明。
