@@ -1,0 +1,2981 @@
+{
+  "sourceFile": "261028-多模态信息融合.xlsx",
+  "sourceSheet": "微信文章导出",
+  "snapshotDate": "2026-10-28",
+  "latestArticleDate": "2026-10-26",
+  "articles": [
+    {
+      "id": "0db9ae90782b",
+      "title": "NeurIPS 2026｜保候选、修曝光、补细节：读懂北理工PCDFusion用贝叶斯决策做图像融合",
+      "date": "2026-10-26",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247493627&idx=1&sn=bfb92ab55d8186c55c9c50fa7ccc15e9",
+      "section": "论文解读",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "NeurIPS",
+      "sourceRow": 130
+    },
+    {
+      "id": "81323af75c35",
+      "title": "跟着 CVPR 和 INFFUS 学习论文模型图及配色",
+      "date": "2026-10-25",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247493620&idx=1&sn=fbec9b74b898e0c17dce0e6c18295f90",
+      "section": "配色与绘图",
+      "topics": [],
+      "venue": "CVPR",
+      "sourceRow": 181
+    },
+    {
+      "id": "8717e19cbb41",
+      "title": "ECCV 2026 | CausalDrive：澳门大学×小米汽车，面向自动驾驶的实时因果世界模型",
+      "date": "2026-10-24",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247493607&idx=1&sn=060247014bd95aee37fcabf8e69de976",
+      "section": "论文解读",
+      "topics": [
+        "三维感知"
+      ],
+      "venue": "ECCV",
+      "sourceRow": 163
+    },
+    {
+      "id": "a682739b5877",
+      "title": "Information Fusion 2027 | SD-CR：先判断结构与退化的“冲突”，再恢复与融合！",
+      "date": "2026-10-23",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247493542&idx=1&sn=d584a697298fee3df7ff2da031b69f55",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "图像恢复"
+      ],
+      "venue": "Information Fusion",
+      "sourceRow": 49
+    },
+    {
+      "id": "787b75bc198d",
+      "title": "学生“慢”科研联合声明及对应署名名单 | 120 位学者联合发声：科研，不必只追求“快",
+      "date": "2026-10-22",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247493491&idx=2&sn=a0e1ad539a534375e6a230aaa38ab1e1",
+      "section": "学术社区",
+      "topics": [],
+      "venue": "",
+      "sourceRow": 240
+    },
+    {
+      "id": "93c7a20beeda",
+      "title": "学术速递｜2026年9月 arXiv 图像融合论文汇总（09.01–09.30）15 篇最新成果",
+      "date": "2026-10-22",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247493491&idx=1&sn=bdd9780a9d7b887669b26e8b277a3ee2",
+      "section": "论文速递",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "",
+      "sourceRow": 190
+    },
+    {
+      "id": "cd7dc0320b57",
+      "title": "CVPR 2026 | 港科大×美团 UAVLight：面向多光照三维重建的 UAV 无人机数据集",
+      "date": "2026-10-21",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247493435&idx=1&sn=369df14a87d6c135343fdb64bb852caf",
+      "section": "论文解读",
+      "topics": [
+        "三维感知",
+        "数据集与基准"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 121
+    },
+    {
+      "id": "5fbaa06c7abc",
+      "title": "TIP 2026 | 不再混成一张! RealFusion从模态不变性重想图像融合",
+      "date": "2026-10-20",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247493434&idx=1&sn=cc8b238a3c2941f99542b2dfc90fb76d",
+      "section": "论文解读",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "TIP",
+      "sourceRow": 108
+    },
+    {
+      "id": "1494b18566be",
+      "title": "ACM MM 2026｜华中师大 CoReFuse-Med：先净化再融合，让低质模态不再拖后腿",
+      "date": "2026-10-19",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247493277&idx=1&sn=cd160fe972f7d09d4f32fad49eba23ce",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "医学影像"
+      ],
+      "venue": "ACM MM",
+      "sourceRow": 119
+    },
+    {
+      "id": "069840f6c1b6",
+      "title": "跟着 ICML 和 CVPR 学习论文模型图及配色",
+      "date": "2026-10-18",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247493257&idx=1&sn=84022f3be27686555fa4b9bc1ffef27a",
+      "section": "配色与绘图",
+      "topics": [],
+      "venue": "ICML",
+      "sourceRow": 104
+    },
+    {
+      "id": "4b1537411c2a",
+      "title": "NeurIPS 2026 | 新加坡国立 FuseAdapt：让多模态融合学会预测缺失信息",
+      "date": "2026-10-17",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247493246&idx=1&sn=278d412b40f0e6c411027a31ca6ffae8",
+      "section": "论文解读",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "NeurIPS",
+      "sourceRow": 18
+    },
+    {
+      "id": "62d692a29b52",
+      "title": "ACM MM 2026｜告别密集交互！ProtoHGF-Net：基于原型超图的RGBT目标检测新范式",
+      "date": "2026-10-16",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247493229&idx=1&sn=d63eae839d6438c1ca5e2f79ab416232",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光"
+      ],
+      "venue": "ACM MM",
+      "sourceRow": 150
+    },
+    {
+      "id": "389d69cf3caf",
+      "title": "INFFUS 2027｜FSDFuse：面向SAR-可见光图像融合的物理启发频域与数据自适应空间解耦",
+      "date": "2026-10-15",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247493215&idx=1&sn=bcfa28a4ab02848f7b18c89703d19f2c",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "图像融合",
+        "遥感与多光谱"
+      ],
+      "venue": "INFFUS",
+      "sourceRow": 129
+    },
+    {
+      "id": "5627bfc752eb",
+      "title": "多模态融合到底该保留什么？用170+篇论文讲透互信息、信息瓶颈与协同信息",
+      "date": "2026-10-14",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247493185&idx=1&sn=32aa09775220f120b48fa4a39ef0be1c",
+      "section": "综述与入门",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "",
+      "sourceRow": 26
+    },
+    {
+      "id": "fc2d6f046255",
+      "title": "NeurIPS 2026 | SIDFusion：用积分约束特征分解，让医学与红外可见光融合更有依据",
+      "date": "2026-10-13",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247493184&idx=1&sn=e96ac9908468937f83d08e36e8225b82",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "图像融合",
+        "医学影像"
+      ],
+      "venue": "NeurIPS",
+      "sourceRow": 90
+    },
+    {
+      "id": "b8f3398c78b6",
+      "title": "ACM MM 2026｜北科大 Shift-IISR：可见光扩散模型也能做好红外超分？双路径引导纠正跨模态偏差",
+      "date": "2026-10-12",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247493078&idx=1&sn=a2a4d1b2aed6715c15ad78d2976e9de1",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "图像恢复"
+      ],
+      "venue": "ACM MM",
+      "sourceRow": 167
+    },
+    {
+      "id": "30e05069d0a8",
+      "title": "NeurIPS | 3EED：车辆、无人机、机器狗谁更会找东西？在三维空间中定位各处万物！",
+      "date": "2026-10-11",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247493047&idx=1&sn=f7246a9af50c1b00f013b8d75436e69a",
+      "section": "论文解读",
+      "topics": [
+        "三维感知"
+      ],
+      "venue": "NeurIPS",
+      "sourceRow": 216
+    },
+    {
+      "id": "d661514b6791",
+      "title": "会推理，还要会改错！CoEvolve 让视觉定位学会自我修正，9B 主干媲美 241B 模型",
+      "date": "2026-10-10",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247493011&idx=1&sn=fad03b72ad52eb991b6ab6d3e45ac294",
+      "section": "论文解读",
+      "topics": [
+        "三维感知"
+      ],
+      "venue": "",
+      "sourceRow": 212
+    },
+    {
+      "id": "70f67073586f",
+      "title": "NeurIPS 2026｜大连民族RCS-Fusion：关系约束监督让多模态融合更均衡",
+      "date": "2026-10-09",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247492790&idx=1&sn=639b6015da792367d415ff630517663b",
+      "section": "论文解读",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "NeurIPS",
+      "sourceRow": 37
+    },
+    {
+      "id": "5a37997f28cd",
+      "title": "CVPR 2026｜Thermal-Det：面向开放词汇热红外目标检测的语言引导跨模态蒸馏",
+      "date": "2026-10-07",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247492744&idx=1&sn=062da5cc1f483be7a6ec2a30ea51ac11",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 122
+    },
+    {
+      "id": "4858e29dace9",
+      "title": "TIP 2026 | 多曝光融合为何越下采样越容易丢细节？成电LDP-MEF 用 Haar 小波给出可逆路线",
+      "date": "2026-10-06",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247492743&idx=1&sn=c2d2adc92bd914aa7fda2fdc3f88e523",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "多曝光与多聚焦"
+      ],
+      "venue": "TIP",
+      "sourceRow": 159
+    },
+    {
+      "id": "dadad82e926f",
+      "title": "ACM MM 2026 | 大连理工等提出SGPDFuse：DINOv3不直接“融合”，先帮模型找出哪些信息不该融",
+      "date": "2026-10-05",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247492736&idx=1&sn=be2c3c89bd8a333a0b6ee04f602123d3",
+      "section": "论文解读",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "ACM MM",
+      "sourceRow": 19
+    },
+    {
+      "id": "382361103b5f",
+      "title": "跟着 TPAMI 2026 学习论文模型图及配色",
+      "date": "2026-10-04",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247492652&idx=1&sn=66098b6ef06c2d3fdafc740023d7f922",
+      "section": "配色与绘图",
+      "topics": [],
+      "venue": "TPAMI",
+      "sourceRow": 120
+    },
+    {
+      "id": "140abcdc243b",
+      "title": "NeurIPS 2026 | DarkVGGT：黑暗场景3D重建新思路，RGB × 热成像联合感知",
+      "date": "2026-10-02",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247492722&idx=1&sn=bba4875cbb71f0d6e08040b2884bcfac",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "三维感知"
+      ],
+      "venue": "NeurIPS",
+      "sourceRow": 65
+    },
+    {
+      "id": "2972668acf7d",
+      "title": "CVPR 2026｜TherA：让可见光照片“懂冷热”，用文字和参考图控制红外生成",
+      "date": "2026-10-01",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247492618&idx=1&sn=186c71e278aefdb0cb0d5a444d1183de",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 100
+    },
+    {
+      "id": "e1e1fe23a649",
+      "title": "TCSVT 2026｜CL-RFNet：高频提示驱动的多模态图像配准与融合对比闭环框架",
+      "date": "2026-09-30",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247492692&idx=1&sn=da4c8e534b24b0971efcc5849aff8162",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "图像配准"
+      ],
+      "venue": "TCSVT",
+      "sourceRow": 78
+    },
+    {
+      "id": "462185ad0d78",
+      "title": "顶刊GRSM | 天目山北航团队提出遥感图像超分辨率：全球真实场景数据集构建、测评与全面综述",
+      "date": "2026-09-29",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247492691&idx=1&sn=41fd96a4a39d8f3a25f37641f52608c4",
+      "section": "综述与入门",
+      "topics": [
+        "图像恢复",
+        "数据集与基准",
+        "遥感与多光谱",
+        "研究团队"
+      ],
+      "venue": "GRSM",
+      "sourceRow": 107
+    },
+    {
+      "id": "d483bafae13c",
+      "title": "NeurIPS 2026 | 复杂≠更强！9个真实数据集告诉你，多模态架构堆料未必带来稳定增益",
+      "date": "2026-09-28",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247492688&idx=1&sn=bbc36883975218fa101836ee8262f7f6",
+      "section": "论文解读",
+      "topics": [
+        "数据集与基准"
+      ],
+      "venue": "NeurIPS",
+      "sourceRow": 153
+    },
+    {
+      "id": "f0c370a9d046",
+      "title": "CVPR 2026 TerraSeg：任意LiDAR地面分割",
+      "date": "2026-09-27",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247492521&idx=1&sn=05d3a4066564a79fafff8927618642ad",
+      "section": "论文解读",
+      "topics": [
+        "三维感知"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 178
+    },
+    {
+      "id": "a26fd1f1dbaf",
+      "title": "跟着 TPAMI 2026 学习论文模型图及配色",
+      "date": "2026-09-27",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247492503&idx=1&sn=fbc03f4a60f0cbc1b7b5d6f1fea2e069",
+      "section": "配色与绘图",
+      "topics": [],
+      "venue": "TPAMI",
+      "sourceRow": 80
+    },
+    {
+      "id": "94d200893f1e",
+      "title": "IJCV 2026｜IterRF用深度展开把多模态图像配准与融合写进同一个迭代优化闭环",
+      "date": "2026-09-25",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247492477&idx=1&sn=32d939c073abe3381b066465e9386a46",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "图像配准"
+      ],
+      "venue": "IJCV",
+      "sourceRow": 113
+    },
+    {
+      "id": "e9c0ce0f1991",
+      "title": "TPAMI 2026｜北航 HomoDiff：在扩散模型去噪中选择更适合红外可见光配准的单应矩阵",
+      "date": "2026-09-24",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247492457&idx=1&sn=f13f5f71aa1ac6745a2ea411710298b8",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "图像配准",
+        "图像恢复"
+      ],
+      "venue": "TPAMI",
+      "sourceRow": 77
+    },
+    {
+      "id": "a114ed4ae07e",
+      "title": "多模态医学图像配准登顶 Nature：xvr 5 分钟定制患者专属神经网络，数秒完成终极配准",
+      "date": "2026-09-23",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247492411&idx=1&sn=b7179e08ca4d872dd983b17bb91fd9fb",
+      "section": "论文解读",
+      "topics": [
+        "图像配准",
+        "医学影像"
+      ],
+      "venue": "",
+      "sourceRow": 24
+    },
+    {
+      "id": "80ac7592bd32",
+      "title": "ECCV 2026｜RGB转热红外不该只是风格迁移：AV2T-Gen把环境条件送进扩散模型",
+      "date": "2026-09-22",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247492360&idx=1&sn=a17a917a7b713dab050def85061c17e8",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光"
+      ],
+      "venue": "ECCV",
+      "sourceRow": 141
+    },
+    {
+      "id": "c81ae23679e4",
+      "title": "TPAMI 2026｜多模态越融合越弱？答案可能不是融合，而是缺少对齐",
+      "date": "2026-09-21",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247492347&idx=1&sn=e10c075c04fca2086995992411cd049e",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "图像配准"
+      ],
+      "venue": "TPAMI",
+      "sourceRow": 4
+    },
+    {
+      "id": "f3d048f182c5",
+      "title": "CVPR 2026 DSERT-RoLL：全天候多模态感知",
+      "date": "2026-09-20",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247492336&idx=1&sn=511c411e47314afa2c3520061ddce8d8",
+      "section": "论文解读",
+      "topics": [],
+      "venue": "CVPR",
+      "sourceRow": 151
+    },
+    {
+      "id": "bee6c908c93e",
+      "title": "TPAMI 2026｜MatchAnything来了！一个模型匹配红外、SAR、医学、多模态图像，跨模态视觉终于走向“大一统”",
+      "date": "2026-09-20",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247492331&idx=1&sn=6b55f2e493ce013559fb90b15ef35861",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "图像配准",
+        "医学影像",
+        "遥感与多光谱"
+      ],
+      "venue": "TPAMI",
+      "sourceRow": 40
+    },
+    {
+      "id": "2a11cfee1ebc",
+      "title": "CVPR 2026 CD-Buffer：双缓冲天气适配",
+      "date": "2026-09-19",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247492256&idx=1&sn=7f7e317626c27b8680026013aee338dd",
+      "section": "论文解读",
+      "topics": [],
+      "venue": "CVPR",
+      "sourceRow": 192
+    },
+    {
+      "id": "c3a9519b2eab",
+      "title": "CVPR 2026｜CHAL：面向运动红外小目标检测的因果引导分层异常感知学习",
+      "date": "2026-09-18",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247492230&idx=1&sn=52f06122ebc19d6572957ab0c1c76a51",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 70
+    },
+    {
+      "id": "63b945b4dde4",
+      "title": "TPAMI 2026｜湖南大学：PAN × 马赛克图像融合，实现等变贝叶斯高光谱成像",
+      "date": "2026-09-17",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247492195&idx=1&sn=0039c3c913d7aede4c0957c2081e5bdc",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "遥感与多光谱"
+      ],
+      "venue": "TPAMI",
+      "sourceRow": 45
+    },
+    {
+      "id": "523140bbb606",
+      "title": "TMM 2026｜SpikeVFuse：利用脉冲神经网络增强红外与可见光图像融合",
+      "date": "2026-09-16",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247492139&idx=1&sn=30054efc3a0f1010e2adf149f1c72403",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "图像融合",
+        "视频融合"
+      ],
+      "venue": "TMM",
+      "sourceRow": 58
+    },
+    {
+      "id": "b491d73d80a9",
+      "title": "ECCV 2026 | 成电D3F-IR：可见光如何变成高质量红外图？双流建模同时保住热信息与结构细节",
+      "date": "2026-09-15",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247492094&idx=1&sn=577f978009d0d72f29aa209ce04bdaa0",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光"
+      ],
+      "venue": "ECCV",
+      "sourceRow": 102
+    },
+    {
+      "id": "8c454e5abfa0",
+      "title": "ECCV 2026 | 单模态运动估计一退化就不稳？DRT-VF改成“先融合、后时间建模”",
+      "date": "2026-09-14",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247492056&idx=1&sn=dfd9b2cd0560cc5c072460214104cba7",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "图像恢复"
+      ],
+      "venue": "ECCV",
+      "sourceRow": 166
+    },
+    {
+      "id": "b66cf6db6731",
+      "title": "CarlaOcc 多模态自动驾驶数据集",
+      "date": "2026-09-13",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247492014&idx=1&sn=81e5913d728b257291f5e7f1b4e0d47a",
+      "section": "论文解读",
+      "topics": [
+        "三维感知",
+        "数据集与基准"
+      ],
+      "venue": "",
+      "sourceRow": 231
+    },
+    {
+      "id": "2ba8e2d05309",
+      "title": "跟着 AAAI 和 ICCV 学习论文模型图及配色",
+      "date": "2026-09-13",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247492002&idx=1&sn=6a6e593a73bcc7617ad211bbd04f7f7f",
+      "section": "配色与绘图",
+      "topics": [],
+      "venue": "AAAI",
+      "sourceRow": 99
+    },
+    {
+      "id": "f59b12a8a626",
+      "title": "CVPR 2026 GeoID:几何内点判别LiDAR分割TTT",
+      "date": "2026-09-12",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247491971&idx=1&sn=68077278dcdbcffd91f48c00a02f8eda",
+      "section": "论文解读",
+      "topics": [
+        "三维感知"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 162
+    },
+    {
+      "id": "136b5979843c",
+      "title": "AAAI 2026 LTDNet：恶劣天气LiDAR点云恢复",
+      "date": "2026-09-12",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247491981&idx=1&sn=d5dfd76ba6fe81b8e9baa242dbdd7339",
+      "section": "论文解读",
+      "topics": [
+        "三维感知",
+        "图像恢复"
+      ],
+      "venue": "AAAI",
+      "sourceRow": 155
+    },
+    {
+      "id": "753a89287b81",
+      "title": "ACM MM 2026 |  浙大SatFusion：卫星影像增强迎来“大一统”！多帧超分与全色锐化首次融合，突破单一路线瓶颈",
+      "date": "2026-09-11",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247491950&idx=1&sn=38bac5af63a5e6d2466102845e242520",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "图像恢复",
+        "遥感与多光谱"
+      ],
+      "venue": "ACM MM",
+      "sourceRow": 96
+    },
+    {
+      "id": "74ff21fcea40",
+      "title": "CVPR 2026｜CarlaOcc：一个集齐八类数据与标注的多模态数据集，包括：RGB、深度、语义、法线、点云、语义点云、全景网格与全景占据",
+      "date": "2026-09-10",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247491906&idx=1&sn=ebe4067fe980c75f00dcfe4061c54f24",
+      "section": "论文解读",
+      "topics": [
+        "三维感知",
+        "数据集与基准"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 72
+    },
+    {
+      "id": "1caa73adafb2",
+      "title": "CVPR 2026 | 全新的五模态信息融合数据集，包括RGB、事件、热成像、4D 雷达与 LiDAR",
+      "date": "2026-09-09",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247491877&idx=1&sn=b8f0cd68a108ab2bc18524556d347776",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "图像融合",
+        "三维感知",
+        "数据集与基准"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 5
+    },
+    {
+      "id": "13cfa2727fea",
+      "title": "TIP 2026 | 多聚焦融合新思路：网络不够强？先把输入空间重新设计一遍！",
+      "date": "2026-09-08",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247491819&idx=1&sn=acfee1da7a4726c572a171d27d856883",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "多曝光与多聚焦"
+      ],
+      "venue": "TIP",
+      "sourceRow": 111
+    },
+    {
+      "id": "9d477cbc832a",
+      "title": "TPAMI 2026｜红外、SAR、深度与地图能否用一套特征匹配？北理工HIMO给出无需预训练的通用路线",
+      "date": "2026-09-07",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247491787&idx=1&sn=c2b8481e09bbb9602957a68846f34c95",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "图像配准",
+        "遥感与多光谱"
+      ],
+      "venue": "TPAMI",
+      "sourceRow": 16
+    },
+    {
+      "id": "544a8bd5f7b4",
+      "title": "TIP 2026 | 低光视频融合数据集 ELVID",
+      "date": "2026-09-06",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247491646&idx=1&sn=58dbaba846ea5592ac2b0ddd166c21ea",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "图像恢复",
+        "数据集与基准",
+        "视频融合"
+      ],
+      "venue": "TIP",
+      "sourceRow": 239
+    },
+    {
+      "id": "c0b39816c04e",
+      "title": "学术速递｜2026年8月 arXiv 图像融合论文汇总（08.01–08.31）29 篇最新成果",
+      "date": "2026-09-06",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247491602&idx=1&sn=abba26d78be40c29843748028ae41dbe",
+      "section": "论文速递",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "",
+      "sourceRow": 191
+    },
+    {
+      "id": "d30cd6b990ad",
+      "title": "TPAMI 2026 自动驾驶的下一代多模态数据集",
+      "date": "2026-09-06",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247491735&idx=1&sn=d50035f65504ab144f02423a4314150b",
+      "section": "论文解读",
+      "topics": [
+        "三维感知",
+        "数据集与基准"
+      ],
+      "venue": "TPAMI",
+      "sourceRow": 158
+    },
+    {
+      "id": "bd278a9db326",
+      "title": "RA-L 2026 KCTF-Net先补运动，再做时序融合",
+      "date": "2026-09-05",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247491699&idx=1&sn=880e5d728f2bb39d0ea4acdd135ff95e",
+      "section": "论文解读",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "RA-L",
+      "sourceRow": 157
+    },
+    {
+      "id": "9cb79f39ccf5",
+      "title": "TIP 2026 | 4739对极暗视频 + 熵门控 + MoE：USCFNet 把低照度视频融合重新做了一遍",
+      "date": "2026-09-04",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247491631&idx=1&sn=49c287534318392137448333633f73da",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "图像恢复",
+        "视频融合"
+      ],
+      "venue": "TIP",
+      "sourceRow": 84
+    },
+    {
+      "id": "cc29bbdab29b",
+      "title": "把学术论文做成这样的封面，你会喜欢吗？",
+      "date": "2026-09-03",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247491504&idx=1&sn=c8347cef176273cb15e36ebae8682c02",
+      "section": "配色与绘图",
+      "topics": [],
+      "venue": "",
+      "sourceRow": 238
+    },
+    {
+      "id": "fac79a188e43",
+      "title": "灾前灾后发生什么？EchoChange：先写草稿、再挑错重写，生成更可信的遥感灾害变化描述",
+      "date": "2026-09-02",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247491489&idx=1&sn=5e8df06da256e874c7ae3da30c2b0811",
+      "section": "论文解读",
+      "topics": [
+        "遥感与多光谱"
+      ],
+      "venue": "",
+      "sourceRow": 198
+    },
+    {
+      "id": "62eb672523bc",
+      "title": "TIP 2026 | SCAC：不用训练也能做视频时刻检索，让事件链与边界校准协同",
+      "date": "2026-09-01",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247491459&idx=1&sn=a8dce1b26628d140564f7937b9366204",
+      "section": "论文解读",
+      "topics": [],
+      "venue": "TIP",
+      "sourceRow": 188
+    },
+    {
+      "id": "d36175a5b4f7",
+      "title": "TIP 2026｜没有分割标签，也能做任务导向图像融合：SSVIF的自监督语义注入",
+      "date": "2026-08-31",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247491410&idx=1&sn=44216c551210bf019386a33bef339d0c",
+      "section": "论文解读",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "TIP",
+      "sourceRow": 137
+    },
+    {
+      "id": "cf847aa71a73",
+      "title": "IVOE：面向真实过曝场景的红外与可见光融合数据集，EPOFusion 实现曝光感知渐进优化",
+      "date": "2026-08-30",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247491381&idx=1&sn=f3afb8ca7b994ae41499c8dbf35bc703",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "图像融合",
+        "数据集与基准"
+      ],
+      "venue": "",
+      "sourceRow": 142
+    },
+    {
+      "id": "fc7a23eaa626",
+      "title": "TPAMI 2026 LargeAD自动驾驶跨传感器预训练",
+      "date": "2026-08-29",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247491379&idx=1&sn=5c716de26f2fb8ecefed8991ad33832a",
+      "section": "论文解读",
+      "topics": [
+        "三维感知"
+      ],
+      "venue": "TPAMI",
+      "sourceRow": 173
+    },
+    {
+      "id": "d6cb26198f2b",
+      "title": "CVPR 2026 恶劣天气下LiDAR-4D混合协作感知",
+      "date": "2026-08-29",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247491288&idx=1&sn=e47d45c89e8f2a1297254b3b47799074",
+      "section": "论文解读",
+      "topics": [
+        "三维感知"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 156
+    },
+    {
+      "id": "6fa5d12c11f1",
+      "title": "TIP 2026｜蛇类双模态神经元如何做红外可见融合？动态感受野与非线性交互机制解析",
+      "date": "2026-08-28",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247491235&idx=1&sn=273afa4ba79afe9d373bb0e57539f4ec",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "图像融合"
+      ],
+      "venue": "TIP",
+      "sourceRow": 89
+    },
+    {
+      "id": "63502b0bb783",
+      "title": "南洋理工 CIS-Fuse：当脉冲神经网络遇上图像融合，跨模态电流如何在 T 步中放电？",
+      "date": "2026-08-27",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247491199&idx=1&sn=3fff11b56bb77b9f7a83e7962f3947f7",
+      "section": "论文解读",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "",
+      "sourceRow": 126
+    },
+    {
+      "id": "9aadcc093ad4",
+      "title": "ICML 2026｜浙大 1D-Fusion：用 Tokenizer 将图像“压”成一维 Token，重构融合表示",
+      "date": "2026-08-26",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247491041&idx=1&sn=afa78f4cf8b50214e17b66da6f855091",
+      "section": "论文解读",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "ICML",
+      "sourceRow": 123
+    },
+    {
+      "id": "d2d6e98e660e",
+      "title": "TPAMI 2026｜DuS-DiFuse 异构退化鲁棒融合",
+      "date": "2026-08-25",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247490921&idx=1&sn=b6b177dce0a1c90af4a0adc2e9b4bbc0",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "图像恢复"
+      ],
+      "venue": "TPAMI",
+      "sourceRow": 235
+    },
+    {
+      "id": "7b3e4cfbc7f8",
+      "title": "TPAMI 2026｜武大 DuS-DiFuse：图像融合从“拼信息”走向“补语义”，兼顾真实退化鲁棒性",
+      "date": "2026-08-25",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247490917&idx=1&sn=ee58596e9ffc41c796c34ec4f8bdc49b",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "图像恢复"
+      ],
+      "venue": "TPAMI",
+      "sourceRow": 64
+    },
+    {
+      "id": "5b82c1b4fc60",
+      "title": "ECCV 2026｜先验越强反而越容易“打架”？P2Fusion把静态约束改成可学习动态Prompt",
+      "date": "2026-08-24",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247490898&idx=1&sn=c74cd27b5fbfbd5fdec88408e65a6a05",
+      "section": "论文解读",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "ECCV",
+      "sourceRow": 20
+    },
+    {
+      "id": "eea6af86a3a0",
+      "title": "TPAMI 2026 Bi3D++:双域主动学习跨域3D检测",
+      "date": "2026-08-23",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247490803&idx=1&sn=7bc9e86b2817d193cf1e270b8c681794",
+      "section": "论文解读",
+      "topics": [
+        "三维感知"
+      ],
+      "venue": "TPAMI",
+      "sourceRow": 206
+    },
+    {
+      "id": "c7b1964f98d7",
+      "title": "学术速递｜2026年7月 arXiv 图像融合论文汇总（07.01–07.31）28 篇最新成果",
+      "date": "2026-08-23",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247490808&idx=1&sn=74d362a27d8f017e107c496ed2cefed7",
+      "section": "论文速递",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "",
+      "sourceRow": 200
+    },
+    {
+      "id": "b840ab9df06a",
+      "title": "跟着IEEE TIP 和 TMM 学习论文模型图及配色",
+      "date": "2026-08-23",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247490847&idx=1&sn=dab93fe440617fb521c5bad3faaab970",
+      "section": "配色与绘图",
+      "topics": [],
+      "venue": "TIP",
+      "sourceRow": 109
+    },
+    {
+      "id": "e9e91e8b8359",
+      "title": "CVPR 2026 C-LaV:条件潜在速场去噪鲁棒定位",
+      "date": "2026-08-22",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247490721&idx=1&sn=52055497832751155ed05d660f442836",
+      "section": "论文解读",
+      "topics": [
+        "三维感知",
+        "图像恢复"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 225
+    },
+    {
+      "id": "0974fe9d94d1",
+      "title": "CVPR 2026 | 上交&复旦&清华 3M-TI：让 RGB 成为热成像超分助手，手机也能看清细节！",
+      "date": "2026-08-21",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247490675&idx=1&sn=8114094cdcd0fcb44f164ad21b183f78",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "图像恢复"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 154
+    },
+    {
+      "id": "2b711ac225f0",
+      "title": "TMM 2025｜大连理工 OS-RFS：多模态图像配准/融合/分割协同框架，面向错位与对抗攻击",
+      "date": "2026-08-20",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247490639&idx=1&sn=e7dbabac0d49abe75c2b7286bf90cf8f",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "图像配准"
+      ],
+      "venue": "TMM",
+      "sourceRow": 98
+    },
+    {
+      "id": "4ed946d43630",
+      "title": "学术速递 | ECCV 2026 放榜！12篇图像/视频融合 + 5篇红外新任务：从真实场景融合到超分、检测",
+      "date": "2026-08-19",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247490637&idx=1&sn=9f02d5c6064c814a17ff64871f86ef0b",
+      "section": "论文速递",
+      "topics": [
+        "红外与可见光",
+        "图像融合",
+        "图像恢复",
+        "视频融合"
+      ],
+      "venue": "ECCV",
+      "sourceRow": 74
+    },
+    {
+      "id": "0b77ef3a2a32",
+      "title": "ACM MM 2026｜东京大学3DarkFusion：无干净RGB监督，把极暗RGB与NIR放进3D空间融合",
+      "date": "2026-08-18",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247490459&idx=1&sn=20dfc7b88e8fe9c8137d6944186f6299",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "三维感知"
+      ],
+      "venue": "ACM MM",
+      "sourceRow": 160
+    },
+    {
+      "id": "f08c6990e476",
+      "title": "TPAMI 2026｜Text-IF 2.0！武大GText-IF：让融合模型“读懂场景”，退化去除与语义理解一步完成",
+      "date": "2026-08-17",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247490458&idx=1&sn=0d709953023c25f38c7f55d8f1280071",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "图像恢复"
+      ],
+      "venue": "TPAMI",
+      "sourceRow": 44
+    },
+    {
+      "id": "44ce7fcaba27",
+      "title": "学术速递｜2026年6月 arXiv 图像融合论文汇总（06.01–06.30）23 篇最新成果",
+      "date": "2026-08-16",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247490370&idx=1&sn=999b49221b8131e43dd5be493d491c51",
+      "section": "论文速递",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "",
+      "sourceRow": 195
+    },
+    {
+      "id": "7467da2877b0",
+      "title": "2026 哈工深×清华 | 图像恢复也能边测边学？TTTIR：测试时训练解锁实例级状态演化！",
+      "date": "2026-08-16",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247490445&idx=1&sn=b6d00cd80becb67bb853fbdc3a236f4d",
+      "section": "论文解读",
+      "topics": [
+        "图像恢复"
+      ],
+      "venue": "",
+      "sourceRow": 101
+    },
+    {
+      "id": "d7c19354c2c3",
+      "title": "CVPR 2026 SiD：结构-强度扩散雨雾雪LiDAR",
+      "date": "2026-08-15",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247490369&idx=1&sn=d3e7a1487cba815f8bae60b5f7d4c831",
+      "section": "论文解读",
+      "topics": [
+        "三维感知"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 208
+    },
+    {
+      "id": "d4cbc58f0cfa",
+      "title": "TPAMI 2026 DGLSS++：单源跨LiDAR密度泛化",
+      "date": "2026-08-15",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247490405&idx=1&sn=bd6e305d7c4a07114208f969963e6377",
+      "section": "论文解读",
+      "topics": [
+        "三维感知"
+      ],
+      "venue": "TPAMI",
+      "sourceRow": 182
+    },
+    {
+      "id": "b6c3dac14102",
+      "title": "TIP 2026｜融合图像好看却未必好检测？西工大TPTAF让任务先验直接进入跨模态特征选择",
+      "date": "2026-08-14",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247490339&idx=1&sn=355d5be992b7b0ab3f6edbd6e9f860db",
+      "section": "论文解读",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "TIP",
+      "sourceRow": 56
+    },
+    {
+      "id": "2cfb13eaebdf",
+      "title": "跟着 CVPR 和 ACM MM 学习论文模型图及配色",
+      "date": "2026-08-13",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247490287&idx=1&sn=9731d4c6820dfc5c940cb6bd8cbec651",
+      "section": "配色与绘图",
+      "topics": [],
+      "venue": "CVPR",
+      "sourceRow": 125
+    },
+    {
+      "id": "9c71313f11e3",
+      "title": "TPAMI 2026｜大连理工 EvoFuse：让融合不再“顾此失彼”，多任务实现共生进化学习",
+      "date": "2026-08-13",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247490231&idx=1&sn=a31bc43f4f55d2cde9bd624f91a16201",
+      "section": "论文解读",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "TPAMI",
+      "sourceRow": 3
+    },
+    {
+      "id": "481baac9f143",
+      "title": "TPAMI 2026｜大连理工 URMIF：构建大规模真实世界未对齐数据集，统一图像配准+融合表征",
+      "date": "2026-08-12",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247490197&idx=1&sn=3c3707ac0c33be9c56aad999ce2e699a",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "图像配准",
+        "数据集与基准"
+      ],
+      "venue": "TPAMI",
+      "sourceRow": 51
+    },
+    {
+      "id": "1e8d4035ac44",
+      "title": "ACM MM 2026｜QuReC把Prompt细化到每个空间查询：统一复原雨雾噪声、模糊与低光",
+      "date": "2026-08-11",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247490172&idx=1&sn=69323e966111b33d1a93163c7ce74fc6",
+      "section": "论文解读",
+      "topics": [
+        "图像恢复"
+      ],
+      "venue": "ACM MM",
+      "sourceRow": 94
+    },
+    {
+      "id": "a4f3b036f602",
+      "title": "ACM MM 2026｜浙大&西电&杭电提出MIND：从固定融合规则走向病理意图驱动",
+      "date": "2026-08-10",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247490160&idx=1&sn=68263ad7cb26c019b5904547e3d82702",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "医学影像"
+      ],
+      "venue": "ACM MM",
+      "sourceRow": 27
+    },
+    {
+      "id": "f3e75eb2abbe",
+      "title": "ACM MM 2026 华北电力｜连续融合空间实现实例级细粒度的可控红外与可见光图像融合",
+      "date": "2026-08-09",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247490135&idx=1&sn=6e7c8cde7332ec5a2ee575a92075e88f",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "图像融合"
+      ],
+      "venue": "ACM MM",
+      "sourceRow": 115
+    },
+    {
+      "id": "98773119302f",
+      "title": "AAAI 26 自适应光滑蒸馏与异构融合的3D检测",
+      "date": "2026-08-08",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247490123&idx=1&sn=c800a394a42f6c5b83146ef42c3cc89f",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "三维感知"
+      ],
+      "venue": "AAAI",
+      "sourceRow": 202
+    },
+    {
+      "id": "2bc9bbf77f00",
+      "title": "AAAI 26 WinMamba:多尺度窗口赋能三维检测",
+      "date": "2026-08-08",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247490093&idx=1&sn=89b62a6a8161aaacaed62bdae65c9b06",
+      "section": "论文解读",
+      "topics": [
+        "三维感知"
+      ],
+      "venue": "AAAI",
+      "sourceRow": 184
+    },
+    {
+      "id": "db30be8688fd",
+      "title": "CVPR 2026｜成电KSDiff：500×+加速！遥感图像融合不直接生成遥感图，而是生成全局感知卷积核",
+      "date": "2026-08-07",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247490066&idx=1&sn=5b5790b5b283a7eea036a9d9fc3eb754",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "遥感与多光谱"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 128
+    },
+    {
+      "id": "a84a3cd96250",
+      "title": "PR 2026 中南&清华&杭电｜MorVess 融合多源几何信息，把距离、厚度图与SAM融在一起！",
+      "date": "2026-08-06",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247490048&idx=1&sn=40b9e667a228e6a366558d837f01d67e",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "医学影像"
+      ],
+      "venue": "PR",
+      "sourceRow": 91
+    },
+    {
+      "id": "8678ff33830b",
+      "title": "BeyondFusion：无需显式配准，统一完成「红外超分」与红外-可见光融合",
+      "date": "2026-08-05",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247490029&idx=1&sn=1ee79872d9d68e731ef903b2b01d8d56",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "图像融合",
+        "图像配准",
+        "图像恢复"
+      ],
+      "venue": "",
+      "sourceRow": 47
+    },
+    {
+      "id": "781d176c9ac3",
+      "title": "CVPR 2026｜闪烁不是普通噪声：Flickerformer如何利用周期与方向先验多帧图像去闪烁？",
+      "date": "2026-08-04",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247490027&idx=1&sn=06831a7a7e29aa49498ca0741756b8ca",
+      "section": "论文解读",
+      "topics": [
+        "图像恢复"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 127
+    },
+    {
+      "id": "e88a139c4829",
+      "title": "TIP 2026｜只提亮还不够：BLFusion让低照度红外-可见光融合同时抑制复杂真实噪",
+      "date": "2026-08-03",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247490011&idx=1&sn=834b550b78a4279cec55a95578949ade",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "图像融合",
+        "图像恢复"
+      ],
+      "venue": "TIP",
+      "sourceRow": 71
+    },
+    {
+      "id": "e3776db54b21",
+      "title": "AAAI 2026 Refine3D场景自适应参考点精细化",
+      "date": "2026-08-01",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247489947&idx=1&sn=fc45dbb314c0859ba2a5f04faf2618a8",
+      "section": "论文解读",
+      "topics": [
+        "三维感知"
+      ],
+      "venue": "AAAI",
+      "sourceRow": 197
+    },
+    {
+      "id": "7dd75bb42420",
+      "title": "AAAI 2026 RayD3D：射线深度蒸馏鲁棒3D检测",
+      "date": "2026-08-01",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247489894&idx=1&sn=a33d0e292a6c777c33dc8f350873ddea",
+      "section": "论文解读",
+      "topics": [
+        "三维感知"
+      ],
+      "venue": "AAAI",
+      "sourceRow": 176
+    },
+    {
+      "id": "eaba304e1671",
+      "title": "TIP 2026｜不再一次生成融合图：LTOFusion用小步状态转移压缩整个预测空间",
+      "date": "2026-07-31",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247489851&idx=1&sn=e7a21e63ef7e9752b5c43819c0647a84",
+      "section": "论文解读",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "TIP",
+      "sourceRow": 148
+    },
+    {
+      "id": "e2f88fc6929b",
+      "title": "CVPR 2026｜NORP攻防战！用物理材料干扰红外感知，图像融合还能识破全方位“隐身”吗？",
+      "date": "2026-07-30",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247489800&idx=1&sn=9106d29f51e60f5a4d5b12833b8b7498",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "图像融合"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 140
+    },
+    {
+      "id": "1d5b4665eeb7",
+      "title": "ECCV 2026｜AerialMetric：一个全新的无人机单目深度估计数据集，面向真实世界航拍场景",
+      "date": "2026-07-29",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247489760&idx=1&sn=a617a5de7c6e34033056c9771670b575",
+      "section": "论文解读",
+      "topics": [
+        "数据集与基准"
+      ],
+      "venue": "ECCV",
+      "sourceRow": 38
+    },
+    {
+      "id": "c50f82b6c528",
+      "title": "ECCV 2026｜LIIFusion用粗到细隐式表示解决生成式多曝光融合的高分辨率效率难题",
+      "date": "2026-07-28",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247489736&idx=1&sn=82c58a7d46cb0dbc16f809caac8c3058",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "多曝光与多聚焦"
+      ],
+      "venue": "ECCV",
+      "sourceRow": 186
+    },
+    {
+      "id": "01f9a32e8d22",
+      "title": "TIP 2026｜融合网络越来越深，为何真正融合步骤仍难以解释？西电HFARFusion给出答案",
+      "date": "2026-07-27",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247489719&idx=1&sn=55fcad36c004ba5ceef26b1bd7bde50e",
+      "section": "论文解读",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "TIP",
+      "sourceRow": 43
+    },
+    {
+      "id": "20db777ee945",
+      "title": "ECCV 2026｜MAVFusion：运动感知稀疏交互驱动的高效红外-可见光视频融合",
+      "date": "2026-07-26",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247489703&idx=1&sn=089dc0471ada1af89ade40a3f8e0aa47",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "图像融合",
+        "视频融合"
+      ],
+      "venue": "ECCV",
+      "sourceRow": 79
+    },
+    {
+      "id": "0aa4bdbdb422",
+      "title": "AAAI 26 自适应LIDAR：时序预测驱动3D检测",
+      "date": "2026-07-25",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247489637&idx=1&sn=6bd7f98e741fda6d87489dd92efb8431",
+      "section": "论文解读",
+      "topics": [
+        "三维感知"
+      ],
+      "venue": "AAAI",
+      "sourceRow": 207
+    },
+    {
+      "id": "338cab4821c9",
+      "title": "AAAI 26 CLIPDet3D:视觉语言协作蒸馏3D检测",
+      "date": "2026-07-25",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247489682&idx=1&sn=4c1bd03bf9e51208e02f3ffbd67da9e6",
+      "section": "论文解读",
+      "topics": [
+        "三维感知"
+      ],
+      "venue": "AAAI",
+      "sourceRow": 171
+    },
+    {
+      "id": "a87d894ad11b",
+      "title": "ICML 2026｜光流太“硬”，历史更“稳”：浙大&大工提出红外-可见光视频融合新方法",
+      "date": "2026-07-24",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247489608&idx=1&sn=21259777a132e25753a87ba94f5002ba",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "图像融合",
+        "视频融合"
+      ],
+      "venue": "ICML",
+      "sourceRow": 33
+    },
+    {
+      "id": "116345ee19b9",
+      "title": "TIP 2026｜遥感检测知道“哪里变了”，描述知道“变成什么”？LCCC 让两个任务互相挑错",
+      "date": "2026-07-23",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247489587&idx=1&sn=b84ef33568fa0841281165280a780965",
+      "section": "论文解读",
+      "topics": [
+        "遥感与多光谱"
+      ],
+      "venue": "TIP",
+      "sourceRow": 55
+    },
+    {
+      "id": "909e8ffcbdbf",
+      "title": "CVPR 2026｜ScaleFormer 与PanScale数据集：面向超大分辨率场景的跨尺度全色锐化框架与评测基准",
+      "date": "2026-07-22",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247489570&idx=1&sn=6a6630c2530410e22c4a1f32b50ef098",
+      "section": "论文解读",
+      "topics": [
+        "数据集与基准",
+        "遥感与多光谱"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 114
+    },
+    {
+      "id": "948d0a9e32aa",
+      "title": "TIP 2026｜Less Is More：SD-MoMFE 让六类专家按场景“少而精”完成红外可见光融合",
+      "date": "2026-07-21",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247489553&idx=1&sn=9e7a544e5e02b275de4e080da619dc92",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "图像融合"
+      ],
+      "venue": "TIP",
+      "sourceRow": 63
+    },
+    {
+      "id": "c7f12a646a07",
+      "title": "CVPR 2026｜PhyFusion：基于物理感知和模态特定先验驱动的红外与可见光图像融合",
+      "date": "2026-07-20",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247489528&idx=1&sn=ef282c7ee95ce84a119b1f29d0b886c9",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "图像融合"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 7
+    },
+    {
+      "id": "8c9e41c03fd8",
+      "title": "ICCV 2025 | 告别平台偏见！车、无人机、机器狗一套模型全搞定：首个跨平台3D检测大一统方案",
+      "date": "2026-07-19",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247489505&idx=3&sn=06215d015201a972437416e251e9d921",
+      "section": "论文解读",
+      "topics": [
+        "三维感知"
+      ],
+      "venue": "ICCV",
+      "sourceRow": 237
+    },
+    {
+      "id": "3dbb061cfa17",
+      "title": "CVPR 2026 | SFS-DETR：小目标无处可藏，让无人机学会精准识别",
+      "date": "2026-07-19",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247489505&idx=2&sn=be33c11b155772495cf867741e2bc2bf",
+      "section": "论文解读",
+      "topics": [],
+      "venue": "CVPR",
+      "sourceRow": 227
+    },
+    {
+      "id": "6618a488444c",
+      "title": "学术速递 | ICCV 2025 Accepted Papers For Image Fusion",
+      "date": "2026-07-19",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247489505&idx=7&sn=a0c50b60123f9d6f4aeb5f5ababcbcfe",
+      "section": "论文速递",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "ICCV",
+      "sourceRow": 220
+    },
+    {
+      "id": "611221cca365",
+      "title": "学术速递 | ICML 2026 放榜！图像融合新趋势，可检索 9 篇相关论文",
+      "date": "2026-07-19",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247489505&idx=6&sn=c1165452b85b5cc3fa5754481c8b6917",
+      "section": "论文速递",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "ICML",
+      "sourceRow": 219
+    },
+    {
+      "id": "db486053c293",
+      "title": "学术速递 | AAAI 2026 Accepted Papers For Image Fusion @ 请选出你心中的最佳论文！",
+      "date": "2026-07-19",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247489505&idx=5&sn=dccb44d20dd9a008e7f6c8d148a751b9",
+      "section": "论文速递",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "AAAI",
+      "sourceRow": 214
+    },
+    {
+      "id": "9170bb05ca8f",
+      "title": "CVPR 2026 | CrossWeaver：红外与可见光未对齐？“织”在一起照样实时检测！",
+      "date": "2026-07-19",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247489505&idx=1&sn=1ffe7afb88b081186422381a753dcc0e",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "图像配准"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 183
+    },
+    {
+      "id": "821a13cf6a3b",
+      "title": "学术速递 | CVPR 2026 放榜！图像融合迎来大爆发，可检索 17 篇相关论文，全网首发！",
+      "date": "2026-07-19",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247489505&idx=4&sn=b38d7442dd2676352f4bacef7c8913e5",
+      "section": "论文速递",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 174
+    },
+    {
+      "id": "417a8dda0155",
+      "title": "AAAI 26 MonoCLUE：聚类增强单目3D检测简析",
+      "date": "2026-07-18",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247489503&idx=1&sn=f502feac1af311e55a034649b412a211",
+      "section": "论文解读",
+      "topics": [
+        "三维感知"
+      ],
+      "venue": "AAAI",
+      "sourceRow": 229
+    },
+    {
+      "id": "d7689eb14ab0",
+      "title": "AAAI 26 DriveFlow:修正流自适应3D检测增强",
+      "date": "2026-07-18",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247489497&idx=1&sn=f38cbf808d549ce03489e040440216f2",
+      "section": "论文解读",
+      "topics": [
+        "三维感知"
+      ],
+      "venue": "AAAI",
+      "sourceRow": 223
+    },
+    {
+      "id": "79d0828a7daf",
+      "title": "ECCV 2026｜曝光帧数一变就要重训？南开&OPPO提出FreeMEF 用一个模型自由融合 2、3、5 帧",
+      "date": "2026-07-17",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247489451&idx=1&sn=59ebd2d6615a7a0e77c26c9a8697656f",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "多曝光与多聚焦"
+      ],
+      "venue": "ECCV",
+      "sourceRow": 67
+    },
+    {
+      "id": "6e0d02d69021",
+      "title": "AAAI 2026 SMC-Mamba 论文模型图及配色学习",
+      "date": "2026-07-16",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247489417&idx=1&sn=6a3b4741002b17eb6d0e06ca03e5e8af",
+      "section": "配色与绘图",
+      "topics": [],
+      "venue": "AAAI",
+      "sourceRow": 185
+    },
+    {
+      "id": "1af21cac8df6",
+      "title": "跟着 ICML 和 CVPR 26学习论文模型图及配色",
+      "date": "2026-07-16",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247489405&idx=1&sn=195e7ef9a10e7e68c3549413a6719e08",
+      "section": "配色与绘图",
+      "topics": [],
+      "venue": "ICML",
+      "sourceRow": 92
+    },
+    {
+      "id": "1e55933f0403",
+      "title": "ECCV 2026｜相机 × 激光雷达 × 4D 雷达：RAF 如何实现恶劣天气下的鲁棒 3D 检测？",
+      "date": "2026-07-15",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247489374&idx=1&sn=3d763b956e346d2e99ba23b37bed6dfa",
+      "section": "论文解读",
+      "topics": [
+        "三维感知"
+      ],
+      "venue": "ECCV",
+      "sourceRow": 32
+    },
+    {
+      "id": "79cf36a57ad9",
+      "title": "ICML 2026 | 红外与可见光发生局部冲突时怎么融合？IDEAL 先看差异再分配贡献",
+      "date": "2026-07-14",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247489353&idx=1&sn=1212fe43f554891f9efbbdc2db6d4355",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "图像融合"
+      ],
+      "venue": "ICML",
+      "sourceRow": 36
+    },
+    {
+      "id": "2768828cfb97",
+      "title": "ICCV 2025｜MMAIF：统一多任务、多退化与语言引导的潜空间图像融合新框架",
+      "date": "2026-07-13",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247489323&idx=1&sn=606dafad9a03e225107f62b690d4c1ce",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "图像恢复"
+      ],
+      "venue": "ICCV",
+      "sourceRow": 134
+    },
+    {
+      "id": "630874cfdebd",
+      "title": "ECCV 2026 | 南开&OPPO开源 ExpoMotion：首个大规模动态多曝光融合数据集",
+      "date": "2026-07-12",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247489301&idx=1&sn=cf9f8aa7741d3f0fb0129375c5aac936",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "数据集与基准",
+        "多曝光与多聚焦"
+      ],
+      "venue": "ECCV",
+      "sourceRow": 60
+    },
+    {
+      "id": "84bcf7621ca0",
+      "title": "ICML 2026 3D-DLP：用物体粒子表示三维场景",
+      "date": "2026-07-11",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247489281&idx=1&sn=00f75cf9e5c658a77be56e1f0335569a",
+      "section": "论文解读",
+      "topics": [
+        "三维感知"
+      ],
+      "venue": "ICML",
+      "sourceRow": 236
+    },
+    {
+      "id": "93596dc62eea",
+      "title": "26AAAI零推理开销！鲁棒全稀疏3D检测新范式",
+      "date": "2026-07-11",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247489235&idx=1&sn=77873ec1493d614a925fce3d1bceb95f",
+      "section": "论文解读",
+      "topics": [
+        "三维感知"
+      ],
+      "venue": "AAAI",
+      "sourceRow": 232
+    },
+    {
+      "id": "699c331d2b94",
+      "title": "TPAMI 2026 | DiTFuse：交互式图像融合 + 语义分割，一句话就能控制多任务融合？",
+      "date": "2026-07-10",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247489121&idx=1&sn=e470e49e8579b31f2a13119a8c040064",
+      "section": "论文解读",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "TPAMI",
+      "sourceRow": 95
+    },
+    {
+      "id": "e9d9b187c032",
+      "title": "ECCV 2026 | 武大马佳义团队提出 UHD-MFF：4K数据集+查找表，让多聚焦融合不爆显存！",
+      "date": "2026-07-09",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247488678&idx=1&sn=030b0e5222b24fb7f05b5dae53de7fab",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "数据集与基准",
+        "多曝光与多聚焦",
+        "研究团队"
+      ],
+      "venue": "ECCV",
+      "sourceRow": 85
+    },
+    {
+      "id": "07ad0a56d41f",
+      "title": "ICML 2026 | 福州大学 LaRA-Fusion：用双环约束优化红外与可见光融合潜空间的拓扑结构",
+      "date": "2026-07-08",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247488647&idx=1&sn=0bfac9ddbb09afa6099cc5128ed69224",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "图像融合"
+      ],
+      "venue": "ICML",
+      "sourceRow": 106
+    },
+    {
+      "id": "bdac766e91eb",
+      "title": "CVPR 2026 Highlight｜北大&大连理工HE-MEF：模型先读懂人脑，再做多曝光图像融合",
+      "date": "2026-07-07",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247488636&idx=1&sn=2aa0e07fc91ebcffeab0a7e6b6c6d62e",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "多曝光与多聚焦"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 69
+    },
+    {
+      "id": "406867df212a",
+      "title": "ECCV 2026｜武大提出 AnyMatch：没有多传感器，也能造出多模态匹配数据",
+      "date": "2026-07-06",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247488611&idx=1&sn=2481d4e27da6da273559628454b40b63",
+      "section": "论文解读",
+      "topics": [
+        "图像配准"
+      ],
+      "venue": "ECCV",
+      "sourceRow": 31
+    },
+    {
+      "id": "4b4ef782a3ce",
+      "title": "CVPR 2026 | DarkAct：一个全新的RGB-T低照度动作识别数据集，专为黑暗场景而生",
+      "date": "2026-07-05",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247488590&idx=1&sn=5fba530a963abe38e8f3fc76b38f7d1a",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "图像恢复",
+        "数据集与基准"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 75
+    },
+    {
+      "id": "356d3cd999c3",
+      "title": "CVPR 2026 面向内参感知的单目3D检测",
+      "date": "2026-07-04",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247488549&idx=1&sn=a13a078b50168a6365226a32bf890afa",
+      "section": "论文解读",
+      "topics": [
+        "三维感知"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 230
+    },
+    {
+      "id": "382d76defa04",
+      "title": "AAAI 2026 开源真实烟雾LiDAR数据集LiSmoke",
+      "date": "2026-07-04",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247488576&idx=1&sn=f9f29c319265c17bf158e602adcf898f",
+      "section": "论文解读",
+      "topics": [
+        "三维感知",
+        "数据集与基准"
+      ],
+      "venue": "AAAI",
+      "sourceRow": 205
+    },
+    {
+      "id": "3ffb8166b60b",
+      "title": "学术速递｜2026年5月 arXiv 图像融合论文汇总 21 篇最新成果",
+      "date": "2026-07-03",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247488512&idx=2&sn=59171dc864249fa5807811ab70f6afb7",
+      "section": "论文速递",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "",
+      "sourceRow": 233
+    },
+    {
+      "id": "e6162a6f3da3",
+      "title": "ICML 2026 | MobileFusion：仅4K参数，通过结构重参数化让图像融合跑上移动端",
+      "date": "2026-07-03",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247488512&idx=1&sn=01c1987535fc7931a610373a663f43c8",
+      "section": "论文解读",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "ICML",
+      "sourceRow": 59
+    },
+    {
+      "id": "8fe0b03b162f",
+      "title": "ICML 2026 | 欧氏空间太“平”，图像融合也要“弯”起来，在双曲空间中学会无文本推理",
+      "date": "2026-07-02",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247488366&idx=1&sn=a6c7218b7524085ef05706af36d59de6",
+      "section": "论文解读",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "ICML",
+      "sourceRow": 21
+    },
+    {
+      "id": "2595eae5291f",
+      "title": "AAAI 2026 | 蚂蚁虽小也能搬山：西南科大提出 AIDFusion 让轻量融合网络不再 “躺平”",
+      "date": "2026-07-01",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247488351&idx=1&sn=f1f1e88efd0e798e444668703940bb05",
+      "section": "论文解读",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "AAAI",
+      "sourceRow": 73
+    },
+    {
+      "id": "73a3008d90d5",
+      "title": "学术速递 | ICML 2026 放榜！图像融合新趋势，可检索 9 篇相关论文",
+      "date": "2026-06-30",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247488333&idx=1&sn=a7b6642e50f8636fe15cad90ce7207bf",
+      "section": "论文速递",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "ICML",
+      "sourceRow": 136
+    },
+    {
+      "id": "ebea6a05e0a1",
+      "title": "AAAI 2026｜没有多源数据怎么办？SigFusion 用自然图像合成融合训练集",
+      "date": "2026-06-29",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247488301&idx=1&sn=181cb7f9214b9562b465dc45cb4ce18f",
+      "section": "论文解读",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "AAAI",
+      "sourceRow": 152
+    },
+    {
+      "id": "7b0b33ea25f5",
+      "title": "恶劣天气红外与可见光图像融合：佛山大学团队系列研究与 AWMM-100k 基准数据集",
+      "date": "2026-06-28",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247488226&idx=3&sn=7d60ef7924a6d563165a84956dd87e36",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "图像融合",
+        "数据集与基准",
+        "研究团队"
+      ],
+      "venue": "",
+      "sourceRow": 175
+    },
+    {
+      "id": "0bcce0787159",
+      "title": "TIP 2026 | 雨雾雪全搞定！一个模型用「文字」教会图像融合看懂恶劣天气",
+      "date": "2026-06-28",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247488226&idx=2&sn=b0adca25b781e86efacc4e18bb2a1ed2",
+      "section": "论文解读",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "TIP",
+      "sourceRow": 164
+    },
+    {
+      "id": "d49056734d3f",
+      "title": "ECCV 2026 | 从静态拟合到动态分配：AMG-Fuse 用模态贡献Mask破解恶劣天气下的融合难题",
+      "date": "2026-06-28",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247488226&idx=1&sn=78aa13e0a72686857fe1950ae0e97527",
+      "section": "论文解读",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "ECCV",
+      "sourceRow": 29
+    },
+    {
+      "id": "c21686c7629a",
+      "title": "CVPR 2026 专家蒸馏算法用于长尾3D目标检测",
+      "date": "2026-06-27",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247488199&idx=1&sn=e680cfad70c18630893ae166d719d985",
+      "section": "论文解读",
+      "topics": [
+        "三维感知"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 211
+    },
+    {
+      "id": "11cf81b5b85e",
+      "title": "CVPR 2026 对单目3D目标检测进行排名与检索",
+      "date": "2026-06-26",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247488156&idx=1&sn=0b69a4060f3aa87c81362ac0cdbd1969",
+      "section": "论文解读",
+      "topics": [
+        "三维感知"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 228
+    },
+    {
+      "id": "2148f3c1b7ec",
+      "title": "CVPR 2026 | 没有红外图怎么办？可见光缺失怎么办？SynthRGB-T 让两种模态自由转换！",
+      "date": "2026-06-25",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247488126&idx=1&sn=fad13213ff4022bdf85b950368bc6775",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 17
+    },
+    {
+      "id": "9a112ba2a473",
+      "title": "CSIG 大佬云集，图像融合领域的半壁江山！",
+      "date": "2026-06-24",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247488030&idx=1&sn=7e372e4210b97b1aa6aca94104dd0575",
+      "section": "学术社区",
+      "topics": [
+        "图像融合",
+        "研究团队"
+      ],
+      "venue": "",
+      "sourceRow": 189
+    },
+    {
+      "id": "7c8b2d3fa2e4",
+      "title": "CVPR 2026 | 基于因果引导的红外小目标检测",
+      "date": "2026-06-24",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247488040&idx=1&sn=778dc072e40cc050ac47d0de001d52b6",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 118
+    },
+    {
+      "id": "fa019559c4c5",
+      "title": "TPAMI 2026 | PBFNet 把图像先验变成“融合地基”：别让融合模型从噪声起跑！",
+      "date": "2026-06-23",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247488009&idx=1&sn=2dfd198d78213f3f54baa15d34ea4427",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "图像恢复"
+      ],
+      "venue": "TPAMI",
+      "sourceRow": 66
+    },
+    {
+      "id": "5b1914cb5afd",
+      "title": "ICCV 2025 | 恢复·配准·融合 All-in-One！UniFuse 打造单阶段医学图像融合新标杆",
+      "date": "2026-06-22",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247487984&idx=1&sn=f0b5de637f2bfcd0dc40baf2f8b736fa",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "图像配准",
+        "图像恢复",
+        "医学影像"
+      ],
+      "venue": "ICCV",
+      "sourceRow": 93
+    },
+    {
+      "id": "f0b63161275a",
+      "title": "CVPR 2026 | 利用ViTs中的稀疏标记相关性机制，用于高效的多视图 3D 目标检测",
+      "date": "2026-06-21",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247487963&idx=1&sn=a10d79e1d47daa3547f935611027d52a",
+      "section": "论文解读",
+      "topics": [
+        "三维感知"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 215
+    },
+    {
+      "id": "1d34f51b5c43",
+      "title": "CVPR 2026 | 空频双选定制小目标无人机检测",
+      "date": "2026-06-21",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247487970&idx=1&sn=019fe0e875175acef4ce2568ebc5b474",
+      "section": "论文解读",
+      "topics": [],
+      "venue": "CVPR",
+      "sourceRow": 161
+    },
+    {
+      "id": "50de1c14d2a9",
+      "title": "AAAI 2026 Oral | 大连民族大学提出M2-CoFS：用流形视角终结融合与分割的“边界战争”",
+      "date": "2026-06-19",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247487948&idx=1&sn=713e7da38520f53d34f3df6cd72cfd36",
+      "section": "论文解读",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "AAAI",
+      "sourceRow": 8
+    },
+    {
+      "id": "81717a2f7e44",
+      "title": "TIP 2026 | DSPFusion：退化作旋钮，语义当导航，双先验引导的图像融合新范式",
+      "date": "2026-06-18",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247487917&idx=1&sn=e5cd7c41bf078116f42442eb56d7ca28",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "图像恢复"
+      ],
+      "venue": "TIP",
+      "sourceRow": 61
+    },
+    {
+      "id": "ecb57bc972b5",
+      "title": "ICML 2026 | 可扩展、可压缩、可挖掘：让开放世界的热红外图像恢复 -> 持续进化！",
+      "date": "2026-06-17",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247487903&idx=1&sn=b01af9784b9b8fd9da280bad3d0f987d",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "图像恢复"
+      ],
+      "venue": "ICML",
+      "sourceRow": 133
+    },
+    {
+      "id": "077260068023",
+      "title": "CVPR 2026 | 图像融合的区域自适应学习：每个区域配个专属专家，让模型学会\"看人下菜\"",
+      "date": "2026-06-16",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247487883&idx=1&sn=9723d5048b537d57305410cf01637117",
+      "section": "论文解读",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 14
+    },
+    {
+      "id": "2bf571dacc8f",
+      "title": "CVPR 2026 | More Than Meets the Eye：用熵的平衡术，让融合模型无缝跨界",
+      "date": "2026-06-15",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247487862&idx=1&sn=9c0dcb4784d8dc47240e398f683b5370",
+      "section": "论文解读",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 83
+    },
+    {
+      "id": "cde52a06899d",
+      "title": "AAAI 2026 Oral | 去雾别只顾着变清楚，ADeT-Net让去雾开始“看任务脸色”",
+      "date": "2026-06-14",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247487843&idx=1&sn=5ee1254d9e3a2f1a568d9a9ffed07681",
+      "section": "论文解读",
+      "topics": [
+        "图像恢复"
+      ],
+      "venue": "AAAI",
+      "sourceRow": 139
+    },
+    {
+      "id": "bac041dcb607",
+      "title": "CVPR 2026 | 3D检测鲁棒的不确定性量化校准",
+      "date": "2026-06-13",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247487767&idx=1&sn=7d16837da5531a825878da8bf6c4fe71",
+      "section": "论文解读",
+      "topics": [
+        "三维感知"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 203
+    },
+    {
+      "id": "1ac44019da5a",
+      "title": "CVPR 2026 | 释放高斯泼溅进行3D目标检测",
+      "date": "2026-06-13",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247487824&idx=1&sn=27a3b967f889f29148dafa9964c8820d",
+      "section": "论文解读",
+      "topics": [
+        "三维感知"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 138
+    },
+    {
+      "id": "bb7f32df6e3e",
+      "title": "CVPR 2026 | TACO + OxfoLD：面向 LiDAR 定位与 3D 目标检测的联合学习框架与新数据集",
+      "date": "2026-06-12",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247487729&idx=1&sn=97ceb9d9e56dc0f27b68be90242a1346",
+      "section": "论文解读",
+      "topics": [
+        "三维感知",
+        "数据集与基准"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 103
+    },
+    {
+      "id": "637e45100c30",
+      "title": "CVPR 2026 | MMVIP：一个全新的红外与可见光融合数据集，面向真实海域场景",
+      "date": "2026-06-11",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247487715&idx=1&sn=55be7f750c729a98b4d15cc33a70fbb0",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "图像融合",
+        "数据集与基准"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 6
+    },
+    {
+      "id": "7071fc5748c0",
+      "title": "CVPR 2026 | 多聚焦图像融合，开始放电！",
+      "date": "2026-06-10",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247487694&idx=1&sn=73ce1f024640e0a42102f09b8aad5e72",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "多曝光与多聚焦"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 180
+    },
+    {
+      "id": "90171da02886",
+      "title": "CVPR 2026 | 扩散太慢？视频融合“流”起来",
+      "date": "2026-06-10",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247487686&idx=1&sn=1c13067fec5c96308bdd48e56bb927f6",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "视频融合"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 179
+    },
+    {
+      "id": "a601aa86e400",
+      "title": "CVPR 2026 | ReCoFuse：让退化图像边修复边融合，鲁棒图像融合迎来“互惠耦合”新范式",
+      "date": "2026-06-09",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247487675&idx=1&sn=e73da1cb917225112eb028ee59632581",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "图像恢复"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 68
+    },
+    {
+      "id": "2f7eab833f5e",
+      "title": "TPAMI 2025 | 当扩散模型遇上 Retinex：低光增强如何同时“好看”又“真实”？",
+      "date": "2026-06-08",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247487657&idx=1&sn=27ec5333f6cc0c2035e47d16b19ee9e4",
+      "section": "论文解读",
+      "topics": [
+        "图像恢复"
+      ],
+      "venue": "TPAMI",
+      "sourceRow": 54
+    },
+    {
+      "id": "f6f40b562cdf",
+      "title": "学术速递 | CVPR 2026 放榜！图像融合迎来大爆发，可检索 17 篇相关论文，全网首发！",
+      "date": "2026-06-06",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247487619&idx=1&sn=722107ecf7f91cdfba88c5a8fd75c299",
+      "section": "论文速递",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 25
+    },
+    {
+      "id": "36ffcccfa199",
+      "title": "以激光雷达为中心的多模态融合三维目标检测",
+      "date": "2026-06-05",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247487556&idx=1&sn=259204f09c0c1f827e9563aa77234552",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "三维感知"
+      ],
+      "venue": "",
+      "sourceRow": 222
+    },
+    {
+      "id": "dd104aedcf8e",
+      "title": "TIP 2026 | 雨雾雪全搞定！一个模型用「文字」教会图像融合看懂恶劣天气",
+      "date": "2026-06-04",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247487538&idx=1&sn=14e4ea1d3d2cf419d15f91731d02953c",
+      "section": "论文解读",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "TIP",
+      "sourceRow": 15
+    },
+    {
+      "id": "568da2c932b8",
+      "title": "IJCV 2026｜双提示点亮暗光世界",
+      "date": "2026-06-03",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247487502&idx=1&sn=8d53b22971a1536e2a39c63bd2b4747f",
+      "section": "论文解读",
+      "topics": [],
+      "venue": "IJCV",
+      "sourceRow": 177
+    },
+    {
+      "id": "5c6b167ce31b",
+      "title": "ICCV 2025 | TITA：不靠任务标签，如何让统一图像融合同时保留共性与差异？",
+      "date": "2026-06-02",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247487485&idx=1&sn=aa480d89fcbb0b0ae309d6603e0afdb2",
+      "section": "论文解读",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "ICCV",
+      "sourceRow": 194
+    },
+    {
+      "id": "6450a39b3154",
+      "title": "TPAMI 2026 | 勿忘我：用知识融合对抗局部过拟合，单模型也能吃到集成红利",
+      "date": "2026-06-01",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247487463&idx=1&sn=2c7798efffa14cb0e92eaa89c12268e2",
+      "section": "论文解读",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "TPAMI",
+      "sourceRow": 124
+    },
+    {
+      "id": "2a2be4158eff",
+      "title": "CVPR 2026 | 对比学习增强的雷达-相机融合",
+      "date": "2026-05-31",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247487450&idx=1&sn=a3b02868ab8528dd5aa44b335de013bc",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "三维感知"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 209
+    },
+    {
+      "id": "15a15e26abd9",
+      "title": "CVPR 2026 | 领域通用化多模态融合的3D检测",
+      "date": "2026-05-30",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247487407&idx=1&sn=b21c7719d358a893c6ce99eb166e2f96",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "三维感知"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 217
+    },
+    {
+      "id": "6730886e6e98",
+      "title": "学术速递 | AAAI 2026 Accepted Papers For Image Fusion @ 请选出你心中的最佳论文！",
+      "date": "2026-05-28",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247487350&idx=1&sn=4c76299edd20cc39291a58fe94136606",
+      "section": "论文速递",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "AAAI",
+      "sourceRow": 143
+    },
+    {
+      "id": "338d1242b6b5",
+      "title": "空频协同：破解非配准红外-可见光融合难题",
+      "date": "2026-05-27",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247487260&idx=1&sn=7a5277d7c1a8705f91be562a8f5ef8da",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "图像融合",
+        "图像配准"
+      ],
+      "venue": "",
+      "sourceRow": 204
+    },
+    {
+      "id": "3696f07fdd7a",
+      "title": "TPAMI 2026 | 先解耦再评价：EvaNet 让红外与可见光图像融合评估更懂“人眼”与“任务”",
+      "date": "2026-05-26",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247487243&idx=1&sn=5d07d53f084e459a3576f4d763ff7ca2",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "图像融合",
+        "评估与指标"
+      ],
+      "venue": "TPAMI",
+      "sourceRow": 41
+    },
+    {
+      "id": "a0d465f671e8",
+      "title": "TPAMI 2026 & ICCV 2025 | 前景背景图像融合不止\"贴图\"！DreamFuse一网搞定六大融合场景！",
+      "date": "2026-05-25",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247487195&idx=1&sn=912889941250d6cd51c87e7fdc624330",
+      "section": "论文解读",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "TPAMI",
+      "sourceRow": 187
+    },
+    {
+      "id": "6b39839ae6f9",
+      "title": "ICLR 2025 | 测试时自适应的协同3D目标检测",
+      "date": "2026-05-23",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247487186&idx=1&sn=d5a7a4e42b6fbfff8deb1e2b0d37bbc1",
+      "section": "论文解读",
+      "topics": [
+        "三维感知"
+      ],
+      "venue": "ICLR",
+      "sourceRow": 234
+    },
+    {
+      "id": "d1357fd00984",
+      "title": "CVPR 2026 | 高性能雷达-摄像头融合3D检测",
+      "date": "2026-05-22",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247487067&idx=1&sn=b518caba5f87aec253f74c6a4fd63392",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "三维感知"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 221
+    },
+    {
+      "id": "6da754ccdc68",
+      "title": "恶劣天气红外与可见光图像融合：佛山大学团队系列研究与 AWMM-100k 基准数据集",
+      "date": "2026-05-21",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247486940&idx=1&sn=a68cd1a398120c97617afce026b30000",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "图像融合",
+        "数据集与基准",
+        "研究团队"
+      ],
+      "venue": "",
+      "sourceRow": 39
+    },
+    {
+      "id": "ebe1f86d9cd5",
+      "title": "多模态大模型驱动的红外可见光融合质量评估",
+      "date": "2026-05-20",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247486959&idx=1&sn=d36dc8b93a4ed02f380c1dee6745a4ea",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "图像融合",
+        "评估与指标"
+      ],
+      "venue": "",
+      "sourceRow": 201
+    },
+    {
+      "id": "f67f3bee950d",
+      "title": "CVPR 2026 | Fusion in Your Way：一个模型，四类需求，统一搞定人类、VLM、检测与分割",
+      "date": "2026-05-19",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247486921&idx=1&sn=47aa5d74878f38e0c675eb13dc371cb5",
+      "section": "论文解读",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 105
+    },
+    {
+      "id": "85a9489b2a2f",
+      "title": "CVPR 2026 | 配置不变的多相机3D目标检测",
+      "date": "2026-05-17",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247486853&idx=1&sn=549d3fe5a3f36a9d35389174400efd1e",
+      "section": "论文解读",
+      "topics": [
+        "三维感知"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 147
+    },
+    {
+      "id": "3c6ca0fce14d",
+      "title": "CVPR 2026｜分而治之，熵引择路！解耦·感知·择路：SEGD 破解红外图像复合退化困局",
+      "date": "2026-05-14",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247486793&idx=1&sn=849eca46372cf26c657fb40229125716",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "图像恢复"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 48
+    },
+    {
+      "id": "0fd700eabcae",
+      "title": "TPAMI 2026｜告别经验堆网络！EFRUF用融合规则展开与DEQ打造高效通用图像融合",
+      "date": "2026-05-11",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247486772&idx=1&sn=f289557a2b16e1cf8abebc7daf50b5ea",
+      "section": "论文解读",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "TPAMI",
+      "sourceRow": 149
+    },
+    {
+      "id": "febad64a05cf",
+      "title": "IJCV 2026 | 谁说多任务一定互相拖累？江南大学CRTFS让图像融合与显著性检测\"双双起飞\"！",
+      "date": "2026-05-09",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247486757&idx=1&sn=308cbaab4f4231506ecc115b8a60ba4a",
+      "section": "论文解读",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "IJCV",
+      "sourceRow": 97
+    },
+    {
+      "id": "6e02ad5fb7b6",
+      "title": "ICCV 2025 | 异构专家协同，重塑VIReID",
+      "date": "2026-05-08",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247486716&idx=1&sn=d2c1d585a9efdbd9d3e455d7efdc06e6",
+      "section": "论文解读",
+      "topics": [],
+      "venue": "ICCV",
+      "sourceRow": 170
+    },
+    {
+      "id": "120ce1a6edcd",
+      "title": "CVPR 2026 | 融合前先观察的稳健3D检测",
+      "date": "2026-05-07",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247486722&idx=1&sn=17a28a3deb7575c5fc78e0ed3875ad36",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "三维感知"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 117
+    },
+    {
+      "id": "1b274ce19689",
+      "title": "学术速递｜2026年4月 arXiv 图像融合论文汇总（04.01–04.30）10 篇最新成果",
+      "date": "2026-05-06",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247486667&idx=1&sn=1b52380e49aadb9dd0baac8c64c82244",
+      "section": "论文速递",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "",
+      "sourceRow": 172
+    },
+    {
+      "id": "ba362f8544fb",
+      "title": "CVPR 2026 | 合工大 DRFusion：面向任意退化场景的多模态图像融合高效扩散新框架！",
+      "date": "2026-05-02",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247486617&idx=1&sn=9a138948f625a740e21ebf2852f401a8",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "图像恢复"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 50
+    },
+    {
+      "id": "25bce55a10d8",
+      "title": "LoRA启发的高效复合退化图像恢复网络",
+      "date": "2026-04-29",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247486595&idx=1&sn=83c7612dd570f8f9beaef220ec05cf74",
+      "section": "论文解读",
+      "topics": [
+        "图像恢复"
+      ],
+      "venue": "",
+      "sourceRow": 112
+    },
+    {
+      "id": "7e7eca9a9ad9",
+      "title": "顶刊速递 | TPAMI 2026 春季：19篇佳作看懂多模态“融合”技术新走向",
+      "date": "2026-04-27",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247486577&idx=1&sn=2f489aa0537e1be6d812906cdcc7b0af",
+      "section": "论文速递",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "TPAMI",
+      "sourceRow": 30
+    },
+    {
+      "id": "9de96f889a32",
+      "title": "AAAI 2026 | 数据集到现实的三维目标检测",
+      "date": "2026-04-25",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247486498&idx=1&sn=db2a2d794ef5c3c2b5cf3de57115021c",
+      "section": "论文解读",
+      "topics": [
+        "三维感知",
+        "数据集与基准"
+      ],
+      "venue": "AAAI",
+      "sourceRow": 135
+    },
+    {
+      "id": "8f0a1c73b4b6",
+      "title": "CVPRW 2026 | 动态场景下多曝光图像融合",
+      "date": "2026-04-23",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247486445&idx=1&sn=149b02f1a831e730ba221822153dc413",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "多曝光与多聚焦"
+      ],
+      "venue": "CVPRW",
+      "sourceRow": 76
+    },
+    {
+      "id": "bb0060a87c0d",
+      "title": "双曲空间协同优化的多模态图像配准与融合",
+      "date": "2026-04-23",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247486425&idx=1&sn=4bac85682188792e594351d054ed98ae",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "图像配准"
+      ],
+      "venue": "",
+      "sourceRow": 22
+    },
+    {
+      "id": "4e98185fded3",
+      "title": "佛山大学｜红外与可见光视频融合新突破",
+      "date": "2026-04-22",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247486397&idx=1&sn=a837f286d9fcce3b8d6986d9bcc4725b",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "图像融合",
+        "视频融合"
+      ],
+      "venue": "",
+      "sourceRow": 82
+    },
+    {
+      "id": "53ed48f6ead4",
+      "title": "CVPR 2026 | 大连理工 EVAFusion：把强化学习注入图像融合，构建首个人类反馈数据集。",
+      "date": "2026-04-20",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247486374&idx=1&sn=40be16b195f5f0eacc7e5e2404609d11",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "数据集与基准"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 12
+    },
+    {
+      "id": "b73021e420d0",
+      "title": "CVPR 2026 Oral | 告别“一刀切”！CLDyN 提出闭环奖惩机制，多任务“按需定制”图像融合",
+      "date": "2026-04-18",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247486345&idx=1&sn=9037b2a177c92517b6ab91243c7d12de",
+      "section": "论文解读",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 86
+    },
+    {
+      "id": "c8ee0616226b",
+      "title": "学术速递 | AAAI 2026 3D目标检测 已接收论文",
+      "date": "2026-04-15",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247486312&idx=1&sn=ed8e21dc0c2114eb97b018e03f361e2e",
+      "section": "论文速递",
+      "topics": [
+        "三维感知"
+      ],
+      "venue": "AAAI",
+      "sourceRow": 87
+    },
+    {
+      "id": "e3d58e255ab9",
+      "title": "CVPR 2026 | 哈工大&清华 DreamPRVR：为视频检索炼就“扩散寄存器”！",
+      "date": "2026-04-11",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247486251&idx=1&sn=ae24ddd869a971129071d9903e756c2f",
+      "section": "论文解读",
+      "topics": [],
+      "venue": "CVPR",
+      "sourceRow": 165
+    },
+    {
+      "id": "d1cc5f6ab7db",
+      "title": "CVPR 2026 | 放弃被动观察！因果学习三大干预策略，让图像融合精准捕捉“稳定特征”！",
+      "date": "2026-04-09",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247486222&idx=1&sn=d2a4fbd5a402acce8236d652b8c3aaaa",
+      "section": "论文解读",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 9
+    },
+    {
+      "id": "0b9a293efa27",
+      "title": "CVPR 2026 | 破解模态缺失，上演单图融合！图像融合“魔术师” MagicFuse 巧用扩散模型指引红外特征“无中生有”！",
+      "date": "2026-04-07",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247486216&idx=1&sn=8aea1de40eb6abadaa3feedbb1204578",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "图像融合"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 145
+    },
+    {
+      "id": "dfa7bfdb8feb",
+      "title": "学术速递 | ICCV 2025 3D目标检测 已接收论文",
+      "date": "2026-04-04",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247486192&idx=1&sn=9a5a57c09d16485edfd07327b59dedc7",
+      "section": "论文速递",
+      "topics": [
+        "三维感知"
+      ],
+      "venue": "ICCV",
+      "sourceRow": 131
+    },
+    {
+      "id": "538051ef835f",
+      "title": "学术速递｜2026年3月 arXiv 图像融合论文汇总（03.01–03.31）19篇最新成果",
+      "date": "2026-04-02",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247486186&idx=1&sn=03509f2d27f1bbf54f958cd43472c6d2",
+      "section": "论文速递",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "",
+      "sourceRow": 196
+    },
+    {
+      "id": "6130c46110a1",
+      "title": "大道无情，万卷争锋：以凡人科研之躯，踏破高校“修仙”全境界！（科普篇）",
+      "date": "2026-03-31",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247486046&idx=1&sn=0326a6fe87ed87c37ae1a4e808b07a56",
+      "section": "学术社区",
+      "topics": [],
+      "venue": "",
+      "sourceRow": 226
+    },
+    {
+      "id": "f48ceb9612f1",
+      "title": "CVPR 2026 | 标注预算告急？北交大提出 RL-MBA：强化学习助力多模态模型“因材施教”！",
+      "date": "2026-03-30",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247486027&idx=1&sn=9769b96aa1ffc0381dead616af16eeaa",
+      "section": "论文解读",
+      "topics": [],
+      "venue": "CVPR",
+      "sourceRow": 199
+    },
+    {
+      "id": "ef3b7c610c85",
+      "title": "CVPR 2026 | 图像融合的数据范式革命：APTP 开启 N2 时代，百对图像对标万级样本性能。",
+      "date": "2026-03-28",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247486014&idx=1&sn=9831f9988be96a5fe04ed52b089d9f04",
+      "section": "论文解读",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 144
+    },
+    {
+      "id": "4315f60383e3",
+      "title": "CVPR 2026 | 统一图像融合新范式UniFusion：用 DINOv3 与重建对齐机制突破通用融合瓶颈！",
+      "date": "2026-03-25",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247485952&idx=1&sn=1190cf5996a4674da148b1ef0ea9f280",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "图像配准"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 28
+    },
+    {
+      "id": "b06d46b9775d",
+      "title": "CVPR 2026 | 东京大学首创 MM-OVSeg：融合光学与 SAR 图像实现全天候遥感开放词汇分割！",
+      "date": "2026-03-23",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247485949&idx=1&sn=a02b440afee5465c31714a0265e3085d",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "遥感与多光谱"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 88
+    },
+    {
+      "id": "8d13eb75bd8a",
+      "title": "CVPR 2026 | 真实红外超分数据集开源！Real-IISR：用视觉自回归与物理热序重构底层视觉",
+      "date": "2026-03-20",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247485920&idx=1&sn=6a049dd7b7c3c92b6afecaa3414d7833",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "图像恢复",
+        "数据集与基准"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 81
+    },
+    {
+      "id": "9c9070e412ba",
+      "title": "CVPR 2026 | 图像配准与融合重返顶会！江南大学提出 FusionRegister：开启即插即用后配准新范式！",
+      "date": "2026-03-18",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247485902&idx=1&sn=03da5dcd722aa944598350bf577a88c5",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "图像配准"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 57
+    },
+    {
+      "id": "94ce886fe928",
+      "title": "AAAI 2026 | 跨域3D目标检测太难？郑大团队用“图文作桥”实现降维打击！",
+      "date": "2026-03-16",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247485876&idx=1&sn=71e17432b96baf6984291e20eb536c2a",
+      "section": "论文解读",
+      "topics": [
+        "三维感知",
+        "研究团队"
+      ],
+      "venue": "AAAI",
+      "sourceRow": 210
+    },
+    {
+      "id": "7739aaf61928",
+      "title": "CVPR 2026 | 没红外图怎么做图像融合？昆明理工提出DCMIF用字典引导告别模态缺失，单模态硬刚双模态，检测分割性能拉满！",
+      "date": "2026-03-14",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247485855&idx=1&sn=753d5229eee708bd5e8101229d8c8ae5",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "图像融合"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 34
+    },
+    {
+      "id": "e4661e64a72b",
+      "title": "TPAMI 2026 | 图像融合既要丰富纹理又要清晰边缘？CDTFusion告诉你：鱼与熊掌真能兼得！",
+      "date": "2026-03-11",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247485642&idx=1&sn=a8d0fe007e1ccfb4cad6f071a76a2052",
+      "section": "论文解读",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "TPAMI",
+      "sourceRow": 11
+    },
+    {
+      "id": "4a2fb06a4022",
+      "title": "学术速递 | ICCV 2025 Accepted Papers For Image Fusion",
+      "date": "2026-03-09",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247485625&idx=1&sn=2f9f7cbc5b71b4e92c6cd3fa08615266",
+      "section": "论文速递",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "ICCV",
+      "sourceRow": 35
+    },
+    {
+      "id": "c4dd46d2a6a8",
+      "title": "CVPR 2026 | VideoFusion：220段15万帧红外与可见光对齐视频！武大提出视频融合新基准！",
+      "date": "2026-03-04",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247485578&idx=1&sn=410574161d6fc21681b3755fdcd48003",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "图像融合",
+        "图像配准",
+        "数据集与基准",
+        "视频融合"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 46
+    },
+    {
+      "id": "7803f54947bc",
+      "title": "TPAMI 2025 | 手工融合损失全扔掉! FreeFusion让红外与可见光互相“教”对方？！",
+      "date": "2026-03-03",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247485541&idx=1&sn=9a158cef4c40d66c51d47532b3208c42",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "图像融合"
+      ],
+      "venue": "TPAMI",
+      "sourceRow": 42
+    },
+    {
+      "id": "eecf23a7e99d",
+      "title": "学术速递｜2026年2月 arXiv 图像融合论文汇总（02.01–02.28）",
+      "date": "2026-03-01",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247485509&idx=1&sn=069f21b9224d8b1055e510fa0a500de9",
+      "section": "论文速递",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "",
+      "sourceRow": 168
+    },
+    {
+      "id": "ce9159352bc0",
+      "title": "NeurIPS 2025 Spotlight | 告别视频闪烁！ETH & 西安交大发布首个视频融合全能基准VF-Bench：统一框架UniVF横扫四大任务",
+      "date": "2026-02-20",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247485475&idx=1&sn=da872bfeb68e425724cb3fddee2a6f8b",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "数据集与基准",
+        "视频融合"
+      ],
+      "venue": "NeurIPS",
+      "sourceRow": 213
+    },
+    {
+      "id": "212ec7813700",
+      "title": "TPAMI 2025 | 一文览尽180+篇融合SOTA！大连理工综述：揭秘红外可见光融合从数据兼容到任务感知的进化真相！",
+      "date": "2026-02-09",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247485463&idx=1&sn=d6173c31f17df5e57e017387970a6d51",
+      "section": "综述与入门",
+      "topics": [
+        "红外与可见光",
+        "图像融合"
+      ],
+      "venue": "TPAMI",
+      "sourceRow": 116
+    },
+    {
+      "id": "c5025ebfbbaa",
+      "title": "学术速递｜2026年1月 arXiv 图像融合论文汇总（01.01–01.31）",
+      "date": "2026-02-06",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247485341&idx=1&sn=f2552d819fb5e9ce4b177d5fbdadbf21",
+      "section": "论文速递",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "",
+      "sourceRow": 169
+    },
+    {
+      "id": "a06035dff0c5",
+      "title": "CVPR 2025 | 仅用2%标注，性能反超全监督？厦大团队用大模型语义提示“点石成金”！",
+      "date": "2026-02-03",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247485293&idx=1&sn=722e582786ad60326fd1ab35ff32bd21",
+      "section": "论文解读",
+      "topics": [
+        "研究团队"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 146
+    },
+    {
+      "id": "54c0816aec63",
+      "title": "NeurIPS 2025 Oral | 雾散云开，言出法随！ControlFusion用“语言”重塑红外与可见光视界",
+      "date": "2026-02-01",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247485273&idx=1&sn=d318fcb5cf315b83352a182e38b34e16",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "图像融合"
+      ],
+      "venue": "NeurIPS",
+      "sourceRow": 110
+    },
+    {
+      "id": "d51f0befa704",
+      "title": "ICLR 2026｜图像融合方向录用情况一览??",
+      "date": "2026-01-29",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247485248&idx=1&sn=643e484e6086f9de51151a609eaf9f14",
+      "section": "论文速递",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "ICLR",
+      "sourceRow": 218
+    },
+    {
+      "id": "c608aba967ed",
+      "title": "NeurIPS 2025 Spotlight | 拒绝盲目拟合！江南大学提出HCLFuse给扩散模型赋予“人类认知”，解决结构失真难题",
+      "date": "2026-01-27",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247485211&idx=1&sn=6572a1dfeefa371a601a287dbaae82c8",
+      "section": "论文解读",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "NeurIPS",
+      "sourceRow": 62
+    },
+    {
+      "id": "f6af49d14b37",
+      "title": "TPAMI 2026 | 给模型戴上“面具”反而更强？Mask-DiFuser：一招破解无监督融合死局，刷新SOTA！",
+      "date": "2026-01-25",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247485183&idx=1&sn=ab1c330d104fca092893dea11e3e19d6",
+      "section": "论文解读",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "TPAMI",
+      "sourceRow": 10
+    },
+    {
+      "id": "9cfa041b0b08",
+      "title": "TPAMI 2024 | 告别BEV“内存黑洞”！国科大提出全稀疏多模态3D检测新范式，速度提升2.7倍！",
+      "date": "2026-01-23",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247485152&idx=1&sn=68d88af1f51e1b568e974631d8b13073",
+      "section": "论文解读",
+      "topics": [
+        "三维感知"
+      ],
+      "venue": "TPAMI",
+      "sourceRow": 224
+    },
+    {
+      "id": "7fd107dfc51b",
+      "title": "图像融合“西瓜书”来啦！没想到有人把图像融合写成了“武侠小说”？玛丽居里学者亲笔，新人入门必读！",
+      "date": "2026-01-21",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247485013&idx=1&sn=4529eecd4d60b61e33fc2c30e90ab086",
+      "section": "综述与入门",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "",
+      "sourceRow": 53
+    },
+    {
+      "id": "33e02fff742f",
+      "title": "AAAI 2026 | 谁说SAM只能做分割？CtrlFuse：Mask Prompt一指即控，想看哪里点哪里！",
+      "date": "2026-01-19",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247484772&idx=1&sn=9be538c812401435668f469abe73f965",
+      "section": "论文解读",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "AAAI",
+      "sourceRow": 132
+    },
+    {
+      "id": "37e122565fd7",
+      "title": "IJCV 2025 | 配准不准也能SOTA？武大马佳义团队提出C2RF：把“伪影”变成最好的老师",
+      "date": "2026-01-15",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247484349&idx=1&sn=87116873bd61bf83de0a12809910ce9b",
+      "section": "论文解读",
+      "topics": [
+        "图像配准",
+        "研究团队"
+      ],
+      "venue": "IJCV",
+      "sourceRow": 23
+    },
+    {
+      "id": "e5dd10719052",
+      "title": "ICCV 2025 | 告别平台偏见！车、无人机、机器狗一套模型全搞定：首个跨平台3D检测大一统方案",
+      "date": "2026-01-13",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247484338&idx=1&sn=473964823d66c25327ad69834115de44",
+      "section": "论文解读",
+      "topics": [
+        "三维感知"
+      ],
+      "venue": "ICCV",
+      "sourceRow": 13
+    },
+    {
+      "id": "c81b25c19736",
+      "title": "全网首发！终于有人把 115 本 IEEE Transactions 全部整理齐了：IF、中科院分区、自引率、发文量一站式起底！投稿必看，建议永久收藏！",
+      "date": "2026-01-13",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247484290&idx=1&sn=ebe5158cf9fee6229c255ce32eb7e625",
+      "section": "投稿参考",
+      "topics": [],
+      "venue": "",
+      "sourceRow": 2
+    },
+    {
+      "id": "4a9b0884e189",
+      "title": "Information Fusion 2025 | 无需重训就能“换任务”？让融合网络“听懂人话”：指令驱动红外-可见光融合，一网通吃三大下游任务",
+      "date": "2026-01-05",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247483805&idx=1&sn=cf1679c767ef52adb744ff4b44294dfa",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "图像融合"
+      ],
+      "venue": "Information Fusion",
+      "sourceRow": 52
+    },
+    {
+      "id": "40769bdff8c6",
+      "title": "Nano Banana 在红外与可见光图像融合中的应用",
+      "date": "2025-12-22",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247483693&idx=1&sn=f182229618861f4cdf174b44e976fab6",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "图像融合"
+      ],
+      "venue": "",
+      "sourceRow": 193
+    }
+  ]
+}

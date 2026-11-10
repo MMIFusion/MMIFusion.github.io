@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mmifusion.github.io/sitemap.xml
