@@ -32,6 +32,36 @@
     });
   });
 
+  const qrDialog = $('#wechat-dialog');
+  if (qrDialog && typeof qrDialog.showModal === 'function') {
+    let qrOpener;
+    const closeQR = () => qrDialog.close();
+    document.querySelectorAll('[data-qr-open]').forEach(link => {
+      link.setAttribute('aria-haspopup', 'dialog');
+      link.setAttribute('aria-controls', 'wechat-dialog');
+      link.addEventListener('click', event => {
+        // Keep normal link behavior for opening in another tab or without JS.
+        if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
+        qrOpener = link;
+        if (menu?.getAttribute('aria-expanded') === 'true') menu.click();
+        qrDialog.showModal();
+        document.documentElement.classList.add('qr-modal-open');
+      });
+    });
+    qrDialog.querySelector('[data-qr-close]').addEventListener('click', closeQR);
+    qrDialog.addEventListener('close', () => {
+      document.documentElement.classList.remove('qr-modal-open');
+      if (qrOpener?.getClientRects().length) qrOpener.focus({preventScroll:true});
+      else menu?.focus({preventScroll:true});
+    });
+    qrDialog.addEventListener('click', event => {
+      if (event.target !== qrDialog) return;
+      const bounds = qrDialog.getBoundingClientRect();
+      if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) closeQR();
+    });
+  }
+
   const bookmarkKey = 'mmifusion-bookmarks-v1';
   let saved;
   try { const raw = JSON.parse(localStorage.getItem(bookmarkKey) || '[]'); saved = new Set(Array.isArray(raw) ? raw.filter(id => typeof id === 'string') : []); } catch { saved = new Set(); }
