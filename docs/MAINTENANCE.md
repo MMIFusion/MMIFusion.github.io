@@ -103,3 +103,5 @@ git config user.email 276543646+MMIFusion@users.noreply.github.com
 - 日期统一使用 `Asia/Shanghai`，每秒更新；跨北京时间午夜刷新今日标识。趣味日签由日期字符串确定，没有接入传统黄历，也不预测录用。改文案可编辑 `community-core.js`，不要改真实会议数据来配合趣味内容。
 - 好运数与检查清单仅存本机（`mmifusion-luck-v1`、`mmifusion-submission-checks-v1`），好运按北京时间每日归零。动效遵循全站暂停与系统减少动态效果设置，键盘和关闭操作应保持可用。
 - 验证：`node scripts/test_community.cjs` 检查跨年、午夜与闰年；浏览器检查导航跟随、四榜顺序、收藏同步、分享、日历翻月、好运领取与 QR 扫描。
+
+状态栏使用深色背景与 16–18 px 文本，时钟 / 访问量为 29–35 px；窄屏通过分行保持字号。时钟只对变化的数字播放短动画，完整时间放在 time 的 aria-label 中，不逐秒朗读。状态栏光轨、呼吸光点、好运流光和悬停反馈均遵循全站动效暂停设置；暂停装饰动画不停止真实时钟更新。

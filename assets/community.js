@@ -57,10 +57,30 @@
   const dateFormat = new Intl.DateTimeFormat('zh-CN',{timeZone:'Asia/Shanghai',year:'numeric',month:'long',day:'numeric',weekday:'long'});
   const clockFormat = new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Shanghai',hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23'});
   let knownDay;
+  function paintClock(clock, value) {
+    // Keep a single readable time label; only changed digits move.
+    if (clock.children.length !== value.length) {
+      clock.replaceChildren(...[...value].map(char => {
+        const span = document.createElement('span');
+        span.className = char === ':' ? 'clock-separator' : 'clock-digit';
+        span.textContent = char;span.setAttribute('aria-hidden','true');return span;
+      }));
+    } else {
+      [...value].forEach((char,index) => {
+        const digit = clock.children[index];
+        if (digit.textContent === char) return;
+        digit.textContent = char;
+        if (!document.hidden && clock.getBoundingClientRect().bottom > 0) {
+          animate(digit,[{opacity:.4,transform:'translateY(-5px)'},{opacity:1,transform:'translateY(0)'}],{duration:360,easing:'cubic-bezier(.2,.8,.2,1)'});
+        }
+      });
+    }
+    clock.setAttribute('aria-label',`北京时间 ${value}`);
+  }
   function updateClock() {
     const now = new Date(), day = Core.dateKey(now), date = $('[data-live-date]'), clock = $('[data-live-clock]');
-    if (date) {date.textContent = dateFormat.format(now);date.dateTime = day;}
-    if (clock) {clock.textContent = clockFormat.format(now);clock.dateTime = now.toISOString();}
+    if (date) {date.textContent = dateFormat.format(now).replace('星期',' 星期');date.dateTime = day;}
+    if (clock) {paintClock(clock,clockFormat.format(now));clock.dateTime = now.toISOString();}
     if (knownDay && knownDay !== day) document.dispatchEvent(new CustomEvent('mmi-date-change',{detail:day}));
     knownDay = day;
   }
