@@ -17,5 +17,7 @@ jobs:
         run: python scripts/build.py
       - name: Check content and links
         run: python scripts/check.py
+      - name: Check image statistics against analytical fixtures
+        run: node scripts/test_metrics.cjs
       - name: Check generated pages are up to date
-        run: git diff --exit-code -- '*.html' robots.txt sitemap.xml
+        run: git diff --exit-code -- '*.html' robots.txt sitemap.xml downloads

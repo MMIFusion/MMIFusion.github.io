@@ -47,5 +47,38 @@ for name,page in pages.items():
         if parsed.fragment and target in pages and parsed.fragment not in pages[target].ids:
             errors.append(f'{name}: missing anchor {link}')
 assert set(pages['papers.html'].articles)==set(ids), 'Full archive is incomplete'
+
+# Calendar files must encode real UTC instants or explicit all-day dates,
+# preserve Unicode folding, and agree with the source records.
+from datetime import datetime, timezone
+portal=json.loads((ROOT/'data/portal.json').read_text())
+event_ids=[]
+for conference in portal['conferences']:
+    assert urlsplit(conference['source']).scheme == 'https'
+    for event in conference['events']:
+        event_ids.append(event['id'])
+        raw=(OUT/'downloads'/(event['id']+'.ics')).read_bytes()
+        assert raw.endswith(b'\r\n') and not raw.replace(b'\r\n',b'').count(b'\n')
+        assert all(len(line)<=75 for line in raw.split(b'\r\n'))
+        content=raw.decode().replace('\r\n ','')
+        if event['kind']=='deadline':
+            expected=datetime.fromisoformat(event['at']).astimezone(timezone.utc).strftime('%Y%m%dT%H%M%SZ')
+            assert 'DTSTART:'+expected in content
+        else:
+            assert event['start'] < event['endExclusive']
+            assert 'DTSTART;VALUE=DATE:'+event['start'].replace('-','') in content
+            assert 'DTEND;VALUE=DATE:'+event['endExclusive'].replace('-','') in content
+assert len(event_ids)==len(set(event_ids))
+combined=(OUT/'downloads/mmifusion-calendar.ics').read_text()
+assert combined.count('BEGIN:VEVENT')==len(event_ids)
+assert 'DTSTART:20261117T115900Z' in (OUT/'downloads/cvpr2027-paper.ics').read_text()
+for category in ('teams','opportunities','venues','datasets'):
+    records=portal[category]
+    assert len({r['id'] for r in records})==len(records)
+    for record in records:
+        assert urlsplit(record['source']).scheme=='https'
+for record in portal['opportunities']:
+    assert record['teamId'] in {team['id'] for team in portal['teams']}
 assert not errors, '\n'.join(errors)
 print(f'PASS: {len(pages)} pages, {len(articles)} unique WeChat articles, all local links and anchors.')
+print(f'PASS: {len(event_ids)} calendar events, UTC/all-day dates, resource identities and official source links.')

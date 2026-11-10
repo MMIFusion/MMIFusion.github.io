@@ -1,0 +1,40 @@
+{
+  "verifiedAt": "2026-11-11",
+  "conferences": [
+    {"id":"cvpr2027","name":"CVPR 2027","field":"计算机视觉","description":"计算机视觉与模式识别会议。重点关注多模态学习、底层视觉和感知任务。","source":"https://cvpr.thecvf.com/Conferences/2027/CallForPapers","events":[
+      {"id":"cvpr2027-register","label":"论文注册截止","kind":"deadline","at":"2026-11-10T23:59:00-12:00","original":"2026-11-10 23:59 AoE (UTC−12)"},
+      {"id":"cvpr2027-paper","label":"论文提交截止","kind":"deadline","at":"2026-11-16T23:59:00-12:00","original":"2026-11-16 23:59 AoE (UTC−12)"},
+      {"id":"cvpr2027-supp","label":"补充材料截止","kind":"deadline","at":"2026-11-23T23:59:00-12:00","original":"2026-11-23 23:59 AoE (UTC−12)"}
+    ]},
+    {"id":"iclr2027","name":"ICLR 2027","field":"机器学习","description":"表征学习、生成建模与多模态学习。以下节点来自官方征稿页，日期未给出具体时刻时按全天事件展示。","source":"https://iclr.cc/Conferences/2027/CallForPapers","events":[
+      {"id":"iclr2027-discussion","label":"作者讨论结束","kind":"date","start":"2026-11-18","endExclusive":"2026-11-19","original":"2026-11-18 · 官方日期，时区 AoE，具体时刻未列明"},
+      {"id":"iclr2027-decision","label":"最终结果通知","kind":"date","start":"2026-12-16","endExclusive":"2026-12-17","original":"2026-12-16 · 官方日期，时区 AoE，具体时刻未列明"}
+    ]},
+    {"id":"icml2027","name":"ICML 2027","field":"机器学习","description":"首批收录已公布的主会日期；投稿截止时间待官方公布后补充。","source":"https://icml.cc/Conferences/2027/Dates","events":[
+      {"id":"icml2027-main","label":"主会举办","kind":"date","start":"2027-08-02","endExclusive":"2027-08-05","original":"2027-08-02 至 2027-08-04 · 全天日期"}
+    ]}
+  ],
+  "teams": [
+    {"id":"jiayi-ma","name":"马佳义团队","institution":"武汉大学","city":"武汉","lead":"马佳义","tags":["图像融合","图像配准","多模态感知"],"description":"关注图像匹配与配准、信息融合、底层视觉及学习驱动的视觉感知。通过导师主页了解研究方向与完整成果。","source":"https://jiayi-ma.github.io/index.html","relatedQuery":"武大","opportunity":null},
+    {"id":"vlog","name":"VLOG · 视觉、学习与优化","institution":"大连理工大学","city":"大连","lead":"刘日升","tags":["图像融合","视觉感知","优化学习"],"description":"研究机器学习、计算机视觉与数值优化，关注复杂环境中的视觉感知及机器人学习。","source":"https://rsliu.tech/","relatedQuery":"大连理工","opportunity":"vlog-open"}
+  ],
+  "opportunities": [
+    {"id":"vlog-open","institution":"大连理工大学","team":"VLOG · 刘日升团队","city":"大连","types":["硕士","博士","博士后","科研助理"],"tags":["计算机视觉","机器学习","优化学习"],"title":"硕博、博士后与本科科研助理招募","status":"长期招募","description":"导师学校主页明确欢迎博士后、博士、硕士和本科生科研助理申请，并注明长期有效。具体名额、申请条件及入学批次请向团队核实。","requirements":"先阅读导师研究方向与团队成果，准备简历、研究经历和感兴趣的问题，再通过官方主页列出的渠道联系。","source":"https://faculty.dlut.edu.cn/rsliu/zh_CN/index.htm","teamId":"vlog","expires":null}
+  ],
+  "venues": [
+    {"id":"cvpr","name":"CVPR","fullName":"IEEE/CVF Conference on Computer Vision and Pattern Recognition","type":"会议","tags":["视觉感知","图像融合","多模态学习"],"scope":"官方征稿覆盖计算机视觉、多模态学习、底层视觉及数据集与基准。","fit":"若融合方法解决了清晰的视觉问题，并有充分的基准与泛化实验，可优先核对这一方向的征稿要求。","source":"https://cvpr.thecvf.com/Conferences/2027/CallForPapers","guide":"https://cvpr.thecvf.com/Conferences/2027/AuthorGuidelines","articleVenue":"CVPR","calendar":"cvpr2027"},
+    {"id":"tip","name":"IEEE TIP","fullName":"IEEE Transactions on Image Processing","type":"期刊","tags":["图像融合","图像恢复","图像处理"],"scope":"官方范围涵盖图像与视频的形成、处理、分析，以及相关理论、算法和架构。","fit":"若研究侧重图像处理方法、理论解释和系统实验，可据其范围进一步评估投稿适配度。","source":"https://signalprocessingsociety.org/publications-resources/ieee-transactions-image-processing/about-transactions-image-processing","guide":"https://signalprocessingsociety.org/publications-resources/information-authors","articleVenue":"TIP","calendar":null},
+    {"id":"iclr","name":"ICLR","fullName":"International Conference on Learning Representations","type":"会议","tags":["多模态学习","表征学习","生成建模"],"scope":"官方征稿涵盖机器学习，包含跨模态表征学习、生成模型、优化与学习理论等主题。","fit":"若贡献落在学习机制或表征方法，且能通过融合任务之外的证据说明普适性，可参考该会议要求。","source":"https://iclr.cc/Conferences/2027/CallForPapers","guide":"https://iclr.cc/Conferences/2027/AuthorGuidelines","articleVenue":"ICLR","calendar":"iclr2027"}
+  ],
+  "datasets": [
+    {"id":"msrs","name":"MSRS","label":"红外 × 可见光","description":"道路场景中的红外与可见光配对图像，适合从图像融合与语义任务开始探索。","source":"https://github.com/Linfeng-Tang/MSRS","catalog":"https://mmifusion.github.io/Datasets/#dataset=msrs"},
+    {"id":"m3fd","name":"M3FD","label":"融合 × 目标检测","description":"面向目标检测的多场景多模态基准，连接融合图像与下游感知。","source":"https://github.com/JinyuanLiu-CV/TarDAL","catalog":"https://mmifusion.github.io/Datasets/#dataset=m3fd"},
+    {"id":"roadscene","name":"RoadScene","label":"道路场景 × 配准","description":"道路场景红外与可见光图像，可用于匹配、配准和融合研究。","source":"https://github.com/hanna-xu/RoadScene","catalog":"https://mmifusion.github.io/Datasets/#dataset=roadscene"}
+  ],
+  "metrics": [
+    {"id":"EN","name":"信息熵","formula":"EN = − Σ p(k) log₂ p(k)","description":"衡量灰度分布的信息量；本工具使用 256 个灰度级的直方图。","caution":"噪声也可能提高熵，不能单凭 EN 判断融合质量。"},
+    {"id":"SD","name":"标准差","formula":"SD = √[Σ (I − μ)² / N]","description":"衡量灰度的离散程度；采用总体标准差，分母为像素数 N。","caution":"对比度变化会影响 SD，不代表保留了正确的信息。"},
+    {"id":"SF","name":"空间频率","formula":"SF = √{mean[(Δx I)²] + mean[(Δy I)²]}","description":"横纵相邻像素差分各按有效像素对求均值，再合并。","caution":"锐化和噪声也会增大 SF。不同实现的边界归一化可能不同。"}
+  ],
+  "metricSource":"https://github.com/Linfeng-Tang/Evaluation-for-Image-Fusion"
+}

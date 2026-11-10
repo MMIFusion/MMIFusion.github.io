@@ -7,12 +7,13 @@
 | 首页 | 文章总数、最新文章、八个栏目入口 |
 | 论文阅读 | `data/articles.json` 全部文章 |
 | 数据集 | 链接既有独立站，不复制它的数据 |
-| 评估指标 | `评估与指标` 主题文章 |
-| 融合团队 | `研究团队` 主题报道及 `community.json` 团队档案 |
-| 会议时间 | `community.json` 官方日程 |
-| 会议期刊推荐 | 投稿参考与论文速递 |
-| 导师招生 | `community.json` 招生信息 |
-| 配色模板 | 基础色板与公众号配色文章 |
+| 评估指标 | EN / SD / SF 试算及评估专题阅读 |
+| 融合团队 | `portal.json` 官方团队档案 |
+| 会议时间 | `portal.json` 官方日程、时区与 ICS |
+| 会议期刊推荐 | `portal.json` 官方范围、整理建议与对比 |
+| 导师招生 | `portal.json` 官方招募信息 |
+| 配色模板 | `community.json` 色板、原创下载模板与公众号文章 |
+| 推荐资源 | 本地生成草稿，由访客确认后前往 GitHub 提交 |
 
 ## 文章
 
@@ -30,27 +31,30 @@
 
 ## 扩展栏目
 
-编辑 `data/community.json`。当前 `conferences`、`teams`、`opportunities` 为空，页面显示明确的待收录状态。
+编辑 `data/portal.json`。每个条目使用稳定唯一的 `id`，保留 `source` 官方链接。`verifiedAt` 记录最近一次整体核对日期；批量更新前应逐项核实来源，不要只改日期。
 
-会议记录字段：`name`、`deadline`、`timezone`、`verifiedAt`、`source`。`deadline` 包含年份、日期与具体时间；`source` 应为官方说明。后续可扩展多种截止日期，而不是从文章年份推算截止日期。
+- `conferences`：每场会议包含 `events`。精确截止节点使用 `kind: deadline` 和带 UTC 偏移的 ISO `at`。AoE 用 `-12:00`，不能误写成 UTC。只公布日期时用 `kind: date`、`start` 和不包含在事件中的 `endExclusive`。例如 8 月 2–4 日的结束值为 8 月 5 日。`original` 保留原始日期 / 时区说明。构建自动生成单条及全部 `.ics`，不安排自动更新订阅。
+- `teams`：学校、城市、负责人、研究标签与官方主页；`relatedQuery` 用于检索公众号文章，`opportunity` 可关联招募条目 ID。引用论文时保留完整作者与顺序。
+- `opportunities`：`teamId` 关联团队、`types` 表示招募类别。长期招募必须有官方原文依据；限期招生请写明到期时间并及时更新 / 移除。当前 `expires` 为记录字段，不自动下架。
+- `venues`：将官方 `scope` 与本站整理的 `fit` 建议分开；`guide` 指向作者指南，`articleVenue` 必须匹配现有文章分类，`calendar` 可关联会议 ID。未核实的信息不填影响因子或录用率。
+- `datasets`：首页精选入口；详情和下载链接继续由独立站维护。不要复制数据文件。
+- `metrics`：定义、公式、注意点；若改计算约定，须同步浏览器 `assets/metrics-core.js`、Python 下载脚本与分析样例测试。
 
-团队记录字段：`name`、`institution`、`description`、`source`。`source` 使用团队/学校官方主页。涉及论文作者时保持完整名单与原始顺序。
+`data/community.json` 只保存基础色板：`name`、`note`、`colors`（HEX）。构建生成 SVG / JSON 下载。框架 SVG 由 `scripts/portal.py` 生成，绘图与指标 Python 脚本直接在 `downloads/` 维护。
 
-招生记录字段：`institution`、`title`、`description`、`deadline`、`source`。过期后及时下架或在内容中明确标注，不能把历史招生当当前机会。
-
-色板字段：`name`、`note`、`colors`（HEX 色值列表）。本站基础色板与论文配色文章分开标识。
+收藏仅存当前浏览器的 localStorage（键 `mmifusion-bookmarks-v1`），不跨设备同步。图片只在内存中计算，不上传、不持久保存。投稿表单只生成预览与 GitHub 链接，维护者在仓库 Issues 中审核后手动更新数据。
 
 ## 构建与发布
 
-页面模板：`scripts/build.py`；样式：`assets/style.css`；交互：`assets/app.js`。
+页面模板：`scripts/build.py`、`scripts/portal.py`；样式：`assets/style.css`、`assets/portal.css`；交互：`assets/app.js`、`assets/portal.js`；指标计算：`assets/metrics-core.js`。
 
 构建输出 `dist/` 供本地预览，同时将生成的 HTML、robots.txt、sitemap.xml 和 `.nojekyll` 同步到仓库根目录，复用根目录的 `assets/` 与 `data/`。请修改源文件后重新构建，不要直接编辑生成页面。
 
 GitHub Pages 沿用 `main / (root)` 的分支发布；GitHub 自带发布流程会在推送后部署。`Check website content` 仅做一致性检查，不另行部署，避免两套发布流程相互覆盖。`dist/` 为本地构建产物，不提交到仓库。
 
-检查命令：`python3 scripts/check.py`。检查文章标识、微信 URL、文章完整性、所有站内文件/锚点、页面标题层级与外链安全属性。
+检查命令：`python3 scripts/check.py`、`node scripts/test_metrics.cjs`。检查文章标识、微信 URL、文章完整性、所有站内文件/锚点、页面标题层级与外链安全属性，并验证 ICS 的 UTC / 日期编码、资源关联及指标解析样例。
 
-更新内容后在浏览器检查受影响页面，至少查看手机和桌面宽度，验证搜索、分类、分页及外链目的地。
+更新内容后在浏览器检查受影响页面，至少查看手机和桌面宽度，验证搜索、分类、分页、收藏、日历下载、时区切换、图片计算与导出、会议期刊对比、投稿预览及外链目的地。
 
 ## Git 身份
 

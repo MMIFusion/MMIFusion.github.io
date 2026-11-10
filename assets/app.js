@@ -32,6 +32,31 @@
     });
   });
 
+  const bookmarkKey = 'mmifusion-bookmarks-v1';
+  let saved;
+  try { const raw = JSON.parse(localStorage.getItem(bookmarkKey) || '[]'); saved = new Set(Array.isArray(raw) ? raw.filter(id => typeof id === 'string') : []); } catch { saved = new Set(); }
+  const bookmarkButtons = [...document.querySelectorAll('[data-bookmark]')];
+  const syncBookmarks = () => bookmarkButtons.forEach(button => {
+    const active = saved.has(button.dataset.bookmark);
+    button.setAttribute('aria-pressed', String(active));
+    button.setAttribute('aria-label', active ? '取消收藏文章' : '收藏文章');
+    button.innerHTML = active ? '★<span>已收藏</span>' : '☆<span>收藏</span>';
+  });
+  let onBookmarkChange = () => {};
+  bookmarkButtons.forEach(button => button.addEventListener('click', () => {
+    const id = button.dataset.bookmark;
+    if (saved.has(id)) saved.delete(id); else saved.add(id);
+    try { localStorage.setItem(bookmarkKey, JSON.stringify([...saved])); }
+    catch { toast('浏览器无法保存收藏，本次打开期间仍然可用'); }
+    syncBookmarks(); onBookmarkChange();
+  }));
+  addEventListener('storage', event => {
+    if (event.key === bookmarkKey) {
+      try { const value = JSON.parse(event.newValue || '[]'); saved = new Set(Array.isArray(value) ? value.filter(id => typeof id === 'string') : []); syncBookmarks(); onBookmarkChange(); } catch { /* Keep last valid selection. */ }
+    }
+  });
+  syncBookmarks();
+
   const collection = $('.collection');
   if (!collection) return;
   const rows = [...collection.querySelectorAll('[data-article-id]')];
@@ -39,6 +64,7 @@
   const topic = $('#topic-filter');
   const venue = $('#venue-filter');
   const sort = $('#sort-order');
+  const savedOnly = $('#saved-only');
   const buttons = [...collection.querySelectorAll('[data-section]')];
   let records, state, filtered;
   const pageSize = Number(collection.dataset.pageSize);
@@ -50,6 +76,7 @@
     const validOption = (select, value) => select && [...select.options].some(option => option.value === value);
     return {
       query: params.get('q') || '',
+      saved: params.get('saved') === '1',
       section: validSection ? params.get('section') : '',
       topic: validOption(topic, params.get('topic')) ? params.get('topic') : '',
       venue: validOption(venue, params.get('venue')) ? params.get('venue') : '',
@@ -59,6 +86,7 @@
   };
   const syncControls = () => {
     if (search) search.value = state.query;
+    if (savedOnly) savedOnly.checked = state.saved;
     if (topic) topic.value = state.topic;
     if (venue) venue.value = state.venue;
     if (sort) sort.value = state.sort;
@@ -73,6 +101,7 @@
     for (const [key, value] of Object.entries({q:state.query,section:state.section,topic:state.topic,venue:state.venue})) {
       if (value) params.set(key, value);
     }
+    if (state.saved) params.set('saved', '1');
     if (state.sort !== 'newest') params.set('sort', state.sort);
     if (state.page > 1) params.set('page', String(state.page));
     const suffix = params.toString();
@@ -81,6 +110,7 @@
   const render = (updateURL = true) => {
     const terms = norm(state.query).split(' ').filter(Boolean);
     filtered = records.filter(({article, searchable}) =>
+      (!state.saved || saved.has(article.id)) &&
       (!state.section || article.section === state.section) &&
       (!state.topic || article.topics.includes(state.topic)) &&
       (!state.venue || article.venue === state.venue) &&
@@ -92,6 +122,8 @@
     const selected = filtered.slice((state.page - 1) * pageSize, state.page * pageSize);
     selected.forEach(({node}) => { node.hidden = false; $('#article-list').append(node); });
     $('#empty-results').hidden = filtered.length > 0;
+    $('#empty-results h3').textContent = state.saved ? '当前筛选下暂无收藏' : '没有找到匹配的文章';
+    $('#empty-results p').textContent = state.saved ? '点击文章旁的星标收藏，或清除其他筛选条件。收藏保存在当前浏览器。' : '试试方法名、研究方向，或缩短关键词。';
     $('#result-count').textContent = `共 ${filtered.length} 篇文章`;
     $('#pagination').hidden = filtered.length <= pageSize;
     $('#page-info').textContent = `${state.page} / ${totalPages}`;
@@ -101,7 +133,7 @@
     if (updateURL) saveState();
   };
   const reset = () => {
-    state = {query:'',section:'',topic:'',venue:'',sort:'newest',page:1};
+    state = {query:'',section:'',topic:'',venue:'',sort:'newest',page:1,saved:false};
     render();
   };
   fetch('data/articles.json').then(response => {
@@ -116,6 +148,8 @@
     });
     state = loadState();
     render();
+    onBookmarkChange = () => render();
+    savedOnly?.addEventListener('change', () => { state.saved = savedOnly.checked; state.page = 1; render(); });
     search?.addEventListener('input', () => { state.query = search.value; state.page = 1; render(); });
     topic?.addEventListener('change', () => { state.topic = topic.value; state.page = 1; render(); });
     venue?.addEventListener('change', () => { state.venue = venue.value; state.page = 1; render(); });
