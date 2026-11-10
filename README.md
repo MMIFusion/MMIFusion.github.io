@@ -32,8 +32,10 @@ python3 -m http.server 8765 --directory dist
 
 1. 在 **MMIFusion** 账号下创建公开空仓库 `MMIFusion.github.io`。
 2. 推送本项目到 `main`。
-3. 仓库 Settings → Pages → Build and deployment → Source 选择 **GitHub Actions**。
-4. Actions 中运行 `Publish academic website`。之后每次推送 `main` 自动发布。
+3. 使用 GitHub 用户主站自动启用的发布设置：Settings → Pages → Source 为 **Deploy from a branch**，分支 `main`，目录 `/ (root)`。
+4. 每次构建后将生成页面一并推送到 `main`，GitHub Pages 会自动发布。`.nojekyll` 使站点直接按静态文件部署。
+
+独立的 `Check website content` 工作流检查内容与生成文件一致性；发布由 GitHub 自带的 `pages build and deployment` 工作流完成。
 
 仓库 SSH 地址：`git@github-mmif:MMIFusion/MMIFusion.github.io.git`。
 

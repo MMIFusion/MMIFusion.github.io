@@ -148,6 +148,10 @@ def main():
     (OUT/'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: '+SITE['url']+'/sitemap.xml\n')
     urls=''.join(f'<url><loc>{SITE["url"]}/{p.name if p.name!="index.html" else ""}</loc></url>' for p in sorted(OUT.glob('*.html')) if p.name!='404.html')
     (OUT/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+urls+'</urlset>')
+    # GitHub user sites publish main / (root) automatically. Mirror the generated
+    # documents there, sharing the existing assets/ and data/ source directories.
+    for path in OUT.iterdir():
+        if path.is_file(): shutil.copy2(path, ROOT/path.name)
     print(f'Built {len(list(OUT.glob("*.html")))} pages; {len(ARTICLES)} articles.')
 
 if __name__ == '__main__': main()

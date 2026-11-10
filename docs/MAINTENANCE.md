@@ -44,7 +44,9 @@
 
 页面模板：`scripts/build.py`；样式：`assets/style.css`；交互：`assets/app.js`。
 
-输出目录 `dist/` 为可直接部署的静态站点。请修改源文件后重新构建，不要直接编辑输出。GitHub Actions 构建后发布该目录。
+构建输出 `dist/` 供本地预览，同时将生成的 HTML、robots.txt、sitemap.xml 和 `.nojekyll` 同步到仓库根目录，复用根目录的 `assets/` 与 `data/`。请修改源文件后重新构建，不要直接编辑生成页面。
+
+GitHub Pages 沿用 `main / (root)` 的分支发布；GitHub 自带发布流程会在推送后部署。`Check website content` 仅做一致性检查，不另行部署，避免两套发布流程相互覆盖。`dist/` 为本地构建产物，不提交到仓库。
 
 检查命令：`python3 scripts/check.py`。检查文章标识、微信 URL、文章完整性、所有站内文件/锚点、页面标题层级与外链安全属性。
 
