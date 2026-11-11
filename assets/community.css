@@ -41,6 +41,7 @@
 .ranking-note{font-size:13px;line-height:1.9;color:#797087;margin-top:22px}
 .rank-group-title{font-size:23px;margin-bottom:20px}.js .rank-group-title{display:none}.no-js .rank-toolbar{display:none}.no-js .rank-group+.rank-group{margin-top:35px}.no-js .rank-actions button{display:none}
 .fortune-teaser{display:flex;align-items:center;gap:28px;background:linear-gradient(120deg,#f8ede2,#f2eafa 60%,#ede9fa);border:1px solid #e9dbee;border-radius:18px;padding:34px 37px;margin-bottom:70px;position:relative;overflow:hidden}
+.deadline-strip+.fortune-teaser{margin-top:24px}
 .fortune-orb{flex:none;width:100px;height:100px;display:grid;place-items:center;border:1px solid #d8bdce;border-radius:50%;font-size:42px;font-weight:600;color:#9d6b84;background:#ffffff50;box-shadow:0 0 0 10px #fff3}
 .fortune-teaser h2{font-size:28px;color:#58406f}.fortune-teaser p:not(.eyebrow){font-size:15px;color:#7a668c;margin-top:10px}.fortune-teaser .eyebrow{font-size:11px!important;margin-bottom:7px}
 .fortune-teaser-actions{display:flex;gap:12px;margin-left:auto;flex:none}.fortune-teaser .button{font-size:14px;padding:11px 17px;gap:10px}
