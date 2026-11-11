@@ -53,7 +53,7 @@
       const terms = norm(search.value).split(/\s+/).filter(Boolean);
       let count = 0;
       cards.forEach(card => {
-        const available = !upcoming?.checked || directory.dataset.directory !== 'calendar' || [...card.querySelectorAll('.event-row')].some(row => !row.hidden);
+        const available = !upcoming?.checked || directory.dataset.directory !== 'calendar' || card.dataset.pending === 'true' || [...card.querySelectorAll('.event-row')].some(row => !row.hidden);
         const show = available && terms.every(t => norm(card.dataset.search).includes(t)) && selects.every(s => !s.value || JSON.parse(card.dataset[s.dataset.cardFilter]).includes(s.value));
         card.hidden = !show; if (show) count++;
       });
@@ -62,7 +62,8 @@
       directory.querySelector('.directory-empty').hidden = count > 0;
       if (directory.dataset.directory === 'calendar') {
         const visible = calendarEvents.filter(({node}) => !node.hidden && !node.closest('.conference-card').hidden);
-        const summary = `显示 ${visible.length} 个节点 · ${visible.filter(r => !r.status.ended).length} 个未结束`;
+        const pending = cards.filter(card => !card.hidden && card.dataset.pending === 'true').length;
+        const summary = `显示 ${visible.length} 个已公布节点 · ${visible.filter(r => !r.status.ended).length} 个未结束${pending ? ` · ${pending} 场待补充日程` : ''}`;
         if ($('#calendar-event-summary').textContent !== summary) $('#calendar-event-summary').textContent = summary;
       }
       if (save) {
@@ -101,15 +102,23 @@
   const compare = $$('[data-compare]');
   if (compare.length) {
     const dialog = $('#compare-dialog'), selected = () => compare.filter(c => c.checked);
-    compare.forEach(c => c.addEventListener('change', () => {
+    const syncCompare = () => {
       $('#compare-open').disabled = selected().length < 2;
+      $('#compare-clear').disabled = selected().length === 0;
       $('#compare-count').textContent = selected().length ? `已选择 ${selected().length} 项 · 可对比 2–3 项` : '选择 2–3 个会议期刊进行对比';
+      $('#compare-selection').textContent = selected().map(c => c.closest('.venue-card').querySelector('h2').textContent).join(' / ');
+    };
+    compare.forEach(c => c.addEventListener('change', () => {
+      if (selected().length > 3) {c.checked=false;notify('一次最多对比 3 项，请先取消已选项目。');}
+      syncCompare();
     }));
+    $('#compare-clear').addEventListener('click', () => {compare.forEach(c => {c.checked=false;});syncCompare();});
+    syncCompare();
     $('#compare-open').addEventListener('click', () => {
       const container = $('#compare-content'); container.replaceChildren();
       selected().forEach(c => {
         const original = c.closest('.venue-card'), clone = original.cloneNode(true);
-        clone.hidden = false; clone.removeAttribute('data-directory-card'); clone.querySelector('.compare-check').remove();
+        clone.hidden = false; clone.removeAttribute('id'); clone.removeAttribute('data-directory-card'); clone.querySelector('.compare-check').remove();
         container.append(clone);
       });
       dialog.showModal();

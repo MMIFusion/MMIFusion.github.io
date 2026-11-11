@@ -1,40 +1,1281 @@
 {
   "verifiedAt": "2026-11-11",
   "conferences": [
-    {"id":"cvpr2027","name":"CVPR 2027","field":"计算机视觉","description":"计算机视觉与模式识别会议。重点关注多模态学习、底层视觉和感知任务。","source":"https://cvpr.thecvf.com/Conferences/2027/CallForPapers","events":[
-      {"id":"cvpr2027-register","label":"论文注册截止","kind":"deadline","at":"2026-11-10T23:59:00-12:00","original":"2026-11-10 23:59 AoE (UTC−12)"},
-      {"id":"cvpr2027-paper","label":"论文提交截止","kind":"deadline","at":"2026-11-16T23:59:00-12:00","original":"2026-11-16 23:59 AoE (UTC−12)"},
-      {"id":"cvpr2027-supp","label":"补充材料截止","kind":"deadline","at":"2026-11-23T23:59:00-12:00","original":"2026-11-23 23:59 AoE (UTC−12)"}
-    ]},
-    {"id":"iclr2027","name":"ICLR 2027","field":"机器学习","description":"表征学习、生成建模与多模态学习。以下节点来自官方征稿页，日期未给出具体时刻时按全天事件展示。","source":"https://iclr.cc/Conferences/2027/CallForPapers","events":[
-      {"id":"iclr2027-discussion","label":"作者讨论结束","kind":"date","start":"2026-11-18","endExclusive":"2026-11-19","original":"2026-11-18 · 官方日期，时区 AoE，具体时刻未列明"},
-      {"id":"iclr2027-decision","label":"最终结果通知","kind":"date","start":"2026-12-16","endExclusive":"2026-12-17","original":"2026-12-16 · 官方日期，时区 AoE，具体时刻未列明"}
-    ]},
-    {"id":"icml2027","name":"ICML 2027","field":"机器学习","description":"首批收录已公布的主会日期；投稿截止时间待官方公布后补充。","source":"https://icml.cc/Conferences/2027/Dates","events":[
-      {"id":"icml2027-main","label":"主会举办","kind":"date","start":"2027-08-02","endExclusive":"2027-08-05","original":"2027-08-02 至 2027-08-04 · 全天日期"}
-    ]}
+    {
+      "id": "cvpr2027",
+      "name": "CVPR 2027",
+      "field": "计算机视觉",
+      "description": "面向视觉、底层成像与多模态感知。主会投稿节点来自征稿页，分段会期按 Dates 页展示。",
+      "source": "https://cvpr.thecvf.com/Conferences/2027/CallForPapers",
+      "location": "美国 · 西雅图",
+      "ccf": "A",
+      "events": [
+        {
+          "id": "cvpr2027-register",
+          "label": "论文注册截止",
+          "kind": "deadline",
+          "at": "2026-11-10T23:59:00-12:00",
+          "original": "2026-11-10 23:59 AoE (UTC−12)"
+        },
+        {
+          "id": "cvpr2027-paper",
+          "label": "论文提交截止",
+          "kind": "deadline",
+          "at": "2026-11-16T23:59:00-12:00",
+          "original": "2026-11-16 23:59 AoE (UTC−12)"
+        },
+        {
+          "id": "cvpr2027-supp",
+          "label": "补充材料截止",
+          "kind": "deadline",
+          "at": "2026-11-23T23:59:00-12:00",
+          "original": "2026-11-23 23:59 AoE (UTC−12)"
+        },
+        {
+          "id": "cvpr2027-reviews",
+          "label": "评审结果公布",
+          "kind": "date",
+          "start": "2027-01-25",
+          "endExclusive": "2027-01-26",
+          "original": "2027-01-25 · 官方日期，具体时刻未列明"
+        },
+        {
+          "id": "cvpr2027-rebuttal",
+          "label": "作者回复阶段",
+          "kind": "date",
+          "start": "2027-01-25",
+          "endExclusive": "2027-02-02",
+          "original": "2027-01-25 至 2027-02-01 · 官方日期，具体时刻未列明"
+        },
+        {
+          "id": "cvpr2027-decision",
+          "label": "最终结果通知",
+          "kind": "date",
+          "start": "2027-02-25",
+          "endExclusive": "2027-02-26",
+          "original": "2027-02-25 · 官方日期，具体时刻未列明"
+        },
+        {
+          "id": "cvpr2027-workshops",
+          "label": "研讨会与教程",
+          "kind": "date",
+          "start": "2027-06-20",
+          "endExclusive": "2027-06-22",
+          "original": "2027-06-20 至 2027-06-21 · 官方日期，具体时刻未列明",
+          "source": "https://cvpr.thecvf.com/Conferences/2027/Dates"
+        },
+        {
+          "id": "cvpr2027-main",
+          "label": "主会举办",
+          "kind": "date",
+          "start": "2027-06-22",
+          "endExclusive": "2027-06-26",
+          "original": "2027-06-22 至 2027-06-25 · 官方日期，具体时刻未列明",
+          "source": "https://cvpr.thecvf.com/Conferences/2027/Dates"
+        }
+      ],
+      "pending": null
+    },
+    {
+      "id": "iccv2027",
+      "name": "ICCV 2027",
+      "field": "计算机视觉",
+      "description": "计算机视觉与多模态感知。官网首页的总会期与 Dates 页表述不同，这里采用 Dates 页明确列出的教程和主会日期。",
+      "source": "https://iccv.thecvf.com/Conferences/2027/Dates",
+      "location": "中国 · 香港",
+      "ccf": "A",
+      "events": [
+        {
+          "id": "iccv2027-workshops",
+          "label": "研讨会与教程",
+          "kind": "date",
+          "start": "2027-10-03",
+          "endExclusive": "2027-10-05",
+          "original": "2027-10-03 至 2027-10-04 · 官方日期，具体时刻未列明"
+        },
+        {
+          "id": "iccv2027-main",
+          "label": "主会举办",
+          "kind": "date",
+          "start": "2027-10-05",
+          "endExclusive": "2027-10-08",
+          "original": "2027-10-05 至 2027-10-07 · 官方日期，具体时刻未列明"
+        }
+      ],
+      "pending": "论文注册、提交、评审与录用时间待官方公布。"
+    },
+    {
+      "id": "acmmm2027",
+      "name": "ACM MM 2027",
+      "field": "多媒体",
+      "description": "适合多媒体、多模态表示与融合研究。系列官网已确认 2027 年举办地为香港。",
+      "source": "https://www.acmmm.org/index.html",
+      "location": "中国 · 香港",
+      "ccf": "A",
+      "events": [],
+      "pending": "会期和投稿节点待官方公布；不沿用上一届日期。"
+    },
+    {
+      "id": "iclr2027",
+      "name": "ICLR 2027",
+      "field": "机器学习",
+      "description": "适合具有学习机制与表示贡献的融合研究。征稿页只列日期的节点保留为全天，不推测具体截止时刻。",
+      "source": "https://iclr.cc/Conferences/2027/CallForPapers",
+      "location": "北美西海岸 · 具体地点待公布",
+      "ccf": "A",
+      "events": [
+        {
+          "id": "iclr2027-abstract",
+          "label": "摘要提交截止",
+          "kind": "date",
+          "start": "2026-09-18",
+          "endExclusive": "2026-09-19",
+          "original": "2026-09-18 · AoE 日期，具体时刻未列明"
+        },
+        {
+          "id": "iclr2027-paper",
+          "label": "论文提交截止",
+          "kind": "date",
+          "start": "2026-09-25",
+          "endExclusive": "2026-09-26",
+          "original": "2026-09-25 · AoE 日期，具体时刻未列明"
+        },
+        {
+          "id": "iclr2027-reviews",
+          "label": "评审公布、作者讨论开始",
+          "kind": "date",
+          "start": "2026-11-05",
+          "endExclusive": "2026-11-06",
+          "original": "2026-11-05 · 官方日期，具体时刻未列明"
+        },
+        {
+          "id": "iclr2027-discussion",
+          "label": "作者讨论结束",
+          "kind": "date",
+          "start": "2026-11-18",
+          "endExclusive": "2026-11-19",
+          "original": "2026-11-18 · 官方日期，时区 AoE，具体时刻未列明"
+        },
+        {
+          "id": "iclr2027-decision",
+          "label": "最终结果通知",
+          "kind": "date",
+          "start": "2026-12-16",
+          "endExclusive": "2026-12-17",
+          "original": "2026-12-16 · 官方日期，时区 AoE，具体时刻未列明"
+        },
+        {
+          "id": "iclr2027-main",
+          "label": "主会举办",
+          "kind": "date",
+          "start": "2027-04-26",
+          "endExclusive": "2027-04-29",
+          "original": "2027-04-26 至 2027-04-28 · 官方日期，具体时刻未列明",
+          "source": "https://iclr.cc/Conferences/2027/Dates"
+        },
+        {
+          "id": "iclr2027-workshops",
+          "label": "研讨会举办",
+          "kind": "date",
+          "start": "2027-04-29",
+          "endExclusive": "2027-05-01",
+          "original": "2027-04-29 至 2027-04-30 · 官方日期，具体时刻未列明",
+          "source": "https://iclr.cc/Conferences/2027/Dates"
+        }
+      ],
+      "pending": null
+    },
+    {
+      "id": "icml2027",
+      "name": "ICML 2027",
+      "field": "机器学习",
+      "description": "适合通用机器学习方法与多模态学习贡献。已公布教程、主会与研讨会日期。",
+      "source": "https://icml.cc/Conferences/2027/Dates",
+      "location": "具体地点以官网更新为准",
+      "ccf": "A",
+      "events": [
+        {
+          "id": "icml2027-tutorials",
+          "label": "教程举办",
+          "kind": "date",
+          "start": "2027-08-01",
+          "endExclusive": "2027-08-02",
+          "original": "2027-08-01 · 官方日期，具体时刻未列明"
+        },
+        {
+          "id": "icml2027-main",
+          "label": "主会举办",
+          "kind": "date",
+          "start": "2027-08-02",
+          "endExclusive": "2027-08-05",
+          "original": "2027-08-02 至 2027-08-04 · 全天日期"
+        },
+        {
+          "id": "icml2027-workshops",
+          "label": "研讨会举办",
+          "kind": "date",
+          "start": "2027-08-05",
+          "endExclusive": "2027-08-07",
+          "original": "2027-08-05 至 2027-08-06 · 官方日期，具体时刻未列明"
+        }
+      ],
+      "pending": "摘要、论文提交与录用节点待官方公布。"
+    },
+    {
+      "id": "neurips2027",
+      "name": "NeurIPS 2027",
+      "field": "机器学习",
+      "description": "适合学习方法、生成建模与通用多模态研究。官方 Future Meetings 目前只公布 2027 年将在欧洲举办。",
+      "source": "https://neurips.cc/Conferences/FutureMeetings",
+      "location": "欧洲 · 具体城市待公布",
+      "ccf": "A",
+      "events": [],
+      "pending": "具体会期、摘要和论文提交节点待官方公布。"
+    },
+    {
+      "id": "aaai2027",
+      "name": "AAAI 2027",
+      "field": "人工智能",
+      "description": "以下仅为主技术赛道。其他专项赛道时间可能不同；官网终稿条目存在修订标记，暂不生成该节点。",
+      "source": "https://aaai.org/conference/aaai/aaai-27/main-technical-track-call/",
+      "location": "加拿大 · 蒙特利尔",
+      "ccf": "A",
+      "events": [
+        {
+          "id": "aaai2027-abstract",
+          "label": "主赛道摘要截止",
+          "kind": "deadline",
+          "at": "2026-07-21T23:59:00-12:00",
+          "original": "2026-07-21 23:59 AoE (UTC−12)"
+        },
+        {
+          "id": "aaai2027-paper",
+          "label": "主赛道论文截止",
+          "kind": "deadline",
+          "at": "2026-07-28T23:59:00-12:00",
+          "original": "2026-07-28 23:59 AoE (UTC−12)"
+        },
+        {
+          "id": "aaai2027-supp",
+          "label": "补充材料与代码截止",
+          "kind": "deadline",
+          "at": "2026-07-31T23:59:00-12:00",
+          "original": "2026-07-31 23:59 AoE (UTC−12)"
+        },
+        {
+          "id": "aaai2027-phase1",
+          "label": "第一阶段拒稿通知",
+          "kind": "date",
+          "start": "2026-09-24",
+          "endExclusive": "2026-09-25",
+          "original": "2026-09-24 · 官方日期，具体时刻未列明"
+        },
+        {
+          "id": "aaai2027-feedback",
+          "label": "作者反馈阶段（更新后）",
+          "kind": "date",
+          "start": "2026-10-24",
+          "endExclusive": "2026-11-01",
+          "original": "2026-10-24 至 2026-10-31 · 官方日期，具体时刻未列明"
+        },
+        {
+          "id": "aaai2027-decision",
+          "label": "最终结果通知",
+          "kind": "date",
+          "start": "2026-11-30",
+          "endExclusive": "2026-12-01",
+          "original": "2026-11-30 · 官方日期，具体时刻未列明"
+        },
+        {
+          "id": "aaai2027-main",
+          "label": "大会举办",
+          "kind": "date",
+          "start": "2027-02-16",
+          "endExclusive": "2027-02-24",
+          "original": "2027-02-16 至 2027-02-23 · 官方日期，具体时刻未列明"
+        }
+      ],
+      "pending": null
+    },
+    {
+      "id": "acl2027",
+      "name": "ACL 2027",
+      "field": "语言与多模态",
+      "description": "适用于图文融合、视觉语言理解等语言导向研究。先提交 ARR 并取得评审，再向 ACL 提交 commitment，两者不是同一个截止节点。",
+      "source": "https://2027.aclweb.org/calls/main/",
+      "location": "日本 · 京都",
+      "ccf": "A",
+      "events": [
+        {
+          "id": "acl2027-arr",
+          "label": "最晚 ARR 投稿轮次截止",
+          "kind": "deadline",
+          "at": "2027-01-04T23:59:00-12:00",
+          "original": "2027-01-04 23:59 AoE (UTC−12)"
+        },
+        {
+          "id": "acl2027-tutorials",
+          "label": "教程举办",
+          "kind": "date",
+          "start": "2027-08-17",
+          "endExclusive": "2027-08-18",
+          "original": "2027-08-17 · 官方日期，具体时刻未列明"
+        },
+        {
+          "id": "acl2027-workshops",
+          "label": "研讨会举办",
+          "kind": "date",
+          "start": "2027-08-18",
+          "endExclusive": "2027-08-20",
+          "original": "2027-08-18 至 2027-08-19 · 官方日期，具体时刻未列明"
+        },
+        {
+          "id": "acl2027-main",
+          "label": "主会举办",
+          "kind": "date",
+          "start": "2027-08-20",
+          "endExclusive": "2027-08-23",
+          "original": "2027-08-20 至 2027-08-22 · 官方日期，具体时刻未列明"
+        }
+      ],
+      "pending": "ACL commitment、录用通知与终稿日期待公布。"
+    }
   ],
   "teams": [
-    {"id":"jiayi-ma","name":"马佳义团队","institution":"武汉大学","city":"武汉","lead":"马佳义","tags":["图像融合","图像配准","多模态感知"],"description":"关注图像匹配与配准、信息融合、底层视觉及学习驱动的视觉感知。通过导师主页了解研究方向与完整成果。","source":"https://jiayi-ma.github.io/index.html","relatedQuery":"武大","opportunity":null},
-    {"id":"vlog","name":"VLOG · 视觉、学习与优化","institution":"大连理工大学","city":"大连","lead":"刘日升","tags":["图像融合","视觉感知","优化学习"],"description":"研究机器学习、计算机视觉与数值优化，关注复杂环境中的视觉感知及机器人学习。","source":"https://rsliu.tech/","relatedQuery":"大连理工","opportunity":"vlog-open"}
+    {
+      "id": "jiayi-ma",
+      "name": "马佳义团队",
+      "institution": "武汉大学",
+      "city": "武汉",
+      "lead": "马佳义",
+      "tags": [
+        "图像融合",
+        "图像配准",
+        "多模态感知"
+      ],
+      "description": "关注图像匹配与配准、信息融合、底层视觉及学习驱动的视觉感知。通过导师主页了解研究方向与完整成果。",
+      "source": "https://jiayi-ma.github.io/index.html",
+      "relatedQuery": "武大",
+      "opportunity": null
+    },
+    {
+      "id": "vlog",
+      "name": "VLOG · 视觉、学习与优化",
+      "institution": "大连理工大学",
+      "city": "大连",
+      "lead": "刘日升",
+      "tags": [
+        "图像融合",
+        "视觉感知",
+        "优化学习"
+      ],
+      "description": "研究机器学习、计算机视觉与数值优化，关注复杂环境中的视觉感知及机器人学习。",
+      "source": "https://rsliu.tech/",
+      "relatedQuery": "大连理工",
+      "opportunity": "vlog-open"
+    }
   ],
   "opportunities": [
-    {"id":"vlog-open","institution":"大连理工大学","team":"VLOG · 刘日升团队","city":"大连","types":["硕士","博士","博士后","科研助理"],"tags":["计算机视觉","机器学习","优化学习"],"title":"硕博、博士后与本科科研助理招募","status":"长期招募","description":"导师学校主页明确欢迎博士后、博士、硕士和本科生科研助理申请，并注明长期有效。具体名额、申请条件及入学批次请向团队核实。","requirements":"先阅读导师研究方向与团队成果，准备简历、研究经历和感兴趣的问题，再通过官方主页列出的渠道联系。","source":"https://faculty.dlut.edu.cn/rsliu/zh_CN/index.htm","teamId":"vlog","expires":null}
+    {
+      "id": "vlog-open",
+      "institution": "大连理工大学",
+      "team": "VLOG · 刘日升团队",
+      "city": "大连",
+      "types": [
+        "硕士",
+        "博士",
+        "博士后",
+        "科研助理"
+      ],
+      "tags": [
+        "计算机视觉",
+        "机器学习",
+        "优化学习"
+      ],
+      "title": "硕博、博士后与本科科研助理招募",
+      "status": "长期招募",
+      "description": "导师学校主页明确欢迎博士后、博士、硕士和本科生科研助理申请，并注明长期有效。具体名额、申请条件及入学批次请向团队核实。",
+      "requirements": "先阅读导师研究方向与团队成果，准备简历、研究经历和感兴趣的问题，再通过官方主页列出的渠道联系。",
+      "source": "https://faculty.dlut.edu.cn/rsliu/zh_CN/index.htm",
+      "teamId": "vlog",
+      "expires": null
+    }
   ],
   "venues": [
-    {"id":"cvpr","name":"CVPR","fullName":"IEEE/CVF Conference on Computer Vision and Pattern Recognition","type":"会议","tags":["视觉感知","图像融合","多模态学习"],"scope":"官方征稿覆盖计算机视觉、多模态学习、底层视觉及数据集与基准。","fit":"若融合方法解决了清晰的视觉问题，并有充分的基准与泛化实验，可优先核对这一方向的征稿要求。","source":"https://cvpr.thecvf.com/Conferences/2027/CallForPapers","guide":"https://cvpr.thecvf.com/Conferences/2027/AuthorGuidelines","articleVenue":"CVPR","calendar":"cvpr2027"},
-    {"id":"tip","name":"IEEE TIP","fullName":"IEEE Transactions on Image Processing","type":"期刊","tags":["图像融合","图像恢复","图像处理"],"scope":"官方范围涵盖图像与视频的形成、处理、分析，以及相关理论、算法和架构。","fit":"若研究侧重图像处理方法、理论解释和系统实验，可据其范围进一步评估投稿适配度。","source":"https://signalprocessingsociety.org/publications-resources/ieee-transactions-image-processing/about-transactions-image-processing","guide":"https://signalprocessingsociety.org/publications-resources/information-authors","articleVenue":"TIP","calendar":null},
-    {"id":"iclr","name":"ICLR","fullName":"International Conference on Learning Representations","type":"会议","tags":["多模态学习","表征学习","生成建模"],"scope":"官方征稿涵盖机器学习，包含跨模态表征学习、生成模型、优化与学习理论等主题。","fit":"若贡献落在学习机制或表征方法，且能通过融合任务之外的证据说明普适性，可参考该会议要求。","source":"https://iclr.cc/Conferences/2027/CallForPapers","guide":"https://iclr.cc/Conferences/2027/AuthorGuidelines","articleVenue":"ICLR","calendar":"iclr2027"}
+    {
+      "id": "tpami",
+      "name": "IEEE TPAMI",
+      "fullName": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+      "type": "期刊",
+      "ccf": "A",
+      "ccfPage": 51,
+      "ccfArea": "人工智能",
+      "tags": [
+        "视觉感知",
+        "图像融合",
+        "机器学习"
+      ],
+      "scope": "计算机视觉、图像理解、模式分析与识别，以及面向模式分析的机器学习。",
+      "fit": "适合具有系统性方法贡献的融合与视觉研究；建议同时提供充分的理论、泛化和任务层面证据。",
+      "source": "https://www.computer.org/csdl/journal/tp/",
+      "guide": "https://www.computer.org/csdl/journal/tp/write-for-us/15083",
+      "calendar": null,
+      "articleVenue": "TPAMI",
+      "relatedQuery": "TPAMI"
+    },
+    {
+      "id": "ijcv",
+      "name": "IJCV",
+      "fullName": "International Journal of Computer Vision",
+      "type": "期刊",
+      "ccf": "A",
+      "ccfPage": 51,
+      "ccfArea": "人工智能",
+      "tags": [
+        "视觉感知",
+        "图像融合",
+        "图像恢复"
+      ],
+      "scope": "覆盖计算机视觉理论与应用，以及图像分析、识别和场景理解。",
+      "fit": "适合从明确视觉问题出发的完整研究；融合方法应说明其对视觉理解或成像问题的贡献。",
+      "source": "https://link.springer.com/journal/11263/aims-and-scope",
+      "guide": "https://link.springer.com/journal/11263/submission-guidelines",
+      "calendar": null,
+      "articleVenue": "IJCV",
+      "relatedQuery": "IJCV"
+    },
+    {
+      "id": "tip",
+      "name": "IEEE TIP",
+      "fullName": "IEEE Transactions on Image Processing",
+      "type": "期刊",
+      "ccf": "A",
+      "ccfPage": 44,
+      "ccfArea": "计算机图形学与多媒体",
+      "tags": [
+        "图像融合",
+        "图像恢复",
+        "图像处理"
+      ],
+      "scope": "官方范围涵盖图像与视频的形成、处理、分析，以及相关理论、算法和架构。",
+      "fit": "若研究侧重图像处理方法、理论解释和系统实验，可据其范围进一步评估投稿适配度。",
+      "source": "https://signalprocessingsociety.org/publications-resources/ieee-transactions-image-processing/about-transactions-image-processing",
+      "guide": "https://signalprocessingsociety.org/publications-resources/information-authors",
+      "calendar": null,
+      "articleVenue": "TIP",
+      "relatedQuery": "TIP"
+    },
+    {
+      "id": "tmm",
+      "name": "IEEE TMM",
+      "fullName": "IEEE Transactions on Multimedia",
+      "type": "期刊",
+      "ccf": "A",
+      "ccfPage": 44,
+      "ccfArea": "计算机图形学与多媒体",
+      "tags": [
+        "多模态学习",
+        "图像融合",
+        "多媒体"
+      ],
+      "scope": "多媒体技术与应用，包括信号处理、系统、软件与系统集成等方面。",
+      "fit": "适合强调跨模态互补、联合表示及多媒体任务的融合研究；需要清晰的多媒体问题与可复现实验。",
+      "source": "https://signalprocessingsociety.org/publications-resources/ieee-transactions-multimedia",
+      "guide": "https://signalprocessingsociety.org/publications-resources/information-authors",
+      "calendar": null,
+      "articleVenue": "TMM",
+      "relatedQuery": "TMM"
+    },
+    {
+      "id": "ai",
+      "name": "AI",
+      "fullName": "Artificial Intelligence",
+      "type": "期刊",
+      "ccf": "A",
+      "ccfPage": 51,
+      "ccfArea": "人工智能",
+      "tags": [
+        "人工智能",
+        "机器学习",
+        "视觉感知"
+      ],
+      "scope": "人工智能的基础问题与方法，包含推理、知识表示、学习、视觉和智能机器人。",
+      "fit": "更适合具有普适人工智能贡献的工作；单一融合网络的小幅改进通常不足以解释其领域意义。",
+      "source": "https://shop.elsevier.com/journals/artificial-intelligence/0004-3702",
+      "guide": "https://www.sciencedirect.com/journal/artificial-intelligence/publish/guide-for-authors",
+      "calendar": null,
+      "articleVenue": null,
+      "relatedQuery": "AI"
+    },
+    {
+      "id": "proc-ieee",
+      "name": "Proc. IEEE",
+      "fullName": "Proceedings of the IEEE",
+      "type": "期刊",
+      "ccf": "A",
+      "ccfPage": 67,
+      "ccfArea": "交叉/综合/新兴",
+      "tags": [
+        "综述教程",
+        "多模态学习",
+        "信息融合"
+      ],
+      "scope": "面向电气、电子与计算机领域，重点发表具有广泛与长期价值的综述、评述和教程文章。",
+      "fit": "适合系统综述或教程型稿件；先核对提案与编辑沟通要求，不宜按常规实验论文准备。",
+      "source": "https://proceedingsoftheieee.ieee.org/resources/preparing-your-regular-paper/",
+      "guide": "https://proceedingsoftheieee.ieee.org/resources/preparing-your-regular-paper/",
+      "calendar": null,
+      "articleVenue": null,
+      "relatedQuery": "Proc. IEEE"
+    },
+    {
+      "id": "cvpr",
+      "name": "CVPR",
+      "fullName": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
+      "type": "会议",
+      "ccf": "A",
+      "ccfPage": 57,
+      "ccfArea": "人工智能",
+      "tags": [
+        "视觉感知",
+        "图像融合",
+        "多模态学习"
+      ],
+      "scope": "官方征稿覆盖计算机视觉、多模态学习、底层视觉及数据集与基准。",
+      "fit": "若融合方法解决了清晰的视觉问题，并有充分的基准与泛化实验，可优先核对这一方向的征稿要求。",
+      "source": "https://cvpr.thecvf.com/Conferences/2027/CallForPapers",
+      "guide": "https://cvpr.thecvf.com/Conferences/2027/AuthorGuidelines",
+      "calendar": "cvpr2027",
+      "articleVenue": "CVPR",
+      "relatedQuery": "CVPR"
+    },
+    {
+      "id": "iccv",
+      "name": "ICCV",
+      "fullName": "IEEE/CVF International Conference on Computer Vision",
+      "type": "会议",
+      "ccf": "A",
+      "ccfPage": 57,
+      "ccfArea": "人工智能",
+      "tags": [
+        "视觉感知",
+        "图像融合",
+        "多模态学习"
+      ],
+      "scope": "计算机视觉与图像理解研究；2027 年官网已公布分段会期，投稿细则尚待更新。",
+      "fit": "适合视觉导向的融合、底层视觉和跨模态感知工作；投稿要求以当届主会征稿为准。",
+      "source": "https://iccv.thecvf.com/Conferences/2027",
+      "guide": null,
+      "calendar": "iccv2027",
+      "articleVenue": "ICCV",
+      "guideNote": "2027 征稿细则待公布",
+      "relatedQuery": "ICCV"
+    },
+    {
+      "id": "acmmm",
+      "name": "ACM MM",
+      "fullName": "ACM International Conference on Multimedia",
+      "type": "会议",
+      "ccf": "A",
+      "ccfPage": 47,
+      "ccfArea": "计算机图形学与多媒体",
+      "tags": [
+        "多媒体",
+        "多模态学习",
+        "图像融合"
+      ],
+      "scope": "多媒体系统、内容理解、用户体验与多媒体应用，覆盖不同媒体形式之间的联系。",
+      "fit": "适合突出多模态表示、互补信息利用和多媒体应用价值的研究；主会与各专题要求需分别核对。",
+      "source": "https://www.acmmm.org/index.html",
+      "guide": null,
+      "calendar": "acmmm2027",
+      "articleVenue": "ACM MM",
+      "guideNote": "2027 征稿细则待公布",
+      "aliases": [
+        "ACMMM",
+        "ACM Multimedia"
+      ],
+      "relatedQuery": "ACM MM"
+    },
+    {
+      "id": "neurips",
+      "name": "NeurIPS",
+      "fullName": "Conference on Neural Information Processing Systems",
+      "type": "会议",
+      "ccf": "A",
+      "ccfPage": 57,
+      "ccfArea": "人工智能",
+      "tags": [
+        "机器学习",
+        "多模态学习",
+        "生成建模"
+      ],
+      "scope": "最近一届主会征稿覆盖深度学习、生成模型、优化、视觉与多模态语言模型等。",
+      "fit": "若融合研究带来可推广的学习机制、理论或评估洞见，可考虑该方向；不要只展示单一基准增益。",
+      "source": "https://neurips.cc/Conferences/2026/CallForPapers",
+      "guide": null,
+      "calendar": "neurips2027",
+      "articleVenue": "NeurIPS",
+      "sourceLabel": "2026 征稿范围",
+      "guideNote": "2027 征稿细则待公布",
+      "relatedQuery": "NeurIPS"
+    },
+    {
+      "id": "icml",
+      "name": "ICML",
+      "fullName": "International Conference on Machine Learning",
+      "type": "会议",
+      "ccf": "A",
+      "ccfPage": 57,
+      "ccfArea": "人工智能",
+      "tags": [
+        "机器学习",
+        "多模态学习",
+        "表征学习"
+      ],
+      "scope": "机器学习方法与应用；2027 年日程页已公布会期，主会征稿正文尚未公布。",
+      "fit": "适合具有通用学习方法贡献的融合研究，建议用跨任务验证说明方法不局限于图像拼合。",
+      "source": "https://icml.cc/Conferences/2027",
+      "guide": null,
+      "calendar": "icml2027",
+      "articleVenue": "ICML",
+      "guideNote": "2027 征稿细则待公布",
+      "relatedQuery": "ICML"
+    },
+    {
+      "id": "iclr",
+      "name": "ICLR",
+      "fullName": "International Conference on Learning Representations",
+      "type": "会议",
+      "ccf": "A",
+      "ccfPage": 57,
+      "ccfArea": "人工智能",
+      "tags": [
+        "多模态学习",
+        "表征学习",
+        "生成建模"
+      ],
+      "scope": "官方征稿涵盖机器学习，包含跨模态表征学习、生成模型、优化与学习理论等主题。",
+      "fit": "若贡献落在学习机制或表征方法，且能通过融合任务之外的证据说明普适性，可参考该会议要求。",
+      "source": "https://iclr.cc/Conferences/2027/CallForPapers",
+      "guide": "https://iclr.cc/Conferences/2027/AuthorGuidelines",
+      "calendar": "iclr2027",
+      "articleVenue": "ICLR",
+      "relatedQuery": "ICLR"
+    },
+    {
+      "id": "aaai",
+      "name": "AAAI",
+      "fullName": "AAAI Conference on Artificial Intelligence",
+      "type": "会议",
+      "ccf": "A",
+      "ccfPage": 57,
+      "ccfArea": "人工智能",
+      "tags": [
+        "人工智能",
+        "视觉感知",
+        "多模态学习"
+      ],
+      "scope": "覆盖人工智能主要研究方向，主技术赛道与专门赛道使用各自的征稿要求。",
+      "fit": "适合问题动机清晰、方法具有人工智能意义的融合工作；务必区分主技术赛道与专项赛道。",
+      "source": "https://aaai.org/conference/aaai/aaai-27/main-technical-track-call/",
+      "guide": "https://aaai.org/conference/aaai/aaai-27/main-technical-track-call/",
+      "calendar": "aaai2027",
+      "articleVenue": "AAAI",
+      "relatedQuery": "AAAI"
+    },
+    {
+      "id": "acl",
+      "name": "ACL",
+      "fullName": "Annual Meeting of the Association for Computational Linguistics",
+      "type": "会议",
+      "ccf": "A",
+      "ccfPage": 57,
+      "ccfArea": "人工智能",
+      "tags": [
+        "语言与视觉",
+        "多模态学习",
+        "自然语言处理"
+      ],
+      "scope": "自然语言处理与计算语言学，包含语言与视觉、机器人等模态的关联与落地。",
+      "fit": "更适合图文融合、视觉语言推理等以语言问题为核心的工作；纯图像融合应优先匹配视觉会议。",
+      "source": "https://2027.aclweb.org/calls/main/",
+      "guide": "https://2027.aclweb.org/calls/main/",
+      "calendar": "acl2027",
+      "articleVenue": null,
+      "relatedQuery": "ACL"
+    },
+    {
+      "id": "tcsvt",
+      "name": "IEEE TCSVT",
+      "fullName": "IEEE Transactions on Circuits and Systems for Video Technology",
+      "type": "期刊",
+      "ccf": "B",
+      "ccfPage": 45,
+      "ccfArea": "计算机图形学与多媒体",
+      "tags": [
+        "图像融合",
+        "图像处理",
+        "视频技术"
+      ],
+      "scope": "图像与视频的获取、处理、分析、学习、编码以及软硬件系统实现。",
+      "fit": "可考虑图像或视频融合方法，尤其是具有时序一致性、效率或系统应用证据的工作。",
+      "source": "https://ieee-cas.org/publication/tcsvt",
+      "guide": "https://ieee-cas.org/publication/tcsvt",
+      "calendar": null,
+      "articleVenue": "TCSVT",
+      "relatedQuery": "TCSVT"
+    },
+    {
+      "id": "tnnls",
+      "name": "IEEE TNNLS",
+      "fullName": "IEEE Transactions on Neural Networks and Learning Systems",
+      "type": "期刊",
+      "ccf": "B",
+      "ccfPage": 52,
+      "ccfArea": "人工智能",
+      "tags": [
+        "机器学习",
+        "神经网络",
+        "多模态学习"
+      ],
+      "scope": "神经网络与学习系统的理论、设计和应用。",
+      "fit": "重点说明学习机制、优化或泛化方面的贡献，并用融合之外或不同场景的实验支撑普适性。",
+      "source": "https://cis.ieee.org/publications/t-neural-networks-and-learning-systems",
+      "guide": "https://cis.ieee.org/publications/t-neural-networks-and-learning-systems",
+      "calendar": null,
+      "articleVenue": null,
+      "relatedQuery": "TNNLS"
+    },
+    {
+      "id": "pr",
+      "name": "Pattern Recognition",
+      "fullName": "Pattern Recognition",
+      "type": "期刊",
+      "ccf": "B",
+      "ccfPage": 53,
+      "ccfArea": "人工智能",
+      "tags": [
+        "模式识别",
+        "视觉感知",
+        "图像融合"
+      ],
+      "scope": "模式识别的理论、方法及应用，强调研究与模式识别问题之间的联系。",
+      "fit": "适合连接图像融合与识别、检测、表征或鲁棒感知的问题；应说明融合如何改善模式分析。",
+      "source": "https://shop.elsevier.com/journals/pattern-recognition/0031-3203",
+      "guide": "https://www.sciencedirect.com/journal/pattern-recognition/publish/guide-for-authors",
+      "calendar": null,
+      "articleVenue": "PR",
+      "relatedQuery": "Pattern Recognition"
+    },
+    {
+      "id": "neural-networks",
+      "name": "Neural Networks",
+      "fullName": "Neural Networks",
+      "type": "期刊",
+      "ccf": "B",
+      "ccfPage": 53,
+      "ccfArea": "人工智能",
+      "tags": [
+        "神经网络",
+        "机器学习",
+        "多模态学习"
+      ],
+      "scope": "神经网络、深度学习的算法与数学分析，以及相关工程应用和认知计算。",
+      "fit": "适合学习模型或网络机制贡献明确的工作，突出机制验证而不只列网络组件。",
+      "source": "https://shop.elsevier.com/journals/neural-networks/0893-6080",
+      "guide": "https://www.sciencedirect.com/journal/neural-networks/publish/guide-for-authors",
+      "calendar": null,
+      "articleVenue": null,
+      "relatedQuery": "Neural Networks"
+    },
+    {
+      "id": "cviu",
+      "name": "CVIU",
+      "fullName": "Computer Vision and Image Understanding",
+      "type": "期刊",
+      "ccf": "B",
+      "ccfPage": 52,
+      "ccfArea": "人工智能",
+      "tags": [
+        "视觉感知",
+        "图像融合",
+        "图像理解"
+      ],
+      "scope": "从早期视觉到识别与解释的图像分析，包括表示、形状、运动与视觉系统。",
+      "fit": "适合讨论融合与图像理解之间关系的研究，结合任务表现和对失败情形的分析。",
+      "source": "https://shop.elsevier.com/journals/computer-vision-and-image-understanding/1077-3142",
+      "guide": "https://www.sciencedirect.com/journal/computer-vision-and-image-understanding/publish/guide-for-authors",
+      "calendar": null,
+      "articleVenue": null,
+      "relatedQuery": "CVIU"
+    },
+    {
+      "id": "tgrs",
+      "name": "IEEE TGRS",
+      "fullName": "IEEE Transactions on Geoscience and Remote Sensing",
+      "type": "期刊",
+      "ccf": "B",
+      "ccfPage": 68,
+      "ccfArea": "交叉/综合/新兴",
+      "tags": [
+        "遥感融合",
+        "多模态学习",
+        "图像处理"
+      ],
+      "scope": "地球、海洋、大气与空间遥感的理论、仪器和方法，以及遥感信息处理与解释。",
+      "fit": "适合全色锐化、高光谱与多光谱融合、光学与 SAR 等遥感研究；需提供场景、物理和遥感任务依据。",
+      "source": "https://www.grss-ieee.org/publications/transactions-on-geoscience-remote-sensing/",
+      "guide": "https://www.grss-ieee.org/publications/transactions-on-geoscience-remote-sensing/",
+      "calendar": null,
+      "articleVenue": null,
+      "aliases": [
+        "TGARS",
+        "IEEE Geoscience and Remote Sensing"
+      ],
+      "relatedQuery": "TGRS"
+    },
+    {
+      "id": "tmi",
+      "name": "IEEE TMI",
+      "fullName": "IEEE Transactions on Medical Imaging",
+      "type": "期刊",
+      "ccf": "B",
+      "ccfPage": 68,
+      "ccfArea": "交叉/综合/新兴",
+      "tags": [
+        "医学融合",
+        "医学影像",
+        "图像处理"
+      ],
+      "scope": "医学、生物与成像科学相关的成像和图像分析研究。",
+      "fit": "适合有明确医学问题的多模态影像融合；重视临床相关性、评估设计与跨机构验证。",
+      "source": "https://ieeetmi.org/",
+      "guide": "https://ieeetmi.org/authors-instructions/",
+      "calendar": null,
+      "articleVenue": null,
+      "relatedQuery": "TMI"
+    },
+    {
+      "id": "eccv",
+      "name": "ECCV",
+      "fullName": "European Conference on Computer Vision",
+      "type": "会议",
+      "ccf": "B",
+      "ccfPage": 58,
+      "ccfArea": "人工智能",
+      "tags": [
+        "视觉感知",
+        "图像融合",
+        "多模态学习"
+      ],
+      "scope": "计算机视觉与模式识别研究，范围参考最近一届官方征稿。",
+      "fit": "适合视觉导向的融合工作。按本次 CCF 第七版标为 B 类；分类不等同于同领域研究者的声誉判断。",
+      "source": "https://eccv.ecva.net/Conferences/2026/CallForPapers",
+      "guide": "https://eccv.ecva.net/Conferences/2026/CallForPapers",
+      "calendar": null,
+      "articleVenue": "ECCV",
+      "guideLabel": "2026 投稿说明",
+      "relatedQuery": "ECCV"
+    },
+    {
+      "id": "ijcai",
+      "name": "IJCAI",
+      "fullName": "International Joint Conference on Artificial Intelligence",
+      "type": "会议",
+      "ccf": "B",
+      "ccfPage": 58,
+      "ccfArea": "人工智能",
+      "tags": [
+        "人工智能",
+        "机器学习",
+        "多模态学习"
+      ],
+      "scope": "人工智能方法、理论与应用的综合性研究交流会议。",
+      "fit": "适合具有通用人工智能问题与方法贡献的工作；本页按所参考第七版目录列为 B 类。",
+      "source": "https://www.ijcai.org/",
+      "guide": null,
+      "calendar": null,
+      "articleVenue": null,
+      "guideNote": "投稿说明请查看当届官网",
+      "relatedQuery": "IJCAI"
+    },
+    {
+      "id": "icassp",
+      "name": "ICASSP",
+      "fullName": "IEEE International Conference on Acoustics, Speech and Signal Processing",
+      "type": "会议",
+      "ccf": "B",
+      "ccfPage": 48,
+      "ccfArea": "计算机图形学与多媒体",
+      "tags": [
+        "信号处理",
+        "图像融合",
+        "多模态学习"
+      ],
+      "scope": "信号处理及其应用，覆盖图像、视频、语音和多模态信号。",
+      "fit": "适合从信号建模、表示、重建或学习方法展开的融合研究；重视方法假设与实验协议。",
+      "source": "https://2027.ieeeicassp.org/call-for-papers/",
+      "guide": "https://2027.ieeeicassp.org/paper-submission-instructions/",
+      "calendar": null,
+      "articleVenue": null,
+      "relatedQuery": "ICASSP"
+    },
+    {
+      "id": "miccai",
+      "name": "MICCAI",
+      "fullName": "International Conference on Medical Image Computing and Computer-Assisted Intervention",
+      "type": "会议",
+      "ccf": "B",
+      "ccfPage": 71,
+      "ccfArea": "交叉/综合/新兴",
+      "tags": [
+        "医学融合",
+        "医学影像",
+        "多模态学习"
+      ],
+      "scope": "医学图像计算、医学影像中的机器学习与计算机辅助干预。",
+      "fit": "适合面向具体医学任务的多模态融合；评价指标和数据划分应与医学使用场景对应。",
+      "source": "https://miccai.org/about-miccai/",
+      "guide": "https://www.miccai2026.org/en/PAPER-SUBMISSION-GUIDELINES.html",
+      "calendar": null,
+      "articleVenue": null,
+      "guideLabel": "2026 投稿指南",
+      "relatedQuery": "MICCAI"
+    },
+    {
+      "id": "signal-processing",
+      "name": "Signal Processing",
+      "fullName": "Signal Processing",
+      "type": "期刊",
+      "ccf": "C",
+      "ccfPage": 46,
+      "ccfArea": "计算机图形学与多媒体",
+      "tags": [
+        "信号处理",
+        "图像融合",
+        "图像恢复"
+      ],
+      "scope": "信号处理的理论与实践，覆盖方法、算法和相关应用。",
+      "fit": "适合从信号表示、变换、重建或优化角度展开的融合方法，并提供清楚的模型与实现。",
+      "source": "https://shop.elsevier.com/journals/signal-processing/0165-1684",
+      "guide": "https://www.sciencedirect.com/journal/signal-processing/publish/guide-for-authors",
+      "calendar": null,
+      "articleVenue": null,
+      "relatedQuery": "Signal Processing"
+    },
+    {
+      "id": "kbs",
+      "name": "Knowledge-Based Systems",
+      "fullName": "Knowledge-Based Systems",
+      "type": "期刊",
+      "ccf": "C",
+      "ccfPage": 55,
+      "ccfArea": "人工智能",
+      "tags": [
+        "人工智能",
+        "多模态学习",
+        "知识系统"
+      ],
+      "scope": "知识系统与人工智能方法，关注模型、方法、系统和决策支持应用。",
+      "fit": "适合强调知识引导、智能决策或学习系统的融合研究；应清楚阐述系统贡献与应用价值。",
+      "source": "https://shop.elsevier.com/journals/knowledge-based-systems/0950-7051",
+      "guide": "https://www.sciencedirect.com/journal/knowledge-based-systems/publish/guide-for-authors",
+      "calendar": null,
+      "articleVenue": null,
+      "relatedQuery": "Knowledge-Based Systems"
+    },
+    {
+      "id": "eaai",
+      "name": "EAAI",
+      "fullName": "Engineering Applications of Artificial Intelligence",
+      "type": "期刊",
+      "ccf": "C",
+      "ccfPage": 54,
+      "ccfArea": "人工智能",
+      "tags": [
+        "工程应用",
+        "人工智能",
+        "多模态学习"
+      ],
+      "scope": "人工智能方法在工程各领域的实际应用。",
+      "fit": "适合工程需求明确、验证充分的融合应用，重点体现解决实际问题的效果和部署约束。",
+      "source": "https://shop.elsevier.com/journals/engineering-applications-of-artificial-intelligence/0952-1976",
+      "guide": "https://www.sciencedirect.com/journal/engineering-applications-of-artificial-intelligence/publish/guide-for-authors",
+      "calendar": null,
+      "articleVenue": null,
+      "relatedQuery": "EAAI"
+    },
+    {
+      "id": "eswa",
+      "name": "ESWA",
+      "fullName": "Expert Systems with Applications",
+      "type": "期刊",
+      "ccf": "C",
+      "ccfPage": 54,
+      "ccfArea": "人工智能",
+      "tags": [
+        "工程应用",
+        "智能系统",
+        "多模态学习"
+      ],
+      "scope": "面向行业、公共部门和研究场景的专家系统与智能系统设计及应用。",
+      "fit": "适合任务与应用价值明确的智能融合系统，说明方法对实际决策或感知流程的作用。",
+      "source": "https://shop.elsevier.com/journals/expert-systems-with-applications/0957-4174",
+      "guide": "https://www.sciencedirect.com/journal/expert-systems-with-applications/publish/guide-for-authors",
+      "calendar": null,
+      "articleVenue": null,
+      "relatedQuery": "ESWA"
+    },
+    {
+      "id": "ivc",
+      "name": "Image and Vision Computing",
+      "fullName": "Image and Vision Computing",
+      "type": "期刊",
+      "ccf": "C",
+      "ccfPage": 55,
+      "ccfArea": "人工智能",
+      "tags": [
+        "视觉感知",
+        "图像融合",
+        "图像理解"
+      ],
+      "scope": "图像解释与计算机视觉的理论和应用，包含多传感器信息融合。",
+      "fit": "适合视觉方法与应用研究，突出定量比较、视觉任务贡献及不同条件下的稳定性。",
+      "source": "https://shop.elsevier.com/journals/image-and-vision-computing/0262-8856",
+      "guide": "https://www.sciencedirect.com/journal/image-and-vision-computing/publish/guide-for-authors",
+      "calendar": null,
+      "articleVenue": null,
+      "relatedQuery": "Image and Vision Computing"
+    },
+    {
+      "id": "iet-ipr",
+      "name": "IET Image Processing",
+      "fullName": "IET Image Processing",
+      "type": "期刊",
+      "ccf": "C",
+      "ccfPage": 46,
+      "ccfArea": "计算机图形学与多媒体",
+      "tags": [
+        "图像处理",
+        "图像融合",
+        "图像恢复"
+      ],
+      "scope": "视觉信息的生成、处理与通信，包括增强、恢复、配准和多光谱处理。",
+      "fit": "适合围绕具体图像处理问题的融合研究，给出完整的参数、对比和重现实验。",
+      "source": "https://ietresearch.onlinelibrary.wiley.com/journal/17519667",
+      "guide": "https://ietresearch.onlinelibrary.wiley.com/hub/journal/17519667/homepage/author-guidelines",
+      "calendar": null,
+      "articleVenue": null,
+      "relatedQuery": "IET Image Processing"
+    },
+    {
+      "id": "iet-sp",
+      "name": "IET Signal Processing",
+      "fullName": "IET Signal Processing",
+      "type": "期刊",
+      "ccf": "C",
+      "ccfPage": 54,
+      "ccfArea": "人工智能",
+      "tags": [
+        "信号处理",
+        "机器学习",
+        "图像融合"
+      ],
+      "scope": "面向检测、估计、推断与分类的信号处理及机器学习方法。",
+      "fit": "适合信号分析、变换或学习建模导向的融合方法，明确算法的假设、复杂度与适用条件。",
+      "source": "https://ietresearch.onlinelibrary.wiley.com/page/journal/ietsp/homepage/productinformation.html",
+      "guide": "https://ietresearch.onlinelibrary.wiley.com/page/journal/ietsp/homepage/author-guidelines",
+      "calendar": null,
+      "articleVenue": null,
+      "relatedQuery": "IET Signal Processing"
+    },
+    {
+      "id": "grsl",
+      "name": "IEEE GRSL",
+      "fullName": "IEEE Geoscience and Remote Sensing Letters",
+      "type": "期刊",
+      "ccf": "C",
+      "ccfPage": 69,
+      "ccfArea": "交叉/综合/新兴",
+      "tags": [
+        "遥感融合",
+        "图像处理",
+        "短文快报"
+      ],
+      "scope": "遥感与地球观测中的新方法、初步概念及及时研究结果，以短文形式发表。",
+      "fit": "适合贡献集中、可以用较短篇幅完整论证的遥感融合研究；篇幅与补充材料要求以官网为准。",
+      "source": "https://www.grss-ieee.org/publications/geoscience-and-remote-sensing-letters/",
+      "guide": "https://www.grss-ieee.org/publications/geoscience-and-remote-sensing-letters/",
+      "calendar": null,
+      "articleVenue": null,
+      "relatedQuery": "GRSL"
+    },
+    {
+      "id": "media",
+      "name": "Medical Image Analysis",
+      "fullName": "Medical Image Analysis",
+      "type": "期刊",
+      "ccf": "C",
+      "ccfPage": 69,
+      "ccfArea": "交叉/综合/新兴",
+      "tags": [
+        "医学融合",
+        "医学影像",
+        "视觉感知"
+      ],
+      "scope": "医学与生物图像分析，包含计算机视觉、建模、配准和辅助干预相关问题。",
+      "fit": "适合方法与医学验证都较完整的影像融合研究；此处按 CCF 类别展示，不以该类别概括医学领域声誉。",
+      "source": "https://shop.elsevier.com/journals/medical-image-analysis/1361-8415",
+      "guide": "https://www.sciencedirect.com/journal/medical-image-analysis/publish/guide-for-authors",
+      "calendar": null,
+      "articleVenue": null,
+      "relatedQuery": "Medical Image Analysis"
+    },
+    {
+      "id": "prcv",
+      "name": "PRCV",
+      "fullName": "Chinese Conference on Pattern Recognition and Computer Vision",
+      "type": "会议",
+      "ccf": "C",
+      "ccfPage": 49,
+      "ccfArea": "计算机图形学与多媒体",
+      "tags": [
+        "模式识别",
+        "视觉感知",
+        "图像融合"
+      ],
+      "scope": "模式识别与计算机视觉的理论研究、技术进展与应用交流。",
+      "fit": "适合问题和实验较完整的视觉与融合研究；请认准 PRCV 官方会议，避免与近似名称会议混淆。",
+      "source": "https://www.prcv.cn/web/",
+      "guide": "https://www.prcv.cn/web/",
+      "calendar": null,
+      "articleVenue": null,
+      "guideLabel": "最近一届官网",
+      "relatedQuery": "PRCV"
+    },
+    {
+      "id": "accv",
+      "name": "ACCV",
+      "fullName": "Asian Conference on Computer Vision",
+      "type": "会议",
+      "ccf": "C",
+      "ccfPage": 59,
+      "ccfArea": "人工智能",
+      "tags": [
+        "视觉感知",
+        "图像融合",
+        "多模态学习"
+      ],
+      "scope": "计算机视觉相关的理论、方法和应用。",
+      "fit": "适合视觉导向的融合研究；当前链接为 2026 届投稿说明，不代表存在 2027 届截止日期。",
+      "source": "https://accv2026.org/submissions/",
+      "guide": "https://accv2026.org/submissions/author-guidelines/",
+      "calendar": null,
+      "articleVenue": null,
+      "guideLabel": "2026 作者指南",
+      "relatedQuery": "ACCV"
+    },
+    {
+      "id": "icip",
+      "name": "ICIP",
+      "fullName": "IEEE International Conference on Image Processing",
+      "type": "会议",
+      "ccf": "C",
+      "ccfPage": 49,
+      "ccfArea": "计算机图形学与多媒体",
+      "tags": [
+        "图像处理",
+        "图像融合",
+        "视觉感知"
+      ],
+      "scope": "图像与视频处理、计算成像、视觉表示及相关应用。",
+      "fit": "适合围绕图像处理和成像问题的融合研究，清楚呈现方法贡献及可复现实验。",
+      "source": "https://signalprocessingsociety.org/our-story/news-updates/2026/11/ieee-signal-processing-society-announces-2027-summit-singapore",
+      "guide": "https://2027.ieeeicip.org/publishing-paper-presentation-options/",
+      "calendar": null,
+      "articleVenue": null,
+      "guideLabel": "投稿与发表说明",
+      "relatedQuery": "ICIP"
+    },
+    {
+      "id": "information-fusion",
+      "name": "Information Fusion",
+      "fullName": "Information Fusion",
+      "type": "期刊",
+      "ccf": "未收录",
+      "ccfPage": null,
+      "ccfArea": null,
+      "tags": [
+        "信息融合",
+        "图像融合",
+        "多模态学习"
+      ],
+      "scope": "多传感器、多来源与多过程的信息融合，强调架构、算法和应用。",
+      "fit": "图像融合领域的重要专题候选。所参考的 CCF 第七版目录未收录该刊，因此单列补充，不赋予推测等级。",
+      "source": "https://shop.elsevier.com/journals/information-fusion/1566-2535",
+      "guide": "https://www.sciencedirect.com/journal/information-fusion/publish/guide-for-authors",
+      "calendar": null,
+      "articleVenue": "Information Fusion",
+      "relatedQuery": "Information Fusion"
+    }
   ],
   "datasets": [
-    {"id":"msrs","name":"MSRS","label":"红外 × 可见光","description":"道路场景中的红外与可见光配对图像，适合从图像融合与语义任务开始探索。","source":"https://github.com/Linfeng-Tang/MSRS","catalog":"datasets.html#dataset=msrs"},
-    {"id":"m3fd","name":"M3FD","label":"融合 × 目标检测","description":"面向目标检测的多场景多模态基准，连接融合图像与下游感知。","source":"https://github.com/JinyuanLiu-CV/TarDAL","catalog":"datasets.html#dataset=m3fd"},
-    {"id":"roadscene","name":"RoadScene","label":"道路场景 × 配准","description":"道路场景红外与可见光图像，可用于匹配、配准和融合研究。","source":"https://github.com/hanna-xu/RoadScene","catalog":"datasets.html#dataset=roadscene"}
+    {
+      "id": "msrs",
+      "name": "MSRS",
+      "label": "红外 × 可见光",
+      "description": "道路场景中的红外与可见光配对图像，适合从图像融合与语义任务开始探索。",
+      "source": "https://github.com/Linfeng-Tang/MSRS",
+      "catalog": "datasets.html#dataset=msrs"
+    },
+    {
+      "id": "m3fd",
+      "name": "M3FD",
+      "label": "融合 × 目标检测",
+      "description": "面向目标检测的多场景多模态基准，连接融合图像与下游感知。",
+      "source": "https://github.com/JinyuanLiu-CV/TarDAL",
+      "catalog": "datasets.html#dataset=m3fd"
+    },
+    {
+      "id": "roadscene",
+      "name": "RoadScene",
+      "label": "道路场景 × 配准",
+      "description": "道路场景红外与可见光图像，可用于匹配、配准和融合研究。",
+      "source": "https://github.com/hanna-xu/RoadScene",
+      "catalog": "datasets.html#dataset=roadscene"
+    }
   ],
   "metrics": [
-    {"id":"EN","name":"信息熵","formula":"EN = − Σ p(k) log₂ p(k)","description":"衡量灰度分布的信息量；本工具使用 256 个灰度级的直方图。","caution":"噪声也可能提高熵，不能单凭 EN 判断融合质量。"},
-    {"id":"SD","name":"标准差","formula":"SD = √[Σ (I − μ)² / N]","description":"衡量灰度的离散程度；采用总体标准差，分母为像素数 N。","caution":"对比度变化会影响 SD，不代表保留了正确的信息。"},
-    {"id":"SF","name":"空间频率","formula":"SF = √{mean[(Δx I)²] + mean[(Δy I)²]}","description":"横纵相邻像素差分各按有效像素对求均值，再合并。","caution":"锐化和噪声也会增大 SF。不同实现的边界归一化可能不同。"}
+    {
+      "id": "EN",
+      "name": "信息熵",
+      "formula": "EN = − Σ p(k) log₂ p(k)",
+      "description": "衡量灰度分布的信息量；本工具使用 256 个灰度级的直方图。",
+      "caution": "噪声也可能提高熵，不能单凭 EN 判断融合质量。"
+    },
+    {
+      "id": "SD",
+      "name": "标准差",
+      "formula": "SD = √[Σ (I − μ)² / N]",
+      "description": "衡量灰度的离散程度；采用总体标准差，分母为像素数 N。",
+      "caution": "对比度变化会影响 SD，不代表保留了正确的信息。"
+    },
+    {
+      "id": "SF",
+      "name": "空间频率",
+      "formula": "SF = √{mean[(Δx I)²] + mean[(Δy I)²]}",
+      "description": "横纵相邻像素差分各按有效像素对求均值，再合并。",
+      "caution": "锐化和噪声也会增大 SF。不同实现的边界归一化可能不同。"
+    }
   ],
-  "metricSource":"https://github.com/Linfeng-Tang/Evaluation-for-Image-Fusion"
+  "metricSource": "https://github.com/Linfeng-Tang/Evaluation-for-Image-Fusion",
+  "venueClassification": {
+    "title": "中国计算机学会推荐国际学术会议和期刊目录（2026 年，第七版）",
+    "filename": "第七版中国计算机学会推荐国际学术会议和期刊目录（正式版）.pdf",
+    "sha256": "271b630b576bf8a4f802e767f5694caded93680e22b3a19bef7902591c45c1d3",
+    "source": "https://www.ccf.org.cn/Academic_Evaluation/By_category/2026-03-05/861526.shtml",
+    "basis": "按所参考第七版目录标注 A / B / C；同级按图像融合相关性组织，不构成同级排名。未收录的领域补充项单列，不表示质量较低。",
+    "verifiedAt": "2026-11-11"
+  }
 }

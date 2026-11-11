@@ -97,12 +97,15 @@ portal=json.loads((ROOT/'data/portal.json').read_text())
 event_ids=[]
 for conference in portal['conferences']:
     assert urlsplit(conference['source']).scheme == 'https'
+    assert conference['ccf']=='A', 'The 2027 calendar currently covers A-class venues only'
+    if not conference['events']: assert conference.get('pending'), 'Unpublished dates need an explicit notice'
     for event in conference['events']:
         event_ids.append(event['id'])
         raw=(OUT/'downloads'/(event['id']+'.ics')).read_bytes()
         assert raw.endswith(b'\r\n') and not raw.replace(b'\r\n',b'').count(b'\n')
         assert all(len(line)<=75 for line in raw.split(b'\r\n'))
         content=raw.decode().replace('\r\n ','')
+        assert 'URL:'+event.get('source',conference['source']) in content
         if event['kind']=='deadline':
             expected=datetime.fromisoformat(event['at']).astimezone(timezone.utc).strftime('%Y%m%dT%H%M%SZ')
             assert 'DTSTART:'+expected in content
@@ -122,7 +125,24 @@ for category in ('teams','opportunities','venues','datasets'):
         assert urlsplit(record['source']).scheme=='https'
 for record in portal['opportunities']:
     assert record['teamId'] in {team['id'] for team in portal['teams']}
+venue_by_id={v['id']:v for v in portal['venues']}
+ranks={'A':0,'B':1,'C':2,'未收录':3}
+assert [ranks[v['ccf']] for v in portal['venues']]==sorted(ranks[v['ccf']] for v in portal['venues']), 'Venue ordering differs from the stated CCF groups'
+for v in portal['venues']:
+    assert (v['ccfPage'] is None)==(v['ccf']=='未收录')
+    if v['ccfPage'] is not None: assert 1<=v['ccfPage']<=72 and v['ccfArea']
+    if v['calendar']: assert v['calendar'] in {c['id'] for c in portal['conferences']}
+    if v['guide']: assert urlsplit(v['guide']).scheme=='https'
+    assert 'venue-'+v['id'] in pages['venues.html'].ids
+# Important seventh-edition changes, independently checked against the supplied PDF.
+for identity,grade in {'tmm':'A','iclr':'A','ijcai':'B','prcv':'C','tgrs':'B','tmi':'B','proc-ieee':'A','media':'C','information-fusion':'未收录'}.items():
+    assert venue_by_id[identity]['ccf']==grade, identity+' classification mismatch'
+for c in portal['conferences']:
+    assert venue_by_id[c['id'].removesuffix('2027')]['ccf']=='A'
+assert 'DTSTART:20270105T115900Z' in (OUT/'downloads/acl2027-arr.ics').read_text()
+assert 'DTEND;VALUE=DATE:20270626' in (OUT/'downloads/cvpr2027-main.ics').read_text()
 assert not errors, '\n'.join(errors)
 print(f'PASS: {len(pages)} pages, {len(articles)} unique WeChat articles, all local links and anchors.')
 print(f'PASS: {len(event_ids)} calendar events, UTC/all-day dates, resource identities and official source links.')
 print(f'PASS: {len(datasets)} full dataset profiles, stable deep links and {len(provenance["images"])} original images.')
+print(f'PASS: {len(venue_by_id)} venue profiles, PDF classifications, calendar associations and pending dates.')

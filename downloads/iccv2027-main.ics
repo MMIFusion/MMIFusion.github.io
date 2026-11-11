@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//MMIFusion//Research Calendar//ZH
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:iccv2027-main@mmifusion.github.io
+DTSTAMP:20261111T000000Z
+SUMMARY:ICCV 2027 · 主会举办
+DTSTART;VALUE=DATE:20271005
+DTEND;VALUE=DATE:20271008
+DESCRIPTION:2027-10-05 至 2027-10-07 · 官方日期，具体时刻未列
+ 明\n官方来源：https://iccv.thecvf.com/Conferences/2027/Dates\n核对
+ 日期：2026-11-11
+URL:https://iccv.thecvf.com/Conferences/2027/Dates
+END:VEVENT
+END:VCALENDAR

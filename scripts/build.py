@@ -85,7 +85,7 @@ def page(filename, title, body, active='resources', description=None, extras='')
     doc=doc.replace('</head>', '<noscript><style>.collection-controls,.menu-toggle,.directory-toolbar,.calendar-tools label,.compare-check,.comparison-bar,.bookmark-button,.metric-lab,.contribution-form,.submission-preview{display:none}.hero-search,.calendar-view-options{display:none}@media(max-width:640px){.header-inner{height:auto;min-height:72px;flex-wrap:wrap;padding-block:12px}.header-inner nav{position:static;display:flex;flex-direction:row;flex-wrap:wrap;padding:0;box-shadow:none;border:0;margin:0}.header-inner nav a{font-size:12px;padding:8px}.header-inner nav a[aria-current]:after{bottom:2px}}</style></noscript></head>')
     doc=doc.replace('</head>', extras+'</head>')
     # Match each document to its exact JS/CSS, including across rolling Pages caches.
-    doc=re.sub(r'((?:href|src)=")(?P<asset>assets/[^"?]+\.(?:css|js))"',
+    doc=re.sub(r'((?:href|src)=")(?P<asset>assets/[^"?]+\.(?:css|js|woff2))"',
         lambda m: m.group(1)+m.group('asset')+'?v='+hashlib.sha256((ROOT/m.group('asset')).read_bytes()).hexdigest()[:12]+'"', doc)
     if filename=='404.html':
         doc=doc.replace('<head>', '<head><base href="/"><meta name="robots" content="noindex">')
@@ -149,8 +149,8 @@ def main():
     metric_reading=[a for a in ARTICLES if '评估与指标' in a['topics']]
     page('metrics.html','评估指标',title_block('EVALUATION & BENCHMARKS','评估指标','读懂指标含义，试算图像统计，再建立一致的评测协议。')+portal.metrics()+f'<section class="wrap section compact-top"><div class="section-heading"><h2>继续阅读 · 融合质量评估</h2></div>{collection(metric_reading,"metrics")}</section>')
     page('teams.html','融合团队',title_block('PEOPLE BEHIND THE RESEARCH','融合团队','从研究方向认识同行，从官方主页继续探索。')+portal.teams())
-    page('calendar.html','会议日历',title_block('CONFERENCE CALENDAR','会议日历','把投稿节点放在一起，按自己的时区安排研究。')+'<div class="wrap calendar-fortune-link"><a href="fortune.html">✦ 想选个好日子？翻翻趣味投稿日历 →</a></div>'+portal.calendar())
-    page('venues.html','投稿推荐',title_block('FIND YOUR RESEARCH COMMUNITY','投稿推荐','从研究问题出发，筛选方向、比较范围，找到合适的交流平台。')+portal.venues())
+    page('calendar.html','会议日历',title_block('CONFERENCE CALENDAR','会议日历','把投稿节点放在一起，按自己的时区安排研究。')+'<div class="wrap calendar-fortune-link"><a href="fortune.html">✦ 想选个好日子？翻翻趣味投稿日历 →</a></div>'+portal.calendar(),extras='<link rel="stylesheet" href="assets/research.css">')
+    page('venues.html','投稿推荐',title_block('FIND YOUR RESEARCH COMMUNITY','投稿推荐','从研究问题出发，筛选方向、比较范围，找到合适的交流平台。')+portal.venues(),extras='<link rel="stylesheet" href="assets/research.css">')
     page('opportunities.html','导师招生',title_block('RESEARCH OPPORTUNITIES','导师招生','连接研究兴趣、团队方向与公开招募信息。')+portal.opportunities())
     page('contribute.html','推荐资源',title_block('BUILD THE COMMONS TOGETHER','一起完善这份资源。','推荐值得分享的研究资源，也欢迎指出已有内容中的错误。')+portal.contribute()+'<noscript><div class="wrap note-box"><p>启用 JavaScript 可生成投稿草稿，也可直接前往 <a href="https://github.com/MMIFusion/MMIFusion.github.io/issues/new">GitHub 提交资源</a>。</p></div></noscript>')
     page('advertising.html','广告合作',title_block('PARTNERSHIPS & COLLABORATION','广告合作','让学术与科研相关的信息，被合适的人看见。')+community.advertising())

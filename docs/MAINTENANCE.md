@@ -35,10 +35,10 @@
 
 编辑 `data/portal.json`。每个条目使用稳定唯一的 `id`，保留 `source` 官方链接。`verifiedAt` 记录最近一次整体核对日期；批量更新前应逐项核实来源，不要只改日期。
 
-- `conferences`：每场会议包含 `events`。精确截止节点使用 `kind: deadline` 和带 UTC 偏移的 ISO `at`。AoE 用 `-12:00`，不能误写成 UTC。只公布日期时用 `kind: date`、`start` 和不包含在事件中的 `endExclusive`。例如 8 月 2–4 日的结束值为 8 月 5 日。`original` 保留原始日期 / 时区说明。构建自动生成单条及全部 `.ics`，不安排自动更新订阅。
+- `conferences`：当前收录 2027 年图像融合及多模态研究相关的 8 场 CCF A 类会议。每场会议包含 `events`、地点 `location` 和可选的待公布说明 `pending`；没有已公布日期时 `events` 必须为空，不放占位日期。精确截止节点使用 `kind: deadline` 和带 UTC 偏移的 ISO `at`。AoE 用 `-12:00`，不能误写成 UTC。只公布日期时用 `kind: date`、`start` 和不包含在事件中的 `endExclusive`。例如 8 月 2–4 日的结束值为 8 月 5 日。`original` 保留原始日期 / 时区说明。事件可有自己的 `source`，否则继承会议来源。构建自动生成已确认节点的单条及全部 `.ics`，不安排自动更新订阅。
 - `teams`：学校、城市、负责人、研究标签与官方主页；`relatedQuery` 用于检索公众号文章，`opportunity` 可关联招募条目 ID。引用论文时保留完整作者与顺序。
 - `opportunities`：`teamId` 关联团队、`types` 表示招募类别。长期招募必须有官方原文依据；限期招生请写明到期时间并及时更新 / 移除。当前 `expires` 为记录字段，不自动下架。
-- `venues`：将官方 `scope` 与本站整理的 `fit` 建议分开；`guide` 指向作者指南，`articleVenue` 必须匹配现有文章分类，`calendar` 可关联会议 ID。未核实的信息不填影响因子或录用率。
+- `venues`：将官方 `scope` 与本站整理的 `fit` 建议分开。`ccf`、`ccfPage`、`ccfArea` 对应所参考目录，未收录条目使用 `未收录` 和空页码；数组按 A、B、C、未收录排列，同级为编辑组织顺序。`guide` 可为空，并用 `guideNote` 说明待公布；旧届指南必须用 `guideLabel` 明示年份。`aliases` 用于简称检索；`articleVenue` 若非空必须匹配现有文章分类，否则使用 `relatedQuery` 检索。`calendar` 可关联会议 ID。未核实的信息不填影响因子或录用率。分类与来源记录见 [投稿目录核对说明](VENUES.md)。
 - `datasets`：首页精选入口；`catalog` 使用 `datasets.html#dataset=条目ID`，链接站内完整档案。完整目录的维护见 [数据目录说明](DATASETS.md)。本站仅保存说明与示例图，不托管数据集本体。
 - `metrics`：定义、公式、注意点；若改计算约定，须同步浏览器 `assets/metrics-core.js`、Python 下载脚本与分析样例测试。
 
@@ -52,7 +52,7 @@
 
 ## 日程展示与交互回归
 
-首页从已收录的全部日程中按时间选择最近三个未结束节点，每 30 秒及页面重新可见时更新；全部结束后明确显示空状态，不以过期节点填充。会议日历支持「只看未结束节点」、检索组合、URL 保留筛选，截止前 72 小时突出提示。所有日程各有稳定锚点，提醒链接可直达对应节点。
+首页从已收录的全部日程中按时间选择最近三个未结束节点，每 30 秒及页面重新可见时更新；全部结束后明确显示空状态，不以过期节点填充。会议日历支持「只看未结束节点」、领域/已公布状态筛选、检索组合、URL 保留筛选，截止前 72 小时突出提示。尚有待公布节点的会议保留可见，避免把未公布误判为已结束。所有已公布日程各有稳定锚点，提醒链接可直达对应节点。
 
 `assets/calendar-core.js` 区分精确截止和纯日期：精确截止按 ISO 时刻判断；纯日期不倒计时，只有在结束日期连 UTC−12 时区也已结束时才移入往期。这个保守边界仅用于界面归档，不生成或暗示官方截止时刻，也不改变 ICS 的全天编码。单元检查：`node scripts/test_calendar.cjs`。
 
@@ -64,7 +64,7 @@
 
 构建输出 `dist/` 供本地预览，同时将生成的 HTML、robots.txt、sitemap.xml 和 `.nojekyll` 同步到仓库根目录，复用根目录的 `assets/` 与 `data/`。请修改源文件后重新构建，不要直接编辑生成页面。
 
-构建为本站 JS / CSS 自动附加内容哈希版本参数；文件变更会生成新 URL，减少发布时新旧脚本混用。无需手工维护版本号。
+构建为本站 JS / CSS 和字体预加载自动附加内容哈希版本参数；文件变更会生成新 URL，减少发布时新旧资源混用。新增文字后可在安装 `fonttools[woff]` 的环境运行 `python scripts/build_fonts.py`，补齐本地字体子集，再运行常规构建。该脚本同步 CSS 字体 URL 与预加载版本，避免重复下载；日常 CI 构建仍仅依赖 Python 标准库。字体原稿缓存在忽略的 `outputs/font-sources/`，保留字体许可证。
 
 GitHub Pages 沿用 `main / (root)` 的分支发布；GitHub 自带发布流程会在推送后部署。`Check website content` 仅做一致性检查，不另行部署，避免两套发布流程相互覆盖。`dist/` 为本地构建产物，不提交到仓库。
 

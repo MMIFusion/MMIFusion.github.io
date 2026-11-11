@@ -92,7 +92,7 @@
         running.add(animation); animation.onfinish = () => running.delete(animation);
       });
     }, {threshold:.08});
-    $$('.section-heading,.path-card,.dataset-preview,.workbench-card,.module,.conference-card,.profile-card,.venue-card,.opportunity-card,.metric-definition,.download-card,.qr-card').filter(e => !e.closest('dialog')).forEach(e => reveal.observe(e));
+    $$('.section-heading,.path-card,.dataset-preview,.dataset-overview,.catalog-card,.dataset-about,.venue-overview,.workbench-card,.module,.conference-card,.profile-card,.venue-card,.opportunity-card,.metric-definition,.download-card,.qr-card').filter(e => !e.closest('dialog')).forEach(e => reveal.observe(e));
   }
 
   let scrollFrame;
