@@ -4,7 +4,7 @@
   "url": "https://mmifusion.github.io",
   "description": "多模态信息融合学术资源导航。阅读前沿论文，寻找数据集与评估方法，连接研究团队与学术社区。",
   "wechat": "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzYzMzIzOTk3MA==&action=getalbum&album_id=4328699245072433170#wechat_redirect",
-  "datasets": "https://mmifusion.github.io/Datasets/",
+  "datasets": "datasets.html",
   "github": "https://github.com/MMIFusion",
   "repository": "https://github.com/MMIFusion/MMIFusion.github.io",
   "contact": "MMIFusion_",

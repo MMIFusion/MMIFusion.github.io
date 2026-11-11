@@ -6,7 +6,7 @@
 | --- | --- |
 | 首页 | 文章总数、最新文章、四种前十榜单、九个栏目入口 |
 | 论文阅读 | `data/articles.json` 全部文章 |
-| 数据资源 | 链接既有独立站，不复制它的数据 |
+| 数据资源 | `data/datasets.json` 完整站内目录、筛选、档案及原图 |
 | 评估指标 | EN / SD / SF 试算及评估专题阅读 |
 | 融合团队 | `portal.json` 官方团队档案 |
 | 会议日历 | `portal.json` 官方日程、时区与 ICS |
@@ -29,7 +29,7 @@
 
 ## 站点设置
 
-`data/site.json` 保存公众号链接、数据集独立站、交流微信、维护者与主站域名。不要填写未经确认的账号、二维码或邮箱。
+`data/site.json` 保存公众号链接、数据资源站内入口、交流微信、维护者与主站域名。不要填写未经确认的账号、二维码或邮箱。
 
 ## 扩展栏目
 
@@ -39,7 +39,7 @@
 - `teams`：学校、城市、负责人、研究标签与官方主页；`relatedQuery` 用于检索公众号文章，`opportunity` 可关联招募条目 ID。引用论文时保留完整作者与顺序。
 - `opportunities`：`teamId` 关联团队、`types` 表示招募类别。长期招募必须有官方原文依据；限期招生请写明到期时间并及时更新 / 移除。当前 `expires` 为记录字段，不自动下架。
 - `venues`：将官方 `scope` 与本站整理的 `fit` 建议分开；`guide` 指向作者指南，`articleVenue` 必须匹配现有文章分类，`calendar` 可关联会议 ID。未核实的信息不填影响因子或录用率。
-- `datasets`：首页精选入口；详情和下载链接继续由独立站维护。不要复制数据文件。
+- `datasets`：首页精选入口；`catalog` 使用 `datasets.html#dataset=条目ID`，链接站内完整档案。完整目录的维护见 [数据目录说明](DATASETS.md)。本站仅保存说明与示例图，不托管数据集本体。
 - `metrics`：定义、公式、注意点；若改计算约定，须同步浏览器 `assets/metrics-core.js`、Python 下载脚本与分析样例测试。
 
 `data/community.json` 只保存基础色板：`name`、`note`、`colors`（HEX）。构建生成 SVG / JSON 下载。框架 SVG 由 `scripts/portal.py` 生成，绘图与指标 Python 脚本直接在 `downloads/` 维护。
@@ -106,7 +106,7 @@ git config user.email 276543646+MMIFusion@users.noreply.github.com
 
 网页字体来自 Google Fonts 官方仓库的 Noto Sans SC 和 Space Grotesk，OFL 文本与字体一同放在 `assets/fonts/`。字体已按本站文本做 WOFF2 子集，日常构建无需依赖字体工具；新增汉字若未包含会使用系统字体回退。需要刷新字形时，安装 `fonttools[woff]` 并运行 `python scripts/build_fonts.py`，再重新构建网页。原字体缓存在忽略的 `outputs/font-sources/`。
 
-首页数据集图来自现有独立站资料，原图保存在 `assets/datasets/`，只作资源预览。论文卡片封面和融合首屏为本站原创概念设计，不是论文模型图或真实融合结果。
+首页数据集图来自原数据资源目录资料，原图保存在 `assets/datasets/`，只作资源预览。论文卡片封面和融合首屏为本站原创概念设计，不是论文模型图或真实融合结果。
 
 ## 人气榜、访问统计与趣味互动
 

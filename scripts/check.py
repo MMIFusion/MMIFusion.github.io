@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Validate source fidelity, URL safety, and generated internal links."""
 import json
+import hashlib
 from pathlib import Path
 from html.parser import HTMLParser
 from urllib.parse import urlsplit, unquote, parse_qs
@@ -22,12 +23,15 @@ for a in articles:
 class Page(HTMLParser):
     def __init__(self):
         super().__init__()
-        self.links, self.ids, self.h1, self.articles = [], [], 0, []
+        self.links, self.ids, self.h1, self.articles, self.datasets = [], [], 0, [], []
     def handle_starttag(self, tag, attrs):
         attrs=dict(attrs)
         if tag=='h1': self.h1+=1
         if 'id' in attrs: self.ids.append(attrs['id'])
         if 'data-article-id' in attrs: self.articles.append(attrs['data-article-id'])
+        if 'data-dataset-id' in attrs: self.datasets.append(attrs['data-dataset-id'])
+        if tag=='a' and urlsplit(attrs.get('href','')).path=='datasets.html' and attrs.get('target'):
+            errors.append('Dataset navigation must stay inside the main website')
         for key in ('href','src'):
             if key in attrs: self.links.append(attrs[key])
         if tag=='a' and attrs.get('target')=='_blank':
@@ -47,6 +51,26 @@ for name,page in pages.items():
         if parsed.fragment and target in pages and parsed.fragment not in pages[target].ids:
             errors.append(f'{name}: missing anchor {link}')
 assert set(pages['papers.html'].articles)==set(ids), 'Full archive is incomplete'
+
+# Dataset content is a local, self-contained catalogue. Preserve original image bytes
+# and stable IDs while allowing deliberate future additions to the main data file.
+datasets=json.loads((ROOT/'data/datasets.json').read_text())
+dataset_ids=[d['id'] for d in datasets]
+assert len(dataset_ids)==len(set(dataset_ids))
+assert pages['datasets.html'].datasets==dataset_ids, 'Dataset archive incomplete or reordered at build time'
+assert {f'dataset={identity}' for identity in dataset_ids}.issubset(pages['datasets.html'].ids)
+for dataset in datasets:
+    assert all(dataset[key] for key in ('id','name','category','task','team','paper','description'))
+    for link in dataset['links']:
+        assert urlsplit(link['url']).scheme in ('http','https')
+    for picture in dataset['images']:
+        assert picture['src'].startswith('assets/dataset-catalog/')
+        assert (OUT/picture['src']).is_file()
+        if picture.get('source'): assert urlsplit(picture['source']).scheme in ('http','https')
+provenance=json.loads((ROOT/'data/datasets-provenance.json').read_text())
+for image_path,digest in provenance['images'].items():
+    assert hashlib.sha256((OUT/image_path).read_bytes()).hexdigest()==digest, image_path+' differs from imported original'
+assert json.loads((ROOT/'data/site.json').read_text())['datasets']=='datasets.html'
 palettes=json.loads((ROOT/'data/community.json').read_text())['palettes']
 for index, palette in enumerate(palettes,1):
     for extension in ('svg','json'):
@@ -101,3 +125,4 @@ for record in portal['opportunities']:
 assert not errors, '\n'.join(errors)
 print(f'PASS: {len(pages)} pages, {len(articles)} unique WeChat articles, all local links and anchors.')
 print(f'PASS: {len(event_ids)} calendar events, UTC/all-day dates, resource identities and official source links.')
+print(f'PASS: {len(datasets)} full dataset profiles, stable deep links and {len(provenance["images"])} original images.')

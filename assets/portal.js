@@ -178,6 +178,13 @@
     const type = form.elements.type, initial = params.get('type');
     if ([...type.options].some(o => o.value === initial)) type.value = initial;
     const source = form.elements.source;
+    const descriptionHint = form.elements.description.placeholder;
+    const syncResourceHint = () => {
+      form.elements.description.placeholder = type.value === '数据集'
+        ? '请附全部论文作者（按原文顺序）、团队与机构、输入模态、任务、规模、划分、开放状态、使用许可及示例图来源。'
+        : descriptionHint;
+    };
+    type.addEventListener('change',syncResourceHint);syncResourceHint();
     for (const key of ['title','source']) {
       if (params.has(key)) form.elements[key].value = params.get(key).slice(0,form.elements[key].maxLength);
     }

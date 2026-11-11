@@ -25,7 +25,7 @@
 - [M3FD / TarDAL 原始项目](https://github.com/JinyuanLiu-CV/TarDAL)
 - [RoadScene 原始项目](https://github.com/hanna-xu/RoadScene)
 
-完整数据档案、作者与下载信息继续由 [数据集独立站](https://mmifusion.github.io/Datasets/) 维护，主站只提供入口。
+原数据资源目录已完整接入 [主站数据资源页](https://mmifusion.github.io/datasets.html)，保留团队作者、介绍、链接、下载说明和原图。初次导入记录及许可见 [数据目录说明](DATASETS.md)。本次整合未另行核验全部论文发表信息。
 
 ## 三个基础指标
 

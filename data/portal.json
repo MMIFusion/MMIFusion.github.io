@@ -27,9 +27,9 @@
     {"id":"iclr","name":"ICLR","fullName":"International Conference on Learning Representations","type":"会议","tags":["多模态学习","表征学习","生成建模"],"scope":"官方征稿涵盖机器学习，包含跨模态表征学习、生成模型、优化与学习理论等主题。","fit":"若贡献落在学习机制或表征方法，且能通过融合任务之外的证据说明普适性，可参考该会议要求。","source":"https://iclr.cc/Conferences/2027/CallForPapers","guide":"https://iclr.cc/Conferences/2027/AuthorGuidelines","articleVenue":"ICLR","calendar":"iclr2027"}
   ],
   "datasets": [
-    {"id":"msrs","name":"MSRS","label":"红外 × 可见光","description":"道路场景中的红外与可见光配对图像，适合从图像融合与语义任务开始探索。","source":"https://github.com/Linfeng-Tang/MSRS","catalog":"https://mmifusion.github.io/Datasets/#dataset=msrs"},
-    {"id":"m3fd","name":"M3FD","label":"融合 × 目标检测","description":"面向目标检测的多场景多模态基准，连接融合图像与下游感知。","source":"https://github.com/JinyuanLiu-CV/TarDAL","catalog":"https://mmifusion.github.io/Datasets/#dataset=m3fd"},
-    {"id":"roadscene","name":"RoadScene","label":"道路场景 × 配准","description":"道路场景红外与可见光图像，可用于匹配、配准和融合研究。","source":"https://github.com/hanna-xu/RoadScene","catalog":"https://mmifusion.github.io/Datasets/#dataset=roadscene"}
+    {"id":"msrs","name":"MSRS","label":"红外 × 可见光","description":"道路场景中的红外与可见光配对图像，适合从图像融合与语义任务开始探索。","source":"https://github.com/Linfeng-Tang/MSRS","catalog":"datasets.html#dataset=msrs"},
+    {"id":"m3fd","name":"M3FD","label":"融合 × 目标检测","description":"面向目标检测的多场景多模态基准，连接融合图像与下游感知。","source":"https://github.com/JinyuanLiu-CV/TarDAL","catalog":"datasets.html#dataset=m3fd"},
+    {"id":"roadscene","name":"RoadScene","label":"道路场景 × 配准","description":"道路场景红外与可见光图像，可用于匹配、配准和融合研究。","source":"https://github.com/hanna-xu/RoadScene","catalog":"datasets.html#dataset=roadscene"}
   ],
   "metrics": [
     {"id":"EN","name":"信息熵","formula":"EN = − Σ p(k) log₂ p(k)","description":"衡量灰度分布的信息量；本工具使用 256 个灰度级的直方图。","caution":"噪声也可能提高熵，不能单凭 EN 判断融合质量。"},

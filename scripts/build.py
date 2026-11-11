@@ -6,6 +6,7 @@ import re
 import portal
 import design
 import community
+import datasets as dataset_catalog
 import json
 import shutil
 from pathlib import Path
@@ -41,7 +42,7 @@ def issue(kind):
 
 MODULES = [
  ('book','论文阅读','PAPERS','从问题、方法到实验，读懂研究进展。','papers.html',f'{len(ARTICLES)} 篇文章'),
- ('data','数据资源','DATASETS','按模态与任务，寻找适合的研究数据。',SITE['datasets'],'独立资源站 ↗'),
+ ('data','数据资源','DATASETS','按模态与任务，寻找适合的研究数据。',SITE['datasets'],f'{len(dataset_catalog.ITEMS)} 项资源 · 站内检索'),
  ('chart','评估指标','EVALUATION','关注融合质量、评价方法与下游任务。','metrics.html',f'{len(portal.P["metrics"])} 个指标 · 在线试算'),
  ('people','融合团队','RESEARCH GROUPS','从代表性成果，认识研究团队。','teams.html',f'{len(portal.P["teams"])} 个团队档案'),
  ('calendar','会议日历','CALENDAR','集中查看投稿节点与会议日程。','calendar.html',f'{len(portal.P["conferences"])} 场会议 · 日历下载'),
@@ -63,8 +64,8 @@ def qr_dialog():
     return f'''<dialog class="qr-dialog" id="wechat-dialog" aria-labelledby="wechat-dialog-title" aria-describedby="wechat-dialog-help"><div class="qr-dialog-heading"><div><p class="eyebrow">MMIFUSION · STAY CONNECTED</p><h2 id="wechat-dialog-title">关注与交流</h2></div><button class="qr-dialog-close" type="button" data-qr-close aria-label="关闭扫码窗口" autofocus>×</button></div>{qr_cards()}<p class="qr-help" id="wechat-dialog-help">用微信扫一扫；手机端可点开原图，或保存后从微信相册识别。</p></dialog>'''
 
 def header(active, filename):
-    nav=[('home','index.html','首页'),('papers','papers.html','论文阅读'),('datasets',SITE['datasets'],'数据资源 ↗'),('resources','resources.html','学术资源'),('about','about.html','关于我们')]
-    links=''.join(f'<a href="{E(url)}"'+(' aria-current="page"' if active==key else '')+(' target="_blank" rel="noopener noreferrer"' if key=='datasets' else '')+f'>{label}</a>' for key,url,label in nav)
+    nav=[('home','index.html','首页'),('papers','papers.html','论文阅读'),('datasets',SITE['datasets'],'数据资源'),('resources','resources.html','学术资源'),('about','about.html','关于我们')]
+    links=''.join(f'<a href="{E(url)}"'+(' aria-current="page"' if active==key else '')+(' target="_blank" rel="noopener noreferrer"' if url.startswith('https:') else '')+f'>{label}</a>' for key,url,label in nav)
     selected = {'fortune.html':'calendar.html'}.get(filename, filename)
     resource_links = ''.join(f'<a class="resource-item" href="{E(m[4])}"' + (' aria-current="page"' if selected == m[4] else '') + (' target="_blank" rel="noopener noreferrer"' if m[4].startswith('https:') else '') + f'>{m[1]}</a>' for m in MODULES)
     return f'''<a class="skip-link" href="#main">跳转到主要内容</a>
@@ -77,11 +78,12 @@ def header(active, filename):
 def footer(filename, title):
     return f'''<footer class="site-footer"><div class="wrap footer-main"><div><a class="brand" href="index.html"><img src="assets/avatar.png" width="40" height="40" alt=""><span><strong>多模态信息融合</strong><small>CONNECTING MODALITIES. SHARING KNOWLEDGE.</small></span></a><p>一起读论文、找资源，探索多模态研究。</p></div><div class="footer-links"><a href="papers.html">文章目录</a><a href="resources.html">学术资源</a><a href="about.html#connect" data-qr-open>扫码关注与交流</a><a href="about.html">关于我们</a><a href="{E(portal.feedback(SITE['url']+'/'+filename, title+'页面反馈'))}">反馈问题</a>{ext(SITE['github'],'GitHub')}</div></div><div class="wrap footer-bottom"><span>© 2026 公众号「多模态信息融合」 · 汐萌、囗〇</span><span>文章索引更新至 {DATA['latestArticleDate'].replace('-','.')} · <a href="about.html#sources">收录说明</a></span></div></footer>'''
 
-def page(filename, title, body, active='resources', description=None):
+def page(filename, title, body, active='resources', description=None, extras=''):
     description=description or SITE['description']
     canonical=SITE['url']+'/' + ('' if filename=='index.html' else filename)
     doc=f'''<!doctype html><html lang="zh-CN" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{E(title)} · 多模态信息融合</title><meta name="description" content="{E(description)}"><meta name="theme-color" content="#11162e"><script>document.documentElement.classList.replace("no-js","js");try{{var motionPreference=localStorage.getItem("mmifusion-motion");document.documentElement.dataset.motion=motionPreference==="on"?"on":(motionPreference==="off"||matchMedia("(prefers-reduced-motion: reduce)").matches)?"off":"on"}}catch(e){{document.documentElement.dataset.motion=matchMedia("(prefers-reduced-motion: reduce)").matches?"off":"on"}}</script><link rel="canonical" href="{canonical}"><meta property="og:title" content="{E(title)} · 多模态信息融合"><meta property="og:description" content="{E(description)}"><meta property="og:type" content="website"><meta property="og:url" content="{canonical}"><meta property="og:image" content="{SITE['url']}/assets/avatar.png"><link rel="icon" href="assets/avatar.png" type="image/png"><link rel="apple-touch-icon" href="assets/avatar.png"><link rel="preload" href="assets/fonts/mmifusion-sans.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="assets/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="assets/style.css"><link rel="stylesheet" href="assets/portal.css"><link rel="stylesheet" href="assets/experience.css"><link rel="stylesheet" href="assets/community.css"><script src="assets/metrics-core.js" defer></script><script src="assets/app.js" defer></script><script src="assets/calendar-core.js" defer></script><script src="assets/portal.js" defer></script><script src="assets/experience.js" defer></script><script src="assets/community-core.js" defer></script><script src="assets/community.js" defer></script></head><body class="page-{filename.removesuffix('.html')}">{header(active, filename)}<main id="main">{body}</main>{footer(filename, title)}{qr_dialog()}{design.motion_controls()}{community.luck_dialog()}<div id="toast" role="status" aria-live="polite"></div></body></html>'''
     doc=doc.replace('</head>', '<noscript><style>.collection-controls,.menu-toggle,.directory-toolbar,.calendar-tools label,.compare-check,.comparison-bar,.bookmark-button,.metric-lab,.contribution-form,.submission-preview{display:none}.hero-search,.calendar-view-options{display:none}@media(max-width:640px){.header-inner{height:auto;min-height:72px;flex-wrap:wrap;padding-block:12px}.header-inner nav{position:static;display:flex;flex-direction:row;flex-wrap:wrap;padding:0;box-shadow:none;border:0;margin:0}.header-inner nav a{font-size:12px;padding:8px}.header-inner nav a[aria-current]:after{bottom:2px}}</style></noscript></head>')
+    doc=doc.replace('</head>', extras+'</head>')
     # Match each document to its exact JS/CSS, including across rolling Pages caches.
     doc=re.sub(r'((?:href|src)=")(?P<asset>assets/[^"?]+\.(?:css|js))"',
         lambda m: m.group(1)+m.group('asset')+'?v='+hashlib.sha256((ROOT/m.group('asset')).read_bytes()).hexdigest()[:12]+'"', doc)
@@ -122,10 +124,10 @@ def palettes():
     return title_block('COLOR & SCIENTIFIC DESIGN','配色模板','好的图表，让方法和结果更容易被理解。')+f'''<section class="wrap section compact-top"><div class="section-heading"><div><h2>基础配色，点击即用。</h2><p>本站搭配的四组色板。点击色块复制 HEX；论文实例见下方公众号文章。</p></div><span class="subtle-label">ORIGINAL COLOR SETS</span></div><div class="palette-grid">{cards}</div><p class="small-note">曲线图建议同时使用不同线型或标记，避免仅靠颜色区分。</p></section>{portal.downloads()}<section class="wrap section compact-top"><div class="section-heading"><div><p class="eyebrow">LEARN FROM THE PAPERS</p><h2>论文模型图与配色阅读</h2></div></div>{collection(items,'palettes')}</section>'''
 
 def about():
-    return title_block('ABOUT MMIFUSION','因为热爱，所以分享。','多模态信息融合，一个围绕论文阅读与学术资源的交流空间。')+f'''<div class="wrap about-layout section compact-top"><section class="about-copy"><h2>从公众号，到学术资源主页。</h2><p>我们关注图像融合、多模态感知与相关研究。通过论文解读、研究动态和资源整理，帮助读者从具体问题出发，理解方法，也找到继续探索的入口。</p><p>主站连接公众号文章与独立的数据集网站，并逐步完善评估指标、研究团队、会议日程、投稿参考、导师招生和论文配色等栏目。</p><h2 id="sources">内容与收录说明</h2><ul class="prose-list"><li>当前文章索引来自公众号的 2026 年 10 月 28 日导出表，共 {len(ARTICLES)} 条，最新文章日期为 {DATA['latestArticleDate']}。</li>
+    return title_block('ABOUT MMIFUSION','因为热爱，所以分享。','多模态信息融合，一个围绕论文阅读与学术资源的交流空间。')+f'''<div class="wrap about-layout section compact-top"><section class="about-copy"><h2>从公众号，到学术资源主页。</h2><p>我们关注图像融合、多模态感知与相关研究。通过论文解读、研究动态和资源整理，帮助读者从具体问题出发，理解方法，也找到继续探索的入口。</p><p>主站整合公众号文章与数据资源目录，并逐步完善评估指标、研究团队、会议日程、投稿参考、导师招生和论文配色等栏目。</p><h2 id="sources">内容与收录说明</h2><ul class="prose-list"><li>当前文章索引来自公众号的 2026 年 10 月 28 日导出表，共 {len(ARTICLES)} 条，最新文章日期为 {DATA['latestArticleDate']}。</li>
 <li>文章保留原始标题与发表日期。点击标题跳转公众号阅读原文；同名但链接不同的文章分别收录。</li>
 <li>研究方向与文章类型依据标题辅助归类，会议和期刊字段也来自标题，不代表本站另行核验了录用信息。欢迎提出分类或信息勘误。</li>
-<li>数据集由独立站维护。数据规模、许可及划分请查看对应资源的原始说明。</li>
+<li>数据资源栏目已整合原数据集目录，保留完整介绍、团队作者、原始示例图和来源链接。数据规模、许可及划分请查看原论文与官方说明。</li>
 <li>会议、团队、招生与投稿方向已收录首批官方来源，逐条标注核对日期。投稿建议为本站整理，不代表录用概率。</li>
 <li>公众号人气榜使用导出表中的阅读、点赞、在看和转发数，属于 2026-10-28 的历史快照。原表不含收藏数，网站收藏仅保存在当前浏览器。</li>
 <li>本站访问次数（PV）由 <a href="https://busuanzi.ibruce.info/" target="_blank" rel="noopener noreferrer">不蒜子</a> 提供，从 2026-11-11 接入后累计；服务可能受网络或拦截设置影响，不代表独立访客数。</li>
@@ -142,6 +144,7 @@ def main():
     for path in (ROOT/'data').glob('*.json'): shutil.copy2(path,OUT/'data'/path.name)
     page('index.html','首页',home(),'home')
     page('resources.html','学术资源',resources())
+    page('datasets.html','数据资源',title_block('DATASETS & BENCHMARKS','找到适合研究的数据。','从经典基准到多模态场景，按方向、任务、论文与团队探索完整资源目录。')+dataset_catalog.page(),'datasets',description=f'{len(dataset_catalog.ITEMS)} 项图像融合与多模态感知数据资源，支持研究方向与任务筛选、全文搜索、完整介绍、团队作者和原图查看。',extras='<link rel="stylesheet" href="assets/datasets.css"><script src="assets/datasets.js" defer></script>')
     page('papers.html','论文阅读',title_block('THE PAPER LIBRARY','读论文，也读懂问题。','检索公众号的论文解读、学术速递与研究资源。点击标题，继续阅读完整文章。','论文阅读')+f'<div class="wrap section compact-top">{collection(ARTICLES)}</div>','papers')
     metric_reading=[a for a in ARTICLES if '评估与指标' in a['topics']]
     page('metrics.html','评估指标',title_block('EVALUATION & BENCHMARKS','评估指标','读懂指标含义，试算图像统计，再建立一致的评测协议。')+portal.metrics()+f'<section class="wrap section compact-top"><div class="section-heading"><h2>继续阅读 · 融合质量评估</h2></div>{collection(metric_reading,"metrics")}</section>')
