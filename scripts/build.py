@@ -111,7 +111,7 @@ def title_block(en,title,desc,crumb='学术资源'):
 
 def home():
     stats=f'<div class="wrap community-stats"><div><strong>{len(ARTICLES)}<span>篇</span></strong><p>公众号文章，持续积累</p></div><div><strong>{len(MODULES):02d}<span>个</span></strong><p>栏目连接研究每一步</p></div><div><strong>03<span>类</span></strong><p>方向专题，从问题出发</p></div><a href="about.html#connect" data-qr-open><img src="assets/avatar.png" width="48" height="48" alt=""><span>一个热爱分享的研究社区<strong>认识多模态信息融合 ↗</strong></span></a></div>'
-    return design.hero(len(ARTICLES))+stats+portal.deadline_strip()+design.reading_room(ARTICLES)+community.ranking(ARTICLES)+community.fortune_teaser()+design.research_paths(ARTICLES)+portal.dataset_showcase()+design.tool_spotlight()+f'<section class="wrap section" id="explore"><div class="section-heading"><div><p class="eyebrow">05 / YOUR RESEARCH COMPANION</p><h2>研究的每一步，都有一个入口。</h2><p>找论文、做实验、准备投稿，或认识下一位同行。</p></div><a class="text-link" href="resources.html">全部资源 ↗</a></div>{modules()}</section>'+connect_section()
+    return design.hero(len(ARTICLES))+stats+portal.deadline_strip()+community.fortune_teaser()+design.reading_room(ARTICLES)+community.ranking(ARTICLES)+design.research_paths(ARTICLES)+portal.dataset_showcase()+design.tool_spotlight()+f'<section class="wrap section" id="explore"><div class="section-heading"><div><p class="eyebrow">05 / YOUR RESEARCH COMPANION</p><h2>研究的每一步，都有一个入口。</h2><p>找论文、做实验、准备投稿，或认识下一位同行。</p></div><a class="text-link" href="resources.html">全部资源 ↗</a></div>{modules()}</section>'+connect_section()
 
 def resources():
     return title_block('THE RESOURCE DIRECTORY','学术资源导航','围绕研究的每一步，整理值得反复使用的资源。')+f'<section class="wrap section compact-top">{modules()}</section>'
