@@ -16,19 +16,19 @@
   "members": [
     {
       "name": "汐萌",
-      "active": true
+      "status": "active"
     },
     {
       "name": "囗〇",
-      "active": true
+      "status": "active"
     },
     {
       "name": "木木彡",
-      "active": false
+      "status": "departed"
     },
     {
       "name": "蓝白红",
-      "active": false
+      "status": "departed"
     }
   ]
 }

@@ -36,7 +36,7 @@
 编辑 `data/portal.json`。每个条目使用稳定唯一的 `id`，保留 `source` 官方链接。`verifiedAt` 记录最近一次整体核对日期；批量更新前应逐项核实来源，不要只改日期。
 
 - `conferences`：当前收录 2027 年图像融合及多模态研究相关的 8 场 CCF A 类会议。每场会议包含 `events`、地点 `location` 和可选的待公布说明 `pending`；没有已公布日期时 `events` 必须为空，不放占位日期。精确截止节点使用 `kind: deadline` 和带 UTC 偏移的 ISO `at`。AoE 用 `-12:00`，不能误写成 UTC。只公布日期时用 `kind: date`、`start` 和不包含在事件中的 `endExclusive`。例如 8 月 2–4 日的结束值为 8 月 5 日。`original` 保留原始日期 / 时区说明。事件可有自己的 `source`，否则继承会议来源。构建自动生成已确认节点的单条及全部 `.ics`，不安排自动更新订阅。
-- `teams`：机构、地区、相关学者 `members`、方向标签、简短介绍与公开学术主页；`note` 和 `links` 展开显示，`verification` 区分核对来源。`aliases` 兼容旧资料检索，`cities` 支持跨地区筛选。`relatedQuery` 检索公众号文章，`opportunity` 关联既有招募条目。不要将同组所有学者写成负责人。来源与编辑规则见 [团队目录维护说明](TEAMS.md)。
+- `teams`：一人一卡，`name`、`lead` 与单元素 `members` 必须对应同一人；每人使用自己的简介与链接。前四位固定为马佳义、刘日升、吴小俊、刘羽，其余综合学术资历、研究关联与同校归组整理。`note` 和 `links` 展开显示，`verification` 区分核对来源。`aliases` 兼容旧资料检索，`cities` 支持跨地区筛选。`relatedQuery` 检索公众号文章，`opportunity` 关联既有招募条目。来源与编辑规则见 [团队目录维护说明](TEAMS.md)。
 - `opportunities`：`teamId` 关联团队、`types` 表示招募类别。长期招募必须有官方原文依据；限期招生请写明到期时间并及时更新 / 移除。当前 `expires` 为记录字段，不自动下架。
 - `venues`：将官方 `scope` 与本站整理的 `fit` 建议分开。`ccf`、`ccfPage`、`ccfArea` 对应所参考目录，未收录条目使用 `未收录` 和空页码；数组按 A、B、C、未收录排列，同级为编辑组织顺序。`guide` 可为空，并用 `guideNote` 说明待公布；旧届指南必须用 `guideLabel` 明示年份。`aliases` 用于简称检索；`articleVenue` 若非空必须匹配现有文章分类，否则使用 `relatedQuery` 检索。`calendar` 可关联会议 ID。未核实的信息不填影响因子或录用率。分类与来源记录见 [投稿目录核对说明](VENUES.md)。
 - `datasets`：首页精选入口；`catalog` 使用 `datasets.html#dataset=条目ID`，链接站内完整档案。完整目录的维护见 [数据目录说明](DATASETS.md)。本站仅保存说明与示例图，不托管数据集本体。

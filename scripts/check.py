@@ -125,6 +125,15 @@ for category in ('teams','opportunities','venues','datasets'):
         assert urlsplit(record['source']).scheme=='https'
 for record in portal['opportunities']:
     assert record['teamId'] in {team['id'] for team in portal['teams']}
+# Keep the directory personal: a grouped import must not silently combine people.
+assert len({t['name'] for t in portal['teams']})==len(portal['teams'])
+assert [t['name'] for t in portal['teams'][:4]]==['马佳义','刘日升','吴小俊','刘羽']
+for team in portal['teams']:
+    assert team['members']==[team['name']]==[team['lead']], team['id']+' must describe one person'
+    assert team['id'] in pages['teams.html'].ids
+    assert team['verification'] in ('official','conference','publication','archive')
+    for item in team['links']:
+        assert urlsplit(item['url']).scheme=='https'
 venue_by_id={v['id']:v for v in portal['venues']}
 ranks={'A':0,'B':1,'C':2,'未收录':3}
 assert [ranks[v['ccf']] for v in portal['venues']]==sorted(ranks[v['ccf']] for v in portal['venues']), 'Venue ordering differs from the stated CCF groups'

@@ -344,13 +344,12 @@
   "teams": [
     {
       "id": "jiayi-ma",
-      "name": "马佳义 · 唐霖峰",
+      "name": "马佳义",
       "institution": "武汉大学",
       "city": "武汉",
       "lead": "马佳义",
       "members": [
-        "马佳义",
-        "唐霖峰"
+        "马佳义"
       ],
       "tags": [
         "图像融合",
@@ -361,7 +360,7 @@
       "source": "https://jiayi-ma.github.io/index.html",
       "relatedQuery": "武大",
       "opportunity": null,
-      "note": "武汉大学相关研究者；唐霖峰个人主页提供图像融合方向与开源成果入口。",
+      "note": "关注多源视觉信息的配准、融合与理解；个人主页提供研究方向、论文和开源项目。",
       "links": [
         {
           "label": "教师主页",
@@ -370,10 +369,6 @@
         {
           "label": "Google Scholar",
           "url": "https://scholar.google.com/citations?user=73trMQkAAAAJ&hl=en"
-        },
-        {
-          "label": "唐霖峰主页",
-          "url": "https://linfeng-tang.github.io/zh/"
         }
       ],
       "verification": "official",
@@ -382,13 +377,12 @@
     },
     {
       "id": "vlog",
-      "name": "刘日升 · 刘晋源",
+      "name": "刘日升",
       "institution": "大连理工大学",
       "city": "大连",
       "lead": "刘日升",
       "members": [
-        "刘日升",
-        "刘晋源"
+        "刘日升"
       ],
       "tags": [
         "图像融合",
@@ -399,7 +393,7 @@
       "source": "https://rsliu.tech/",
       "relatedQuery": "大连理工",
       "opportunity": "vlog-open",
-      "note": "VLOG · 视觉、学习与优化研究组。通过导师和成员主页了解各自方向与完整成果。",
+      "note": "VLOG 视觉、学习与优化研究组的学术入口，介绍机器学习、计算机视觉与数值优化方向。",
       "links": [
         {
           "label": "教师主页",
@@ -408,10 +402,6 @@
         {
           "label": "Google Scholar",
           "url": "https://scholar.google.com/citations?hl=zh-CN&user=DzuhImQAAAAJ"
-        },
-        {
-          "label": "刘晋源主页",
-          "url": "https://faculty.dlut.edu.cn/liujinyuan1/zh_CN/index.htm"
         }
       ],
       "verification": "official",
@@ -420,14 +410,12 @@
     },
     {
       "id": "xiaojun-wu",
-      "name": "吴小俊 · 李辉 · 徐天阳",
+      "name": "吴小俊",
       "institution": "江南大学",
       "city": "无锡",
       "lead": "吴小俊",
       "members": [
-        "吴小俊",
-        "李辉",
-        "徐天阳"
+        "吴小俊"
       ],
       "tags": [
         "图像融合",
@@ -438,7 +426,7 @@
       "source": "https://kjc.jiangnan.edu.cn/jgsz/wxj1.htm",
       "relatedQuery": "江南大学",
       "opportunity": null,
-      "note": "学校研究报道介绍了三位学者在多模态图像融合方面的合作。",
+      "note": "关注模式识别、表示学习与多模态视觉研究；可通过教师主页和学校研究报道了解相关成果。",
       "links": [
         {
           "label": "Google Scholar",
@@ -487,14 +475,165 @@
       "extension": false
     },
     {
+      "id": "you-he",
+      "name": "何友",
+      "institution": "清华大学",
+      "city": "北京 / 深圳",
+      "lead": "何友",
+      "members": [
+        "何友"
+      ],
+      "tags": [
+        "信息融合",
+        "智能感知",
+        "决策学习"
+      ],
+      "description": "研究信息融合理论与技术、智能感知，以及博弈和深度强化学习等相关决策方法。",
+      "source": "https://ioe.sigs.tsinghua.edu.cn/2022/0328/c4348a31571/page.psp",
+      "relatedQuery": "何友",
+      "opportunity": null,
+      "note": "清华电子系名单列为双聘教授，同时有深圳海洋工程研究院介绍；地区并列展示。",
+      "links": [
+        {
+          "label": "电子系人员目录",
+          "url": "https://www.ee.tsinghua.edu.cn/ryqk/kzjs/spjs.htm"
+        }
+      ],
+      "verification": "official",
+      "aliases": [],
+      "extension": true,
+      "cities": [
+        "北京",
+        "深圳"
+      ]
+    },
+    {
+      "id": "shutao-li",
+      "name": "李树涛",
+      "institution": "长安大学",
+      "city": "西安",
+      "lead": "李树涛",
+      "members": [
+        "李树涛"
+      ],
+      "tags": [
+        "图像融合",
+        "遥感图像",
+        "模式识别"
+      ],
+      "description": "关注遥感图像处理、多源信息融合与模式识别，以及多源感知和人工智能的交通应用。",
+      "source": "https://www.chd.edu.cn/info/1059/1048.htm",
+      "relatedQuery": "李树涛",
+      "opportunity": null,
+      "note": "任职机构按长安大学官方介绍整理；既有湖南大学研究团队作为独立入口保留，不变更其机构归属。",
+      "links": [
+        {
+          "label": "既有研究团队",
+          "url": "https://hnuvpai.github.io/m/"
+        },
+        {
+          "label": "学校研究报道",
+          "url": "https://www.chd.edu.cn/info/2171/578171.htm"
+        }
+      ],
+      "verification": "official",
+      "aliases": [],
+      "extension": true
+    },
+    {
+      "id": "huchuan-lu",
+      "name": "卢湖川",
+      "institution": "大连理工大学",
+      "city": "大连",
+      "lead": "卢湖川",
+      "members": [
+        "卢湖川"
+      ],
+      "tags": [
+        "多模态大模型",
+        "计算机视觉",
+        "图像视频处理"
+      ],
+      "description": "IIAU 智能图像分析实验室关注多模态大模型、视觉理解和底层图像视频处理，涉及检测、跟踪与分割等任务。",
+      "source": "https://faculty.dlut.edu.cn/Huchuan_Lu/zh_CN/index.htm",
+      "relatedQuery": "卢湖川",
+      "opportunity": null,
+      "note": "作为相关方向扩展收录，可从视觉任务、图文理解和底层视觉的交叉角度了解。",
+      "links": [
+        {
+          "label": "Google Scholar",
+          "url": "https://scholar.google.com/citations?hl=en&user=D3nE0agAAAAJ"
+        },
+        {
+          "label": "IIAU 实验室",
+          "url": "https://iiaulab.github.io/"
+        }
+      ],
+      "verification": "official",
+      "aliases": [],
+      "extension": true
+    },
+    {
+      "id": "jinyuan-liu",
+      "name": "刘晋源",
+      "lead": "刘晋源",
+      "members": [
+        "刘晋源"
+      ],
+      "institution": "大连理工大学",
+      "city": "大连",
+      "tags": [
+        "图像融合",
+        "底层视觉",
+        "协同表征学习"
+      ],
+      "description": "研究异构模态视觉感知与增强、多模态图像融合及协同表征学习，并关注垂域大模型与科学智能。",
+      "source": "https://faculty.dlut.edu.cn/liujinyuan1/zh_CN/index.htm",
+      "relatedQuery": "刘晋源",
+      "opportunity": null,
+      "note": "通过学校教师页了解个人研究方向和公开成果。",
+      "links": [],
+      "verification": "official",
+      "aliases": [],
+      "extension": false
+    },
+    {
+      "id": "wenda-zhao",
+      "name": "赵文达",
+      "institution": "大连理工大学",
+      "city": "大连",
+      "lead": "赵文达",
+      "members": [
+        "赵文达"
+      ],
+      "tags": [
+        "图像融合",
+        "遥感图像",
+        "目标检测"
+      ],
+      "description": "依托 IIAU 实验室开展多模态图像分析，研究图像融合、聚焦区域检测与遥感目标检测识别。",
+      "source": "https://faculty.dlut.edu.cn/wdzhao/zh_CN/index.htm",
+      "relatedQuery": "赵文达",
+      "opportunity": null,
+      "note": "与同校其他相关学者分别建档，便于检索各自研究方向。",
+      "links": [
+        {
+          "label": "IIAU 实验室",
+          "url": "https://iiaulab.github.io/"
+        }
+      ],
+      "verification": "official",
+      "aliases": [],
+      "extension": false
+    },
+    {
       "id": "qinghua-hu",
-      "name": "胡清华 · 曹兵",
+      "name": "胡清华",
       "institution": "天津大学",
       "city": "天津",
       "lead": "胡清华",
       "members": [
-        "胡清华",
-        "曹兵"
+        "胡清华"
       ],
       "tags": [
         "多模态学习",
@@ -505,7 +644,7 @@
       "source": "https://cic.tju.edu.cn/faculty/huqinghua/index.html",
       "relatedQuery": "天津大学",
       "opportunity": null,
-      "note": "按资料中的相关学者合并展示；具体团队组成与各自研究内容请查看个人主页。",
+      "note": "研究粒计算、多模态学习与不确定性建模；个人主页提供研究方向与公开成果。",
       "links": [
         {
           "label": "教师主页",
@@ -514,10 +653,93 @@
         {
           "label": "Google Scholar",
           "url": "https://scholar.google.com.hk/citations?hl=zh-CN&user=TVSNq_wAAAAJ"
-        },
+        }
+      ],
+      "verification": "official",
+      "aliases": [],
+      "extension": false
+    },
+    {
+      "id": "bing-cao",
+      "name": "曹兵",
+      "lead": "曹兵",
+      "members": [
+        "曹兵"
+      ],
+      "institution": "天津大学",
+      "city": "天津",
+      "tags": [
+        "多模态学习",
+        "计算机视觉",
+        "智能无人系统"
+      ],
+      "description": "研究多模态人工智能与计算机视觉，面向智能无人系统、图像融合和智能医学开展方法研究。",
+      "source": "https://bcaosudo.github.io/",
+      "relatedQuery": "曹兵",
+      "opportunity": null,
+      "note": "个人主页与学校教师页提供本人研究信息，不与同校其他研究者合并。",
+      "links": [
         {
-          "label": "曹兵主页",
+          "label": "学校教师页",
           "url": "https://sai.tju.edu.cn/info/1811/3271.htm"
+        }
+      ],
+      "verification": "official",
+      "aliases": [],
+      "extension": false
+    },
+    {
+      "id": "junjun-jiang",
+      "name": "江俊君",
+      "institution": "哈尔滨工业大学",
+      "city": "哈尔滨",
+      "lead": "江俊君",
+      "members": [
+        "江俊君"
+      ],
+      "tags": [
+        "图像处理",
+        "计算机视觉",
+        "深度学习"
+      ],
+      "description": "关注图像处理、计算机视觉和深度学习，涉及大模型、多模态自主系统与生成式人工智能。",
+      "source": "https://homepage.hit.edu.cn/jiangjunjun",
+      "relatedQuery": "江俊君",
+      "opportunity": null,
+      "note": "相关研究还涉及图像超分辨率与高光谱图像处理；完整成果以教师主页为准。",
+      "links": [
+        {
+          "label": "Google Scholar",
+          "url": "https://scholar.google.com/citations?user=WNH2_rgAAAAJ&hl=zh-CN&oi=ao"
+        }
+      ],
+      "verification": "official",
+      "aliases": [],
+      "extension": false
+    },
+    {
+      "id": "mai-xu",
+      "name": "徐迈",
+      "institution": "北京航空航天大学",
+      "city": "北京",
+      "lead": "徐迈",
+      "members": [
+        "徐迈"
+      ],
+      "tags": [
+        "图像视频处理",
+        "多模态感知",
+        "视觉显著性"
+      ],
+      "description": "围绕图像与视频处理开展研究，涉及跨模态图像对应、视听显著性与多模态视觉表示。",
+      "source": "https://shi.buaa.edu.cn/MaiXu/zh_CN/",
+      "relatedQuery": "北航",
+      "opportunity": null,
+      "note": "研究入口包括教师主页与研究领域页面，可进一步查看多模态处理相关论文。",
+      "links": [
+        {
+          "label": "Google Scholar",
+          "url": "https://scholar.google.com/citations?hl=zh-CN&user=JdhDuXAAAAAJ"
         }
       ],
       "verification": "official",
@@ -566,60 +788,233 @@
       "extension": false
     },
     {
-      "id": "zixiang-zhao",
-      "name": "赵子祥",
-      "institution": "ETH Zürich",
-      "city": "苏黎世",
-      "lead": "赵子祥",
+      "id": "han-xu",
+      "name": "徐涵",
+      "institution": "东南大学",
+      "city": "南京",
+      "lead": "徐涵",
       "members": [
-        "赵子祥"
+        "徐涵"
       ],
       "tags": [
         "图像融合",
-        "图像复原",
-        "生成式模型"
+        "计算机视觉",
+        "图像增强"
       ],
-      "description": "关注多模态图像融合、图像与视频复原及生成式模型，覆盖多曝光、多焦点与遥感等视觉任务。",
-      "source": "https://zhaozixiang1228.github.io/",
-      "relatedQuery": "赵子祥",
+      "description": "关注计算机视觉、信息融合与图像增强，研究多源视觉信息的表达和图像质量改善。",
+      "source": "https://automation.seu.edu.cn/xh/",
+      "relatedQuery": "徐涵",
       "opportunity": null,
-      "note": "现机构按个人主页列为瑞士苏黎世联邦理工学院；西安交通大学为其博士培养单位。",
+      "note": "姓名按东南大学自动化学院主页统一为“徐涵”。",
       "links": [
         {
           "label": "Google Scholar",
-          "url": "https://scholar.google.com/citations?user=tUv_X8cAAAAJ&hl"
+          "url": "https://scholar.google.com/citations?user=ZsxOdRUAAAAJ&hl=zh-CN"
         }
       ],
       "verification": "official",
       "aliases": [
-        "西安交通大学",
-        "苏黎世联邦理工学院"
+        "徐函"
       ],
       "extension": false
     },
     {
-      "id": "mai-xu",
-      "name": "徐迈",
-      "institution": "北京航空航天大学",
-      "city": "北京",
-      "lead": "徐迈",
+      "id": "huafeng-li",
+      "name": "李华锋",
+      "institution": "昆明理工大学",
+      "city": "昆明",
+      "lead": "李华锋",
       "members": [
-        "徐迈"
+        "李华锋"
       ],
       "tags": [
-        "图像视频处理",
-        "多模态感知",
-        "视觉显著性"
+        "图像融合",
+        "图像配准",
+        "模式识别"
       ],
-      "description": "围绕图像与视频处理开展研究，涉及跨模态图像对应、视听显著性与多模态视觉表示。",
-      "source": "https://shi.buaa.edu.cn/MaiXu/zh_CN/",
-      "relatedQuery": "北航",
+      "description": "关注图像配准与融合、计算机视觉及模式识别，研究多源图像的互补表达与理解。",
+      "source": "https://lhf12278.github.io/",
+      "relatedQuery": "昆明理工",
       "opportunity": null,
-      "note": "研究入口包括教师主页与研究领域页面，可进一步查看多模态处理相关论文。",
+      "note": "CVIP 研究方向涉及图像处理与计算机视觉，个人主页和学校教师页提供研究成果。",
+      "links": [
+        {
+          "label": "教师主页",
+          "url": "https://xzy.kmust.edu.cn/info/1127/1305.htm"
+        },
+        {
+          "label": "Google Scholar",
+          "url": "https://scholar.google.com/citations?user=njjX8D0AAAAJ&hl=en&oi=ao"
+        }
+      ],
+      "verification": "official",
+      "aliases": [],
+      "extension": false
+    },
+    {
+      "id": "yafei-zhang",
+      "name": "张亚飞",
+      "lead": "张亚飞",
+      "members": [
+        "张亚飞"
+      ],
+      "institution": "昆明理工大学",
+      "city": "昆明",
+      "tags": [
+        "图像融合",
+        "图像复原",
+        "模式识别"
+      ],
+      "description": "关注图像处理与模式识别，研究红外与可见光图像融合、任务自适应、图像去雾及跨模态行人重识别。",
+      "source": "https://xzy.kmust.edu.cn/info/1127/3838.htm",
+      "relatedQuery": "张亚飞",
+      "opportunity": null,
+      "note": "学院教师主页提供个人研究项目和成果介绍。",
+      "links": [],
+      "verification": "official",
+      "aliases": [],
+      "extension": false
+    },
+    {
+      "id": "yang-yang",
+      "name": "杨扬",
+      "institution": "云南师范大学",
+      "city": "昆明",
+      "lead": "杨扬",
+      "members": [
+        "杨扬"
+      ],
+      "tags": [
+        "计算机视觉",
+        "遥感图像",
+        "医学图像"
+      ],
+      "description": "研究计算机视觉与图像处理，涉及遥感图像、医学图像等多源视觉数据的分析与应用。",
+      "source": "https://cic.ynnu.edu.cn/info/1056/1078.htm",
+      "relatedQuery": "云南师范",
+      "opportunity": null,
+      "note": "姓名按学院主页统一为“杨扬”；从官方介绍继续了解具体研究方向与成果。",
       "links": [
         {
           "label": "Google Scholar",
-          "url": "https://scholar.google.com/citations?hl=zh-CN&user=JdhDuXAAAAAJ"
+          "url": "https://scholar.google.com/citations?hl=en&user=7JLPFHgAAAAJ"
+        }
+      ],
+      "verification": "official",
+      "aliases": [
+        "杨杨"
+      ],
+      "extension": false
+    },
+    {
+      "id": "wenhua-qian",
+      "name": "钱文华",
+      "institution": "云南大学",
+      "city": "昆明",
+      "lead": "钱文华",
+      "members": [
+        "钱文华"
+      ],
+      "tags": [
+        "图像融合",
+        "计算机视觉",
+        "文化计算"
+      ],
+      "description": "关注计算机视觉、图形图像处理与文化计算，涉及红外可见光融合、多模态特征融合与图像理解。",
+      "source": "https://www.ise.ynu.edu.cn/faculty/152/",
+      "relatedQuery": "钱文华",
+      "opportunity": null,
+      "note": "学校教师页提供研究方向和成果入口。",
+      "links": [],
+      "verification": "official",
+      "aliases": [],
+      "extension": false
+    },
+    {
+      "id": "liangjian-deng",
+      "name": "邓良剑",
+      "institution": "电子科技大学",
+      "city": "成都",
+      "lead": "邓良剑",
+      "members": [
+        "邓良剑"
+      ],
+      "tags": [
+        "图像融合",
+        "机器学习",
+        "数学建模"
+      ],
+      "description": "关注应用数学、人工智能与图像处理的交叉研究，涉及图像融合、机器学习及变分图像建模。",
+      "source": "https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/20071?yxsh=11",
+      "relatedQuery": "邓良剑",
+      "opportunity": null,
+      "note": "电子科技大学数学科学学院相关研究者；从学校导师页与个人主页继续查看图像处理研究。",
+      "links": [
+        {
+          "label": "个人主页",
+          "url": "https://liangjiandeng.github.io/"
+        }
+      ],
+      "verification": "official",
+      "aliases": [],
+      "extension": false
+    },
+    {
+      "id": "hui-li",
+      "name": "李辉",
+      "lead": "李辉",
+      "members": [
+        "李辉"
+      ],
+      "institution": "江南大学",
+      "city": "无锡",
+      "tags": [
+        "图像融合",
+        "图像复原",
+        "视觉跟踪"
+      ],
+      "description": "研究多模态图像融合与超分辨率、多模态目标检测和跟踪，并关注医学影像、遥感和多模态大模型。",
+      "source": "https://hli1221.github.io/",
+      "relatedQuery": "李辉",
+      "opportunity": null,
+      "note": "个人主页提供多模态视觉研究与开源项目；学术检索链接对应本人。",
+      "links": [
+        {
+          "label": "Google Scholar",
+          "url": "https://scholar.google.com/citations?hl=zh-CN&user=YemtYUoAAAAJ"
+        }
+      ],
+      "verification": "official",
+      "aliases": [],
+      "extension": false
+    },
+    {
+      "id": "tianyang-xu",
+      "name": "徐天阳",
+      "lead": "徐天阳",
+      "members": [
+        "徐天阳"
+      ],
+      "institution": "江南大学",
+      "city": "无锡",
+      "tags": [
+        "视频理解",
+        "跨模态学习",
+        "流形学习"
+      ],
+      "description": "研究视觉跟踪、视频理解与跨模态分析，关注流形学习及其在多模态融合与感知中的应用。",
+      "source": "https://xu-tianyang.github.io/",
+      "relatedQuery": "徐天阳",
+      "opportunity": null,
+      "note": "本人主页与学校教师页分别提供研究成果和个人学术介绍。",
+      "links": [
+        {
+          "label": "学校教师页",
+          "url": "https://ai.jiangnan.edu.cn/info/1009/2094.htm"
+        },
+        {
+          "label": "Google Scholar",
+          "url": "https://scholar.google.com/citations?hl=en&user=bbSNrAgAAAAJ"
         }
       ],
       "verification": "official",
@@ -693,134 +1088,31 @@
       "extension": true
     },
     {
-      "id": "huafeng-li",
-      "name": "李华锋 · 张亚飞",
-      "institution": "昆明理工大学",
-      "city": "昆明",
-      "lead": "李华锋",
+      "id": "haipeng-wang",
+      "name": "王海鹏",
+      "institution": "海军研究院",
+      "city": "地区待核",
+      "lead": "王海鹏",
       "members": [
-        "李华锋",
-        "张亚飞"
+        "王海鹏"
       ],
       "tags": [
-        "图像融合",
-        "图像配准",
-        "模式识别"
+        "信息融合",
+        "态势感知",
+        "目标识别"
       ],
-      "description": "关注图像配准与融合、计算机视觉及模式识别，研究多源图像的互补表达与理解。",
-      "source": "https://lhf12278.github.io/",
-      "relatedQuery": "昆明理工",
+      "description": "研究多域态势感知、目标融合识别与相关信息融合方法，作为融合感知的相关方向收录。",
+      "source": "https://icus.c2.org.cn/uploads/admin/202604213007/69e6e23002bad.pdf",
+      "relatedQuery": "王海鹏",
       "opportunity": null,
-      "note": "同校相关研究者合并展示，不代表上下级或固定团队隶属关系；各自研究信息见教师主页。",
-      "links": [
-        {
-          "label": "教师主页",
-          "url": "https://xzy.kmust.edu.cn/info/1127/1305.htm"
-        },
-        {
-          "label": "Google Scholar",
-          "url": "https://scholar.google.com/citations?user=njjX8D0AAAAJ&hl=en&oi=ao"
-        },
-        {
-          "label": "张亚飞主页",
-          "url": "https://xzy.kmust.edu.cn/info/1127/3838.htm"
-        }
-      ],
-      "verification": "official",
-      "aliases": [],
-      "extension": false
-    },
-    {
-      "id": "yang-yang",
-      "name": "杨扬",
-      "institution": "云南师范大学",
-      "city": "昆明",
-      "lead": "杨扬",
-      "members": [
-        "杨扬"
-      ],
-      "tags": [
-        "计算机视觉",
-        "遥感图像",
-        "医学图像"
-      ],
-      "description": "研究计算机视觉与图像处理，涉及遥感图像、医学图像等多源视觉数据的分析与应用。",
-      "source": "https://cic.ynnu.edu.cn/info/1056/1078.htm",
-      "relatedQuery": "云南师范",
-      "opportunity": null,
-      "note": "姓名按学院主页统一为“杨扬”；从官方介绍继续了解具体研究方向与成果。",
-      "links": [
-        {
-          "label": "Google Scholar",
-          "url": "https://scholar.google.com/citations?hl=en&user=7JLPFHgAAAAJ"
-        }
-      ],
-      "verification": "official",
+      "note": "原资料列海军航空大学；机构依据 2026 IEEE ICUS 官方会议简介更新，具体地区暂不推定。",
+      "links": [],
+      "verification": "conference",
       "aliases": [
-        "杨杨"
+        "海军航空大学"
       ],
-      "extension": false
-    },
-    {
-      "id": "xiaosong-li",
-      "name": "李小松 · 黎熹来",
-      "institution": "佛山大学",
-      "city": "佛山",
-      "lead": "李小松",
-      "members": [
-        "李小松",
-        "黎熹来"
-      ],
-      "tags": [
-        "图像处理",
-        "计算机视觉",
-        "视觉测量"
-      ],
-      "description": "资料介绍的研究方向包括图像处理、计算机视觉和视觉精密测量，可进一步关注相关图像融合研究。",
-      "source": "https://www.fosu.edu.cn/spoe/yanjiu/ssds/gxgc/11653.html",
-      "relatedQuery": "佛山",
-      "opportunity": null,
-      "note": "本条根据提供的资料整理；原教师主页暂未完成访问核验，任职与成员信息请以学校最新页面为准。",
-      "links": [
-        {
-          "label": "Google Scholar",
-          "url": "https://scholar.google.com/citations?hl=zh-CN&user=yHlMpnUAAAAJ"
-        }
-      ],
-      "verification": "archive",
-      "aliases": [],
-      "extension": false
-    },
-    {
-      "id": "han-xu",
-      "name": "徐涵",
-      "institution": "东南大学",
-      "city": "南京",
-      "lead": "徐涵",
-      "members": [
-        "徐涵"
-      ],
-      "tags": [
-        "图像融合",
-        "计算机视觉",
-        "图像增强"
-      ],
-      "description": "关注计算机视觉、信息融合与图像增强，研究多源视觉信息的表达和图像质量改善。",
-      "source": "https://automation.seu.edu.cn/xh/",
-      "relatedQuery": "徐涵",
-      "opportunity": null,
-      "note": "姓名按东南大学自动化学院主页统一为“徐涵”。",
-      "links": [
-        {
-          "label": "Google Scholar",
-          "url": "https://scholar.google.com/citations?user=ZsxOdRUAAAAJ&hl=zh-CN"
-        }
-      ],
-      "verification": "official",
-      "aliases": [
-        "徐函"
-      ],
-      "extension": false
+      "extension": true,
+      "sourceLabel": "会议官方介绍"
     },
     {
       "id": "shuang-xu",
@@ -855,6 +1147,121 @@
           "url": "https://math.nwpu.edu.cn/info/1502/37467.htm"
         }
       ],
+      "verification": "official",
+      "aliases": [],
+      "extension": false
+    },
+    {
+      "id": "xiaosong-li",
+      "name": "李小松",
+      "institution": "佛山大学",
+      "city": "佛山",
+      "lead": "李小松",
+      "members": [
+        "李小松"
+      ],
+      "tags": [
+        "图像处理",
+        "计算机视觉",
+        "视觉测量"
+      ],
+      "description": "资料介绍的研究方向包括图像处理、计算机视觉和视觉精密测量，可进一步关注相关图像融合研究。",
+      "source": "https://www.fosu.edu.cn/spoe/yanjiu/ssds/gxgc/11653.html",
+      "relatedQuery": "佛山",
+      "opportunity": null,
+      "note": "依据所供资料整理个人研究方向；原教师页暂未完成访问核验，任职信息以学校最新页面为准。",
+      "links": [
+        {
+          "label": "Google Scholar",
+          "url": "https://scholar.google.com/citations?hl=zh-CN&user=yHlMpnUAAAAJ"
+        }
+      ],
+      "verification": "archive",
+      "aliases": [],
+      "extension": false
+    },
+    {
+      "id": "xilai-li",
+      "name": "黎熹来",
+      "lead": "黎熹来",
+      "members": [
+        "黎熹来"
+      ],
+      "institution": "佛山大学",
+      "city": "佛山",
+      "tags": [
+        "图像融合",
+        "视频融合",
+        "鲁棒融合"
+      ],
+      "description": "公开研究涉及统一多模态图像融合、复杂天气下的图像恢复与融合，以及红外和可见光视频融合。",
+      "source": "https://github.com/ixilai/UP-Fusion",
+      "relatedQuery": "黎熹来",
+      "opportunity": null,
+      "note": "机构依据公开论文署名；个人任职信息待补充。可从作者项目查看方法、代码和公开资源。",
+      "links": [
+        {
+          "label": "作者 GitHub",
+          "url": "https://github.com/ixilai"
+        },
+        {
+          "label": "UP-Fusion 论文",
+          "url": "https://arxiv.org/abs/2511.12432"
+        },
+        {
+          "label": "FTPFusion 论文",
+          "url": "https://arxiv.org/abs/2604.01900"
+        }
+      ],
+      "verification": "publication",
+      "aliases": [],
+      "extension": false,
+      "sourceLabel": "论文项目"
+    },
+    {
+      "id": "xingfeng-li",
+      "name": "李杏峰",
+      "institution": "西南科技大学",
+      "city": "绵阳",
+      "lead": "李杏峰",
+      "members": [
+        "李杏峰"
+      ],
+      "tags": [
+        "图像融合",
+        "多模态学习",
+        "深度学习"
+      ],
+      "description": "关注多模态与多视图学习、红外可见光图像融合，以及用于聚类和分类的深度学习方法。",
+      "source": "https://lee-xingfeng.github.io/",
+      "relatedQuery": "李杏峰",
+      "opportunity": null,
+      "note": "机构与地区依据个人主页正文任职介绍；页面侧栏中的旧地点信息不用于本条。",
+      "links": [],
+      "verification": "official",
+      "aliases": [],
+      "extension": false
+    },
+    {
+      "id": "linfeng-tang",
+      "name": "唐霖峰",
+      "lead": "唐霖峰",
+      "members": [
+        "唐霖峰"
+      ],
+      "institution": "武汉大学",
+      "city": "武汉",
+      "tags": [
+        "图像融合",
+        "图像增强",
+        "视觉语义理解"
+      ],
+      "description": "研究多模态图像与视频融合、退化感知增强，以及面向检测和分割任务的视觉语义协同融合。",
+      "source": "https://linfeng-tang.github.io/zh/",
+      "relatedQuery": "唐霖峰",
+      "opportunity": null,
+      "note": "个人主页提供图像融合、图像增强与高层视觉任务相关论文和代码。",
+      "links": [],
       "verification": "official",
       "aliases": [],
       "extension": false
@@ -918,35 +1325,6 @@
       "extension": false
     },
     {
-      "id": "junjun-jiang",
-      "name": "江俊君",
-      "institution": "哈尔滨工业大学",
-      "city": "哈尔滨",
-      "lead": "江俊君",
-      "members": [
-        "江俊君"
-      ],
-      "tags": [
-        "图像处理",
-        "计算机视觉",
-        "深度学习"
-      ],
-      "description": "关注图像处理、计算机视觉和深度学习，涉及大模型、多模态自主系统与生成式人工智能。",
-      "source": "https://homepage.hit.edu.cn/jiangjunjun",
-      "relatedQuery": "江俊君",
-      "opportunity": null,
-      "note": "相关研究还涉及图像超分辨率与高光谱图像处理；完整成果以教师主页为准。",
-      "links": [
-        {
-          "label": "Google Scholar",
-          "url": "https://scholar.google.com/citations?user=WNH2_rgAAAAJ&hl=zh-CN&oi=ao"
-        }
-      ],
-      "verification": "official",
-      "aliases": [],
-      "extension": false
-    },
-    {
       "id": "xingchen-zhang",
       "name": "张星辰",
       "institution": "英国埃克塞特大学",
@@ -984,236 +1362,36 @@
       "extension": false
     },
     {
-      "id": "huchuan-lu",
-      "name": "卢湖川",
-      "institution": "大连理工大学",
-      "city": "大连",
-      "lead": "卢湖川",
+      "id": "zixiang-zhao",
+      "name": "赵子祥",
+      "institution": "ETH Zürich",
+      "city": "苏黎世",
+      "lead": "赵子祥",
       "members": [
-        "卢湖川"
+        "赵子祥"
       ],
       "tags": [
-        "多模态大模型",
-        "计算机视觉",
-        "图像视频处理"
+        "图像融合",
+        "图像复原",
+        "生成式模型"
       ],
-      "description": "IIAU 智能图像分析实验室关注多模态大模型、视觉理解和底层图像视频处理，涉及检测、跟踪与分割等任务。",
-      "source": "https://faculty.dlut.edu.cn/Huchuan_Lu/zh_CN/index.htm",
-      "relatedQuery": "卢湖川",
+      "description": "关注多模态图像融合、图像与视频复原及生成式模型，覆盖多曝光、多焦点与遥感等视觉任务。",
+      "source": "https://zhaozixiang1228.github.io/",
+      "relatedQuery": "赵子祥",
       "opportunity": null,
-      "note": "作为相关方向扩展收录，可从视觉任务、图文理解和底层视觉的交叉角度了解。",
+      "note": "现机构按个人主页列为瑞士苏黎世联邦理工学院；西安交通大学为其博士培养单位。",
       "links": [
         {
           "label": "Google Scholar",
-          "url": "https://scholar.google.com/citations?hl=en&user=D3nE0agAAAAJ"
-        },
-        {
-          "label": "IIAU 实验室",
-          "url": "https://iiaulab.github.io/"
+          "url": "https://scholar.google.com/citations?user=tUv_X8cAAAAJ&hl"
         }
       ],
       "verification": "official",
-      "aliases": [],
-      "extension": true
-    },
-    {
-      "id": "liangjian-deng",
-      "name": "邓良剑",
-      "institution": "电子科技大学",
-      "city": "成都",
-      "lead": "邓良剑",
-      "members": [
-        "邓良剑"
-      ],
-      "tags": [
-        "图像融合",
-        "机器学习",
-        "数学建模"
-      ],
-      "description": "关注应用数学、人工智能与图像处理的交叉研究，涉及图像融合、机器学习及变分图像建模。",
-      "source": "https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/20071?yxsh=11",
-      "relatedQuery": "邓良剑",
-      "opportunity": null,
-      "note": "电子科技大学数学科学学院相关研究者；从学校导师页与个人主页继续查看图像处理研究。",
-      "links": [
-        {
-          "label": "个人主页",
-          "url": "https://liangjiandeng.github.io/"
-        }
-      ],
-      "verification": "official",
-      "aliases": [],
-      "extension": false
-    },
-    {
-      "id": "wenhua-qian",
-      "name": "钱文华",
-      "institution": "云南大学",
-      "city": "昆明",
-      "lead": "钱文华",
-      "members": [
-        "钱文华"
-      ],
-      "tags": [
-        "图像融合",
-        "计算机视觉",
-        "文化计算"
-      ],
-      "description": "关注计算机视觉、图形图像处理与文化计算，涉及红外可见光融合、多模态特征融合与图像理解。",
-      "source": "https://www.ise.ynu.edu.cn/faculty/152/",
-      "relatedQuery": "钱文华",
-      "opportunity": null,
-      "note": "学校教师页提供研究方向和成果入口。",
-      "links": [],
-      "verification": "official",
-      "aliases": [],
-      "extension": false
-    },
-    {
-      "id": "wenda-zhao",
-      "name": "赵文达",
-      "institution": "大连理工大学",
-      "city": "大连",
-      "lead": "赵文达",
-      "members": [
-        "赵文达"
-      ],
-      "tags": [
-        "图像融合",
-        "遥感图像",
-        "目标检测"
-      ],
-      "description": "依托 IIAU 实验室开展多模态图像分析，研究图像融合、聚焦区域检测与遥感目标检测识别。",
-      "source": "https://faculty.dlut.edu.cn/wdzhao/zh_CN/index.htm",
-      "relatedQuery": "赵文达",
-      "opportunity": null,
-      "note": "与同校其他相关学者分别建档，便于检索各自研究方向。",
-      "links": [
-        {
-          "label": "IIAU 实验室",
-          "url": "https://iiaulab.github.io/"
-        }
-      ],
-      "verification": "official",
-      "aliases": [],
-      "extension": false
-    },
-    {
-      "id": "xingfeng-li",
-      "name": "李杏峰",
-      "institution": "西南科技大学",
-      "city": "绵阳",
-      "lead": "李杏峰",
-      "members": [
-        "李杏峰"
-      ],
-      "tags": [
-        "图像融合",
-        "多模态学习",
-        "深度学习"
-      ],
-      "description": "关注多模态与多视图学习、红外可见光图像融合，以及用于聚类和分类的深度学习方法。",
-      "source": "https://lee-xingfeng.github.io/",
-      "relatedQuery": "李杏峰",
-      "opportunity": null,
-      "note": "机构与地区依据个人主页正文任职介绍；页面侧栏中的旧地点信息不用于本条。",
-      "links": [],
-      "verification": "official",
-      "aliases": [],
-      "extension": false
-    },
-    {
-      "id": "haipeng-wang",
-      "name": "王海鹏",
-      "institution": "海军研究院",
-      "city": "地区待核",
-      "lead": "王海鹏",
-      "members": [
-        "王海鹏"
-      ],
-      "tags": [
-        "信息融合",
-        "态势感知",
-        "目标识别"
-      ],
-      "description": "研究多域态势感知、目标融合识别与相关信息融合方法，作为融合感知的相关方向收录。",
-      "source": "https://icus.c2.org.cn/uploads/admin/202604213007/69e6e23002bad.pdf",
-      "relatedQuery": "王海鹏",
-      "opportunity": null,
-      "note": "原资料列海军航空大学；机构依据 2026 IEEE ICUS 官方会议简介更新，具体地区暂不推定。",
-      "links": [],
-      "verification": "conference",
       "aliases": [
-        "海军航空大学"
+        "西安交通大学",
+        "苏黎世联邦理工学院"
       ],
-      "extension": true,
-      "sourceLabel": "会议官方介绍"
-    },
-    {
-      "id": "you-he",
-      "name": "何友",
-      "institution": "清华大学",
-      "city": "北京 / 深圳",
-      "lead": "何友",
-      "members": [
-        "何友"
-      ],
-      "tags": [
-        "信息融合",
-        "智能感知",
-        "决策学习"
-      ],
-      "description": "研究信息融合理论与技术、智能感知，以及博弈和深度强化学习等相关决策方法。",
-      "source": "https://ioe.sigs.tsinghua.edu.cn/2022/0328/c4348a31571/page.psp",
-      "relatedQuery": "何友",
-      "opportunity": null,
-      "note": "清华电子系名单列为双聘教授，同时有深圳海洋工程研究院介绍；地区并列展示。",
-      "links": [
-        {
-          "label": "电子系人员目录",
-          "url": "https://www.ee.tsinghua.edu.cn/ryqk/kzjs/spjs.htm"
-        }
-      ],
-      "verification": "official",
-      "aliases": [],
-      "extension": true,
-      "cities": [
-        "北京",
-        "深圳"
-      ]
-    },
-    {
-      "id": "shutao-li",
-      "name": "李树涛",
-      "institution": "长安大学",
-      "city": "西安",
-      "lead": "李树涛",
-      "members": [
-        "李树涛"
-      ],
-      "tags": [
-        "图像融合",
-        "遥感图像",
-        "模式识别"
-      ],
-      "description": "关注遥感图像处理、多源信息融合与模式识别，以及多源感知和人工智能的交通应用。",
-      "source": "https://www.chd.edu.cn/info/1059/1048.htm",
-      "relatedQuery": "李树涛",
-      "opportunity": null,
-      "note": "任职机构按长安大学官方介绍整理；既有湖南大学研究团队作为独立入口保留，不变更其机构归属。",
-      "links": [
-        {
-          "label": "既有研究团队",
-          "url": "https://hnuvpai.github.io/m/"
-        },
-        {
-          "label": "学校研究报道",
-          "url": "https://www.chd.edu.cn/info/2171/578171.htm"
-        }
-      ],
-      "verification": "official",
-      "aliases": [],
-      "extension": true
+      "extension": false
     }
   ],
   "opportunities": [
@@ -2129,6 +2307,6 @@
     "archive": "多模态图像融合优秀团队（2025 持续更新）_西北工业大学副教授徐爽-CSDN博客.zip",
     "sha256": "821a19ed0f65c610410ab7c0aa37f3d2a997f59487704c769ab72b9e7367f2cc",
     "updatedAt": "2026-11-11",
-    "note": "按提供资料顺序整理，结合公开主页校正姓名、机构与方向；不是团队排名。"
+    "note": "一人一卡；前四位依用户指定，其余按学术资历、研究关联和同校归组形成编辑顺序，不作量化学术排名。"
   }
 }

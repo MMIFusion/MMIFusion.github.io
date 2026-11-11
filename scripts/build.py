@@ -76,8 +76,7 @@ def header(active, filename):
 <a href="about.html#connect" class="button small wechat-link" data-qr-open>关注公众号 <span aria-hidden="true">＋</span></a></div></header><div class="resource-nav-shell"><nav class="resource-nav wrap" aria-label="学术栏目"><span class="resource-indicator" aria-hidden="true"></span>{resource_links}<a class="resource-contribute" href="contribute.html">推荐资源 ＋</a></nav></div>{community.daily_bar()}'''
 
 def footer(filename, title):
-    credit=" · 汐萌、囗〇" if filename=="datasets.html" else ""
-    return f'''<footer class="site-footer"><div class="wrap footer-main"><div><a class="brand" href="index.html"><img src="assets/avatar.png" width="40" height="40" alt=""><span><strong>多模态信息融合</strong><small>CONNECTING MODALITIES. SHARING KNOWLEDGE.</small></span></a><p>一起读论文、找资源，探索多模态研究。</p></div><div class="footer-links"><a href="papers.html">文章目录</a><a href="resources.html">学术资源</a><a href="about.html#connect" data-qr-open>扫码关注与交流</a><a href="about.html">关于我们</a><a href="{E(portal.feedback(SITE['url']+'/'+filename, title+'页面反馈'))}">反馈问题</a>{ext(SITE['github'],'GitHub')}</div></div><div class="wrap footer-bottom"><span>© 2026 公众号「多模态信息融合」{credit}</span><span>文章索引更新至 {DATA['latestArticleDate'].replace('-','.')} · <a href="about.html#sources">收录说明</a></span></div></footer>'''
+    return f'''<footer class="site-footer"><div class="wrap footer-main"><div><a class="brand" href="index.html"><img src="assets/avatar.png" width="40" height="40" alt=""><span><strong>多模态信息融合</strong><small>CONNECTING MODALITIES. SHARING KNOWLEDGE.</small></span></a><p>一起读论文、找资源，探索多模态研究。</p></div><div class="footer-links"><a href="papers.html">文章目录</a><a href="resources.html">学术资源</a><a href="about.html#connect" data-qr-open>扫码关注与交流</a><a href="about.html">关于我们</a><a href="{E(portal.feedback(SITE['url']+'/'+filename, title+'页面反馈'))}">反馈问题</a>{ext(SITE['github'],'GitHub')}</div></div><div class="wrap footer-bottom"><span>© 2026 公众号「多模态信息融合」</span><span>文章索引更新至 {DATA['latestArticleDate'].replace('-','.')} · <a href="about.html#sources">收录说明</a></span></div></footer>'''
 
 def page(filename, title, body, active='resources', description=None, extras=''):
     description=description or SITE['description']
@@ -127,10 +126,10 @@ def palettes():
 def community_members():
     cards=[]
     for member in SITE['members']:
-        state='active' if member['active'] else 'inactive'
-        status='已激活' if member['active'] else '未激活'
-        note='参与内容整理与社区共建' if member['active'] else '成员席位预留'
-        cards.append(f'<li class="member-card member-{state}" data-member-state="{state}"><span class="member-avatar" aria-hidden="true">{E(member["name"][0])}</span><div><h3>{E(member["name"])}</h3><p>{note}</p></div><span class="member-status">{status}</span></li>')
+        state=member['status']
+        status='已激活' if state=='active' else '已退出'
+        note='<p>感谢参与</p>' if state=='departed' else ''
+        cards.append(f'<li class="member-card member-{state}" data-member-state="{state}"><span class="member-avatar" aria-hidden="true">{E(member["name"][0])}</span><div><h3>{E(member["name"])}</h3>{note}</div><span class="member-status">{status}</span></li>')
     return '<section class="community-members" id="members" aria-labelledby="members-heading"><h2 id="members-heading">团队成员</h2><p>一起整理知识，也一起建设这个交流空间。</p><ol class="member-grid">'+''.join(cards)+'</ol></section>'
 
 def about():
