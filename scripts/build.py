@@ -76,7 +76,8 @@ def header(active, filename):
 <a href="about.html#connect" class="button small wechat-link" data-qr-open>关注公众号 <span aria-hidden="true">＋</span></a></div></header><div class="resource-nav-shell"><nav class="resource-nav wrap" aria-label="学术栏目"><span class="resource-indicator" aria-hidden="true"></span>{resource_links}<a class="resource-contribute" href="contribute.html">推荐资源 ＋</a></nav></div>{community.daily_bar()}'''
 
 def footer(filename, title):
-    return f'''<footer class="site-footer"><div class="wrap footer-main"><div><a class="brand" href="index.html"><img src="assets/avatar.png" width="40" height="40" alt=""><span><strong>多模态信息融合</strong><small>CONNECTING MODALITIES. SHARING KNOWLEDGE.</small></span></a><p>一起读论文、找资源，探索多模态研究。</p></div><div class="footer-links"><a href="papers.html">文章目录</a><a href="resources.html">学术资源</a><a href="about.html#connect" data-qr-open>扫码关注与交流</a><a href="about.html">关于我们</a><a href="{E(portal.feedback(SITE['url']+'/'+filename, title+'页面反馈'))}">反馈问题</a>{ext(SITE['github'],'GitHub')}</div></div><div class="wrap footer-bottom"><span>© 2026 公众号「多模态信息融合」 · 汐萌、囗〇</span><span>文章索引更新至 {DATA['latestArticleDate'].replace('-','.')} · <a href="about.html#sources">收录说明</a></span></div></footer>'''
+    credit=" · 汐萌、囗〇" if filename=="datasets.html" else ""
+    return f'''<footer class="site-footer"><div class="wrap footer-main"><div><a class="brand" href="index.html"><img src="assets/avatar.png" width="40" height="40" alt=""><span><strong>多模态信息融合</strong><small>CONNECTING MODALITIES. SHARING KNOWLEDGE.</small></span></a><p>一起读论文、找资源，探索多模态研究。</p></div><div class="footer-links"><a href="papers.html">文章目录</a><a href="resources.html">学术资源</a><a href="about.html#connect" data-qr-open>扫码关注与交流</a><a href="about.html">关于我们</a><a href="{E(portal.feedback(SITE['url']+'/'+filename, title+'页面反馈'))}">反馈问题</a>{ext(SITE['github'],'GitHub')}</div></div><div class="wrap footer-bottom"><span>© 2026 公众号「多模态信息融合」{credit}</span><span>文章索引更新至 {DATA['latestArticleDate'].replace('-','.')} · <a href="about.html#sources">收录说明</a></span></div></footer>'''
 
 def page(filename, title, body, active='resources', description=None, extras=''):
     description=description or SITE['description']
@@ -123,8 +124,17 @@ def palettes():
     items=[a for a in ARTICLES if a['section']=='配色与绘图']
     return title_block('COLOR & SCIENTIFIC DESIGN','配色模板','好的图表，让方法和结果更容易被理解。')+f'''<section class="wrap section compact-top"><div class="section-heading"><div><h2>基础配色，点击即用。</h2><p>本站搭配的四组色板。点击色块复制 HEX；论文实例见下方公众号文章。</p></div><span class="subtle-label">ORIGINAL COLOR SETS</span></div><div class="palette-grid">{cards}</div><p class="small-note">曲线图建议同时使用不同线型或标记，避免仅靠颜色区分。</p></section>{portal.downloads()}<section class="wrap section compact-top"><div class="section-heading"><div><p class="eyebrow">LEARN FROM THE PAPERS</p><h2>论文模型图与配色阅读</h2></div></div>{collection(items,'palettes')}</section>'''
 
+def community_members():
+    cards=[]
+    for member in SITE['members']:
+        state='active' if member['active'] else 'inactive'
+        status='已激活' if member['active'] else '未激活'
+        note='参与内容整理与社区共建' if member['active'] else '成员席位预留'
+        cards.append(f'<li class="member-card member-{state}" data-member-state="{state}"><span class="member-avatar" aria-hidden="true">{E(member["name"][0])}</span><div><h3>{E(member["name"])}</h3><p>{note}</p></div><span class="member-status">{status}</span></li>')
+    return '<section class="community-members" id="members" aria-labelledby="members-heading"><h2 id="members-heading">团队成员</h2><p>一起整理知识，也一起建设这个交流空间。</p><ol class="member-grid">'+''.join(cards)+'</ol></section>'
+
 def about():
-    return title_block('ABOUT MMIFUSION','因为热爱，所以分享。','多模态信息融合，一个围绕论文阅读与学术资源的交流空间。')+f'''<div class="wrap about-layout section compact-top"><section class="about-copy"><h2>从公众号，到学术资源主页。</h2><p>我们关注图像融合、多模态感知与相关研究。通过论文解读、研究动态和资源整理，帮助读者从具体问题出发，理解方法，也找到继续探索的入口。</p><p>主站整合公众号文章与数据资源目录，并逐步完善评估指标、研究团队、会议日程、投稿参考、导师招生和论文配色等栏目。</p><h2 id="sources">内容与收录说明</h2><ul class="prose-list"><li>当前文章索引来自公众号的 2026 年 10 月 28 日导出表，共 {len(ARTICLES)} 条，最新文章日期为 {DATA['latestArticleDate']}。</li>
+    return title_block('ABOUT MMIFUSION','因为热爱，所以分享。','多模态信息融合，一个围绕论文阅读与学术资源的交流空间。')+f'''<div class="wrap about-layout section compact-top"><section class="about-copy"><h2>从公众号，到学术资源主页。</h2><p>我们关注图像融合、多模态感知与相关研究。通过论文解读、研究动态和资源整理，帮助读者从具体问题出发，理解方法，也找到继续探索的入口。</p><p>主站整合公众号文章与数据资源目录，并逐步完善评估指标、研究团队、会议日程、投稿参考、导师招生和论文配色等栏目。</p>{community_members()}<h2 id="sources">内容与收录说明</h2><ul class="prose-list"><li>当前文章索引来自公众号的 2026 年 10 月 28 日导出表，共 {len(ARTICLES)} 条，最新文章日期为 {DATA['latestArticleDate']}。</li>
 <li>文章保留原始标题与发表日期。点击标题跳转公众号阅读原文；同名但链接不同的文章分别收录。</li>
 <li>研究方向与文章类型依据标题辅助归类，会议和期刊字段也来自标题，不代表本站另行核验了录用信息。欢迎提出分类或信息勘误。</li>
 <li>数据资源栏目已整合原数据集目录，保留完整介绍、团队作者、原始示例图和来源链接。数据规模、许可及划分请查看原论文与官方说明。</li>
@@ -132,7 +142,7 @@ def about():
 <li>公众号人气榜使用导出表中的阅读、点赞、在看和转发数，属于 2026-10-28 的历史快照。原表不含收藏数，网站收藏仅保存在当前浏览器。</li>
 <li>本站访问次数（PV）由 <a href="https://busuanzi.ibruce.info/" target="_blank" rel="noopener noreferrer">不蒜子</a> 提供，从 2026-11-11 接入后累计；服务可能受网络或拦截设置影响，不代表独立访客数。</li>
 <li>投稿日历与接好运是科研趣味互动，不是传统黄历或录用预测。真实截止日期请查看会议日历。</li>
-<li>基础色板由本站搭配，不是从论文中提取；论文配色实例通过公众号文章提供。</li></ul><h2>一起完善这份资源</h2><p>欢迎分享论文、数据集、团队主页、招生信息，或指出已有内容中的错误。请附原始来源，方便核对和持续维护。</p><a href="contribute.html" class="button secondary">推荐资源 / 提交勘误 →</a></section><aside class="contact-card"><img src="assets/avatar.png" width="100" height="100" alt="多模态信息融合头像"><h2>多模态信息融合</h2><p>微信公众号 · MMIFusion</p><a href="about.html#connect" class="button primary" data-qr-open>扫码关注与交流</a><div class="contact-id"><span>交流微信</span><strong>{SITE['contact']}</strong><button class="text-link" data-copy="{SITE['contact']}">复制微信号</button></div><p class="small-note">整理与维护：汐萌、囗〇</p>{ext(SITE['github'],'GitHub · MMIFusion','text-link')}</aside></div>{connect_section()}'''
+<li>基础色板由本站搭配，不是从论文中提取；论文配色实例通过公众号文章提供。</li></ul><h2>一起完善这份资源</h2><p>欢迎分享论文、数据集、团队主页、招生信息，或指出已有内容中的错误。请附原始来源，方便核对和持续维护。</p><a href="contribute.html" class="button secondary">推荐资源 / 提交勘误 →</a></section><aside class="contact-card"><img src="assets/avatar.png" width="100" height="100" alt="多模态信息融合头像"><h2>多模态信息融合</h2><p>微信公众号 · MMIFusion</p><a href="about.html#connect" class="button primary" data-qr-open>扫码关注与交流</a><div class="contact-id"><span>交流微信</span><strong>{SITE['contact']}</strong><button class="text-link" data-copy="{SITE['contact']}">复制微信号</button></div><a href="#members" class="text-link">认识团队成员 →</a>{ext(SITE['github'],'GitHub · MMIFusion','text-link')}</aside></div>{connect_section()}'''
 
 def main():
     if OUT.exists(): shutil.rmtree(OUT)
@@ -148,7 +158,7 @@ def main():
     page('papers.html','论文阅读',title_block('THE PAPER LIBRARY','读论文，也读懂问题。','检索公众号的论文解读、学术速递与研究资源。点击标题，继续阅读完整文章。','论文阅读')+f'<div class="wrap section compact-top">{collection(ARTICLES)}</div>','papers')
     metric_reading=[a for a in ARTICLES if '评估与指标' in a['topics']]
     page('metrics.html','评估指标',title_block('EVALUATION & BENCHMARKS','评估指标','读懂指标含义，试算图像统计，再建立一致的评测协议。')+portal.metrics()+f'<section class="wrap section compact-top"><div class="section-heading"><h2>继续阅读 · 融合质量评估</h2></div>{collection(metric_reading,"metrics")}</section>')
-    page('teams.html','融合团队',title_block('PEOPLE BEHIND THE RESEARCH','融合团队','从研究方向认识同行，从官方主页继续探索。')+portal.teams())
+    page('teams.html','融合团队',title_block('PEOPLE BEHIND THE RESEARCH','融合团队','从研究方向认识同行，从公开主页继续探索。')+portal.teams(),extras='<link rel="stylesheet" href="assets/people.css">')
     page('calendar.html','会议日历',title_block('CONFERENCE CALENDAR','会议日历','把投稿节点放在一起，按自己的时区安排研究。')+'<div class="wrap calendar-fortune-link"><a href="fortune.html">✦ 想选个好日子？翻翻趣味投稿日历 →</a></div>'+portal.calendar(),extras='<link rel="stylesheet" href="assets/research.css">')
     page('venues.html','投稿推荐',title_block('FIND YOUR RESEARCH COMMUNITY','投稿推荐','从研究问题出发，筛选方向、比较范围，找到合适的交流平台。')+portal.venues(),extras='<link rel="stylesheet" href="assets/research.css">')
     page('opportunities.html','导师招生',title_block('RESEARCH OPPORTUNITIES','导师招生','连接研究兴趣、团队方向与公开招募信息。')+portal.opportunities())
@@ -156,7 +166,7 @@ def main():
     page('advertising.html','广告合作',title_block('PARTNERSHIPS & COLLABORATION','广告合作','让学术与科研相关的信息，被合适的人看见。')+community.advertising())
     page('fortune.html','投稿日历',title_block('A LITTLE LUCK, A LOT OF PREPARATION','投稿日历','挑个好日子，带着底气出发。')+community.fortune_page())
     page('palettes.html','配色模板',palettes())
-    page('about.html','关于我们',about(),'about')
+    page('about.html','关于我们',about(),'about',extras='<link rel="stylesheet" href="assets/people.css">')
     page('404.html','页面未找到','<section class="wrap empty-feature"><p class="eyebrow">404 / PAGE NOT FOUND</p><h1>这一页暂时没有找到。</h1><p>回到资源目录，继续探索感兴趣的内容。</p><a class="button primary" href="/">返回首页 →</a></section>')
     (OUT/'.nojekyll').touch()
     (OUT/'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: '+SITE['url']+'/sitemap.xml\n')

@@ -8,6 +8,27 @@
   "github": "https://github.com/MMIFusion",
   "repository": "https://github.com/MMIFusion/MMIFusion.github.io",
   "contact": "MMIFusion_",
-  "maintainers": ["汐萌", "囗〇"],
-  "updated": "2026-11-11"
+  "maintainers": [
+    "汐萌",
+    "囗〇"
+  ],
+  "updated": "2026-11-11",
+  "members": [
+    {
+      "name": "汐萌",
+      "active": true
+    },
+    {
+      "name": "囗〇",
+      "active": true
+    },
+    {
+      "name": "木木彡",
+      "active": false
+    },
+    {
+      "name": "蓝白红",
+      "active": false
+    }
+  ]
 }
