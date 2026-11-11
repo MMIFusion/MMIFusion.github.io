@@ -14,6 +14,7 @@
 - `cities` 支持多地区筛选；未知地区明确显示，不猜测。
 - `aliases` 兼容原资料中的错字或旧机构搜索，页面显示规范姓名与核实后的机构。
 - 保留已有 `jiayi-ma`、`vlog` 锚点及 `vlog-open` 招生关联，复制链接直达条目。
+- 展示顺序沿用既有编排：张星辰、赵子祥依次置于徐涵之前；末尾先列佛山地区（李小松、黎熹来），再列云南地区（李华锋、张亚飞、杨扬、钱文华）。其余研究者的相对顺序保持不变。
 
 ## 本轮关键校正
 
@@ -52,11 +53,9 @@
 | 江俊君 | 哈尔滨工业大学 | [Source](https://homepage.hit.edu.cn/jiangjunjun) | official |
 | 徐迈 | 北京航空航天大学 | [Source](https://shi.buaa.edu.cn/MaiXu/zh_CN/) | official |
 | 朱鹏飞 | 东南大学 | [Source](https://aiskyeye.com/) | official |
+| 张星辰 | 英国埃克塞特大学 | [Source](https://xingchenzhang.github.io/) | official |
+| 赵子祥 | ETH Zürich | [Source](https://zhaozixiang1228.github.io/) | official |
 | 徐涵 | 东南大学 | [Source](https://automation.seu.edu.cn/xh/) | official |
-| 李华锋 | 昆明理工大学 | [Source](https://lhf12278.github.io/) | official |
-| 张亚飞 | 昆明理工大学 | [Source](https://xzy.kmust.edu.cn/info/1127/3838.htm) | official |
-| 杨扬 | 云南师范大学 | [Source](https://cic.ynnu.edu.cn/info/1056/1078.htm) | official |
-| 钱文华 | 云南大学 | [Source](https://www.ise.ynu.edu.cn/faculty/152/) | official |
 | 邓良剑 | 电子科技大学 | [Source](https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/20071?yxsh=11) | official |
 | 李辉 | 江南大学 | [Source](https://hli1221.github.io/) | official |
 | 徐天阳 | 江南大学 | [Source](https://xu-tianyang.github.io/) | official |
@@ -64,11 +63,13 @@
 | 岳裕丰 | 北京理工大学 | [Source](https://yfyue-bit.github.io/) | official |
 | 王海鹏 | 海军研究院 | [Source](https://icus.c2.org.cn/uploads/admin/202604213007/69e6e23002bad.pdf) | conference |
 | 徐爽 | 西北工业大学 | [Source](https://shuangxu96.github.io/) | official |
-| 李小松 | 佛山大学 | [Source](https://www.fosu.edu.cn/spoe/yanjiu/ssds/gxgc/11653.html) | archive |
-| 黎熹来 | 佛山大学 | [Source](https://github.com/ixilai/UP-Fusion) | publication |
 | 李杏峰 | 西南科技大学 | [Source](https://lee-xingfeng.github.io/) | official |
 | 唐霖峰 | 武汉大学 | [Source](https://linfeng-tang.github.io/zh/) | official |
 | 王泽宇 | 大连民族大学 | [Source](https://new.dlnu.edu.cn/comd/info/1235/1046.htm) | official |
 | 姜智颖 | 大连海事大学 | [Source](https://ist.dlmu.edu.cn/info/1287/6828.htm) | official |
-| 张星辰 | 英国埃克塞特大学 | [Source](https://xingchenzhang.github.io/) | official |
-| 赵子祥 | ETH Zürich | [Source](https://zhaozixiang1228.github.io/) | official |
+| 李小松 | 佛山大学 | [Source](https://www.fosu.edu.cn/spoe/yanjiu/ssds/gxgc/11653.html) | archive |
+| 黎熹来 | 佛山大学 | [Source](https://github.com/ixilai/UP-Fusion) | publication |
+| 李华锋 | 昆明理工大学 | [Source](https://lhf12278.github.io/) | official |
+| 张亚飞 | 昆明理工大学 | [Source](https://xzy.kmust.edu.cn/info/1127/3838.htm) | official |
+| 杨扬 | 云南师范大学 | [Source](https://cic.ynnu.edu.cn/info/1056/1078.htm) | official |
+| 钱文华 | 云南大学 | [Source](https://www.ise.ynu.edu.cn/faculty/152/) | official |

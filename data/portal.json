@@ -788,6 +788,75 @@
       "extension": false
     },
     {
+      "id": "xingchen-zhang",
+      "name": "张星辰",
+      "institution": "英国埃克塞特大学",
+      "city": "埃克塞特",
+      "lead": "张星辰",
+      "members": [
+        "张星辰"
+      ],
+      "tags": [
+        "图像融合",
+        "多模态学习",
+        "具身智能"
+      ],
+      "description": "Fusion Intelligence Laboratory 关注图像融合、多模态学习、机器人与具身智能，以及可信人工智能。",
+      "source": "https://xingchenzhang.github.io/",
+      "relatedQuery": "张星辰",
+      "opportunity": null,
+      "note": "融合智能实验室（FIL）提供研究主题与成员入口，机构为英国埃克塞特大学。",
+      "links": [
+        {
+          "label": "教师主页",
+          "url": "https://experts.exeter.ac.uk/43335-xingchen-zhang"
+        },
+        {
+          "label": "Google Scholar",
+          "url": "https://scholar.google.com/citations?user=w-7b36cAAAAJ&hl=en"
+        },
+        {
+          "label": "融合智能实验室",
+          "url": "https://xingchenzhang.github.io/fil/"
+        }
+      ],
+      "verification": "official",
+      "aliases": [],
+      "extension": false
+    },
+    {
+      "id": "zixiang-zhao",
+      "name": "赵子祥",
+      "institution": "ETH Zürich",
+      "city": "苏黎世",
+      "lead": "赵子祥",
+      "members": [
+        "赵子祥"
+      ],
+      "tags": [
+        "图像融合",
+        "图像复原",
+        "生成式模型"
+      ],
+      "description": "关注多模态图像融合、图像与视频复原及生成式模型，覆盖多曝光、多焦点与遥感等视觉任务。",
+      "source": "https://zhaozixiang1228.github.io/",
+      "relatedQuery": "赵子祥",
+      "opportunity": null,
+      "note": "现机构按个人主页列为瑞士苏黎世联邦理工学院；西安交通大学为其博士培养单位。",
+      "links": [
+        {
+          "label": "Google Scholar",
+          "url": "https://scholar.google.com/citations?user=tUv_X8cAAAAJ&hl"
+        }
+      ],
+      "verification": "official",
+      "aliases": [
+        "西安交通大学",
+        "苏黎世联邦理工学院"
+      ],
+      "extension": false
+    },
+    {
       "id": "han-xu",
       "name": "徐涵",
       "institution": "东南大学",
@@ -816,118 +885,6 @@
       "aliases": [
         "徐函"
       ],
-      "extension": false
-    },
-    {
-      "id": "huafeng-li",
-      "name": "李华锋",
-      "institution": "昆明理工大学",
-      "city": "昆明",
-      "lead": "李华锋",
-      "members": [
-        "李华锋"
-      ],
-      "tags": [
-        "图像融合",
-        "图像配准",
-        "模式识别"
-      ],
-      "description": "关注图像配准与融合、计算机视觉及模式识别，研究多源图像的互补表达与理解。",
-      "source": "https://lhf12278.github.io/",
-      "relatedQuery": "昆明理工",
-      "opportunity": null,
-      "note": "CVIP 研究方向涉及图像处理与计算机视觉，个人主页和学校教师页提供研究成果。",
-      "links": [
-        {
-          "label": "教师主页",
-          "url": "https://xzy.kmust.edu.cn/info/1127/1305.htm"
-        },
-        {
-          "label": "Google Scholar",
-          "url": "https://scholar.google.com/citations?user=njjX8D0AAAAJ&hl=en&oi=ao"
-        }
-      ],
-      "verification": "official",
-      "aliases": [],
-      "extension": false
-    },
-    {
-      "id": "yafei-zhang",
-      "name": "张亚飞",
-      "lead": "张亚飞",
-      "members": [
-        "张亚飞"
-      ],
-      "institution": "昆明理工大学",
-      "city": "昆明",
-      "tags": [
-        "图像融合",
-        "图像复原",
-        "模式识别"
-      ],
-      "description": "关注图像处理与模式识别，研究红外与可见光图像融合、任务自适应、图像去雾及跨模态行人重识别。",
-      "source": "https://xzy.kmust.edu.cn/info/1127/3838.htm",
-      "relatedQuery": "张亚飞",
-      "opportunity": null,
-      "note": "学院教师主页提供个人研究项目和成果介绍。",
-      "links": [],
-      "verification": "official",
-      "aliases": [],
-      "extension": false
-    },
-    {
-      "id": "yang-yang",
-      "name": "杨扬",
-      "institution": "云南师范大学",
-      "city": "昆明",
-      "lead": "杨扬",
-      "members": [
-        "杨扬"
-      ],
-      "tags": [
-        "计算机视觉",
-        "遥感图像",
-        "医学图像"
-      ],
-      "description": "研究计算机视觉与图像处理，涉及遥感图像、医学图像等多源视觉数据的分析与应用。",
-      "source": "https://cic.ynnu.edu.cn/info/1056/1078.htm",
-      "relatedQuery": "云南师范",
-      "opportunity": null,
-      "note": "姓名按学院主页统一为“杨扬”；从官方介绍继续了解具体研究方向与成果。",
-      "links": [
-        {
-          "label": "Google Scholar",
-          "url": "https://scholar.google.com/citations?hl=en&user=7JLPFHgAAAAJ"
-        }
-      ],
-      "verification": "official",
-      "aliases": [
-        "杨杨"
-      ],
-      "extension": false
-    },
-    {
-      "id": "wenhua-qian",
-      "name": "钱文华",
-      "institution": "云南大学",
-      "city": "昆明",
-      "lead": "钱文华",
-      "members": [
-        "钱文华"
-      ],
-      "tags": [
-        "图像融合",
-        "计算机视觉",
-        "文化计算"
-      ],
-      "description": "关注计算机视觉、图形图像处理与文化计算，涉及红外可见光融合、多模态特征融合与图像理解。",
-      "source": "https://www.ise.ynu.edu.cn/faculty/152/",
-      "relatedQuery": "钱文华",
-      "opportunity": null,
-      "note": "学校教师页提供研究方向和成果入口。",
-      "links": [],
-      "verification": "official",
-      "aliases": [],
       "extension": false
     },
     {
@@ -1152,73 +1109,6 @@
       "extension": false
     },
     {
-      "id": "xiaosong-li",
-      "name": "李小松",
-      "institution": "佛山大学",
-      "city": "佛山",
-      "lead": "李小松",
-      "members": [
-        "李小松"
-      ],
-      "tags": [
-        "图像处理",
-        "计算机视觉",
-        "视觉测量"
-      ],
-      "description": "资料介绍的研究方向包括图像处理、计算机视觉和视觉精密测量，可进一步关注相关图像融合研究。",
-      "source": "https://www.fosu.edu.cn/spoe/yanjiu/ssds/gxgc/11653.html",
-      "relatedQuery": "佛山",
-      "opportunity": null,
-      "note": "依据所供资料整理个人研究方向；原教师页暂未完成访问核验，任职信息以学校最新页面为准。",
-      "links": [
-        {
-          "label": "Google Scholar",
-          "url": "https://scholar.google.com/citations?hl=zh-CN&user=yHlMpnUAAAAJ"
-        }
-      ],
-      "verification": "archive",
-      "aliases": [],
-      "extension": false
-    },
-    {
-      "id": "xilai-li",
-      "name": "黎熹来",
-      "lead": "黎熹来",
-      "members": [
-        "黎熹来"
-      ],
-      "institution": "佛山大学",
-      "city": "佛山",
-      "tags": [
-        "图像融合",
-        "视频融合",
-        "鲁棒融合"
-      ],
-      "description": "公开研究涉及统一多模态图像融合、复杂天气下的图像恢复与融合，以及红外和可见光视频融合。",
-      "source": "https://github.com/ixilai/UP-Fusion",
-      "relatedQuery": "黎熹来",
-      "opportunity": null,
-      "note": "机构依据公开论文署名；个人任职信息待补充。可从作者项目查看方法、代码和公开资源。",
-      "links": [
-        {
-          "label": "作者 GitHub",
-          "url": "https://github.com/ixilai"
-        },
-        {
-          "label": "UP-Fusion 论文",
-          "url": "https://arxiv.org/abs/2511.12432"
-        },
-        {
-          "label": "FTPFusion 论文",
-          "url": "https://arxiv.org/abs/2604.01900"
-        }
-      ],
-      "verification": "publication",
-      "aliases": [],
-      "extension": false,
-      "sourceLabel": "论文项目"
-    },
-    {
       "id": "xingfeng-li",
       "name": "李杏峰",
       "institution": "西南科技大学",
@@ -1325,36 +1215,99 @@
       "extension": false
     },
     {
-      "id": "xingchen-zhang",
-      "name": "张星辰",
-      "institution": "英国埃克塞特大学",
-      "city": "埃克塞特",
-      "lead": "张星辰",
+      "id": "xiaosong-li",
+      "name": "李小松",
+      "institution": "佛山大学",
+      "city": "佛山",
+      "lead": "李小松",
       "members": [
-        "张星辰"
+        "李小松"
+      ],
+      "tags": [
+        "图像处理",
+        "计算机视觉",
+        "视觉测量"
+      ],
+      "description": "资料介绍的研究方向包括图像处理、计算机视觉和视觉精密测量，可进一步关注相关图像融合研究。",
+      "source": "https://www.fosu.edu.cn/spoe/yanjiu/ssds/gxgc/11653.html",
+      "relatedQuery": "佛山",
+      "opportunity": null,
+      "note": "依据所供资料整理个人研究方向；原教师页暂未完成访问核验，任职信息以学校最新页面为准。",
+      "links": [
+        {
+          "label": "Google Scholar",
+          "url": "https://scholar.google.com/citations?hl=zh-CN&user=yHlMpnUAAAAJ"
+        }
+      ],
+      "verification": "archive",
+      "aliases": [],
+      "extension": false
+    },
+    {
+      "id": "xilai-li",
+      "name": "黎熹来",
+      "lead": "黎熹来",
+      "members": [
+        "黎熹来"
+      ],
+      "institution": "佛山大学",
+      "city": "佛山",
+      "tags": [
+        "图像融合",
+        "视频融合",
+        "鲁棒融合"
+      ],
+      "description": "公开研究涉及统一多模态图像融合、复杂天气下的图像恢复与融合，以及红外和可见光视频融合。",
+      "source": "https://github.com/ixilai/UP-Fusion",
+      "relatedQuery": "黎熹来",
+      "opportunity": null,
+      "note": "机构依据公开论文署名；个人任职信息待补充。可从作者项目查看方法、代码和公开资源。",
+      "links": [
+        {
+          "label": "作者 GitHub",
+          "url": "https://github.com/ixilai"
+        },
+        {
+          "label": "UP-Fusion 论文",
+          "url": "https://arxiv.org/abs/2511.12432"
+        },
+        {
+          "label": "FTPFusion 论文",
+          "url": "https://arxiv.org/abs/2604.01900"
+        }
+      ],
+      "verification": "publication",
+      "aliases": [],
+      "extension": false,
+      "sourceLabel": "论文项目"
+    },
+    {
+      "id": "huafeng-li",
+      "name": "李华锋",
+      "institution": "昆明理工大学",
+      "city": "昆明",
+      "lead": "李华锋",
+      "members": [
+        "李华锋"
       ],
       "tags": [
         "图像融合",
-        "多模态学习",
-        "具身智能"
+        "图像配准",
+        "模式识别"
       ],
-      "description": "Fusion Intelligence Laboratory 关注图像融合、多模态学习、机器人与具身智能，以及可信人工智能。",
-      "source": "https://xingchenzhang.github.io/",
-      "relatedQuery": "张星辰",
+      "description": "关注图像配准与融合、计算机视觉及模式识别，研究多源图像的互补表达与理解。",
+      "source": "https://lhf12278.github.io/",
+      "relatedQuery": "昆明理工",
       "opportunity": null,
-      "note": "融合智能实验室（FIL）提供研究主题与成员入口，机构为英国埃克塞特大学。",
+      "note": "CVIP 研究方向涉及图像处理与计算机视觉，个人主页和学校教师页提供研究成果。",
       "links": [
         {
           "label": "教师主页",
-          "url": "https://experts.exeter.ac.uk/43335-xingchen-zhang"
+          "url": "https://xzy.kmust.edu.cn/info/1127/1305.htm"
         },
         {
           "label": "Google Scholar",
-          "url": "https://scholar.google.com/citations?user=w-7b36cAAAAJ&hl=en"
-        },
-        {
-          "label": "融合智能实验室",
-          "url": "https://xingchenzhang.github.io/fil/"
+          "url": "https://scholar.google.com/citations?user=njjX8D0AAAAJ&hl=en&oi=ao"
         }
       ],
       "verification": "official",
@@ -1362,35 +1315,82 @@
       "extension": false
     },
     {
-      "id": "zixiang-zhao",
-      "name": "赵子祥",
-      "institution": "ETH Zürich",
-      "city": "苏黎世",
-      "lead": "赵子祥",
+      "id": "yafei-zhang",
+      "name": "张亚飞",
+      "lead": "张亚飞",
       "members": [
-        "赵子祥"
+        "张亚飞"
       ],
+      "institution": "昆明理工大学",
+      "city": "昆明",
       "tags": [
         "图像融合",
         "图像复原",
-        "生成式模型"
+        "模式识别"
       ],
-      "description": "关注多模态图像融合、图像与视频复原及生成式模型，覆盖多曝光、多焦点与遥感等视觉任务。",
-      "source": "https://zhaozixiang1228.github.io/",
-      "relatedQuery": "赵子祥",
+      "description": "关注图像处理与模式识别，研究红外与可见光图像融合、任务自适应、图像去雾及跨模态行人重识别。",
+      "source": "https://xzy.kmust.edu.cn/info/1127/3838.htm",
+      "relatedQuery": "张亚飞",
       "opportunity": null,
-      "note": "现机构按个人主页列为瑞士苏黎世联邦理工学院；西安交通大学为其博士培养单位。",
+      "note": "学院教师主页提供个人研究项目和成果介绍。",
+      "links": [],
+      "verification": "official",
+      "aliases": [],
+      "extension": false
+    },
+    {
+      "id": "yang-yang",
+      "name": "杨扬",
+      "institution": "云南师范大学",
+      "city": "昆明",
+      "lead": "杨扬",
+      "members": [
+        "杨扬"
+      ],
+      "tags": [
+        "计算机视觉",
+        "遥感图像",
+        "医学图像"
+      ],
+      "description": "研究计算机视觉与图像处理，涉及遥感图像、医学图像等多源视觉数据的分析与应用。",
+      "source": "https://cic.ynnu.edu.cn/info/1056/1078.htm",
+      "relatedQuery": "云南师范",
+      "opportunity": null,
+      "note": "姓名按学院主页统一为“杨扬”；从官方介绍继续了解具体研究方向与成果。",
       "links": [
         {
           "label": "Google Scholar",
-          "url": "https://scholar.google.com/citations?user=tUv_X8cAAAAJ&hl"
+          "url": "https://scholar.google.com/citations?hl=en&user=7JLPFHgAAAAJ"
         }
       ],
       "verification": "official",
       "aliases": [
-        "西安交通大学",
-        "苏黎世联邦理工学院"
+        "杨杨"
       ],
+      "extension": false
+    },
+    {
+      "id": "wenhua-qian",
+      "name": "钱文华",
+      "institution": "云南大学",
+      "city": "昆明",
+      "lead": "钱文华",
+      "members": [
+        "钱文华"
+      ],
+      "tags": [
+        "图像融合",
+        "计算机视觉",
+        "文化计算"
+      ],
+      "description": "关注计算机视觉、图形图像处理与文化计算，涉及红外可见光融合、多模态特征融合与图像理解。",
+      "source": "https://www.ise.ynu.edu.cn/faculty/152/",
+      "relatedQuery": "钱文华",
+      "opportunity": null,
+      "note": "学校教师页提供研究方向和成果入口。",
+      "links": [],
+      "verification": "official",
+      "aliases": [],
       "extension": false
     }
   ],
