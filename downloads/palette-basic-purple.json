@@ -1,0 +1,14 @@
+{
+  "id": "purple",
+  "name": "紫色渐阶",
+  "note": "浅 → 深 · 单色递进",
+  "colors": [
+    "#F0EAF6",
+    "#CFB8E0",
+    "#A87FC7",
+    "#7B48A3",
+    "#482A60"
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

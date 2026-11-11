@@ -1,0 +1,14 @@
+{
+  "id": "magenta",
+  "name": "玫红渐阶",
+  "note": "浅 → 深 · 单色递进",
+  "colors": [
+    "#F6E9F2",
+    "#E1B7D2",
+    "#CA7DAF",
+    "#A74484",
+    "#62284E"
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "orange",
+  "name": "橙色渐阶",
+  "note": "浅 → 深 · 单色递进",
+  "colors": [
+    "#FAEFE5",
+    "#EECAAA",
+    "#E19F66",
+    "#C47027",
+    "#734217"
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

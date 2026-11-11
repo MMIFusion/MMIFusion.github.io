@@ -1,0 +1,14 @@
+{
+  "id": "gray",
+  "name": "灰色渐阶",
+  "note": "浅 → 深 · 单色递进",
+  "colors": [
+    "#EEEFF1",
+    "#C7CAD1",
+    "#9BA0AB",
+    "#6B7180",
+    "#3F434B"
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

@@ -71,12 +71,26 @@ provenance=json.loads((ROOT/'data/datasets-provenance.json').read_text())
 for image_path,digest in provenance['images'].items():
     assert hashlib.sha256((OUT/image_path).read_bytes()).hexdigest()==digest, image_path+' differs from imported original'
 assert json.loads((ROOT/'data/site.json').read_text())['datasets']=='datasets.html'
-palettes=json.loads((ROOT/'data/community.json').read_text())['palettes']
-for index, palette in enumerate(palettes,1):
+palette_data=json.loads((ROOT/'data/community.json').read_text())
+palette_entries=[(f'palette-{i}',p) for i,p in enumerate(palette_data['palettes'],1)]
+palette_entries += [('palette-basic-'+p['id'],p) for p in palette_data['basicPalettes']]
+assert len({stem for stem,_ in palette_entries})==len(palette_entries)
+for stem, palette in palette_entries:
     for extension in ('svg','json'):
-        assert f'downloads/palette-{index}.{extension}' in pages['palettes.html'].links, 'Palette download missing'
-    download=json.loads((OUT/'downloads'/f'palette-{index}.json').read_text())
+        assert f'downloads/{stem}.{extension}' in pages['palettes.html'].links, 'Palette download missing'
+    download=json.loads((OUT/'downloads'/f'{stem}.json').read_text())
     assert download['colors']==palette['colors'] and download['name']==palette['name']
+    svg=(OUT/'downloads'/f'{stem}.svg').read_text()
+    assert all(f'fill="{color}"' in svg for color in palette['colors'])
+# A manually edited basic palette must still go from light to dark.
+def luminance(color):
+    channels=[int(color[i:i+2],16)/255 for i in (1,3,5)]
+    linear=[v/12.92 if v<=.04045 else ((v+.055)/1.055)**2.4 for v in channels]
+    return sum(v*w for v,w in zip(linear,(.2126,.7152,.0722)))
+for palette in palette_data['basicPalettes']:
+    assert len(palette['colors'])==5 and len(set(palette['colors']))==5
+    levels=[luminance(color) for color in palette['colors']]
+    assert all(a>b for a,b in zip(levels,levels[1:])), palette['id']+' must progress from light to dark'
 
 # Historical WeChat engagement remains separate from live website PV and local saves.
 stats = json.loads((ROOT/'data/article-stats.json').read_text())

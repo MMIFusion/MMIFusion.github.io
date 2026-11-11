@@ -118,10 +118,19 @@ def home():
 def resources():
     return title_block('THE RESOURCE DIRECTORY','学术资源导航','围绕研究的每一步，整理值得反复使用的资源。')+f'<section class="wrap section compact-top">{modules()}</section>'
 
+def palette_cards(records, basic=False):
+    cards=[]
+    for index,p in enumerate(records,1):
+        stem='palette-basic-'+p['id'] if basic else f'palette-{index}'
+        colors=''.join(f'<button style="--swatch:{color}" data-copy="{color}" aria-label="复制色值 {color}"><span>{color}</span></button>' for color in p['colors'])
+        cards.append(f'''<article class="palette-card" id="{stem}"><div class="swatches">{colors}</div><div class="palette-info"><h3>{E(p['name'])}</h3><p>{E(p['note'])}</p><div class="palette-actions"><button class="text-link" data-copy="{', '.join(p['colors'])}">复制整组色值</button><a href="downloads/{stem}.svg" download>SVG 色板 ↓</a><a href="downloads/{stem}.json" download>JSON 色值 ↓</a></div></div></article>''')
+    return ''.join(cards)
+
 def palettes():
-    cards=''.join(f'''<article class="palette-card"><div class="swatches">{''.join(f'<button style="--swatch:{color}" data-copy="{color}" aria-label="复制色值 {color}"><span>{color}</span></button>' for color in p['colors'])}</div><div class="palette-info"><h3>{E(p['name'])}</h3><p>{E(p['note'])}</p><div class="palette-actions"><button class="text-link" data-copy="{', '.join(p['colors'])}">复制整组色值</button><a href="downloads/palette-{i+1}.svg" download>SVG 色板 ↓</a><a href="downloads/palette-{i+1}.json" download>JSON 色值 ↓</a></div></div></article>''' for i,p in enumerate(COMMUNITY['palettes']))
+    basic=palette_cards(COMMUNITY['basicPalettes'],basic=True)
+    combinations=palette_cards(COMMUNITY['palettes'])
     items=[a for a in ARTICLES if a['section']=='配色与绘图']
-    return title_block('COLOR & SCIENTIFIC DESIGN','配色模板','好的图表，让方法和结果更容易被理解。')+f'''<section class="wrap section compact-top"><div class="section-heading"><div><h2>基础配色，点击即用。</h2><p>本站搭配的四组色板。点击色块复制 HEX；论文实例见下方公众号文章。</p></div><span class="subtle-label">ORIGINAL COLOR SETS</span></div><div class="palette-grid">{cards}</div><p class="small-note">曲线图建议同时使用不同线型或标记，避免仅靠颜色区分。</p></section>{portal.downloads()}<section class="wrap section compact-top"><div class="section-heading"><div><p class="eyebrow">LEARN FROM THE PAPERS</p><h2>论文模型图与配色阅读</h2></div></div>{collection(items,'palettes')}</section>'''
+    return title_block('COLOR & SCIENTIFIC DESIGN','配色模板','好的图表，让方法和结果更容易被理解。')+f'''<nav class="wrap palette-section-links" aria-label="配色系列"><a class="text-link" href="#basic-palettes">基础色系 ↓</a><a class="text-link" href="#combined-palettes">组合配色 ↓</a></nav><section class="wrap section compact-top palette-series" id="basic-palettes"><div class="section-heading"><div><h2>基础色系，从浅到深。</h2><p>{len(COMMUNITY['basicPalettes'])} 个基础色系，每组 5 个色阶。从左到右由浅入深，点击色块复制 HEX。</p></div><span class="subtle-label">LIGHT TO DARK</span></div><div class="palette-grid">{basic}</div></section><section class="wrap section compact-top palette-series" id="combined-palettes"><div class="section-heading"><div><h2>组合配色，搭配即用。</h2><p>跨色系搭配，适合方法对比、模块区分与双模态示意。论文实例见下方公众号文章。</p></div><span class="subtle-label">CURATED COLOR SETS</span></div><div class="palette-grid">{combinations}</div><p class="small-note">曲线图建议同时使用不同线型或标记，避免仅靠颜色区分。</p></section>{portal.downloads()}<section class="wrap section compact-top"><div class="section-heading"><div><p class="eyebrow">LEARN FROM THE PAPERS</p><h2>论文模型图与配色阅读</h2></div></div>{collection(items,'palettes')}</section>'''
 
 def community_members():
     cards=[]
@@ -146,7 +155,7 @@ def about():
 def main():
     if OUT.exists(): shutil.rmtree(OUT)
     OUT.mkdir()
-    portal.build_downloads(COMMUNITY['palettes'])
+    portal.build_downloads(COMMUNITY['palettes'],COMMUNITY['basicPalettes'])
     shutil.copytree(ROOT/'assets', OUT/'assets')
     shutil.copytree(ROOT/'downloads', OUT/'downloads')
     (OUT/'data').mkdir()
@@ -164,7 +173,7 @@ def main():
     page('contribute.html','推荐资源',title_block('BUILD THE COMMONS TOGETHER','一起完善这份资源。','推荐值得分享的研究资源，也欢迎指出已有内容中的错误。')+portal.contribute()+'<noscript><div class="wrap note-box"><p>启用 JavaScript 可生成投稿草稿，也可直接前往 <a href="https://github.com/MMIFusion/MMIFusion.github.io/issues/new">GitHub 提交资源</a>。</p></div></noscript>')
     page('advertising.html','广告合作',title_block('PARTNERSHIPS & COLLABORATION','广告合作','让学术与科研相关的信息，被合适的人看见。')+community.advertising())
     page('fortune.html','投稿日历',title_block('A LITTLE LUCK, A LOT OF PREPARATION','投稿日历','挑个好日子，带着底气出发。')+community.fortune_page())
-    page('palettes.html','配色模板',palettes())
+    page('palettes.html','配色模板',palettes(),extras='<link rel="stylesheet" href="assets/palettes.css">')
     page('about.html','关于我们',about(),'about',extras='<link rel="stylesheet" href="assets/people.css">')
     page('404.html','页面未找到','<section class="wrap empty-feature"><p class="eyebrow">404 / PAGE NOT FOUND</p><h1>这一页暂时没有找到。</h1><p>回到资源目录，继续探索感兴趣的内容。</p><a class="button primary" href="/">返回首页 →</a></section>')
     (OUT/'.nojekyll').touch()

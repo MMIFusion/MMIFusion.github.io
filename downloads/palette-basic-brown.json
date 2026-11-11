@@ -1,0 +1,14 @@
+{
+  "id": "brown",
+  "name": "棕色渐阶",
+  "note": "浅 → 深 · 单色递进",
+  "colors": [
+    "#F5F0EB",
+    "#DDCBBB",
+    "#C1A285",
+    "#9C744F",
+    "#5C442E"
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}
