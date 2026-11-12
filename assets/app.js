@@ -120,7 +120,7 @@
       wrap.classList.remove('stats-open');
       button?.setAttribute('aria-expanded', 'false');
     });
-    wrap.addEventListener('mouseleave', () => wrap.classList.remove('stats-dismissed'));
+    wrap.querySelector('.article-title-link')?.addEventListener('mouseleave', () => wrap.classList.remove('stats-dismissed'));
     wrap.addEventListener('focusout', event => {
       if (!wrap.contains(event.relatedTarget)) wrap.classList.remove('stats-dismissed');
     });

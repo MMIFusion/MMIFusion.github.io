@@ -1,7 +1,6 @@
 /* Article title data: fixed-positioning within the row avoids moving the list on hover. */
 .article-stat-wrap{position:relative}
 .article-stat-panel{position:absolute;top:calc(100% + 10px);left:0;width:min(590px,100%);padding:18px 22px 14px;border:1px solid #e0d9ef;border-radius:13px;background:#fff;box-shadow:0 14px 40px #40335d1c;color:#25283e;z-index:6;opacity:0;visibility:hidden;transform:translateY(7px);transition:opacity .18s,transform .22s,visibility .18s}
-.article-stat-panel:before{content:"";position:absolute;left:0;right:0;top:-12px;height:12px}
 .article-stat-values{display:grid;grid-template-columns:repeat(var(--stat-count,4),minmax(0,1fr));gap:12px;margin:0}
 .article-stat-values>div{padding-right:10px;min-width:0}
 .article-stat-values>div+div{border-left:1px solid #ece7f3;padding-left:16px}
@@ -14,13 +13,13 @@
 .article-stat-toggle[aria-expanded=true]>span{transform:rotate(180deg)}
 .article-row:hover,.article-row:focus-within,.article-row:has(.stats-open){z-index:4}
 @media(hover:hover) and (pointer:fine){
- .article-stat-wrap:hover .article-stat-panel,.article-stat-wrap:focus-within .article-stat-panel{opacity:1;visibility:visible;transform:translateY(0)}
- .article-stat-wrap.stats-dismissed .article-stat-panel{opacity:0;visibility:hidden;transform:translateY(7px)}
+ .article-body h3 .article-title-link{display:inline}
+ .article-stat-panel{pointer-events:none;transition:none}
+ .article-stat-wrap:not(.stats-dismissed):has(.article-title-link:hover) .article-stat-panel,.article-stat-wrap:not(.stats-dismissed):has(.article-title-link:focus-visible) .article-stat-panel{opacity:1;visibility:visible;transform:translateY(0);transition:opacity .18s,transform .22s}
 }
 @media(hover:none),(pointer:coarse){
  .js .article-stat-toggle{display:inline-flex}
  .article-stat-panel{position:static;display:none;width:100%;margin-top:8px;transform:none;box-shadow:none;padding:15px 14px 11px;background:#f7f4fc}
- .article-stat-panel:before{display:none}
  .article-stat-wrap.stats-open .article-stat-panel{display:block;opacity:1;visibility:visible}
  .article-stat-values{gap:8px}
  .article-stat-values>div{padding-right:0}
