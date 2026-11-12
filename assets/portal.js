@@ -47,16 +47,35 @@
     const search = directory.querySelector('[data-card-search]');
     const selects = [...directory.querySelectorAll('[data-card-filter]')];
     const params = new URLSearchParams(location.search);
+    const paginated = directory.dataset.directory === 'venues';
+    const pageSize = 12;
+    let page = Math.max(1, Math.floor(Number(params.get('page')) || 1));
+    let initialVenueHash = paginated ? location.hash.slice(1) : '';
     search.value = params.get('q') || '';
     selects.forEach(select => { const value = params.get(select.dataset.cardFilter); if ([...select.options].some(o => o.value === value)) select.value = value; });
     const render = (save = true) => {
       const terms = norm(search.value).split(/\s+/).filter(Boolean);
-      let count = 0;
+      const matches = [];
       cards.forEach(card => {
         const available = !upcoming?.checked || directory.dataset.directory !== 'calendar' || card.dataset.reference === 'true' || card.dataset.pending === 'true' || [...card.querySelectorAll('.event-row')].some(row => !row.hidden);
         const show = available && terms.every(t => norm(card.dataset.search).includes(t)) && selects.every(s => !s.value || JSON.parse(card.dataset[s.dataset.cardFilter]).includes(s.value));
-        card.hidden = !show; if (show) count++;
+        card.hidden = !show; if (show) matches.push(card);
       });
+      const count = matches.length;
+      if (paginated) {
+        const targetIndex = matches.findIndex(card => card.id === initialVenueHash);
+        if (targetIndex >= 0) page = Math.floor(targetIndex / pageSize) + 1;
+        initialVenueHash = '';
+        const pages = Math.max(1, Math.ceil(count / pageSize));
+        page = Math.min(page, pages);
+        matches.forEach((card, index) => { card.hidden = index < (page - 1) * pageSize || index >= page * pageSize; });
+        directory.querySelectorAll('[data-venue-pagination]').forEach(nav => {
+          nav.hidden = count <= pageSize;
+          nav.querySelector('[data-venue-page-label]').textContent = `第 ${page} / ${pages} 页 · 每页 ${pageSize} 项`;
+          nav.querySelector('[data-venue-prev]').disabled = page <= 1;
+          nav.querySelector('[data-venue-next]').disabled = page >= pages;
+        });
+      }
       const countLabel = directory.querySelector('.directory-count'), countText = `显示 ${count} / ${cards.length} 项`;
       if (countLabel.textContent !== countText) countLabel.textContent = countText;
       directory.querySelector('.directory-empty').hidden = count > 0;
@@ -71,12 +90,22 @@
         if (search.value) query.set('q', search.value);
         selects.forEach(s => { if (s.value) query.set(s.dataset.cardFilter, s.value); });
         if (upcoming?.checked) query.set('upcoming','1');
+        if (paginated && page > 1) query.set('page', page);
         history.replaceState(null, '', location.pathname + (query.size ? '?' + query : '') + location.hash);
       }
     };
-    search.addEventListener('input', () => render());
-    selects.forEach(s => s.addEventListener('change', () => render()));
-    directory.querySelectorAll('[data-card-reset]').forEach(b => b.addEventListener('click', () => { search.value = ''; selects.forEach(s => s.value = ''); if (upcoming) {upcoming.checked=false;refreshEvents();} render(); }));
+    search.addEventListener('input', () => {page = 1; render();});
+    selects.forEach(s => s.addEventListener('change', () => {page = 1; render();}));
+    directory.querySelectorAll('[data-card-reset]').forEach(b => b.addEventListener('click', () => { page = 1; search.value = ''; selects.forEach(s => s.value = ''); if (upcoming) {upcoming.checked=false;refreshEvents();} render(); }));
+    if (paginated) {
+      directory.querySelectorAll('[data-venue-prev], [data-venue-next]').forEach(button => button.addEventListener('click', () => {
+        page += button.hasAttribute('data-venue-next') ? 1 : -1;
+        render();
+        const top = directory.querySelector('[data-venue-pagination]');
+        top.focus({preventScroll:true});
+        top.scrollIntoView({block:'start',behavior:document.documentElement.dataset.motion === 'off' ? 'instant' : 'smooth'});
+      }));
+    }
     if (directory.dataset.directory === 'calendar') {
       upcoming.addEventListener('change', () => {refreshEvents();render();});
       refreshDirectories.push(() => render(false));
@@ -134,6 +163,7 @@
   if (compare.length) {
     const dialog = $('#compare-dialog'), selected = () => compare.filter(c => c.checked);
     const syncCompare = () => {
+      $('.comparison-bar').classList.toggle('has-selection', selected().length > 0);
       $('#compare-open').disabled = selected().length < 2;
       $('#compare-clear').disabled = selected().length === 0;
       $('#compare-count').textContent = selected().length ? `已选择 ${selected().length} 项 · 可对比 2–3 项` : '选择 2–3 个会议期刊进行对比';

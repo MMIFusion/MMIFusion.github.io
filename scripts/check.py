@@ -158,9 +158,12 @@ for team in portal['teams']:
     for item in team['links']:
         assert urlsplit(item['url']).scheme=='https'
 venue_by_id={v['id']:v for v in portal['venues']}
+assert len(venue_by_id)==len(portal['venues']), 'Duplicate venue identity'
+assert len({v['fullName'].casefold() for v in portal['venues']})==len(portal['venues']), 'Duplicate publication title'
 ranks={'A':0,'B':1,'C':2,'未收录':3}
 assert [ranks[v['ccf']] for v in portal['venues']]==sorted(ranks[v['ccf']] for v in portal['venues']), 'Venue ordering differs from the stated CCF groups'
 for v in portal['venues']:
+    assert v['focus'] and set(v['focus']) <= set(portal['venueFocusOrder']), 'Unknown venue focus'
     assert (v['ccfPage'] is None)==(v['ccf']=='未收录')
     if v['ccfPage'] is not None: assert 1<=v['ccfPage']<=72 and v['ccfArea']
     if v['calendar']: assert v['calendar'] in {c['id'] for c in portal['conferences']}
