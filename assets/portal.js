@@ -91,7 +91,7 @@
         selects.forEach(s => { if (s.value) query.set(s.dataset.cardFilter, s.value); });
         if (upcoming?.checked) query.set('upcoming','1');
         if (paginated && page > 1) query.set('page', page);
-        history.replaceState(null, '', location.pathname + (query.size ? '?' + query : '') + location.hash);
+        history.replaceState(null, '', location.pathname + (query.size ? '?' + query : '') + (paginated ? '' : location.hash));
       }
     };
     search.addEventListener('input', () => {page = 1; render();});
