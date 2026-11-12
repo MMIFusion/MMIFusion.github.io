@@ -1,0 +1,86 @@
+{
+  "id": "amber-vivid",
+  "name": "琥珀 · 明亮",
+  "note": "浅 → 深 · 明亮渐阶",
+  "colors": [
+    "#FEF7E7",
+    "#FBE5AD",
+    "#F6C955",
+    "#E4A70C",
+    "#916A08"
+  ],
+  "family": "琥珀",
+  "style": "明亮",
+  "uses": [
+    "重点标注",
+    "结果强调"
+  ],
+  "tips": "选择中间色突出关键结果；高纯度颜色控制面积，图中正文优先使用深色。",
+  "background": "浅色背景",
+  "roles": [
+    "极浅底色",
+    "浅色填充",
+    "中间主色",
+    "深色强调",
+    "极深轮廓"
+  ],
+  "colorDetails": [
+    {
+      "hex": "#FEF7E7",
+      "rgb": [
+        254,
+        247,
+        231
+      ],
+      "role": "极浅底色",
+      "textColor": "#000000",
+      "textContrast": 19.67
+    },
+    {
+      "hex": "#FBE5AD",
+      "rgb": [
+        251,
+        229,
+        173
+      ],
+      "role": "浅色填充",
+      "textColor": "#000000",
+      "textContrast": 16.91
+    },
+    {
+      "hex": "#F6C955",
+      "rgb": [
+        246,
+        201,
+        85
+      ],
+      "role": "中间主色",
+      "textColor": "#000000",
+      "textContrast": 13.4
+    },
+    {
+      "hex": "#E4A70C",
+      "rgb": [
+        228,
+        167,
+        12
+      ],
+      "role": "深色强调",
+      "textColor": "#000000",
+      "textContrast": 9.83
+    },
+    {
+      "hex": "#916A08",
+      "rgb": [
+        145,
+        106,
+        8
+      ],
+      "role": "极深轮廓",
+      "textColor": "#FFFFFF",
+      "textContrast": 4.92
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

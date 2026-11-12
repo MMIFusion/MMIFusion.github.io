@@ -1,0 +1,86 @@
+{
+  "id": "mint-2",
+  "name": "薄荷 · 柔和分组",
+  "note": "模块示意 · 组会封面",
+  "colors": [
+    "#4F8C59",
+    "#8AB8A7",
+    "#C5DCDD",
+    "#D7B2D5",
+    "#AB5E81"
+  ],
+  "family": "薄荷",
+  "style": "柔和分组",
+  "uses": [
+    "模块示意",
+    "组会封面"
+  ],
+  "roles": [
+    "主模块",
+    "次模块",
+    "留白底色",
+    "辅助模块",
+    "强调模块"
+  ],
+  "tips": "适合框架图的大色块与章节页；用深色描边或编号补充分组。",
+  "background": "浅色背景",
+  "colorDetails": [
+    {
+      "hex": "#4F8C59",
+      "rgb": [
+        79,
+        140,
+        89
+      ],
+      "role": "主模块",
+      "textColor": "#000000",
+      "textContrast": 5.23
+    },
+    {
+      "hex": "#8AB8A7",
+      "rgb": [
+        138,
+        184,
+        167
+      ],
+      "role": "次模块",
+      "textColor": "#000000",
+      "textContrast": 9.49
+    },
+    {
+      "hex": "#C5DCDD",
+      "rgb": [
+        197,
+        220,
+        221
+      ],
+      "role": "留白底色",
+      "textColor": "#000000",
+      "textContrast": 14.66
+    },
+    {
+      "hex": "#D7B2D5",
+      "rgb": [
+        215,
+        178,
+        213
+      ],
+      "role": "辅助模块",
+      "textColor": "#000000",
+      "textContrast": 11.22
+    },
+    {
+      "hex": "#AB5E81",
+      "rgb": [
+        171,
+        94,
+        129
+      ],
+      "role": "强调模块",
+      "textColor": "#000000",
+      "textContrast": 4.65
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

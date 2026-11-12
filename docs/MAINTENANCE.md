@@ -43,7 +43,9 @@
 - `datasets`：首页精选入口；`catalog` 使用 `datasets.html#dataset=条目ID`，链接站内完整档案。完整目录的维护见 [数据目录说明](DATASETS.md)。本站仅保存说明与示例图，不托管数据集本体。
 - `metrics`：定义、公式、注意点；若改计算约定，须同步浏览器 `assets/metrics-core.js`、Python 下载脚本与分析样例测试。
 
-`data/community.json` 保存两类色板：`basicPalettes` 为单色系的五级浅至深序列，字段为稳定 `id`、`name`、`note`、`colors`（HEX）；`palettes` 保留原有组合色板。页面先展示基础色系，再展示组合配色，使用同一套卡片。构建生成 SVG / JSON 下载：基础系列使用 `palette-basic-{id}`，原组合色板继续使用 `palette-1` 至 `palette-4`，避免旧链接失效。检查脚本验证基础系列亮度严格递减。框架 SVG 由 `scripts/portal.py` 生成，绘图与指标 Python 脚本直接在 `downloads/` 维护。
+`data/community.json` 保存两类色板：`basicPalettes` 为单色系的五级浅至深序列；`palettes` 为组会组合色板。两类各 132 组，均覆盖 22 个色系 × 6 种风格。字段包括稳定 `id`、`name`、`note`、`colors`（HEX）、`family`、`style`、`uses`、`tips`、`background`、`roles`；`paletteLibrary` 维护筛选选项与版本。请直接编辑数据，`scripts/palette_library.py --initialize` 仅供首次初始化，不覆盖已经维护的库。两类独立搜索、筛选和分页（每页 12 组）；无 JavaScript 时完整展示。卡片锚点可直接打开所在页，筛选会清理失效的卡片锚点。
+
+构建生成每组 SVG / JSON、整库 CSV / JSON 及基础、组会、完整三份 ZIP。基础系列使用 `palette-basic-{id}`；组合色板使用固定数组序号 `palette-{n}`，保留原 `palette-1` 至 `palette-4`，新增只能追加，不重排数组，以免旧链接变化。单卡详情及导出含 RGB、颜色用途，以及按 sRGB 相对亮度计算的黑/白建议字色与对比度；不宣称全部配色满足色觉障碍可分辨性。`scripts/check.py` 验证两类数量相等、全部色系/风格组合、颜色唯一性、基础亮度递减、RGB/对比度及 ZIP 内文件一致性。框架 SVG 由 `scripts/portal.py` 生成，绘图与指标 Python 脚本直接在 `downloads/` 维护。
 
 收藏仅存当前浏览器的 localStorage（键 `mmifusion-bookmarks-v1`），不跨设备同步。图片只在内存中计算，不上传、不持久保存。投稿表单只生成预览与 GitHub 链接，维护者在仓库 Issues 中审核后手动更新数据。
 

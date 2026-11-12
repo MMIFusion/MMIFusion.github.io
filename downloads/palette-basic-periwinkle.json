@@ -1,0 +1,86 @@
+{
+  "id": "periwinkle",
+  "name": "蓝紫 · 经典",
+  "note": "浅 → 深 · 经典渐阶",
+  "colors": [
+    "#EFECF9",
+    "#C1B6E7",
+    "#8974D2",
+    "#5238AD",
+    "#312268"
+  ],
+  "family": "蓝紫",
+  "style": "经典",
+  "uses": [
+    "量级热图",
+    "区域标注"
+  ],
+  "tips": "按浅至深表达递增量级；浅色铺底，中间色填充，深色用于轮廓和重点。",
+  "background": "浅色背景",
+  "roles": [
+    "极浅底色",
+    "浅色填充",
+    "中间主色",
+    "深色强调",
+    "极深轮廓"
+  ],
+  "colorDetails": [
+    {
+      "hex": "#EFECF9",
+      "rgb": [
+        239,
+        236,
+        249
+      ],
+      "role": "极浅底色",
+      "textColor": "#000000",
+      "textContrast": 18.04
+    },
+    {
+      "hex": "#C1B6E7",
+      "rgb": [
+        193,
+        182,
+        231
+      ],
+      "role": "浅色填充",
+      "textColor": "#000000",
+      "textContrast": 11.11
+    },
+    {
+      "hex": "#8974D2",
+      "rgb": [
+        137,
+        116,
+        210
+      ],
+      "role": "中间主色",
+      "textColor": "#000000",
+      "textContrast": 5.49
+    },
+    {
+      "hex": "#5238AD",
+      "rgb": [
+        82,
+        56,
+        173
+      ],
+      "role": "深色强调",
+      "textColor": "#FFFFFF",
+      "textContrast": 8.31
+    },
+    {
+      "hex": "#312268",
+      "rgb": [
+        49,
+        34,
+        104
+      ],
+      "role": "极深轮廓",
+      "textColor": "#FFFFFF",
+      "textContrast": 13.47
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

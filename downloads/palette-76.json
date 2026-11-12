@@ -1,0 +1,86 @@
+{
+  "id": "sky-4",
+  "name": "天蓝 · 多组对比",
+  "note": "方法对比 · 多组实验",
+  "colors": [
+    "#287FAE",
+    "#7638C7",
+    "#923057",
+    "#CCB94C",
+    "#2CBF2E"
+  ],
+  "family": "天蓝",
+  "style": "多组对比",
+  "uses": [
+    "方法对比",
+    "多组实验"
+  ],
+  "roles": [
+    "方法一",
+    "方法二",
+    "方法三",
+    "方法四",
+    "方法五"
+  ],
+  "tips": "五种颜色用于不同方法或实验组；曲线配合线型、标记和图例，不依赖颜色单独区分。",
+  "background": "浅色背景",
+  "colorDetails": [
+    {
+      "hex": "#287FAE",
+      "rgb": [
+        40,
+        127,
+        174
+      ],
+      "role": "方法一",
+      "textColor": "#000000",
+      "textContrast": 4.74
+    },
+    {
+      "hex": "#7638C7",
+      "rgb": [
+        118,
+        56,
+        199
+      ],
+      "role": "方法二",
+      "textColor": "#FFFFFF",
+      "textContrast": 6.64
+    },
+    {
+      "hex": "#923057",
+      "rgb": [
+        146,
+        48,
+        87
+      ],
+      "role": "方法三",
+      "textColor": "#FFFFFF",
+      "textContrast": 7.55
+    },
+    {
+      "hex": "#CCB94C",
+      "rgb": [
+        204,
+        185,
+        76
+      ],
+      "role": "方法四",
+      "textColor": "#000000",
+      "textContrast": 10.61
+    },
+    {
+      "hex": "#2CBF2E",
+      "rgb": [
+        44,
+        191,
+        46
+      ],
+      "role": "方法五",
+      "textColor": "#000000",
+      "textContrast": 8.6
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

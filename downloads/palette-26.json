@@ -1,0 +1,86 @@
+{
+  "id": "amber-2",
+  "name": "琥珀 · 柔和分组",
+  "note": "模块示意 · 组会封面",
+  "colors": [
+    "#965445",
+    "#BFAA82",
+    "#DFE1C1",
+    "#ACD9DD",
+    "#527EB7"
+  ],
+  "family": "琥珀",
+  "style": "柔和分组",
+  "uses": [
+    "模块示意",
+    "组会封面"
+  ],
+  "roles": [
+    "主模块",
+    "次模块",
+    "留白底色",
+    "辅助模块",
+    "强调模块"
+  ],
+  "tips": "适合框架图的大色块与章节页；用深色描边或编号补充分组。",
+  "background": "浅色背景",
+  "colorDetails": [
+    {
+      "hex": "#965445",
+      "rgb": [
+        150,
+        84,
+        69
+      ],
+      "role": "主模块",
+      "textColor": "#FFFFFF",
+      "textContrast": 5.75
+    },
+    {
+      "hex": "#BFAA82",
+      "rgb": [
+        191,
+        170,
+        130
+      ],
+      "role": "次模块",
+      "textColor": "#000000",
+      "textContrast": 9.29
+    },
+    {
+      "hex": "#DFE1C1",
+      "rgb": [
+        223,
+        225,
+        193
+      ],
+      "role": "留白底色",
+      "textColor": "#000000",
+      "textContrast": 15.68
+    },
+    {
+      "hex": "#ACD9DD",
+      "rgb": [
+        172,
+        217,
+        221
+      ],
+      "role": "辅助模块",
+      "textColor": "#000000",
+      "textContrast": 13.72
+    },
+    {
+      "hex": "#527EB7",
+      "rgb": [
+        82,
+        126,
+        183
+      ],
+      "role": "强调模块",
+      "textColor": "#000000",
+      "textContrast": 5.03
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

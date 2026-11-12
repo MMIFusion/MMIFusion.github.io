@@ -1,0 +1,86 @@
+{
+  "id": "mint",
+  "name": "薄荷 · 经典",
+  "note": "浅 → 深 · 经典渐阶",
+  "colors": [
+    "#EDF8F4",
+    "#BAE3D4",
+    "#7CCBAE",
+    "#41A480",
+    "#27624D"
+  ],
+  "family": "薄荷",
+  "style": "经典",
+  "uses": [
+    "量级热图",
+    "区域标注"
+  ],
+  "tips": "按浅至深表达递增量级；浅色铺底，中间色填充，深色用于轮廓和重点。",
+  "background": "浅色背景",
+  "roles": [
+    "极浅底色",
+    "浅色填充",
+    "中间主色",
+    "深色强调",
+    "极深轮廓"
+  ],
+  "colorDetails": [
+    {
+      "hex": "#EDF8F4",
+      "rgb": [
+        237,
+        248,
+        244
+      ],
+      "role": "极浅底色",
+      "textColor": "#000000",
+      "textContrast": 19.33
+    },
+    {
+      "hex": "#BAE3D4",
+      "rgb": [
+        186,
+        227,
+        212
+      ],
+      "role": "浅色填充",
+      "textColor": "#000000",
+      "textContrast": 15.03
+    },
+    {
+      "hex": "#7CCBAE",
+      "rgb": [
+        124,
+        203,
+        174
+      ],
+      "role": "中间主色",
+      "textColor": "#000000",
+      "textContrast": 11.01
+    },
+    {
+      "hex": "#41A480",
+      "rgb": [
+        65,
+        164,
+        128
+      ],
+      "role": "深色强调",
+      "textColor": "#000000",
+      "textContrast": 6.85
+    },
+    {
+      "hex": "#27624D",
+      "rgb": [
+        39,
+        98,
+        77
+      ],
+      "role": "极深轮廓",
+      "textColor": "#FFFFFF",
+      "textContrast": 7.14
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

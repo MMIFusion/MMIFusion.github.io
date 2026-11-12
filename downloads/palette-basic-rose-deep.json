@@ -1,0 +1,86 @@
+{
+  "id": "rose-deep",
+  "name": "玫瑰 · 深邃",
+  "note": "浅 → 深 · 深邃渐阶",
+  "colors": [
+    "#F2D9DA",
+    "#DE9C9F",
+    "#C6575D",
+    "#8B2F34",
+    "#48181B"
+  ],
+  "family": "玫瑰",
+  "style": "深邃",
+  "uses": [
+    "强调层级",
+    "区域标注"
+  ],
+  "tips": "深色适合重点块、标题或细线；大面积深色填充时参考各色位的建议字色。",
+  "background": "浅色背景",
+  "roles": [
+    "极浅底色",
+    "浅色填充",
+    "中间主色",
+    "深色强调",
+    "极深轮廓"
+  ],
+  "colorDetails": [
+    {
+      "hex": "#F2D9DA",
+      "rgb": [
+        242,
+        217,
+        218
+      ],
+      "role": "极浅底色",
+      "textColor": "#000000",
+      "textContrast": 15.71
+    },
+    {
+      "hex": "#DE9C9F",
+      "rgb": [
+        222,
+        156,
+        159
+      ],
+      "role": "浅色填充",
+      "textColor": "#000000",
+      "textContrast": 9.36
+    },
+    {
+      "hex": "#C6575D",
+      "rgb": [
+        198,
+        87,
+        93
+      ],
+      "role": "中间主色",
+      "textColor": "#000000",
+      "textContrast": 4.92
+    },
+    {
+      "hex": "#8B2F34",
+      "rgb": [
+        139,
+        47,
+        52
+      ],
+      "role": "深色强调",
+      "textColor": "#FFFFFF",
+      "textContrast": 8.22
+    },
+    {
+      "hex": "#48181B",
+      "rgb": [
+        72,
+        24,
+        27
+      ],
+      "role": "极深轮廓",
+      "textColor": "#FFFFFF",
+      "textContrast": 14.77
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

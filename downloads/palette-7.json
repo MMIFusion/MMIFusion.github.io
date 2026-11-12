@@ -1,0 +1,86 @@
+{
+  "id": "amber-1",
+  "name": "琥珀 · 冷暖对照",
+  "note": "方法对比 · 双模态示意",
+  "colors": [
+    "#574524",
+    "#CF9426",
+    "#DACDB4",
+    "#A0BBDE",
+    "#2E70C6"
+  ],
+  "family": "琥珀",
+  "style": "冷暖对照",
+  "uses": [
+    "方法对比",
+    "双模态示意"
+  ],
+  "roles": [
+    "冷端深色",
+    "冷端主色",
+    "过渡浅色",
+    "暖端浅色",
+    "暖端强调"
+  ],
+  "tips": "前三色组织一侧信息，后两色组织另一侧；例如可见光与红外、基线与改进。",
+  "background": "浅色背景",
+  "colorDetails": [
+    {
+      "hex": "#574524",
+      "rgb": [
+        87,
+        69,
+        36
+      ],
+      "role": "冷端深色",
+      "textColor": "#FFFFFF",
+      "textContrast": 9.2
+    },
+    {
+      "hex": "#CF9426",
+      "rgb": [
+        207,
+        148,
+        38
+      ],
+      "role": "冷端主色",
+      "textColor": "#000000",
+      "textContrast": 7.92
+    },
+    {
+      "hex": "#DACDB4",
+      "rgb": [
+        218,
+        205,
+        180
+      ],
+      "role": "过渡浅色",
+      "textColor": "#000000",
+      "textContrast": 13.37
+    },
+    {
+      "hex": "#A0BBDE",
+      "rgb": [
+        160,
+        187,
+        222
+      ],
+      "role": "暖端浅色",
+      "textColor": "#000000",
+      "textContrast": 10.66
+    },
+    {
+      "hex": "#2E70C6",
+      "rgb": [
+        46,
+        112,
+        198
+      ],
+      "role": "暖端强调",
+      "textColor": "#FFFFFF",
+      "textContrast": 4.94
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

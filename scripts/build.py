@@ -138,18 +138,44 @@ def resources():
     return title_block('THE RESOURCE DIRECTORY','学术资源导航','围绕研究的每一步，整理值得反复使用的资源。')+f'<section class="wrap section compact-top">{modules()}</section>'
 
 def palette_cards(records, basic=False):
+    from palette_library import color_detail
     cards=[]
     for index,p in enumerate(records,1):
         stem='palette-basic-'+p['id'] if basic else f'palette-{index}'
-        colors=''.join(f'<button style="--swatch:{color}" data-copy="{color}" aria-label="复制色值 {color}"><span>{color}</span></button>' for color in p['colors'])
-        cards.append(f'''<article class="palette-card" id="{stem}"><div class="swatches">{colors}</div><div class="palette-info"><h3>{E(p['name'])}</h3><p>{E(p['note'])}</p><div class="palette-actions"><button class="text-link" data-copy="{', '.join(p['colors'])}">复制整组色值</button><a href="downloads/{stem}.svg" download>SVG 色板 ↓</a><a href="downloads/{stem}.json" download>JSON 色值 ↓</a></div></div></article>''')
+        colors=''.join(f'<button style="--swatch:{color}" data-copy="{color}" aria-label="{E(p["roles"][i])}，复制色值 {color}"><span>{color}</span></button>' for i,color in enumerate(p['colors']))
+        rows=[]
+        for color,role in zip(p['colors'],p['roles']):
+            d=color_detail(color,role);rgb=', '.join(str(v) for v in d['rgb'])
+            rows.append(f'<div class="palette-color-detail"><i style="background:{color}" aria-hidden="true"></i><div><strong>{E(role)}</strong><div class="palette-values"><button data-copy="{color}" aria-label="复制 HEX {color}">{color}</button><button data-copy="rgb({rgb})" aria-label="复制 RGB {rgb}">RGB {rgb}</button></div><small>建议字色 <code>{d["textColor"]}</code> · 对比度 {d["textContrast"]}:1</small></div></div>')
+        haystack=' '.join([p['name'],p['family'],p['style'],p['note'],p['tips'],*p['uses'],*p['colors']])
+        uses=''.join(f'<span>{E(u)}</span>' for u in p['uses'])
+        cards.append(f'''<article class="palette-card" id="{stem}" tabindex="-1" data-palette-card data-palette-search="{E(haystack)}" data-family="{E(p['family'])}" data-style="{E(p['style'])}" data-uses="{E(json.dumps(p['uses'],ensure_ascii=False))}"><div class="swatches">{colors}</div><div class="palette-info"><div class="palette-meta"><span>{E(p['family'])} · {E(p['style'])}</span><span>{E(p['background'])}</span></div><h3>{E(p['name'])}</h3><p>{E(p['note'])}</p><div class="palette-use-tags">{uses}</div><details class="palette-details"><summary>色值详情与使用建议 <span aria-hidden="true">＋</span></summary><p>{E(p['tips'])}</p><div class="palette-color-details">{''.join(rows)}</div><p class="palette-detail-note">建议字色仅比较纯黑与纯白文字在当前色块上的对比度；色块在页面上显示为 sRGB。</p></details><div class="palette-actions"><button class="text-link" data-copy="{', '.join(p['colors'])}">复制整组色值</button><a href="downloads/{stem}.svg" download>SVG 色板 ↓</a><a href="downloads/{stem}.json" download>JSON 色值 ↓</a></div></div></article>''')
     return ''.join(cards)
 
+def palette_section(basic=False):
+    records=COMMUNITY['basicPalettes' if basic else 'palettes']
+    section_id='basic-palettes' if basic else 'combined-palettes'
+    kind='basic' if basic else 'meeting'
+    title='基础色系，从浅到深。' if basic else '组会配色，搭配即用。'
+    nfamilies=len(COMMUNITY['paletteLibrary']['families'])
+    nstyles=len(COMMUNITY['paletteLibrary']['basicStyles' if basic else 'meetingStyles'])
+    subtitle=f'{nfamilies} 个色系 × {nstyles} 种风格，每组 5 个色阶。从左到右由浅入深，点击色块复制 HEX。' if basic else f'{nfamilies} 个主色系 × {nstyles} 种搭配，覆盖方法对比、框架图、重点强调与深色幻灯；按用途挑选。'
+    filters=[]
+    for key,label,values in [('family','色系',COMMUNITY['paletteLibrary']['families']),('style','风格',COMMUNITY['paletteLibrary']['basicStyles' if basic else 'meetingStyles']),('use','用途',list(dict.fromkeys(u for p in records for u in p['uses'])))]:
+        opts=''.join(f'<option value="{E(v)}">{E(v)}</option>' for v in values)
+        filters.append(f'<label>{label}<select data-palette-filter="{key}"><option value="">全部{label}</option>{opts}</select></label>')
+    toolbar=f'<div class="palette-toolbar" data-palette-controls><label class="palette-search"><span>搜索配色</span><input type="search" data-palette-search-input placeholder="搜索名称、用途或 HEX 色值" aria-label="搜索{title[:4]}"></label>{"".join(filters)}<button type="button" data-palette-reset class="text-link">重置</button><p data-palette-count aria-live="polite"></p></div>'
+    pagination='<nav class="palette-pagination" aria-label="'+('基础色系' if basic else '组会配色')+'分页" data-palette-pagination tabindex="-1" hidden><button class="button secondary" data-palette-prev>← 上一页</button><span data-palette-page-label aria-live="polite"></span><button class="button secondary" data-palette-next>下一页 →</button></nav>'
+    empty='<div class="empty-state" data-palette-empty hidden><h3>没有匹配的配色</h3><p>试试其他色系、用途或关键词。</p><button class="button secondary" data-palette-reset>清除筛选</button></div>'
+    return f'<section class="wrap section compact-top palette-series" id="{section_id}" data-palette-library><div class="section-heading"><div><p class="eyebrow">{len(records)} COLOR SETS</p><h2>{title}</h2><p>{subtitle}</p></div><a class="button secondary" href="downloads/palettes-{kind}.zip" download>下载本系列 ↓</a></div>{toolbar}{pagination}<div class="palette-grid">{palette_cards(records,basic)}</div>{empty}{pagination}</section>'
+
 def palettes():
-    basic=palette_cards(COMMUNITY['basicPalettes'],basic=True)
-    combinations=palette_cards(COMMUNITY['palettes'])
     items=[a for a in ARTICLES if a['section']=='配色与绘图']
-    return title_block('COLOR & SCIENTIFIC DESIGN','配色模板','好的图表，让方法和结果更容易被理解。')+f'''<nav class="wrap palette-section-links" aria-label="配色系列"><a class="text-link" href="#basic-palettes">基础色系 ↓</a><a class="text-link" href="#combined-palettes">组合配色 ↓</a></nav><section class="wrap section compact-top palette-series" id="basic-palettes"><div class="section-heading"><div><h2>基础色系，从浅到深。</h2><p>{len(COMMUNITY['basicPalettes'])} 个基础色系，每组 5 个色阶。从左到右由浅入深，点击色块复制 HEX。</p></div><span class="subtle-label">LIGHT TO DARK</span></div><div class="palette-grid">{basic}</div></section><section class="wrap section compact-top palette-series" id="combined-palettes"><div class="section-heading"><div><h2>组合配色，搭配即用。</h2><p>跨色系搭配，适合方法对比、模块区分与双模态示意。论文实例见下方公众号文章。</p></div><span class="subtle-label">CURATED COLOR SETS</span></div><div class="palette-grid">{combinations}</div><p class="small-note">曲线图建议同时使用不同线型或标记，避免仅靠颜色区分。</p></section>{portal.downloads()}<section class="wrap section compact-top"><div class="section-heading"><div><p class="eyebrow">LEARN FROM THE PAPERS</p><h2>论文模型图与配色阅读</h2></div></div>{collection(items,'palettes')}</section>'''
+    basic_count=len(COMMUNITY['basicPalettes']);meeting_count=len(COMMUNITY['palettes'])
+    family_count=len(COMMUNITY['paletteLibrary']['families'])
+    overview=f'''<section class="wrap palette-library-intro"><div><p class="eyebrow">A COLOR LIBRARY FOR YOUR RESEARCH</p><h2>从一个色阶，到整场组会。</h2><p>基础色系负责层级，组会配色负责区分。先选色系，再选用途，找到适合你的那一组。</p></div><div class="palette-library-totals"><div><strong>{len(COMMUNITY['basicPalettes'])}</strong><span>基础色系</span></div><div><strong>{len(COMMUNITY['palettes'])}</strong><span>组会配色</span></div><div><strong>{family_count}</strong><span>色系分组</span></div></div></section>'''
+    downloads=f'''<aside class="wrap palette-library-download"><div><strong>整套配色，一次带走。</strong><p>包含全部 SVG、HEX / RGB、使用建议与建议字色，便于直接用于图表和幻灯片。</p></div><div><a href="downloads/palettes-all.zip" download class="button primary">下载全部 {basic_count+meeting_count} 组 ↓</a><a class="text-link" href="downloads/palettes-all.csv" download>CSV 色值表 ↓</a><a class="text-link" href="downloads/palettes-all.json" download>整库 JSON ↓</a></div></aside>'''
+    return title_block('COLOR & SCIENTIFIC DESIGN','配色模板','好的图表，让方法和结果更容易被理解。')+overview+f'''<nav class="wrap palette-section-links" aria-label="配色系列"><a class="text-link" href="#basic-palettes">基础色系 · {basic_count} ↓</a><a class="text-link" href="#combined-palettes">组会配色 · {meeting_count} ↓</a><a class="text-link" href="#palette-reading">论文配色阅读 ↓</a></nav>'''+downloads+palette_section(True)+palette_section()+'''<div class="wrap palette-library-note"><p>浅色更适合填充；细线与小字优先使用深色。曲线图同时搭配线型、标记和图例，投影前检查实际显示效果。</p><p>配色由本站原创搭配与扩展，覆盖常用色相及中性色；论文中的实际配色案例见下方文章。</p></div>'''+portal.downloads()+f'''<section class="wrap section compact-top" id="palette-reading"><div class="section-heading"><div><p class="eyebrow">LEARN FROM THE PAPERS</p><h2>论文模型图与配色阅读</h2></div></div>{collection(items,'palettes')}</section>'''
 
 def community_members():
     cards=[]
@@ -192,7 +218,7 @@ def main():
     page('contribute.html','推荐资源',title_block('BUILD THE COMMONS TOGETHER','一起完善这份资源。','推荐值得分享的研究资源，也欢迎指出已有内容中的错误。')+portal.contribute()+'<noscript><div class="wrap note-box"><p>启用 JavaScript 可生成投稿草稿，也可直接前往 <a href="https://github.com/MMIFusion/MMIFusion.github.io/issues/new">GitHub 提交资源</a>。</p></div></noscript>')
     page('advertising.html','广告合作',title_block('PARTNERSHIPS & COLLABORATION','广告合作','让学术与科研相关的信息，被合适的人看见。')+community.advertising())
     page('fortune.html','投稿日历',title_block('A LITTLE LUCK, A LOT OF PREPARATION','投稿日历','挑个好日子，带着底气出发。')+community.fortune_page())
-    page('palettes.html','配色模板',palettes(),extras='<link rel="stylesheet" href="assets/palettes.css">')
+    page('palettes.html','配色模板',palettes(),extras='<link rel="stylesheet" href="assets/palettes.css"><script src="assets/palettes.js" defer></script>')
     page('about.html','关于我们',about(),'about',extras='<link rel="stylesheet" href="assets/people.css">')
     page('404.html','页面未找到','<section class="wrap empty-feature"><p class="eyebrow">404 / PAGE NOT FOUND</p><h1>这一页暂时没有找到。</h1><p>回到资源目录，继续探索感兴趣的内容。</p><a class="button primary" href="/">返回首页 →</a></section>')
     (OUT/'.nojekyll').touch()

@@ -2,6 +2,10 @@
 """Validate source fidelity, URL safety, and generated internal links."""
 import json
 import hashlib
+import csv
+import re
+import zipfile
+from collections import Counter
 from pathlib import Path
 from html.parser import HTMLParser
 from urllib.parse import urlsplit, unquote, parse_qs
@@ -91,6 +95,45 @@ for palette in palette_data['basicPalettes']:
     assert len(palette['colors'])==5 and len(set(palette['colors']))==5
     levels=[luminance(color) for color in palette['colors']]
     assert all(a>b for a,b in zip(levels,levels[1:])), palette['id']+' must progress from light to dark'
+
+# The two libraries cover every family/style pair and ship matching, usable exports.
+library=palette_data['paletteLibrary']
+assert len(palette_data['basicPalettes'])==len(palette_data['palettes'])
+for key,styles in [('basicPalettes',library['basicStyles']),('palettes',library['meetingStyles'])]:
+    rows=palette_data[key]
+    assert len(rows)==len(library['families'])*len(styles)
+    assert Counter((p['family'],p['style']) for p in rows)==Counter((f,s) for f in library['families'] for s in styles)
+    assert len({p['id'] for p in rows})==len(rows)
+    assert len({tuple(p['colors']) for p in rows})==len(rows)
+    for p in rows:
+        assert len(p['colors'])==len(p['roles'])==len(set(p['colors']))==5
+        assert all(re.fullmatch(r'#[0-9A-F]{6}',c) for c in p['colors'])
+        assert p['tips'] and p['uses'] and p['background']
+for stem,p in palette_entries:
+    details=json.loads((OUT/'downloads'/f'{stem}.json').read_text())['colorDetails']
+    assert len(details)==5
+    for c,role,d in zip(p['colors'],p['roles'],details):
+        assert d['hex']==c and d['role']==role and d['rgb']==[int(c[i:i+2],16) for i in (1,3,5)]
+        y=luminance(c); ratios={'#000000':(y+.05)/.05,'#FFFFFF':1.05/(y+.05)}
+        assert d['textColor']==max(ratios,key=ratios.get)
+        assert d['textContrast']==round(ratios[d['textColor']],2) and d['textContrast']>=4.5
+catalog=json.loads((OUT/'downloads/palettes-all.json').read_text())
+assert [p['colors'] for p in catalog['basic']]==[p['colors'] for p in palette_data['basicPalettes']]
+assert [p['colors'] for p in catalog['meeting']]==[p['colors'] for p in palette_data['palettes']]
+with (OUT/'downloads/palettes-all.csv').open(encoding='utf-8-sig',newline='') as f:
+    csv_rows=list(csv.DictReader(f))
+assert len(csv_rows)==len(palette_entries)*5
+for row in csv_rows:
+    assert [int(row[k]) for k in ('R','G','B')]==[int(row['HEX'][i:i+2],16) for i in (1,3,5)]
+for label,kinds in [('basic',['basic']),('meeting',['meeting']),('all',['basic','meeting'])]:
+    expected={f"{kind}/{p['download']}.{ext}" for kind in kinds for p in catalog[kind] for ext in ('svg','json')}
+    expected.add('README.txt')
+    if label=='all':expected.update(('palettes-all.json','palettes-all.csv'))
+    with zipfile.ZipFile(OUT/'downloads'/f'palettes-{label}.zip') as z:
+        assert z.testzip() is None and set(z.namelist())==expected
+        for name in expected-{'README.txt'}:
+            assert z.read(name)==(OUT/'downloads'/name.split('/')[-1]).read_bytes()
+print(f"PASS {len(palette_data['basicPalettes'])} basic + {len(palette_data['palettes'])} meeting palettes; ordered shades, RGB/contrast and all archive contents.")
 
 # Historical WeChat engagement remains separate from live website PV and local saves.
 stats = json.loads((ROOT/'data/article-stats.json').read_text())

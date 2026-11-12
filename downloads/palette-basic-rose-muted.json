@@ -1,0 +1,86 @@
+{
+  "id": "rose-muted",
+  "name": "玫瑰 · 灰调",
+  "note": "浅 → 深 · 灰调渐阶",
+  "colors": [
+    "#F2EDEE",
+    "#D8CACC",
+    "#BAA1A4",
+    "#956F74",
+    "#61474B"
+  ],
+  "family": "玫瑰",
+  "style": "灰调",
+  "uses": [
+    "辅助信息",
+    "消融实验"
+  ],
+  "tips": "适合背景方法、辅助区域与消融层级；关键方法可另外使用一组强调色。",
+  "background": "浅色背景",
+  "roles": [
+    "极浅底色",
+    "浅色填充",
+    "中间主色",
+    "深色强调",
+    "极深轮廓"
+  ],
+  "colorDetails": [
+    {
+      "hex": "#F2EDEE",
+      "rgb": [
+        242,
+        237,
+        238
+      ],
+      "role": "极浅底色",
+      "textColor": "#000000",
+      "textContrast": 18.12
+    },
+    {
+      "hex": "#D8CACC",
+      "rgb": [
+        216,
+        202,
+        204
+      ],
+      "role": "浅色填充",
+      "textColor": "#000000",
+      "textContrast": 13.24
+    },
+    {
+      "hex": "#BAA1A4",
+      "rgb": [
+        186,
+        161,
+        164
+      ],
+      "role": "中间主色",
+      "textColor": "#000000",
+      "textContrast": 8.72
+    },
+    {
+      "hex": "#956F74",
+      "rgb": [
+        149,
+        111,
+        116
+      ],
+      "role": "深色强调",
+      "textColor": "#000000",
+      "textContrast": 4.8
+    },
+    {
+      "hex": "#61474B",
+      "rgb": [
+        97,
+        71,
+        75
+      ],
+      "role": "极深轮廓",
+      "textColor": "#FFFFFF",
+      "textContrast": 8.36
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

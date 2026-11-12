@@ -1,0 +1,86 @@
+{
+  "id": "rose-vivid",
+  "name": "玫瑰 · 明亮",
+  "note": "浅 → 深 · 明亮渐阶",
+  "colors": [
+    "#FBE9EB",
+    "#F2B5BB",
+    "#E56773",
+    "#CC2334",
+    "#821721"
+  ],
+  "family": "玫瑰",
+  "style": "明亮",
+  "uses": [
+    "重点标注",
+    "结果强调"
+  ],
+  "tips": "选择中间色突出关键结果；高纯度颜色控制面积，图中正文优先使用深色。",
+  "background": "浅色背景",
+  "roles": [
+    "极浅底色",
+    "浅色填充",
+    "中间主色",
+    "深色强调",
+    "极深轮廓"
+  ],
+  "colorDetails": [
+    {
+      "hex": "#FBE9EB",
+      "rgb": [
+        251,
+        233,
+        235
+      ],
+      "role": "极浅底色",
+      "textColor": "#000000",
+      "textContrast": 17.96
+    },
+    {
+      "hex": "#F2B5BB",
+      "rgb": [
+        242,
+        181,
+        187
+      ],
+      "role": "浅色填充",
+      "textColor": "#000000",
+      "textContrast": 12.1
+    },
+    {
+      "hex": "#E56773",
+      "rgb": [
+        229,
+        103,
+        115
+      ],
+      "role": "中间主色",
+      "textColor": "#000000",
+      "textContrast": 6.52
+    },
+    {
+      "hex": "#CC2334",
+      "rgb": [
+        204,
+        35,
+        52
+      ],
+      "role": "深色强调",
+      "textColor": "#FFFFFF",
+      "textContrast": 5.44
+    },
+    {
+      "hex": "#821721",
+      "rgb": [
+        130,
+        23,
+        33
+      ],
+      "role": "极深轮廓",
+      "textColor": "#FFFFFF",
+      "textContrast": 10.03
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

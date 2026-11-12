@@ -1,0 +1,86 @@
+{
+  "id": "mint-4",
+  "name": "薄荷 · 多组对比",
+  "note": "方法对比 · 多组实验",
+  "colors": [
+    "#379F79",
+    "#4868B7",
+    "#7E3B87",
+    "#BE685B",
+    "#8CAE3C"
+  ],
+  "family": "薄荷",
+  "style": "多组对比",
+  "uses": [
+    "方法对比",
+    "多组实验"
+  ],
+  "roles": [
+    "方法一",
+    "方法二",
+    "方法三",
+    "方法四",
+    "方法五"
+  ],
+  "tips": "五种颜色用于不同方法或实验组；曲线配合线型、标记和图例，不依赖颜色单独区分。",
+  "background": "浅色背景",
+  "colorDetails": [
+    {
+      "hex": "#379F79",
+      "rgb": [
+        55,
+        159,
+        121
+      ],
+      "role": "方法一",
+      "textColor": "#000000",
+      "textContrast": 6.4
+    },
+    {
+      "hex": "#4868B7",
+      "rgb": [
+        72,
+        104,
+        183
+      ],
+      "role": "方法二",
+      "textColor": "#FFFFFF",
+      "textContrast": 5.33
+    },
+    {
+      "hex": "#7E3B87",
+      "rgb": [
+        126,
+        59,
+        135
+      ],
+      "role": "方法三",
+      "textColor": "#FFFFFF",
+      "textContrast": 7.34
+    },
+    {
+      "hex": "#BE685B",
+      "rgb": [
+        190,
+        104,
+        91
+      ],
+      "role": "方法四",
+      "textColor": "#000000",
+      "textContrast": 5.32
+    },
+    {
+      "hex": "#8CAE3C",
+      "rgb": [
+        140,
+        174,
+        60
+      ],
+      "role": "方法五",
+      "textColor": "#000000",
+      "textContrast": 8.23
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

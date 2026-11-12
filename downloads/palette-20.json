@@ -1,0 +1,86 @@
+{
+  "id": "sand-1",
+  "name": "沙色 · 冷暖对照",
+  "note": "方法对比 · 双模态示意",
+  "colors": [
+    "#4D442E",
+    "#948660",
+    "#D3CCBB",
+    "#ACBAD2",
+    "#4B6EA9"
+  ],
+  "family": "沙色",
+  "style": "冷暖对照",
+  "uses": [
+    "方法对比",
+    "双模态示意"
+  ],
+  "roles": [
+    "冷端深色",
+    "冷端主色",
+    "过渡浅色",
+    "暖端浅色",
+    "暖端强调"
+  ],
+  "tips": "前三色组织一侧信息，后两色组织另一侧；例如可见光与红外、基线与改进。",
+  "background": "浅色背景",
+  "colorDetails": [
+    {
+      "hex": "#4D442E",
+      "rgb": [
+        77,
+        68,
+        46
+      ],
+      "role": "冷端深色",
+      "textColor": "#FFFFFF",
+      "textContrast": 9.62
+    },
+    {
+      "hex": "#948660",
+      "rgb": [
+        148,
+        134,
+        96
+      ],
+      "role": "冷端主色",
+      "textColor": "#000000",
+      "textContrast": 5.84
+    },
+    {
+      "hex": "#D3CCBB",
+      "rgb": [
+        211,
+        204,
+        187
+      ],
+      "role": "过渡浅色",
+      "textColor": "#000000",
+      "textContrast": 13.12
+    },
+    {
+      "hex": "#ACBAD2",
+      "rgb": [
+        172,
+        186,
+        210
+      ],
+      "role": "暖端浅色",
+      "textColor": "#000000",
+      "textContrast": 10.71
+    },
+    {
+      "hex": "#4B6EA9",
+      "rgb": [
+        75,
+        110,
+        169
+      ],
+      "role": "暖端强调",
+      "textColor": "#FFFFFF",
+      "textContrast": 5.12
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

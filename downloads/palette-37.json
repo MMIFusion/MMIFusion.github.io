@@ -1,0 +1,86 @@
+{
+  "id": "magenta-2",
+  "name": "洋红 · 柔和分组",
+  "note": "模块示意 · 组会封面",
+  "colors": [
+    "#7A4C8F",
+    "#BA88B2",
+    "#DEC4CF",
+    "#C2D8B0",
+    "#5BAE60"
+  ],
+  "family": "洋红",
+  "style": "柔和分组",
+  "uses": [
+    "模块示意",
+    "组会封面"
+  ],
+  "roles": [
+    "主模块",
+    "次模块",
+    "留白底色",
+    "辅助模块",
+    "强调模块"
+  ],
+  "tips": "适合框架图的大色块与章节页；用深色描边或编号补充分组。",
+  "background": "浅色背景",
+  "colorDetails": [
+    {
+      "hex": "#7A4C8F",
+      "rgb": [
+        122,
+        76,
+        143
+      ],
+      "role": "主模块",
+      "textColor": "#FFFFFF",
+      "textContrast": 6.45
+    },
+    {
+      "hex": "#BA88B2",
+      "rgb": [
+        186,
+        136,
+        178
+      ],
+      "role": "次模块",
+      "textColor": "#000000",
+      "textContrast": 7.25
+    },
+    {
+      "hex": "#DEC4CF",
+      "rgb": [
+        222,
+        196,
+        207
+      ],
+      "role": "留白底色",
+      "textColor": "#000000",
+      "textContrast": 12.9
+    },
+    {
+      "hex": "#C2D8B0",
+      "rgb": [
+        194,
+        216,
+        176
+      ],
+      "role": "辅助模块",
+      "textColor": "#000000",
+      "textContrast": 13.74
+    },
+    {
+      "hex": "#5BAE60",
+      "rgb": [
+        91,
+        174,
+        96
+      ],
+      "role": "强调模块",
+      "textColor": "#000000",
+      "textContrast": 7.67
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

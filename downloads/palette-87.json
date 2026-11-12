@@ -1,0 +1,86 @@
+{
+  "id": "cool-gray-4",
+  "name": "冷灰 · 多组对比",
+  "note": "方法对比 · 多组实验",
+  "colors": [
+    "#4F6687",
+    "#89629D",
+    "#754C53",
+    "#A3A771",
+    "#569466"
+  ],
+  "family": "冷灰",
+  "style": "多组对比",
+  "uses": [
+    "方法对比",
+    "多组实验"
+  ],
+  "roles": [
+    "方法一",
+    "方法二",
+    "方法三",
+    "方法四",
+    "方法五"
+  ],
+  "tips": "五种颜色用于不同方法或实验组；曲线配合线型、标记和图例，不依赖颜色单独区分。",
+  "background": "浅色背景",
+  "colorDetails": [
+    {
+      "hex": "#4F6687",
+      "rgb": [
+        79,
+        102,
+        135
+      ],
+      "role": "方法一",
+      "textColor": "#FFFFFF",
+      "textContrast": 5.86
+    },
+    {
+      "hex": "#89629D",
+      "rgb": [
+        137,
+        98,
+        157
+      ],
+      "role": "方法二",
+      "textColor": "#FFFFFF",
+      "textContrast": 4.89
+    },
+    {
+      "hex": "#754C53",
+      "rgb": [
+        117,
+        76,
+        83
+      ],
+      "role": "方法三",
+      "textColor": "#FFFFFF",
+      "textContrast": 7.2
+    },
+    {
+      "hex": "#A3A771",
+      "rgb": [
+        163,
+        167,
+        113
+      ],
+      "role": "方法四",
+      "textColor": "#000000",
+      "textContrast": 8.32
+    },
+    {
+      "hex": "#569466",
+      "rgb": [
+        86,
+        148,
+        102
+      ],
+      "role": "方法五",
+      "textColor": "#000000",
+      "textContrast": 5.82
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

@@ -1,0 +1,86 @@
+{
+  "id": "rose-3",
+  "name": "玫瑰 · 重点强调",
+  "note": "结果强调 · 消融实验",
+  "colors": [
+    "#4C4345",
+    "#897679",
+    "#CBC2C4",
+    "#D4686E",
+    "#B81E26"
+  ],
+  "family": "玫瑰",
+  "style": "重点强调",
+  "uses": [
+    "结果强调",
+    "消融实验"
+  ],
+  "roles": [
+    "正文辅助",
+    "基线方法",
+    "背景区域",
+    "次要结果",
+    "核心结果"
+  ],
+  "tips": "前三色弱化背景信息，后两色突出结果；将核心方法固定使用最后一色。",
+  "background": "浅色背景",
+  "colorDetails": [
+    {
+      "hex": "#4C4345",
+      "rgb": [
+        76,
+        67,
+        69
+      ],
+      "role": "正文辅助",
+      "textColor": "#FFFFFF",
+      "textContrast": 9.56
+    },
+    {
+      "hex": "#897679",
+      "rgb": [
+        137,
+        118,
+        121
+      ],
+      "role": "基线方法",
+      "textColor": "#000000",
+      "textContrast": 4.93
+    },
+    {
+      "hex": "#CBC2C4",
+      "rgb": [
+        203,
+        194,
+        196
+      ],
+      "role": "背景区域",
+      "textColor": "#000000",
+      "textContrast": 12.05
+    },
+    {
+      "hex": "#D4686E",
+      "rgb": [
+        212,
+        104,
+        110
+      ],
+      "role": "次要结果",
+      "textColor": "#000000",
+      "textContrast": 6.0
+    },
+    {
+      "hex": "#B81E26",
+      "rgb": [
+        184,
+        30,
+        38
+      ],
+      "role": "核心结果",
+      "textColor": "#FFFFFF",
+      "textContrast": 6.46
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

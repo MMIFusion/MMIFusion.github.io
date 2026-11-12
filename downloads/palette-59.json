@@ -1,0 +1,86 @@
+{
+  "id": "magenta-3",
+  "name": "洋红 · 重点强调",
+  "note": "结果强调 · 消融实验",
+  "colors": [
+    "#4B434A",
+    "#887785",
+    "#CBC3CA",
+    "#CC70B4",
+    "#AE288A"
+  ],
+  "family": "洋红",
+  "style": "重点强调",
+  "uses": [
+    "结果强调",
+    "消融实验"
+  ],
+  "roles": [
+    "正文辅助",
+    "基线方法",
+    "背景区域",
+    "次要结果",
+    "核心结果"
+  ],
+  "tips": "前三色弱化背景信息，后两色突出结果；将核心方法固定使用最后一色。",
+  "background": "浅色背景",
+  "colorDetails": [
+    {
+      "hex": "#4B434A",
+      "rgb": [
+        75,
+        67,
+        74
+      ],
+      "role": "正文辅助",
+      "textColor": "#FFFFFF",
+      "textContrast": 9.54
+    },
+    {
+      "hex": "#887785",
+      "rgb": [
+        136,
+        119,
+        133
+      ],
+      "role": "基线方法",
+      "textColor": "#000000",
+      "textContrast": 5.02
+    },
+    {
+      "hex": "#CBC3CA",
+      "rgb": [
+        203,
+        195,
+        202
+      ],
+      "role": "背景区域",
+      "textColor": "#000000",
+      "textContrast": 12.2
+    },
+    {
+      "hex": "#CC70B4",
+      "rgb": [
+        204,
+        112,
+        180
+      ],
+      "role": "次要结果",
+      "textColor": "#000000",
+      "textContrast": 6.54
+    },
+    {
+      "hex": "#AE288A",
+      "rgb": [
+        174,
+        40,
+        138
+      ],
+      "role": "核心结果",
+      "textColor": "#FFFFFF",
+      "textContrast": 6.05
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

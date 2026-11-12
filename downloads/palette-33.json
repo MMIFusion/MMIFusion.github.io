@@ -1,0 +1,86 @@
+{
+  "id": "sky-2",
+  "name": "天蓝 · 柔和分组",
+  "note": "模块示意 · 组会封面",
+  "colors": [
+    "#46958C",
+    "#83AABE",
+    "#C2C9E0",
+    "#DCADB8",
+    "#B66E53"
+  ],
+  "family": "天蓝",
+  "style": "柔和分组",
+  "uses": [
+    "模块示意",
+    "组会封面"
+  ],
+  "roles": [
+    "主模块",
+    "次模块",
+    "留白底色",
+    "辅助模块",
+    "强调模块"
+  ],
+  "tips": "适合框架图的大色块与章节页；用深色描边或编号补充分组。",
+  "background": "浅色背景",
+  "colorDetails": [
+    {
+      "hex": "#46958C",
+      "rgb": [
+        70,
+        149,
+        140
+      ],
+      "role": "主模块",
+      "textColor": "#000000",
+      "textContrast": 5.94
+    },
+    {
+      "hex": "#83AABE",
+      "rgb": [
+        131,
+        170,
+        190
+      ],
+      "role": "次模块",
+      "textColor": "#000000",
+      "textContrast": 8.46
+    },
+    {
+      "hex": "#C2C9E0",
+      "rgb": [
+        194,
+        201,
+        224
+      ],
+      "role": "留白底色",
+      "textColor": "#000000",
+      "textContrast": 12.72
+    },
+    {
+      "hex": "#DCADB8",
+      "rgb": [
+        220,
+        173,
+        184
+      ],
+      "role": "辅助模块",
+      "textColor": "#000000",
+      "textContrast": 10.71
+    },
+    {
+      "hex": "#B66E53",
+      "rgb": [
+        182,
+        110,
+        83
+      ],
+      "role": "强调模块",
+      "textColor": "#000000",
+      "textContrast": 5.34
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

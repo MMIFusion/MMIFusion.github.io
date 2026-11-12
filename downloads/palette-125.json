@@ -1,0 +1,86 @@
+{
+  "id": "magenta-6",
+  "name": "洋红 · 深色演示",
+  "note": "深色幻灯 · 组会封面",
+  "colors": [
+    "#DE87D1",
+    "#DD9D9C",
+    "#C0D08B",
+    "#A5E4BE",
+    "#8EA4E2"
+  ],
+  "family": "洋红",
+  "style": "深色演示",
+  "uses": [
+    "深色幻灯",
+    "组会封面"
+  ],
+  "roles": [
+    "主曲线",
+    "辅助曲线",
+    "参考曲线",
+    "次要强调",
+    "核心强调"
+  ],
+  "tips": "建议搭配 #111827 深色画布；这些颜色用于图形与强调，正文使用白色或浅灰。",
+  "background": "深色背景",
+  "colorDetails": [
+    {
+      "hex": "#DE87D1",
+      "rgb": [
+        222,
+        135,
+        209
+      ],
+      "role": "主曲线",
+      "textColor": "#000000",
+      "textContrast": 8.49
+    },
+    {
+      "hex": "#DD9D9C",
+      "rgb": [
+        221,
+        157,
+        156
+      ],
+      "role": "辅助曲线",
+      "textColor": "#000000",
+      "textContrast": 9.38
+    },
+    {
+      "hex": "#C0D08B",
+      "rgb": [
+        192,
+        208,
+        139
+      ],
+      "role": "参考曲线",
+      "textColor": "#000000",
+      "textContrast": 12.64
+    },
+    {
+      "hex": "#A5E4BE",
+      "rgb": [
+        165,
+        228,
+        190
+      ],
+      "role": "次要强调",
+      "textColor": "#000000",
+      "textContrast": 14.44
+    },
+    {
+      "hex": "#8EA4E2",
+      "rgb": [
+        142,
+        164,
+        226
+      ],
+      "role": "核心强调",
+      "textColor": "#000000",
+      "textContrast": 8.56
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

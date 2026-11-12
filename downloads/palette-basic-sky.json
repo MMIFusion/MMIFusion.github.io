@@ -1,0 +1,86 @@
+{
+  "id": "sky",
+  "name": "天蓝 · 经典",
+  "note": "浅 → 深 · 经典渐阶",
+  "colors": [
+    "#EAF5FA",
+    "#B0D8EE",
+    "#68B5DE",
+    "#2989BC",
+    "#195271"
+  ],
+  "family": "天蓝",
+  "style": "经典",
+  "uses": [
+    "量级热图",
+    "区域标注"
+  ],
+  "tips": "按浅至深表达递增量级；浅色铺底，中间色填充，深色用于轮廓和重点。",
+  "background": "浅色背景",
+  "roles": [
+    "极浅底色",
+    "浅色填充",
+    "中间主色",
+    "深色强调",
+    "极深轮廓"
+  ],
+  "colorDetails": [
+    {
+      "hex": "#EAF5FA",
+      "rgb": [
+        234,
+        245,
+        250
+      ],
+      "role": "极浅底色",
+      "textColor": "#000000",
+      "textContrast": 18.94
+    },
+    {
+      "hex": "#B0D8EE",
+      "rgb": [
+        176,
+        216,
+        238
+      ],
+      "role": "浅色填充",
+      "textColor": "#000000",
+      "textContrast": 13.9
+    },
+    {
+      "hex": "#68B5DE",
+      "rgb": [
+        104,
+        181,
+        222
+      ],
+      "role": "中间主色",
+      "textColor": "#000000",
+      "textContrast": 9.25
+    },
+    {
+      "hex": "#2989BC",
+      "rgb": [
+        41,
+        137,
+        188
+      ],
+      "role": "深色强调",
+      "textColor": "#000000",
+      "textContrast": 5.4
+    },
+    {
+      "hex": "#195271",
+      "rgb": [
+        25,
+        82,
+        113
+      ],
+      "role": "极深轮廓",
+      "textColor": "#FFFFFF",
+      "textContrast": 8.44
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

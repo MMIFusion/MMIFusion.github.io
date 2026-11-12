@@ -1,0 +1,86 @@
+{
+  "id": "purple-1",
+  "name": "紫色 · 冷暖对照",
+  "note": "方法对比 · 双模态示意",
+  "colors": [
+    "#412A51",
+    "#8449AB",
+    "#CAB8D6",
+    "#BED7A7",
+    "#78B540"
+  ],
+  "family": "紫色",
+  "style": "冷暖对照",
+  "uses": [
+    "方法对比",
+    "双模态示意"
+  ],
+  "roles": [
+    "冷端深色",
+    "冷端主色",
+    "过渡浅色",
+    "暖端浅色",
+    "暖端强调"
+  ],
+  "tips": "前三色组织一侧信息，后两色组织另一侧；例如可见光与红外、基线与改进。",
+  "background": "浅色背景",
+  "colorDetails": [
+    {
+      "hex": "#412A51",
+      "rgb": [
+        65,
+        42,
+        81
+      ],
+      "role": "冷端深色",
+      "textColor": "#FFFFFF",
+      "textContrast": 12.54
+    },
+    {
+      "hex": "#8449AB",
+      "rgb": [
+        132,
+        73,
+        171
+      ],
+      "role": "冷端主色",
+      "textColor": "#FFFFFF",
+      "textContrast": 5.96
+    },
+    {
+      "hex": "#CAB8D6",
+      "rgb": [
+        202,
+        184,
+        214
+      ],
+      "role": "过渡浅色",
+      "textColor": "#000000",
+      "textContrast": 11.34
+    },
+    {
+      "hex": "#BED7A7",
+      "rgb": [
+        190,
+        215,
+        167
+      ],
+      "role": "暖端浅色",
+      "textColor": "#000000",
+      "textContrast": 13.47
+    },
+    {
+      "hex": "#78B540",
+      "rgb": [
+        120,
+        181,
+        64
+      ],
+      "role": "暖端强调",
+      "textColor": "#000000",
+      "textContrast": 8.48
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

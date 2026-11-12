@@ -1,0 +1,86 @@
+{
+  "id": "magenta-4",
+  "name": "洋红 · 多组对比",
+  "note": "方法对比 · 多组实验",
+  "colors": [
+    "#A43293",
+    "#BC5F43",
+    "#698A37",
+    "#56C39D",
+    "#374EB4"
+  ],
+  "family": "洋红",
+  "style": "多组对比",
+  "uses": [
+    "方法对比",
+    "多组实验"
+  ],
+  "roles": [
+    "方法一",
+    "方法二",
+    "方法三",
+    "方法四",
+    "方法五"
+  ],
+  "tips": "五种颜色用于不同方法或实验组；曲线配合线型、标记和图例，不依赖颜色单独区分。",
+  "background": "浅色背景",
+  "colorDetails": [
+    {
+      "hex": "#A43293",
+      "rgb": [
+        164,
+        50,
+        147
+      ],
+      "role": "方法一",
+      "textColor": "#FFFFFF",
+      "textContrast": 6.08
+    },
+    {
+      "hex": "#BC5F43",
+      "rgb": [
+        188,
+        95,
+        67
+      ],
+      "role": "方法二",
+      "textColor": "#000000",
+      "textContrast": 4.86
+    },
+    {
+      "hex": "#698A37",
+      "rgb": [
+        105,
+        138,
+        55
+      ],
+      "role": "方法三",
+      "textColor": "#000000",
+      "textContrast": 5.29
+    },
+    {
+      "hex": "#56C39D",
+      "rgb": [
+        86,
+        195,
+        157
+      ],
+      "role": "方法四",
+      "textColor": "#000000",
+      "textContrast": 9.69
+    },
+    {
+      "hex": "#374EB4",
+      "rgb": [
+        55,
+        78,
+        180
+      ],
+      "role": "方法五",
+      "textColor": "#FFFFFF",
+      "textContrast": 7.21
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

@@ -1,0 +1,86 @@
+{
+  "id": "periwinkle-6",
+  "name": "蓝紫 · 深色演示",
+  "note": "深色幻灯 · 组会封面",
+  "colors": [
+    "#9986DF",
+    "#DE9CD8",
+    "#D19F8A",
+    "#C6E5A4",
+    "#8DE2D1"
+  ],
+  "family": "蓝紫",
+  "style": "深色演示",
+  "uses": [
+    "深色幻灯",
+    "组会封面"
+  ],
+  "roles": [
+    "主曲线",
+    "辅助曲线",
+    "参考曲线",
+    "次要强调",
+    "核心强调"
+  ],
+  "tips": "建议搭配 #111827 深色画布；这些颜色用于图形与强调，正文使用白色或浅灰。",
+  "background": "深色背景",
+  "colorDetails": [
+    {
+      "hex": "#9986DF",
+      "rgb": [
+        153,
+        134,
+        223
+      ],
+      "role": "主曲线",
+      "textColor": "#000000",
+      "textContrast": 6.83
+    },
+    {
+      "hex": "#DE9CD8",
+      "rgb": [
+        222,
+        156,
+        216
+      ],
+      "role": "辅助曲线",
+      "textColor": "#000000",
+      "textContrast": 9.85
+    },
+    {
+      "hex": "#D19F8A",
+      "rgb": [
+        209,
+        159,
+        138
+      ],
+      "role": "参考曲线",
+      "textColor": "#000000",
+      "textContrast": 9.04
+    },
+    {
+      "hex": "#C6E5A4",
+      "rgb": [
+        198,
+        229,
+        164
+      ],
+      "role": "次要强调",
+      "textColor": "#000000",
+      "textContrast": 15.14
+    },
+    {
+      "hex": "#8DE2D1",
+      "rgb": [
+        141,
+        226,
+        209
+      ],
+      "role": "核心强调",
+      "textColor": "#000000",
+      "textContrast": 13.93
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

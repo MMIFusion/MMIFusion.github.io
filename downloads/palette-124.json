@@ -1,0 +1,86 @@
+{
+  "id": "purple-6",
+  "name": "紫色 · 深色演示",
+  "note": "深色幻灯 · 组会封面",
+  "colors": [
+    "#BB8ADB",
+    "#DB9EBF",
+    "#CEB98D",
+    "#B0E2A7",
+    "#90D1DF"
+  ],
+  "family": "紫色",
+  "style": "深色演示",
+  "uses": [
+    "深色幻灯",
+    "组会封面"
+  ],
+  "roles": [
+    "主曲线",
+    "辅助曲线",
+    "参考曲线",
+    "次要强调",
+    "核心强调"
+  ],
+  "tips": "建议搭配 #111827 深色画布；这些颜色用于图形与强调，正文使用白色或浅灰。",
+  "background": "深色背景",
+  "colorDetails": [
+    {
+      "hex": "#BB8ADB",
+      "rgb": [
+        187,
+        138,
+        219
+      ],
+      "role": "主曲线",
+      "textColor": "#000000",
+      "textContrast": 7.77
+    },
+    {
+      "hex": "#DB9EBF",
+      "rgb": [
+        219,
+        158,
+        191
+      ],
+      "role": "辅助曲线",
+      "textColor": "#000000",
+      "textContrast": 9.66
+    },
+    {
+      "hex": "#CEB98D",
+      "rgb": [
+        206,
+        185,
+        141
+      ],
+      "role": "参考曲线",
+      "textColor": "#000000",
+      "textContrast": 10.95
+    },
+    {
+      "hex": "#B0E2A7",
+      "rgb": [
+        176,
+        226,
+        167
+      ],
+      "role": "次要强调",
+      "textColor": "#000000",
+      "textContrast": 14.28
+    },
+    {
+      "hex": "#90D1DF",
+      "rgb": [
+        144,
+        209,
+        223
+      ],
+      "role": "核心强调",
+      "textColor": "#000000",
+      "textContrast": 12.37
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

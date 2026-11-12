@@ -1,0 +1,86 @@
+{
+  "id": "mint-1",
+  "name": "薄荷 · 冷暖对照",
+  "note": "方法对比 · 双模态示意",
+  "colors": [
+    "#2A5042",
+    "#4DA887",
+    "#B8D5CB",
+    "#D6A8BD",
+    "#B44175"
+  ],
+  "family": "薄荷",
+  "style": "冷暖对照",
+  "uses": [
+    "方法对比",
+    "双模态示意"
+  ],
+  "roles": [
+    "冷端深色",
+    "冷端主色",
+    "过渡浅色",
+    "暖端浅色",
+    "暖端强调"
+  ],
+  "tips": "前三色组织一侧信息，后两色组织另一侧；例如可见光与红外、基线与改进。",
+  "background": "浅色背景",
+  "colorDetails": [
+    {
+      "hex": "#2A5042",
+      "rgb": [
+        42,
+        80,
+        66
+      ],
+      "role": "冷端深色",
+      "textColor": "#FFFFFF",
+      "textContrast": 9.03
+    },
+    {
+      "hex": "#4DA887",
+      "rgb": [
+        77,
+        168,
+        135
+      ],
+      "role": "冷端主色",
+      "textColor": "#000000",
+      "textContrast": 7.27
+    },
+    {
+      "hex": "#B8D5CB",
+      "rgb": [
+        184,
+        213,
+        203
+      ],
+      "role": "过渡浅色",
+      "textColor": "#000000",
+      "textContrast": 13.42
+    },
+    {
+      "hex": "#D6A8BD",
+      "rgb": [
+        214,
+        168,
+        189
+      ],
+      "role": "暖端浅色",
+      "textColor": "#000000",
+      "textContrast": 10.2
+    },
+    {
+      "hex": "#B44175",
+      "rgb": [
+        180,
+        65,
+        117
+      ],
+      "role": "暖端强调",
+      "textColor": "#FFFFFF",
+      "textContrast": 5.31
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

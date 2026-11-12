@@ -1,0 +1,86 @@
+{
+  "id": "orange-deep",
+  "name": "橙色 · 深邃",
+  "note": "浅 → 深 · 深邃渐阶",
+  "colors": [
+    "#F6E8D5",
+    "#E8C292",
+    "#D89846",
+    "#996521",
+    "#503511"
+  ],
+  "family": "橙色",
+  "style": "深邃",
+  "uses": [
+    "强调层级",
+    "区域标注"
+  ],
+  "tips": "深色适合重点块、标题或细线；大面积深色填充时参考各色位的建议字色。",
+  "background": "浅色背景",
+  "roles": [
+    "极浅底色",
+    "浅色填充",
+    "中间主色",
+    "深色强调",
+    "极深轮廓"
+  ],
+  "colorDetails": [
+    {
+      "hex": "#F6E8D5",
+      "rgb": [
+        246,
+        232,
+        213
+      ],
+      "role": "极浅底色",
+      "textColor": "#000000",
+      "textContrast": 17.42
+    },
+    {
+      "hex": "#E8C292",
+      "rgb": [
+        232,
+        194,
+        146
+      ],
+      "role": "浅色填充",
+      "textColor": "#000000",
+      "textContrast": 12.56
+    },
+    {
+      "hex": "#D89846",
+      "rgb": [
+        216,
+        152,
+        70
+      ],
+      "role": "中间主色",
+      "textColor": "#000000",
+      "textContrast": 8.5
+    },
+    {
+      "hex": "#996521",
+      "rgb": [
+        153,
+        101,
+        33
+      ],
+      "role": "深色强调",
+      "textColor": "#FFFFFF",
+      "textContrast": 4.96
+    },
+    {
+      "hex": "#503511",
+      "rgb": [
+        80,
+        53,
+        17
+      ],
+      "role": "极深轮廓",
+      "textColor": "#FFFFFF",
+      "textContrast": 11.3
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

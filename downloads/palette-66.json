@@ -1,0 +1,86 @@
+{
+  "id": "gray-3",
+  "name": "中性灰 · 重点强调",
+  "note": "结果强调 · 消融实验",
+  "colors": [
+    "#464749",
+    "#7C7E83",
+    "#C5C6C8",
+    "#9596A8",
+    "#5B5D7C"
+  ],
+  "family": "中性灰",
+  "style": "重点强调",
+  "uses": [
+    "结果强调",
+    "消融实验"
+  ],
+  "roles": [
+    "正文辅助",
+    "基线方法",
+    "背景区域",
+    "次要结果",
+    "核心结果"
+  ],
+  "tips": "前三色弱化背景信息，后两色突出结果；将核心方法固定使用最后一色。",
+  "background": "浅色背景",
+  "colorDetails": [
+    {
+      "hex": "#464749",
+      "rgb": [
+        70,
+        71,
+        73
+      ],
+      "role": "正文辅助",
+      "textColor": "#FFFFFF",
+      "textContrast": 9.3
+    },
+    {
+      "hex": "#7C7E83",
+      "rgb": [
+        124,
+        126,
+        131
+      ],
+      "role": "基线方法",
+      "textColor": "#000000",
+      "textContrast": 5.17
+    },
+    {
+      "hex": "#C5C6C8",
+      "rgb": [
+        197,
+        198,
+        200
+      ],
+      "role": "背景区域",
+      "textColor": "#000000",
+      "textContrast": 12.29
+    },
+    {
+      "hex": "#9596A8",
+      "rgb": [
+        149,
+        150,
+        168
+      ],
+      "role": "次要结果",
+      "textColor": "#000000",
+      "textContrast": 7.21
+    },
+    {
+      "hex": "#5B5D7C",
+      "rgb": [
+        91,
+        93,
+        124
+      ],
+      "role": "核心结果",
+      "textColor": "#FFFFFF",
+      "textContrast": 6.36
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

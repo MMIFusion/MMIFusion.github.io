@@ -1,0 +1,86 @@
+{
+  "id": "periwinkle-4",
+  "name": "蓝紫 · 多组对比",
+  "note": "方法对比 · 多组实验",
+  "colors": [
+    "#4A31A5",
+    "#BD4298",
+    "#8B5E37",
+    "#74C355",
+    "#36B4A6"
+  ],
+  "family": "蓝紫",
+  "style": "多组对比",
+  "uses": [
+    "方法对比",
+    "多组实验"
+  ],
+  "roles": [
+    "方法一",
+    "方法二",
+    "方法三",
+    "方法四",
+    "方法五"
+  ],
+  "tips": "五种颜色用于不同方法或实验组；曲线配合线型、标记和图例，不依赖颜色单独区分。",
+  "background": "浅色背景",
+  "colorDetails": [
+    {
+      "hex": "#4A31A5",
+      "rgb": [
+        74,
+        49,
+        165
+      ],
+      "role": "方法一",
+      "textColor": "#FFFFFF",
+      "textContrast": 9.24
+    },
+    {
+      "hex": "#BD4298",
+      "rgb": [
+        189,
+        66,
+        152
+      ],
+      "role": "方法二",
+      "textColor": "#FFFFFF",
+      "textContrast": 4.78
+    },
+    {
+      "hex": "#8B5E37",
+      "rgb": [
+        139,
+        94,
+        55
+      ],
+      "role": "方法三",
+      "textColor": "#FFFFFF",
+      "textContrast": 5.59
+    },
+    {
+      "hex": "#74C355",
+      "rgb": [
+        116,
+        195,
+        85
+      ],
+      "role": "方法四",
+      "textColor": "#000000",
+      "textContrast": 9.68
+    },
+    {
+      "hex": "#36B4A6",
+      "rgb": [
+        54,
+        180,
+        166
+      ],
+      "role": "方法五",
+      "textColor": "#000000",
+      "textContrast": 8.24
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

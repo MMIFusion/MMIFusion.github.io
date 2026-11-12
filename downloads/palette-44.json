@@ -1,0 +1,86 @@
+{
+  "id": "gray-2",
+  "name": "中性灰 · 柔和分组",
+  "note": "模块示意 · 组会封面",
+  "colors": [
+    "#61727A",
+    "#979BAA",
+    "#CECCD6",
+    "#CCC0BD",
+    "#948B75"
+  ],
+  "family": "中性灰",
+  "style": "柔和分组",
+  "uses": [
+    "模块示意",
+    "组会封面"
+  ],
+  "roles": [
+    "主模块",
+    "次模块",
+    "留白底色",
+    "辅助模块",
+    "强调模块"
+  ],
+  "tips": "适合框架图的大色块与章节页；用深色描边或编号补充分组。",
+  "background": "浅色背景",
+  "colorDetails": [
+    {
+      "hex": "#61727A",
+      "rgb": [
+        97,
+        114,
+        122
+      ],
+      "role": "主模块",
+      "textColor": "#FFFFFF",
+      "textContrast": 5.0
+    },
+    {
+      "hex": "#979BAA",
+      "rgb": [
+        151,
+        155,
+        170
+      ],
+      "role": "次模块",
+      "textColor": "#000000",
+      "textContrast": 7.58
+    },
+    {
+      "hex": "#CECCD6",
+      "rgb": [
+        206,
+        204,
+        214
+      ],
+      "role": "留白底色",
+      "textColor": "#000000",
+      "textContrast": 13.23
+    },
+    {
+      "hex": "#CCC0BD",
+      "rgb": [
+        204,
+        192,
+        189
+      ],
+      "role": "辅助模块",
+      "textColor": "#000000",
+      "textContrast": 11.84
+    },
+    {
+      "hex": "#948B75",
+      "rgb": [
+        148,
+        139,
+        117
+      ],
+      "role": "强调模块",
+      "textColor": "#000000",
+      "textContrast": 6.21
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

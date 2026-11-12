@@ -1,0 +1,86 @@
+{
+  "id": "mint-6",
+  "name": "薄荷 · 深色演示",
+  "note": "深色幻灯 · 组会封面",
+  "colors": [
+    "#8BDABD",
+    "#9FBDDB",
+    "#BB8ECD",
+    "#E1A7AE",
+    "#CDDE91"
+  ],
+  "family": "薄荷",
+  "style": "深色演示",
+  "uses": [
+    "深色幻灯",
+    "组会封面"
+  ],
+  "roles": [
+    "主曲线",
+    "辅助曲线",
+    "参考曲线",
+    "次要强调",
+    "核心强调"
+  ],
+  "tips": "建议搭配 #111827 深色画布；这些颜色用于图形与强调，正文使用白色或浅灰。",
+  "background": "深色背景",
+  "colorDetails": [
+    {
+      "hex": "#8BDABD",
+      "rgb": [
+        139,
+        218,
+        189
+      ],
+      "role": "主曲线",
+      "textColor": "#000000",
+      "textContrast": 12.86
+    },
+    {
+      "hex": "#9FBDDB",
+      "rgb": [
+        159,
+        189,
+        219
+      ],
+      "role": "辅助曲线",
+      "textColor": "#000000",
+      "textContrast": 10.78
+    },
+    {
+      "hex": "#BB8ECD",
+      "rgb": [
+        187,
+        142,
+        205
+      ],
+      "role": "参考曲线",
+      "textColor": "#000000",
+      "textContrast": 7.86
+    },
+    {
+      "hex": "#E1A7AE",
+      "rgb": [
+        225,
+        167,
+        174
+      ],
+      "role": "次要强调",
+      "textColor": "#000000",
+      "textContrast": 10.34
+    },
+    {
+      "hex": "#CDDE91",
+      "rgb": [
+        205,
+        222,
+        145
+      ],
+      "role": "核心强调",
+      "textColor": "#000000",
+      "textContrast": 14.45
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

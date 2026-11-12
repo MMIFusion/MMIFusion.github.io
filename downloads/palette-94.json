@@ -1,0 +1,86 @@
+{
+  "id": "green-5",
+  "name": "绿色 · 模块流程",
+  "note": "模块示意 · 双模态示意",
+  "colors": [
+    "#2A6F3F",
+    "#63B57C",
+    "#A9C1D6",
+    "#BA84C7",
+    "#923A53"
+  ],
+  "family": "绿色",
+  "style": "模块流程",
+  "uses": [
+    "模块示意",
+    "双模态示意"
+  ],
+  "roles": [
+    "输入分支",
+    "特征提取",
+    "融合模块",
+    "任务模块",
+    "输出结果"
+  ],
+  "tips": "按流程给模块分配固定颜色；同类模块保持同色，箭头和文字使用统一深色。",
+  "background": "浅色背景",
+  "colorDetails": [
+    {
+      "hex": "#2A6F3F",
+      "rgb": [
+        42,
+        111,
+        63
+      ],
+      "role": "输入分支",
+      "textColor": "#FFFFFF",
+      "textContrast": 6.1
+    },
+    {
+      "hex": "#63B57C",
+      "rgb": [
+        99,
+        181,
+        124
+      ],
+      "role": "特征提取",
+      "textColor": "#000000",
+      "textContrast": 8.43
+    },
+    {
+      "hex": "#A9C1D6",
+      "rgb": [
+        169,
+        193,
+        214
+      ],
+      "role": "融合模块",
+      "textColor": "#000000",
+      "textContrast": 11.29
+    },
+    {
+      "hex": "#BA84C7",
+      "rgb": [
+        186,
+        132,
+        199
+      ],
+      "role": "任务模块",
+      "textColor": "#000000",
+      "textContrast": 7.21
+    },
+    {
+      "hex": "#923A53",
+      "rgb": [
+        146,
+        58,
+        83
+      ],
+      "role": "输出结果",
+      "textColor": "#FFFFFF",
+      "textContrast": 7.11
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

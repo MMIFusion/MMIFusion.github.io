@@ -1,0 +1,86 @@
+{
+  "id": "sand-deep",
+  "name": "沙色 · 深邃",
+  "note": "浅 → 深 · 深邃渐阶",
+  "colors": [
+    "#ECEADF",
+    "#CFC9AB",
+    "#ADA371",
+    "#766E44",
+    "#3E3923"
+  ],
+  "family": "沙色",
+  "style": "深邃",
+  "uses": [
+    "强调层级",
+    "区域标注"
+  ],
+  "tips": "深色适合重点块、标题或细线；大面积深色填充时参考各色位的建议字色。",
+  "background": "浅色背景",
+  "roles": [
+    "极浅底色",
+    "浅色填充",
+    "中间主色",
+    "深色强调",
+    "极深轮廓"
+  ],
+  "colorDetails": [
+    {
+      "hex": "#ECEADF",
+      "rgb": [
+        236,
+        234,
+        223
+      ],
+      "role": "极浅底色",
+      "textColor": "#000000",
+      "textContrast": 17.4
+    },
+    {
+      "hex": "#CFC9AB",
+      "rgb": [
+        207,
+        201,
+        171
+      ],
+      "role": "浅色填充",
+      "textColor": "#000000",
+      "textContrast": 12.6
+    },
+    {
+      "hex": "#ADA371",
+      "rgb": [
+        173,
+        163,
+        113
+      ],
+      "role": "中间主色",
+      "textColor": "#000000",
+      "textContrast": 8.25
+    },
+    {
+      "hex": "#766E44",
+      "rgb": [
+        118,
+        110,
+        68
+      ],
+      "role": "深色强调",
+      "textColor": "#FFFFFF",
+      "textContrast": 5.14
+    },
+    {
+      "hex": "#3E3923",
+      "rgb": [
+        62,
+        57,
+        35
+      ],
+      "role": "极深轮廓",
+      "textColor": "#FFFFFF",
+      "textContrast": 11.57
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

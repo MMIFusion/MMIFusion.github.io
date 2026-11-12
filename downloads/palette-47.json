@@ -1,0 +1,86 @@
+{
+  "id": "amber-3",
+  "name": "琥珀 · 重点强调",
+  "note": "结果强调 · 消融实验",
+  "colors": [
+    "#4C4942",
+    "#8A8375",
+    "#CCC8C2",
+    "#E1C25B",
+    "#C99D0D"
+  ],
+  "family": "琥珀",
+  "style": "重点强调",
+  "uses": [
+    "结果强调",
+    "消融实验"
+  ],
+  "roles": [
+    "正文辅助",
+    "基线方法",
+    "背景区域",
+    "次要结果",
+    "核心结果"
+  ],
+  "tips": "前三色弱化背景信息，后两色突出结果；将核心方法固定使用最后一色。",
+  "background": "浅色背景",
+  "colorDetails": [
+    {
+      "hex": "#4C4942",
+      "rgb": [
+        76,
+        73,
+        66
+      ],
+      "role": "正文辅助",
+      "textColor": "#FFFFFF",
+      "textContrast": 8.98
+    },
+    {
+      "hex": "#8A8375",
+      "rgb": [
+        138,
+        131,
+        117
+      ],
+      "role": "基线方法",
+      "textColor": "#000000",
+      "textContrast": 5.58
+    },
+    {
+      "hex": "#CCC8C2",
+      "rgb": [
+        204,
+        200,
+        194
+      ],
+      "role": "背景区域",
+      "textColor": "#000000",
+      "textContrast": 12.61
+    },
+    {
+      "hex": "#E1C25B",
+      "rgb": [
+        225,
+        194,
+        91
+      ],
+      "role": "次要结果",
+      "textColor": "#000000",
+      "textContrast": 12.07
+    },
+    {
+      "hex": "#C99D0D",
+      "rgb": [
+        201,
+        157,
+        13
+      ],
+      "role": "核心结果",
+      "textColor": "#000000",
+      "textContrast": 8.31
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

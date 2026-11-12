@@ -1,0 +1,86 @@
+{
+  "id": "teal",
+  "name": "青绿 · 经典",
+  "note": "浅 → 深 · 经典渐阶",
+  "colors": [
+    "#ECF8F7",
+    "#B7E6E1",
+    "#77CFC6",
+    "#3CAA9F",
+    "#24665F"
+  ],
+  "family": "青绿",
+  "style": "经典",
+  "uses": [
+    "量级热图",
+    "区域标注"
+  ],
+  "tips": "按浅至深表达递增量级；浅色铺底，中间色填充，深色用于轮廓和重点。",
+  "background": "浅色背景",
+  "roles": [
+    "极浅底色",
+    "浅色填充",
+    "中间主色",
+    "深色强调",
+    "极深轮廓"
+  ],
+  "colorDetails": [
+    {
+      "hex": "#ECF8F7",
+      "rgb": [
+        236,
+        248,
+        247
+      ],
+      "role": "极浅底色",
+      "textColor": "#000000",
+      "textContrast": 19.34
+    },
+    {
+      "hex": "#B7E6E1",
+      "rgb": [
+        183,
+        230,
+        225
+      ],
+      "role": "浅色填充",
+      "textColor": "#000000",
+      "textContrast": 15.42
+    },
+    {
+      "hex": "#77CFC6",
+      "rgb": [
+        119,
+        207,
+        198
+      ],
+      "role": "中间主色",
+      "textColor": "#000000",
+      "textContrast": 11.52
+    },
+    {
+      "hex": "#3CAA9F",
+      "rgb": [
+        60,
+        170,
+        159
+      ],
+      "role": "深色强调",
+      "textColor": "#000000",
+      "textContrast": 7.44
+    },
+    {
+      "hex": "#24665F",
+      "rgb": [
+        36,
+        102,
+        95
+      ],
+      "role": "极深轮廓",
+      "textColor": "#FFFFFF",
+      "textContrast": 6.69
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

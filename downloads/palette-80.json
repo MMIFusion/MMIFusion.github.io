@@ -1,0 +1,86 @@
+{
+  "id": "purple-4",
+  "name": "紫色 · 多组对比",
+  "note": "方法对比 · 多组实验",
+  "colors": [
+    "#7636A0",
+    "#B8476B",
+    "#887C3A",
+    "#59BF63",
+    "#3B91B0"
+  ],
+  "family": "紫色",
+  "style": "多组对比",
+  "uses": [
+    "方法对比",
+    "多组实验"
+  ],
+  "roles": [
+    "方法一",
+    "方法二",
+    "方法三",
+    "方法四",
+    "方法五"
+  ],
+  "tips": "五种颜色用于不同方法或实验组；曲线配合线型、标记和图例，不依赖颜色单独区分。",
+  "background": "浅色背景",
+  "colorDetails": [
+    {
+      "hex": "#7636A0",
+      "rgb": [
+        118,
+        54,
+        160
+      ],
+      "role": "方法一",
+      "textColor": "#FFFFFF",
+      "textContrast": 7.49
+    },
+    {
+      "hex": "#B8476B",
+      "rgb": [
+        184,
+        71,
+        107
+      ],
+      "role": "方法二",
+      "textColor": "#FFFFFF",
+      "textContrast": 5.06
+    },
+    {
+      "hex": "#887C3A",
+      "rgb": [
+        136,
+        124,
+        58
+      ],
+      "role": "方法三",
+      "textColor": "#000000",
+      "textContrast": 4.99
+    },
+    {
+      "hex": "#59BF63",
+      "rgb": [
+        89,
+        191,
+        99
+      ],
+      "role": "方法四",
+      "textColor": "#000000",
+      "textContrast": 9.06
+    },
+    {
+      "hex": "#3B91B0",
+      "rgb": [
+        59,
+        145,
+        176
+      ],
+      "role": "方法五",
+      "textColor": "#000000",
+      "textContrast": 5.86
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

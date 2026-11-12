@@ -1,0 +1,86 @@
+{
+  "id": "pink-deep",
+  "name": "粉色 · 深邃",
+  "note": "浅 → 深 · 深邃渐阶",
+  "colors": [
+    "#F3D8E0",
+    "#DF9AAE",
+    "#C95475",
+    "#8E2C48",
+    "#4A1725"
+  ],
+  "family": "粉色",
+  "style": "深邃",
+  "uses": [
+    "强调层级",
+    "区域标注"
+  ],
+  "tips": "深色适合重点块、标题或细线；大面积深色填充时参考各色位的建议字色。",
+  "background": "浅色背景",
+  "roles": [
+    "极浅底色",
+    "浅色填充",
+    "中间主色",
+    "深色强调",
+    "极深轮廓"
+  ],
+  "colorDetails": [
+    {
+      "hex": "#F3D8E0",
+      "rgb": [
+        243,
+        216,
+        224
+      ],
+      "role": "极浅底色",
+      "textColor": "#000000",
+      "textContrast": 15.71
+    },
+    {
+      "hex": "#DF9AAE",
+      "rgb": [
+        223,
+        154,
+        174
+      ],
+      "role": "浅色填充",
+      "textColor": "#000000",
+      "textContrast": 9.37
+    },
+    {
+      "hex": "#C95475",
+      "rgb": [
+        201,
+        84,
+        117
+      ],
+      "role": "中间主色",
+      "textColor": "#000000",
+      "textContrast": 5.01
+    },
+    {
+      "hex": "#8E2C48",
+      "rgb": [
+        142,
+        44,
+        72
+      ],
+      "role": "深色强调",
+      "textColor": "#FFFFFF",
+      "textContrast": 8.06
+    },
+    {
+      "hex": "#4A1725",
+      "rgb": [
+        74,
+        23,
+        37
+      ],
+      "role": "极深轮廓",
+      "textColor": "#FFFFFF",
+      "textContrast": 14.58
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

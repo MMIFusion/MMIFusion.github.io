@@ -1,0 +1,86 @@
+{
+  "id": "warm-gray-vintage",
+  "name": "暖灰 · 复古",
+  "note": "浅 → 深 · 复古渐阶",
+  "colors": [
+    "#EDECEB",
+    "#CBC6C3",
+    "#A29A95",
+    "#756C67",
+    "#45403D"
+  ],
+  "family": "暖灰",
+  "style": "复古",
+  "uses": [
+    "学术海报",
+    "组会封面"
+  ],
+  "tips": "适合低饱和的海报与章节页；用最浅色作底，最深色建立标题层级。",
+  "background": "浅色背景",
+  "roles": [
+    "极浅底色",
+    "浅色填充",
+    "中间主色",
+    "深色强调",
+    "极深轮廓"
+  ],
+  "colorDetails": [
+    {
+      "hex": "#EDECEB",
+      "rgb": [
+        237,
+        236,
+        235
+      ],
+      "role": "极浅底色",
+      "textColor": "#000000",
+      "textContrast": 17.8
+    },
+    {
+      "hex": "#CBC6C3",
+      "rgb": [
+        203,
+        198,
+        195
+      ],
+      "role": "浅色填充",
+      "textColor": "#000000",
+      "textContrast": 12.4
+    },
+    {
+      "hex": "#A29A95",
+      "rgb": [
+        162,
+        154,
+        149
+      ],
+      "role": "中间主色",
+      "textColor": "#000000",
+      "textContrast": 7.59
+    },
+    {
+      "hex": "#756C67",
+      "rgb": [
+        117,
+        108,
+        103
+      ],
+      "role": "深色强调",
+      "textColor": "#FFFFFF",
+      "textContrast": 5.13
+    },
+    {
+      "hex": "#45403D",
+      "rgb": [
+        69,
+        64,
+        61
+      ],
+      "role": "极深轮廓",
+      "textColor": "#FFFFFF",
+      "textContrast": 10.23
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

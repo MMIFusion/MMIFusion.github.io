@@ -1,0 +1,86 @@
+{
+  "id": "yellow-vivid",
+  "name": "黄色 · 明亮",
+  "note": "浅 → 深 · 明亮渐阶",
+  "colors": [
+    "#FEFBE7",
+    "#FBF3AD",
+    "#F6E655",
+    "#E4CE0C",
+    "#918408"
+  ],
+  "family": "黄色",
+  "style": "明亮",
+  "uses": [
+    "重点标注",
+    "结果强调"
+  ],
+  "tips": "选择中间色突出关键结果；高纯度颜色控制面积，图中正文优先使用深色。",
+  "background": "浅色背景",
+  "roles": [
+    "极浅底色",
+    "浅色填充",
+    "中间主色",
+    "深色强调",
+    "极深轮廓"
+  ],
+  "colorDetails": [
+    {
+      "hex": "#FEFBE7",
+      "rgb": [
+        254,
+        251,
+        231
+      ],
+      "role": "极浅底色",
+      "textColor": "#000000",
+      "textContrast": 20.17
+    },
+    {
+      "hex": "#FBF3AD",
+      "rgb": [
+        251,
+        243,
+        173
+      ],
+      "role": "浅色填充",
+      "textColor": "#000000",
+      "textContrast": 18.53
+    },
+    {
+      "hex": "#F6E655",
+      "rgb": [
+        246,
+        230,
+        85
+      ],
+      "role": "中间主色",
+      "textColor": "#000000",
+      "textContrast": 16.37
+    },
+    {
+      "hex": "#E4CE0C",
+      "rgb": [
+        228,
+        206,
+        12
+      ],
+      "role": "深色强调",
+      "textColor": "#000000",
+      "textContrast": 13.13
+    },
+    {
+      "hex": "#918408",
+      "rgb": [
+        145,
+        132,
+        8
+      ],
+      "role": "极深轮廓",
+      "textColor": "#000000",
+      "textContrast": 5.51
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

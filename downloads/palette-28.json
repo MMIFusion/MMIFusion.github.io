@@ -1,0 +1,86 @@
+{
+  "id": "lime-2",
+  "name": "黄绿 · 柔和分组",
+  "note": "模块示意 · 组会封面",
+  "colors": [
+    "#91854A",
+    "#ABBB86",
+    "#CBDFC3",
+    "#AFBBDA",
+    "#6B58B1"
+  ],
+  "family": "黄绿",
+  "style": "柔和分组",
+  "uses": [
+    "模块示意",
+    "组会封面"
+  ],
+  "roles": [
+    "主模块",
+    "次模块",
+    "留白底色",
+    "辅助模块",
+    "强调模块"
+  ],
+  "tips": "适合框架图的大色块与章节页；用深色描边或编号补充分组。",
+  "background": "浅色背景",
+  "colorDetails": [
+    {
+      "hex": "#91854A",
+      "rgb": [
+        145,
+        133,
+        74
+      ],
+      "role": "主模块",
+      "textColor": "#000000",
+      "textContrast": 5.66
+    },
+    {
+      "hex": "#ABBB86",
+      "rgb": [
+        171,
+        187,
+        134
+      ],
+      "role": "次模块",
+      "textColor": "#000000",
+      "textContrast": 10.18
+    },
+    {
+      "hex": "#CBDFC3",
+      "rgb": [
+        203,
+        223,
+        195
+      ],
+      "role": "留白底色",
+      "textColor": "#000000",
+      "textContrast": 14.88
+    },
+    {
+      "hex": "#AFBBDA",
+      "rgb": [
+        175,
+        187,
+        218
+      ],
+      "role": "辅助模块",
+      "textColor": "#000000",
+      "textContrast": 10.94
+    },
+    {
+      "hex": "#6B58B1",
+      "rgb": [
+        107,
+        88,
+        177
+      ],
+      "role": "强调模块",
+      "textColor": "#FFFFFF",
+      "textContrast": 5.74
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

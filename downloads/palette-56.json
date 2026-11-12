@@ -1,0 +1,86 @@
+{
+  "id": "indigo-3",
+  "name": "靛蓝 · 重点强调",
+  "note": "结果强调 · 消融实验",
+  "colors": [
+    "#43444C",
+    "#777788",
+    "#C3C3CB",
+    "#766FCE",
+    "#3226B0"
+  ],
+  "family": "靛蓝",
+  "style": "重点强调",
+  "uses": [
+    "结果强调",
+    "消融实验"
+  ],
+  "roles": [
+    "正文辅助",
+    "基线方法",
+    "背景区域",
+    "次要结果",
+    "核心结果"
+  ],
+  "tips": "前三色弱化背景信息，后两色突出结果；将核心方法固定使用最后一色。",
+  "background": "浅色背景",
+  "colorDetails": [
+    {
+      "hex": "#43444C",
+      "rgb": [
+        67,
+        68,
+        76
+      ],
+      "role": "正文辅助",
+      "textColor": "#FFFFFF",
+      "textContrast": 9.68
+    },
+    {
+      "hex": "#777788",
+      "rgb": [
+        119,
+        119,
+        136
+      ],
+      "role": "基线方法",
+      "textColor": "#000000",
+      "textContrast": 4.78
+    },
+    {
+      "hex": "#C3C3CB",
+      "rgb": [
+        195,
+        195,
+        203
+      ],
+      "role": "背景区域",
+      "textColor": "#000000",
+      "textContrast": 11.99
+    },
+    {
+      "hex": "#766FCE",
+      "rgb": [
+        118,
+        111,
+        206
+      ],
+      "role": "次要结果",
+      "textColor": "#000000",
+      "textContrast": 4.94
+    },
+    {
+      "hex": "#3226B0",
+      "rgb": [
+        50,
+        38,
+        176
+      ],
+      "role": "核心结果",
+      "textColor": "#FFFFFF",
+      "textContrast": 10.3
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

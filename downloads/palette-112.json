@@ -1,0 +1,86 @@
+{
+  "id": "orange-6",
+  "name": "橙色 · 深色演示",
+  "note": "深色幻灯 · 组会封面",
+  "colors": [
+    "#E7AD7E",
+    "#CBE495",
+    "#83D8B0",
+    "#9EB5EB",
+    "#EB85E7"
+  ],
+  "family": "橙色",
+  "style": "深色演示",
+  "uses": [
+    "深色幻灯",
+    "组会封面"
+  ],
+  "roles": [
+    "主曲线",
+    "辅助曲线",
+    "参考曲线",
+    "次要强调",
+    "核心强调"
+  ],
+  "tips": "建议搭配 #111827 深色画布；这些颜色用于图形与强调，正文使用白色或浅灰。",
+  "background": "深色背景",
+  "colorDetails": [
+    {
+      "hex": "#E7AD7E",
+      "rgb": [
+        231,
+        173,
+        126
+      ],
+      "role": "主曲线",
+      "textColor": "#000000",
+      "textContrast": 10.68
+    },
+    {
+      "hex": "#CBE495",
+      "rgb": [
+        203,
+        228,
+        149
+      ],
+      "role": "辅助曲线",
+      "textColor": "#000000",
+      "textContrast": 15.07
+    },
+    {
+      "hex": "#83D8B0",
+      "rgb": [
+        131,
+        216,
+        176
+      ],
+      "role": "参考曲线",
+      "textColor": "#000000",
+      "textContrast": 12.41
+    },
+    {
+      "hex": "#9EB5EB",
+      "rgb": [
+        158,
+        181,
+        235
+      ],
+      "role": "次要强调",
+      "textColor": "#000000",
+      "textContrast": 10.26
+    },
+    {
+      "hex": "#EB85E7",
+      "rgb": [
+        235,
+        133,
+        231
+      ],
+      "role": "核心强调",
+      "textColor": "#000000",
+      "textContrast": 9.04
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

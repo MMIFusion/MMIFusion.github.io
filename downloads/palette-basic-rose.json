@@ -1,0 +1,86 @@
+{
+  "id": "rose",
+  "name": "玫瑰 · 经典",
+  "note": "浅 → 深 · 经典渐阶",
+  "colors": [
+    "#F9EBEE",
+    "#E9B4BD",
+    "#D67182",
+    "#B23449",
+    "#6B1F2C"
+  ],
+  "family": "玫瑰",
+  "style": "经典",
+  "uses": [
+    "量级热图",
+    "区域标注"
+  ],
+  "tips": "按浅至深表达递增量级；浅色铺底，中间色填充，深色用于轮廓和重点。",
+  "background": "浅色背景",
+  "roles": [
+    "极浅底色",
+    "浅色填充",
+    "中间主色",
+    "深色强调",
+    "极深轮廓"
+  ],
+  "colorDetails": [
+    {
+      "hex": "#F9EBEE",
+      "rgb": [
+        249,
+        235,
+        238
+      ],
+      "role": "极浅底色",
+      "textColor": "#000000",
+      "textContrast": 18.15
+    },
+    {
+      "hex": "#E9B4BD",
+      "rgb": [
+        233,
+        180,
+        189
+      ],
+      "role": "浅色填充",
+      "textColor": "#000000",
+      "textContrast": 11.73
+    },
+    {
+      "hex": "#D67182",
+      "rgb": [
+        214,
+        113,
+        130
+      ],
+      "role": "中间主色",
+      "textColor": "#000000",
+      "textContrast": 6.54
+    },
+    {
+      "hex": "#B23449",
+      "rgb": [
+        178,
+        52,
+        73
+      ],
+      "role": "深色强调",
+      "textColor": "#FFFFFF",
+      "textContrast": 6.03
+    },
+    {
+      "hex": "#6B1F2C",
+      "rgb": [
+        107,
+        31,
+        44
+      ],
+      "role": "极深轮廓",
+      "textColor": "#FFFFFF",
+      "textContrast": 11.31
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

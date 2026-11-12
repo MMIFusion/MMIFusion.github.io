@@ -1,0 +1,86 @@
+{
+  "id": "rose-mist",
+  "name": "玫瑰 · 柔雾",
+  "note": "浅 → 深 · 柔雾渐阶",
+  "colors": [
+    "#F9F3F5",
+    "#E8D3D9",
+    "#D4ABB5",
+    "#BA7889",
+    "#8D495A"
+  ],
+  "family": "玫瑰",
+  "style": "柔雾",
+  "uses": [
+    "模块示意",
+    "浅色背景"
+  ],
+  "tips": "适合大面积模块填充；浅色块之间增加留白或深色边框，避免投影时边界消失。",
+  "background": "浅色背景",
+  "roles": [
+    "极浅底色",
+    "浅色填充",
+    "中间主色",
+    "深色强调",
+    "极深轮廓"
+  ],
+  "colorDetails": [
+    {
+      "hex": "#F9F3F5",
+      "rgb": [
+        249,
+        243,
+        245
+      ],
+      "role": "极浅底色",
+      "textColor": "#000000",
+      "textContrast": 19.17
+    },
+    {
+      "hex": "#E8D3D9",
+      "rgb": [
+        232,
+        211,
+        217
+      ],
+      "role": "浅色填充",
+      "textColor": "#000000",
+      "textContrast": 14.75
+    },
+    {
+      "hex": "#D4ABB5",
+      "rgb": [
+        212,
+        171,
+        181
+      ],
+      "role": "中间主色",
+      "textColor": "#000000",
+      "textContrast": 10.29
+    },
+    {
+      "hex": "#BA7889",
+      "rgb": [
+        186,
+        120,
+        137
+      ],
+      "role": "深色强调",
+      "textColor": "#000000",
+      "textContrast": 6.14
+    },
+    {
+      "hex": "#8D495A",
+      "rgb": [
+        141,
+        73,
+        90
+      ],
+      "role": "极深轮廓",
+      "textColor": "#FFFFFF",
+      "textContrast": 6.5
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

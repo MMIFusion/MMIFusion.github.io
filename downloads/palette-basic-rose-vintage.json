@@ -1,0 +1,86 @@
+{
+  "id": "rose-vintage",
+  "name": "玫瑰 · 复古",
+  "note": "浅 → 深 · 复古渐阶",
+  "colors": [
+    "#F3E4E9",
+    "#DDB1BF",
+    "#C3748D",
+    "#99425E",
+    "#5B2738"
+  ],
+  "family": "玫瑰",
+  "style": "复古",
+  "uses": [
+    "学术海报",
+    "组会封面"
+  ],
+  "tips": "适合低饱和的海报与章节页；用最浅色作底，最深色建立标题层级。",
+  "background": "浅色背景",
+  "roles": [
+    "极浅底色",
+    "浅色填充",
+    "中间主色",
+    "深色强调",
+    "极深轮廓"
+  ],
+  "colorDetails": [
+    {
+      "hex": "#F3E4E9",
+      "rgb": [
+        243,
+        228,
+        233
+      ],
+      "role": "极浅底色",
+      "textColor": "#000000",
+      "textContrast": 17.08
+    },
+    {
+      "hex": "#DDB1BF",
+      "rgb": [
+        221,
+        177,
+        191
+      ],
+      "role": "浅色填充",
+      "textColor": "#000000",
+      "textContrast": 11.12
+    },
+    {
+      "hex": "#C3748D",
+      "rgb": [
+        195,
+        116,
+        141
+      ],
+      "role": "中间主色",
+      "textColor": "#000000",
+      "textContrast": 6.2
+    },
+    {
+      "hex": "#99425E",
+      "rgb": [
+        153,
+        66,
+        94
+      ],
+      "role": "深色强调",
+      "textColor": "#FFFFFF",
+      "textContrast": 6.37
+    },
+    {
+      "hex": "#5B2738",
+      "rgb": [
+        91,
+        39,
+        56
+      ],
+      "role": "极深轮廓",
+      "textColor": "#FFFFFF",
+      "textContrast": 11.72
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

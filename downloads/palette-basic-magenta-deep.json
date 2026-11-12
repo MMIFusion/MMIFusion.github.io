@@ -1,0 +1,86 @@
+{
+  "id": "magenta-deep",
+  "name": "洋红 · 深邃",
+  "note": "浅 → 深 · 深邃渐阶",
+  "colors": [
+    "#F1DAEB",
+    "#DB9FCB",
+    "#C15CA6",
+    "#873371",
+    "#461B3B"
+  ],
+  "family": "洋红",
+  "style": "深邃",
+  "uses": [
+    "强调层级",
+    "区域标注"
+  ],
+  "tips": "深色适合重点块、标题或细线；大面积深色填充时参考各色位的建议字色。",
+  "background": "浅色背景",
+  "roles": [
+    "极浅底色",
+    "浅色填充",
+    "中间主色",
+    "深色强调",
+    "极深轮廓"
+  ],
+  "colorDetails": [
+    {
+      "hex": "#F1DAEB",
+      "rgb": [
+        241,
+        218,
+        235
+      ],
+      "role": "极浅底色",
+      "textColor": "#000000",
+      "textContrast": 15.97
+    },
+    {
+      "hex": "#DB9FCB",
+      "rgb": [
+        219,
+        159,
+        203
+      ],
+      "role": "浅色填充",
+      "textColor": "#000000",
+      "textContrast": 9.83
+    },
+    {
+      "hex": "#C15CA6",
+      "rgb": [
+        193,
+        92,
+        166
+      ],
+      "role": "中间主色",
+      "textColor": "#000000",
+      "textContrast": 5.35
+    },
+    {
+      "hex": "#873371",
+      "rgb": [
+        135,
+        51,
+        113
+      ],
+      "role": "深色强调",
+      "textColor": "#FFFFFF",
+      "textContrast": 7.66
+    },
+    {
+      "hex": "#461B3B",
+      "rgb": [
+        70,
+        27,
+        59
+      ],
+      "role": "极深轮廓",
+      "textColor": "#FFFFFF",
+      "textContrast": 14.19
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

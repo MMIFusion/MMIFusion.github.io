@@ -1,0 +1,86 @@
+{
+  "id": "amber-mist",
+  "name": "琥珀 · 柔雾",
+  "note": "浅 → 深 · 柔雾渐阶",
+  "colors": [
+    "#FAF7F2",
+    "#ECE0D0",
+    "#DBC3A4",
+    "#C59F6D",
+    "#99713D"
+  ],
+  "family": "琥珀",
+  "style": "柔雾",
+  "uses": [
+    "模块示意",
+    "浅色背景"
+  ],
+  "tips": "适合大面积模块填充；浅色块之间增加留白或深色边框，避免投影时边界消失。",
+  "background": "浅色背景",
+  "roles": [
+    "极浅底色",
+    "浅色填充",
+    "中间主色",
+    "深色强调",
+    "极深轮廓"
+  ],
+  "colorDetails": [
+    {
+      "hex": "#FAF7F2",
+      "rgb": [
+        250,
+        247,
+        242
+      ],
+      "role": "极浅底色",
+      "textColor": "#000000",
+      "textContrast": 19.65
+    },
+    {
+      "hex": "#ECE0D0",
+      "rgb": [
+        236,
+        224,
+        208
+      ],
+      "role": "浅色填充",
+      "textColor": "#000000",
+      "textContrast": 16.14
+    },
+    {
+      "hex": "#DBC3A4",
+      "rgb": [
+        219,
+        195,
+        164
+      ],
+      "role": "中间主色",
+      "textColor": "#000000",
+      "textContrast": 12.35
+    },
+    {
+      "hex": "#C59F6D",
+      "rgb": [
+        197,
+        159,
+        109
+      ],
+      "role": "深色强调",
+      "textColor": "#000000",
+      "textContrast": 8.55
+    },
+    {
+      "hex": "#99713D",
+      "rgb": [
+        153,
+        113,
+        61
+      ],
+      "role": "极深轮廓",
+      "textColor": "#000000",
+      "textContrast": 4.78
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

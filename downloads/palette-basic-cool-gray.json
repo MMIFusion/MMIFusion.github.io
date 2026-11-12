@@ -1,0 +1,86 @@
+{
+  "id": "cool-gray",
+  "name": "冷灰 · 经典",
+  "note": "浅 → 深 · 经典渐阶",
+  "colors": [
+    "#F1F2F4",
+    "#CACED3",
+    "#9AA2AC",
+    "#67717E",
+    "#3E444C"
+  ],
+  "family": "冷灰",
+  "style": "经典",
+  "uses": [
+    "量级热图",
+    "区域标注"
+  ],
+  "tips": "按浅至深表达递增量级；浅色铺底，中间色填充，深色用于轮廓和重点。",
+  "background": "浅色背景",
+  "roles": [
+    "极浅底色",
+    "浅色填充",
+    "中间主色",
+    "深色强调",
+    "极深轮廓"
+  ],
+  "colorDetails": [
+    {
+      "hex": "#F1F2F4",
+      "rgb": [
+        241,
+        242,
+        244
+      ],
+      "role": "极浅底色",
+      "textColor": "#000000",
+      "textContrast": 18.75
+    },
+    {
+      "hex": "#CACED3",
+      "rgb": [
+        202,
+        206,
+        211
+      ],
+      "role": "浅色填充",
+      "textColor": "#000000",
+      "textContrast": 13.28
+    },
+    {
+      "hex": "#9AA2AC",
+      "rgb": [
+        154,
+        162,
+        172
+      ],
+      "role": "中间主色",
+      "textColor": "#000000",
+      "textContrast": 8.14
+    },
+    {
+      "hex": "#67717E",
+      "rgb": [
+        103,
+        113,
+        126
+      ],
+      "role": "深色强调",
+      "textColor": "#FFFFFF",
+      "textContrast": 4.95
+    },
+    {
+      "hex": "#3E444C",
+      "rgb": [
+        62,
+        68,
+        76
+      ],
+      "role": "极深轮廓",
+      "textColor": "#FFFFFF",
+      "textContrast": 9.83
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

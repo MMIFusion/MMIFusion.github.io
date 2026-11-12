@@ -1,0 +1,86 @@
+{
+  "id": "blue-muted",
+  "name": "蓝色 · 灰调",
+  "note": "浅 → 深 · 灰调渐阶",
+  "colors": [
+    "#EDEFF2",
+    "#CAD0D9",
+    "#A0ABBB",
+    "#6D7E97",
+    "#465162"
+  ],
+  "family": "蓝色",
+  "style": "灰调",
+  "uses": [
+    "辅助信息",
+    "消融实验"
+  ],
+  "tips": "适合背景方法、辅助区域与消融层级；关键方法可另外使用一组强调色。",
+  "background": "浅色背景",
+  "roles": [
+    "极浅底色",
+    "浅色填充",
+    "中间主色",
+    "深色强调",
+    "极深轮廓"
+  ],
+  "colorDetails": [
+    {
+      "hex": "#EDEFF2",
+      "rgb": [
+        237,
+        239,
+        242
+      ],
+      "role": "极浅底色",
+      "textColor": "#000000",
+      "textContrast": 18.23
+    },
+    {
+      "hex": "#CAD0D9",
+      "rgb": [
+        202,
+        208,
+        217
+      ],
+      "role": "浅色填充",
+      "textColor": "#000000",
+      "textContrast": 13.54
+    },
+    {
+      "hex": "#A0ABBB",
+      "rgb": [
+        160,
+        171,
+        187
+      ],
+      "role": "中间主色",
+      "textColor": "#000000",
+      "textContrast": 9.04
+    },
+    {
+      "hex": "#6D7E97",
+      "rgb": [
+        109,
+        126,
+        151
+      ],
+      "role": "深色强调",
+      "textColor": "#000000",
+      "textContrast": 5.08
+    },
+    {
+      "hex": "#465162",
+      "rgb": [
+        70,
+        81,
+        98
+      ],
+      "role": "极深轮廓",
+      "textColor": "#FFFFFF",
+      "textContrast": 8.03
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

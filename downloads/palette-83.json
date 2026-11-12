@@ -1,0 +1,86 @@
+{
+  "id": "rose-4",
+  "name": "玫瑰 · 多组对比",
+  "note": "方法对比 · 多组实验",
+  "colors": [
+    "#A82F43",
+    "#C0B53F",
+    "#358D3C",
+    "#52A0C6",
+    "#7533B8"
+  ],
+  "family": "玫瑰",
+  "style": "多组对比",
+  "uses": [
+    "方法对比",
+    "多组实验"
+  ],
+  "roles": [
+    "方法一",
+    "方法二",
+    "方法三",
+    "方法四",
+    "方法五"
+  ],
+  "tips": "五种颜色用于不同方法或实验组；曲线配合线型、标记和图例，不依赖颜色单独区分。",
+  "background": "浅色背景",
+  "colorDetails": [
+    {
+      "hex": "#A82F43",
+      "rgb": [
+        168,
+        47,
+        67
+      ],
+      "role": "方法一",
+      "textColor": "#FFFFFF",
+      "textContrast": 6.66
+    },
+    {
+      "hex": "#C0B53F",
+      "rgb": [
+        192,
+        181,
+        63
+      ],
+      "role": "方法二",
+      "textColor": "#000000",
+      "textContrast": 9.92
+    },
+    {
+      "hex": "#358D3C",
+      "rgb": [
+        53,
+        141,
+        60
+      ],
+      "role": "方法三",
+      "textColor": "#000000",
+      "textContrast": 5.03
+    },
+    {
+      "hex": "#52A0C6",
+      "rgb": [
+        82,
+        160,
+        198
+      ],
+      "role": "方法四",
+      "textColor": "#000000",
+      "textContrast": 7.2
+    },
+    {
+      "hex": "#7533B8",
+      "rgb": [
+        117,
+        51,
+        184
+      ],
+      "role": "方法五",
+      "textColor": "#FFFFFF",
+      "textContrast": 7.19
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}

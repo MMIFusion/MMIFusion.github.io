@@ -9,6 +9,78 @@
     "#6B7180",
     "#3F434B"
   ],
+  "family": "中性灰",
+  "style": "经典",
+  "uses": [
+    "量级热图",
+    "区域标注"
+  ],
+  "tips": "按浅至深表达递增量级；浅色铺底，中间色填充，深色用于轮廓和重点。",
+  "background": "浅色背景",
+  "roles": [
+    "极浅底色",
+    "浅色填充",
+    "中间主色",
+    "深色强调",
+    "极深轮廓"
+  ],
+  "colorDetails": [
+    {
+      "hex": "#EEEFF1",
+      "rgb": [
+        238,
+        239,
+        241
+      ],
+      "role": "极浅底色",
+      "textColor": "#000000",
+      "textContrast": 18.25
+    },
+    {
+      "hex": "#C7CAD1",
+      "rgb": [
+        199,
+        202,
+        209
+      ],
+      "role": "浅色填充",
+      "textColor": "#000000",
+      "textContrast": 12.8
+    },
+    {
+      "hex": "#9BA0AB",
+      "rgb": [
+        155,
+        160,
+        171
+      ],
+      "role": "中间主色",
+      "textColor": "#000000",
+      "textContrast": 8.01
+    },
+    {
+      "hex": "#6B7180",
+      "rgb": [
+        107,
+        113,
+        128
+      ],
+      "role": "深色强调",
+      "textColor": "#FFFFFF",
+      "textContrast": 4.88
+    },
+    {
+      "hex": "#3F434B",
+      "rgb": [
+        63,
+        67,
+        75
+      ],
+      "role": "极深轮廓",
+      "textColor": "#FFFFFF",
+      "textContrast": 9.93
+    }
+  ],
   "creator": "多模态信息融合",
   "license": "CC BY 4.0"
 }

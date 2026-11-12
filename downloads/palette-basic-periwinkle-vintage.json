@@ -1,0 +1,86 @@
+{
+  "id": "periwinkle-vintage",
+  "name": "蓝紫 · 复古",
+  "note": "浅 → 深 · 复古渐阶",
+  "colors": [
+    "#E6E5F3",
+    "#B5B2DB",
+    "#7C77C0",
+    "#4B4596",
+    "#2C2959"
+  ],
+  "family": "蓝紫",
+  "style": "复古",
+  "uses": [
+    "学术海报",
+    "组会封面"
+  ],
+  "tips": "适合低饱和的海报与章节页；用最浅色作底，最深色建立标题层级。",
+  "background": "浅色背景",
+  "roles": [
+    "极浅底色",
+    "浅色填充",
+    "中间主色",
+    "深色强调",
+    "极深轮廓"
+  ],
+  "colorDetails": [
+    {
+      "hex": "#E6E5F3",
+      "rgb": [
+        230,
+        229,
+        243
+      ],
+      "role": "极浅底色",
+      "textColor": "#000000",
+      "textContrast": 16.87
+    },
+    {
+      "hex": "#B5B2DB",
+      "rgb": [
+        181,
+        178,
+        219
+      ],
+      "role": "浅色填充",
+      "textColor": "#000000",
+      "textContrast": 10.36
+    },
+    {
+      "hex": "#7C77C0",
+      "rgb": [
+        124,
+        119,
+        192
+      ],
+      "role": "中间主色",
+      "textColor": "#000000",
+      "textContrast": 5.26
+    },
+    {
+      "hex": "#4B4596",
+      "rgb": [
+        75,
+        69,
+        150
+      ],
+      "role": "深色强调",
+      "textColor": "#FFFFFF",
+      "textContrast": 8.11
+    },
+    {
+      "hex": "#2C2959",
+      "rgb": [
+        44,
+        41,
+        89
+      ],
+      "role": "极深轮廓",
+      "textColor": "#FFFFFF",
+      "textContrast": 13.39
+    }
+  ],
+  "creator": "多模态信息融合",
+  "license": "CC BY 4.0"
+}
