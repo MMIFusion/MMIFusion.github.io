@@ -130,7 +130,7 @@ def write_archives(target,entries):
         groups[kind].append(dict(record,download=stem,type=kind,colorDetails=details))
     catalog=dict(creator='多模态信息融合',license='CC BY 4.0',basic=groups['basic'],meeting=groups['meeting'])
     (target/'palettes-all.json').write_text(json.dumps(catalog,ensure_ascii=False,indent=2)+'\n')
-    csvfile=io.StringIO(newline='');writer=csv.writer(csvfile)
+    csvfile=io.StringIO(newline='');writer=csv.writer(csvfile,lineterminator='\n')
     writer.writerow(['类型','名称','色系','风格','用途','色位','HEX','R','G','B','建议字色','字色对比度'])
     for kind,rows in groups.items():
         for p in rows:
