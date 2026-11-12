@@ -53,7 +53,7 @@
       const terms = norm(search.value).split(/\s+/).filter(Boolean);
       let count = 0;
       cards.forEach(card => {
-        const available = !upcoming?.checked || directory.dataset.directory !== 'calendar' || card.dataset.pending === 'true' || [...card.querySelectorAll('.event-row')].some(row => !row.hidden);
+        const available = !upcoming?.checked || directory.dataset.directory !== 'calendar' || card.dataset.reference === 'true' || card.dataset.pending === 'true' || [...card.querySelectorAll('.event-row')].some(row => !row.hidden);
         const show = available && terms.every(t => norm(card.dataset.search).includes(t)) && selects.every(s => !s.value || JSON.parse(card.dataset[s.dataset.cardFilter]).includes(s.value));
         card.hidden = !show; if (show) count++;
       });
@@ -82,6 +82,37 @@
       refreshDirectories.push(() => render(false));
     }
     render(false);
+    if (directory.dataset.directory === 'calendar') {
+      const shortcuts = [...directory.querySelectorAll('[data-conference-jump]')];
+      const revealConference = (hash, scroll = true) => {
+        let target;
+        try { target = document.getElementById(decodeURIComponent(hash.slice(1))); } catch { return; }
+        const card = target?.closest('.conference-card');
+        if (!card || !directory.contains(card)) return;
+        // A shortcut must still work after search, filtering or hiding ended nodes.
+        if (card.hidden || target.hidden || card.querySelector('.event-row[hidden]')) {
+          search.value = ''; selects.forEach(select => { select.value = ''; });
+          upcoming.checked = false; refreshEvents(); render();
+        }
+        shortcuts.forEach(link => {
+          if (link.hash === '#' + card.id) link.setAttribute('aria-current','location');
+          else link.removeAttribute('aria-current');
+        });
+        cards.forEach(item => item.classList.toggle('conference-current',item === card));
+        if (scroll) {
+          card.focus({preventScroll:true});
+          target.scrollIntoView({block:'start',behavior:document.documentElement.dataset.motion === 'off' ? 'instant' : 'smooth'});
+        }
+      };
+      shortcuts.forEach(link => link.addEventListener('click', event => {
+        if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
+        revealConference(link.hash);
+        if (location.hash !== link.hash) history.pushState(null,'',location.pathname + location.search + link.hash);
+      }));
+      addEventListener('hashchange', () => revealConference(location.hash));
+      if (location.hash) requestAnimationFrame(() => revealConference(location.hash));
+    }
   });
 
   const refreshCalendar = () => {refreshEvents();refreshDirectories.forEach(render => render());};

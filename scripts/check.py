@@ -170,7 +170,21 @@ for v in portal['venues']:
 for identity,grade in {'tmm':'A','iclr':'A','ijcai':'B','prcv':'C','tgrs':'B','tmi':'B','proc-ieee':'A','media':'C','information-fusion':'未收录'}.items():
     assert venue_by_id[identity]['ccf']==grade, identity+' classification mismatch'
 for c in portal['conferences']:
-    assert venue_by_id[c['id'].removesuffix('2027')]['ccf']=='A'
+    identity=c['id'].removesuffix('2027')
+    if identity in venue_by_id:
+        assert venue_by_id[identity]['ccf']=='A'
+    else:
+        # Additional calendar venues are checked against the supplied formal PDF.
+        assert c['ccfPage']=={'kdd':35,'sigir':35,'www':70}[identity]
+        assert c['ccfArea']
+    assert '#'+c['id'] in pages['calendar.html'].links, 'Conference shortcut missing'
+for note in portal.get('calendarNotes',[]):
+    assert note['referenceOnly'] and not note['events'], 'Reference notes must not create dates'
+    assert note['id'] in pages['calendar.html'].ids and '#'+note['id'] in pages['calendar.html'].links
+    assert note['ccf']==venue_by_id[note['id']]['ccf']
+    assert note['id']+'2027@mmifusion.github.io' not in combined
+assert 'DTSTART;VALUE=DATE:20270122' in (OUT/'downloads/icml2027-paper.ics').read_text(), 'Do not infer an exact ICML cutoff'
+assert 'DTSTART:20270122T115900Z' in (OUT/'downloads/sigir2027-paper.ics').read_text()
 assert 'DTSTART:20270105T115900Z' in (OUT/'downloads/acl2027-arr.ics').read_text()
 assert 'DTEND;VALUE=DATE:20270626' in (OUT/'downloads/cvpr2027-main.ics').read_text()
 assert not errors, '\n'.join(errors)

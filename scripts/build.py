@@ -81,6 +81,8 @@ def footer(filename, title):
     return f'''<footer class="site-footer"><div class="wrap footer-main"><div><a class="brand" href="index.html"><img src="assets/avatar.png" width="40" height="40" alt=""><span><strong>多模态信息融合</strong><small>CONNECTING MODALITIES. SHARING KNOWLEDGE.</small></span></a><p>一起读论文、找资源，探索多模态研究。</p></div><div class="footer-links"><a href="papers.html">文章目录</a><a href="resources.html">学术资源</a><a href="about.html#connect" data-qr-open>扫码关注与交流</a><a href="about.html">关于我们</a><a href="{E(portal.feedback(SITE['url']+'/'+filename, title+'页面反馈'))}">反馈问题</a>{ext(SITE['github'],'GitHub')}</div></div><div class="wrap footer-bottom"><span>© 2026 公众号「多模态信息融合」</span><span>文章索引更新至 {DATA['latestArticleDate'].replace('-','.')} · <a href="about.html#sources">收录说明</a></span></div></footer>'''
 
 def page(filename, title, body, active='resources', description=None, extras=''):
+    if filename=='calendar.html':
+        extras += '<link rel="stylesheet" href="assets/calendar-nav.css">'
     if 'class="article-stat-wrap"' in body:
         extras += '<link rel="stylesheet" href="assets/article-stats.css">'
     description=description or SITE['description']

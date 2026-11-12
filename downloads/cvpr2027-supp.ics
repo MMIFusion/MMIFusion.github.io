@@ -5,12 +5,12 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
 UID:cvpr2027-supp@mmifusion.github.io
-DTSTAMP:20261111T000000Z
+DTSTAMP:20261112T000000Z
 SUMMARY:CVPR 2027 · 补充材料截止
 DTSTART:20261124T115900Z
 DTEND:20261124T120000Z
 DESCRIPTION:2026-11-23 23:59 AoE (UTC−12)\n官方来源：https://cvpr.th
- ecvf.com/Conferences/2027/CallForPapers\n核对日期：2026-11-11
+ ecvf.com/Conferences/2027/CallForPapers\n核对日期：2026-11-12
 URL:https://cvpr.thecvf.com/Conferences/2027/CallForPapers
 END:VEVENT
 END:VCALENDAR

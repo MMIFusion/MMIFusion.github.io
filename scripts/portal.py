@@ -12,7 +12,7 @@ def link(url,text,css='text-link'):
 def tags(values): return '<div class="tag-list">'+''.join(f'<span>{E(t)}</span>' for t in values)+'</div>'
 def feedback(url, title='资源信息勘误'):
     return 'contribute.html?'+urlencode({'type':'内容勘误','title':title,'source':url})
-def source(url): return f'<div class="source-line">{link(url,"官方来源")}<span>核对于 {P["verifiedAt"]}</span><a class="source-feedback" href="{E(feedback(url))}">反馈勘误 →</a></div>'
+def source(url, verified_at=None): return f'<div class="source-line">{link(url,"官方来源")}<span>核对于 {verified_at or P["verifiedAt"]}</span><a class="source-feedback" href="{E(feedback(url))}">反馈勘误 →</a></div>'
 def related(query): return 'papers.html?'+urlencode({'q':query})
 
 def filterbar(kind,placeholder,filters):
@@ -34,7 +34,13 @@ def dataset_showcase():
 def calendar():
     from datetime import date, timedelta
     cards=[]
-    for c in P['conferences']:
+    entries=P['conferences']+P.get('calendarNotes',[])
+    primary=[('CVPR','cvpr2027'),('ICCV','iccv2027'),('ECCV','eccv'),('AAAI','aaai2027'),('ACM MM','acmmm2027'),('ICLR','iclr2027'),('NeurIPS','neurips2027')]
+    more=[('ICML','icml2027'),('ACL','acl2027'),('KDD','kdd2027'),('SIGIR','sigir2027'),('WWW','www2027')]
+    def navlinks(items):
+        return ''.join(f'<a href="#{identity}" data-conference-jump><span>{label}</span><small>{"届次说明" if identity=="eccv" else "2027"}</small><b aria-hidden="true">↓</b></a>' for label,identity in items)
+    navigation=f'<nav class="conference-navigation" aria-label="会议快捷导航"><div class="conference-nav-heading"><strong>会议直达</strong><span>选择会议，查看投稿与举办日程</span></div><div class="conference-nav-primary">{navlinks(primary)}</div><div class="conference-nav-more"><span>更多方向</span>{navlinks(more)}</div></nav>'
+    for c in entries:
         events=[]
         for e in c['events']:
             last=(date.fromisoformat(e['endExclusive'])-timedelta(days=1)).isoformat() if e['kind']=='date' else ''
@@ -43,11 +49,14 @@ def calendar():
             countdown=f'<span class="countdown" data-countdown="{e["at"]}">{E(e["original"])}</span>' if e['kind']=='deadline' else '<span class="date-only">按官方日期显示</span>'
             eventsource=link(e.get('source',c['source']),'节点来源')
             events.append(f'<div class="event-row" id="{e["id"]}" data-calendar-event="{E(json.dumps(e))}"><div><h3>{E(e["label"])}</h3>{time}<small>{E(e["original"])}</small></div><div class="event-actions">{countdown}<a href="downloads/{e["id"]}.ics" download>加入日历 ↓</a>{eventsource}</div></div>')
-        status=(['已公布日程'] if c['events'] else [])+(['待补充日程'] if c.get('pending') else [])
-        attrs=filterattrs(c,' '.join([c['name'],c['field'],c['description'],c['location']]),field=[c['field']],status=status)
+        reference=c.get('referenceOnly',False)
+        status=['届次说明'] if reference else (['已公布日程'] if c['events'] else [])+(['待补充日程'] if c.get('pending') else [])
+        attrs=filterattrs(c,' '.join([c['name'],c['field'],c['description'],c['location'],*c.get('aliases',[])]),field=[c['field']],status=status)
         pending=f'<div class="conference-pending"><strong>待官方更新</strong><p>{E(c["pending"])}</p></div>' if c.get('pending') else ''
-        cards.append(f'<article id="{c["id"]}" class="conference-card" data-pending="{str(bool(c.get("pending"))).lower()}" {attrs}><div class="conference-title"><div><p class="eyebrow">{E(c["field"])}</p><h2>{E(c["name"])}</h2><div class="conference-meta"><span class="ccf-badge ccf-a">CCF A</span><span>{E(c["location"])}</span></div></div>{link(c["source"],"会议官网")}</div><p class="conference-description">{E(c["description"])}</p>{"".join(events)}{pending}{source(c["source"])}</article>')
-    return f'''<section class="wrap section compact-top" data-directory="calendar"><div class="calendar-scope"><p><strong>2027 · 图像融合与多模态研究相关 A 类会议</strong></p><p>收录 CVPR、ICCV、ACM MM、ICLR、ICML、NeurIPS、AAAI 与 ACL。分类参考 CCF 第七版；ACL 更适合语言与视觉交叉研究。已公布时间均链接官方来源，待公布项保留入口。</p></div>{filterbar('calendar','搜索会议名称、地点或研究方向',[('field','领域',list(dict.fromkeys(c['field'] for c in P['conferences']))),('status','日程',['已公布日程','待补充日程'])])}<div class="calendar-tools"><p>精确截止可切换时区；仅公布日期的节点保留为全天。</p><label>时间显示 <select id="calendar-timezone"><option value="Asia/Shanghai">北京时间 UTC+8</option><option value="UTC">协调世界时 UTC</option><option value="local">浏览器当地时间</option></select></label><a href="downloads/mmifusion-calendar.ics" download class="button secondary">下载已公布日程 ↓</a></div><div class="calendar-view-options"><label><input type="checkbox" id="calendar-upcoming">只看未结束节点</label><p id="calendar-event-summary" role="status"></p><span>保留待公布项 · 临近截止突出显示 · 日期节点不作精确倒计时</span></div><div class="conference-grid">{''.join(cards)}</div>{empty()}<p class="small-note">AoE 为 UTC−12。日历文件只包含已经公布的节点，可导入系统日历；文件为本次信息快照，后续变更请查看会议官网。</p></section>'''
+        notice=f'<div class="conference-pending conference-reference"><strong>届次与分类</strong><p>{E(c["notice"])}</p></div>' if reference else ''
+        location_source=f'<div class="conference-location-source">{link(c["locationSource"],"举办地来源")}</div>' if c.get('locationSource') else ''
+        cards.append(f'<article id="{c["id"]}" class="conference-card" tabindex="-1" aria-labelledby="{c["id"]}-title" data-reference="{str(reference).lower()}" data-pending="{str(bool(c.get("pending"))).lower()}" {attrs}><div class="conference-title"><div><p class="eyebrow">{E(c["field"])}</p><h2 id="{c["id"]}-title">{E(c["name"])}</h2><div class="conference-meta"><span class="ccf-badge ccf-{c["ccf"].lower()}">CCF {E(c["ccf"])}</span><span>{E(c["location"])}</span></div></div>{link(c["source"],"会议官网")}</div><p class="conference-description">{E(c["description"])}</p>{"".join(events)}{pending}{notice}{location_source}{source(c["source"],P.get("calendarVerifiedAt"))}</article>')
+    return f'''<section class="wrap section compact-top" data-directory="calendar"><div class="calendar-scope"><p><strong>2027 · 人工智能、多模态与机器学习 A 类会议</strong></p><p>收录 {len(P['conferences'])} 场相关 A 类会议，覆盖视觉、多媒体、语言、数据挖掘与检索方向；分类参考 CCF 第七版。ECCV 单列届次说明。已确认节点链接官方来源，未公布的日期保留说明。</p></div>{filterbar('calendar','搜索会议名称、地点或研究方向',[('field','领域',list(dict.fromkeys(c['field'] for c in entries))),('status','日程',['已公布日程','待补充日程','届次说明'])])}{navigation}<div class="calendar-tools"><p>精确截止可切换时区；仅公布日期的节点保留为全天。</p><label>时间显示 <select id="calendar-timezone"><option value="Asia/Shanghai">北京时间 UTC+8</option><option value="UTC">协调世界时 UTC</option><option value="local">浏览器当地时间</option></select></label><a href="downloads/mmifusion-calendar.ics" download class="button secondary">下载已公布日程 ↓</a></div><div class="calendar-view-options"><label><input type="checkbox" id="calendar-upcoming">只看未结束节点</label><p id="calendar-event-summary" role="status"></p><span>保留待公布项 · 临近截止突出显示 · 日期节点不作精确倒计时</span></div><div class="conference-grid">{''.join(cards)}</div>{empty()}<p class="small-note">AoE 为 UTC−12。日历文件只包含已经公布的节点，可导入系统日历；文件为本次信息快照，后续变更请查看会议官网。</p></section>'''
 
 def teams():
     cards=[]
@@ -86,7 +95,7 @@ def venues():
         guide_note=f'<p class="venue-guide-note">{E(v["guideNote"])}</p>' if v.get('guideNote') else ''
         reading='papers.html?'+urlencode({'venue':v['articleVenue']} if v['articleVenue'] else {'q':v['relatedQuery']})
         fullname=f'<p class="venue-fullname">{E(v["fullName"])}</p>' if v['fullName']!=v['name'] else ''
-        cards.append(f'<article class="venue-card" id="venue-{v["id"]}" {attrs}><div class="venue-top"><div><span class="ccf-badge ccf-{gradecss}">{grade}</span><span class="venue-type">{E(v["type"])}</span></div><label class="compare-check"><input type="checkbox" data-compare="{v["id"]}">加入对比</label></div><h2>{E(v["name"])}</h2>{fullname}{tags(v["tags"])}<p>{E(v["scope"])}</p><div class="fit-note"><strong>选刊思路</strong><p>{E(v["fit"])}</p></div><div class="card-actions">{link(v["source"],v.get("sourceLabel","征稿范围"))}{guide}<a href="{E(reading)}">相关解读 →</a>{calendarlink}</div>{guide_note}{source(v["source"])}</article>')
+        cards.append(f'<article class="venue-card" id="venue-{v["id"]}" {attrs}><div class="venue-top"><div><span class="ccf-badge ccf-{gradecss}">{grade}</span><span class="venue-type">{E(v["type"])}</span></div><label class="compare-check"><input type="checkbox" data-compare="{v["id"]}">加入对比</label></div><h2>{E(v["name"])}</h2>{fullname}{tags(v["tags"])}<p>{E(v["scope"])}</p><div class="fit-note"><strong>选刊思路</strong><p>{E(v["fit"])}</p></div><div class="card-actions">{link(v["source"],v.get("sourceLabel","征稿范围"))}{guide}<a href="{E(reading)}">相关解读 →</a>{calendarlink}</div>{guide_note}{source(v["source"],v.get("verifiedAt"))}</article>')
     spotlight=f'<aside class="venue-spotlight"><div><span class="eyebrow">JOURNAL SPOTLIGHT</span><h2>Information Fusion</h2><p>聚焦多源信息融合的期刊 · 图像融合与多模态研究</p></div><a class="button secondary" href="venues.html?type=期刊&amp;q=Information%20Fusion#venue-information-fusion">查看期刊档案 →</a></aside>'
     counts=''.join(f'<div><strong>{sum(v["ccf"]==rank for v in P["venues"])}</strong><span>{"CCF "+rank+" 类" if rank!="未收录" else "领域补充"}</span></div>' for rank in ['A','B','C','未收录'])
     return f'''<section class="wrap section compact-top" data-directory="venues"><div class="venue-overview"><div><p class="eyebrow">FIND THE RIGHT VENUE</p><h2>{len(P['venues'])} 个会议期刊，按研究方向选。</h2><p>依次展示 CCF A、B、C 类与领域补充。同级按图像融合相关性组织，不构成同级排名；先看研究问题，再看分类。</p></div><div class="venue-totals">{counts}</div></div>{spotlight}{filterbar('venues','搜索简称、完整名称或研究方向',[('type','类型',['会议','期刊']),('ccf','分类',['A','B','C','未收录']),('topic','方向',sorted(set(t for v in P['venues'] for t in v['tags'])))])}<p class="small-note venue-reading-note">征稿范围来自官方页面；“选刊思路”为本站整理建议。未收录不代表质量较低，录用与否取决于具体工作。</p><div class="venue-grid">{''.join(cards)}</div>{empty()}<details class="venue-basis" id="ccf-basis"><summary>分类依据与排序说明</summary><p>分类参考《{E(P['venueClassification']['title'])}》正式版 PDF。Information Fusion 等未收录条目不强行归入 A、B、C。会议和期刊跨领域的声誉不能仅由这一分类概括。</p><p>此版中的 TMM、ICLR 为 A 类，IJCAI 为 B 类，PRCV 为 C 类。投稿前也请核对所在单位采用的目录版本。{link(P['venueClassification']['source'],'CCF 第七版公示说明')}</p></details><div class="comparison-bar"><div><span id="compare-count" role="status">选择 2–3 个会议期刊进行对比</span><small id="compare-selection"></small></div><div class="comparison-actions"><button class="text-link" type="button" id="compare-clear" disabled>清空所选</button><button class="button secondary" id="compare-open" disabled>比较所选项目 →</button></div></div><dialog id="compare-dialog" class="portal-dialog" aria-labelledby="compare-title"><div class="dialog-heading"><h2 id="compare-title">会议期刊对比</h2><button type="button" data-close-dialog aria-label="关闭对比" autofocus>×</button></div><div id="compare-content"></div></dialog></section>'''
@@ -116,14 +125,15 @@ def build_downloads(palettes, basic_palettes=()):
     def calendar_text(events):
         lines=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//MMIFusion//Research Calendar//ZH','CALSCALE:GREGORIAN','METHOD:PUBLISH']
         for c,e in events:
-            lines+=['BEGIN:VEVENT','UID:'+e['id']+'@mmifusion.github.io','DTSTAMP:'+P['verifiedAt'].replace('-','')+'T000000Z','SUMMARY:'+escape(c['name']+' · '+e['label'])]
+            verified=P.get('calendarVerifiedAt',P['verifiedAt'])
+            lines+=['BEGIN:VEVENT','UID:'+e['id']+'@mmifusion.github.io','DTSTAMP:'+verified.replace('-','')+'T000000Z','SUMMARY:'+escape(c['name']+' · '+e['label'])]
             if e['kind']=='deadline':
                 dt=datetime.fromisoformat(e['at']).astimezone(timezone.utc)
                 lines+=['DTSTART:'+dt.strftime('%Y%m%dT%H%M%SZ'),'DTEND:'+(dt+timedelta(minutes=1)).strftime('%Y%m%dT%H%M%SZ')]
             else:
                 lines+=['DTSTART;VALUE=DATE:'+e['start'].replace('-',''),'DTEND;VALUE=DATE:'+e['endExclusive'].replace('-','')]
             event_source=e.get('source',c['source'])
-            lines+=['DESCRIPTION:'+escape(e['original']+'\n官方来源：'+event_source+'\n核对日期：'+P['verifiedAt']),'URL:'+event_source,'END:VEVENT']
+            lines+=['DESCRIPTION:'+escape(e['original']+'\n官方来源：'+event_source+'\n核对日期：'+verified),'URL:'+event_source,'END:VEVENT']
         return '\r\n'.join(fold(l) for l in lines+['END:VCALENDAR'])+'\r\n'
     events=[(c,e) for c in P['conferences'] for e in c['events']]
     for c,e in events: (target/(e['id']+'.ics')).write_bytes(calendar_text([(c,e)]).encode())

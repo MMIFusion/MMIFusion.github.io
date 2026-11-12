@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//MMIFusion//Research Calendar//ZH
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kdd2027-cycle1-decision@mmifusion.github.io
+DTSTAMP:20261112T000000Z
+SUMMARY:KDD 2027 · 研究赛道第一轮录用通知
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261115
+DESCRIPTION:2026-11-14 · 官方日期，具体时刻未列明\n官方来
+ 源：https://kdd2027.kdd.org/research-track-call-for-papers/\n核对日
+ 期：2026-11-12
+URL:https://kdd2027.kdd.org/research-track-call-for-papers/
+END:VEVENT
+END:VCALENDAR

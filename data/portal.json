@@ -121,7 +121,7 @@
       "field": "机器学习",
       "description": "适合具有学习机制与表示贡献的融合研究。征稿页只列日期的节点保留为全天，不推测具体截止时刻。",
       "source": "https://iclr.cc/Conferences/2027/CallForPapers",
-      "location": "北美西海岸 · 具体地点待公布",
+      "location": "美国 · 加利福尼亚州（具体城市待公布）",
       "ccf": "A",
       "events": [
         {
@@ -157,6 +157,14 @@
           "original": "2026-11-18 · 官方日期，时区 AoE，具体时刻未列明"
         },
         {
+          "id": "iclr2027-meta-review",
+          "label": "评审与领域主席讨论 / 元评审",
+          "kind": "date",
+          "start": "2026-11-19",
+          "endExclusive": "2026-12-17",
+          "original": "2026-11-19 至 2026-12-16 · AoE 日期，具体时刻未列明"
+        },
+        {
           "id": "iclr2027-decision",
           "label": "最终结果通知",
           "kind": "date",
@@ -183,17 +191,66 @@
           "source": "https://iclr.cc/Conferences/2027/Dates"
         }
       ],
-      "pending": null
+      "pending": null,
+      "locationSource": "https://iclr.cc/Conferences/2027"
     },
     {
       "id": "icml2027",
       "name": "ICML 2027",
       "field": "机器学习",
-      "description": "适合通用机器学习方法与多模态学习贡献。已公布教程、主会与研讨会日期。",
+      "description": "适合通用机器学习方法、表示学习与多模态学习研究。Dates 页已公布投稿与评审节点；只列日期的节点按全天展示。",
       "source": "https://icml.cc/Conferences/2027/Dates",
-      "location": "具体地点以官网更新为准",
+      "location": "巴西 · 里约热内卢",
       "ccf": "A",
       "events": [
+        {
+          "id": "icml2027-open",
+          "label": "主会投稿开放 / 建议完成 OpenReview 账号注册",
+          "kind": "date",
+          "start": "2027-01-08",
+          "endExclusive": "2027-01-09",
+          "original": "2027-01-08 · 官方日期，具体时刻未列明"
+        },
+        {
+          "id": "icml2027-abstract",
+          "label": "摘要提交截止",
+          "kind": "date",
+          "start": "2027-01-14",
+          "endExclusive": "2027-01-15",
+          "original": "2027-01-14 · AoE 日期，具体时刻未列明"
+        },
+        {
+          "id": "icml2027-paper",
+          "label": "全文提交截止",
+          "kind": "date",
+          "start": "2027-01-22",
+          "endExclusive": "2027-01-23",
+          "original": "2027-01-22 · AoE 日期，具体时刻未列明"
+        },
+        {
+          "id": "icml2027-phase1",
+          "label": "第一阶段拒稿通知",
+          "kind": "date",
+          "start": "2027-02-23",
+          "endExclusive": "2027-02-24",
+          "original": "2027-02-23 · 官方日期，具体时刻未列明"
+        },
+        {
+          "id": "icml2027-decision",
+          "label": "最终结果通知",
+          "kind": "date",
+          "start": "2027-05-03",
+          "endExclusive": "2027-05-04",
+          "original": "2027-05-03 · 官方日期，具体时刻未列明"
+        },
+        {
+          "id": "icml2027-expo",
+          "label": "博览会举办",
+          "kind": "date",
+          "start": "2027-07-31",
+          "endExclusive": "2027-08-01",
+          "original": "2027-07-31 · 官方日期，具体时刻未列明"
+        },
         {
           "id": "icml2027-tutorials",
           "label": "教程举办",
@@ -219,7 +276,8 @@
           "original": "2027-08-05 至 2027-08-06 · 官方日期，具体时刻未列明"
         }
       ],
-      "pending": "摘要、论文提交与录用节点待官方公布。"
+      "pending": "征稿正文、作者回复与终稿安排待官方进一步公布。",
+      "locationSource": "https://icml.cc/Conferences/2027"
     },
     {
       "id": "neurips2027",
@@ -295,7 +353,7 @@
           "original": "2027-02-16 至 2027-02-23 · 官方日期，具体时刻未列明"
         }
       ],
-      "pending": null
+      "pending": "主技术赛道终稿条目存在修订标记，日期待进一步确认；其他赛道以各自征稿页为准。"
     },
     {
       "id": "acl2027",
@@ -339,6 +397,244 @@
         }
       ],
       "pending": "ACL commitment、录用通知与终稿日期待公布。"
+    },
+    {
+      "id": "kdd2027",
+      "name": "KDD 2027",
+      "field": "数据挖掘与机器学习",
+      "description": "适合数据驱动的学习方法、多模态基础模型与知识发现。以下为 Research Track 第一轮；两轮投稿分别公布，不根据往年推算第二轮日期。",
+      "source": "https://kdd2027.kdd.org/research-track-call-for-papers/",
+      "location": "美国 · 圣何塞",
+      "locationSource": "https://kdd2027.kdd.org/",
+      "ccf": "A",
+      "aliases": [
+        "SIGKDD",
+        "ACM KDD",
+        "多模态"
+      ],
+      "events": [
+        {
+          "id": "kdd2027-cycle1-abstract",
+          "label": "研究赛道第一轮摘要截止",
+          "kind": "deadline",
+          "at": "2026-07-19T23:59:00-12:00",
+          "original": "2026-07-19 23:59 AoE (UTC−12)"
+        },
+        {
+          "id": "kdd2027-cycle1-paper",
+          "label": "研究赛道第一轮论文截止",
+          "kind": "deadline",
+          "at": "2026-07-26T23:59:00-12:00",
+          "original": "2026-07-26 23:59 AoE (UTC−12)"
+        },
+        {
+          "id": "kdd2027-cycle1-rebuttal",
+          "label": "研究赛道第一轮作者回复",
+          "kind": "date",
+          "start": "2026-09-29",
+          "endExclusive": "2026-10-14",
+          "original": "2026-09-29 至 2026-10-13 · 官方日期范围，AoE"
+        },
+        {
+          "id": "kdd2027-cycle1-decision",
+          "label": "研究赛道第一轮录用通知",
+          "kind": "date",
+          "start": "2026-11-14",
+          "endExclusive": "2026-11-15",
+          "original": "2026-11-14 · 官方日期，具体时刻未列明"
+        },
+        {
+          "id": "kdd2027-main",
+          "label": "大会举办",
+          "kind": "date",
+          "start": "2027-08-01",
+          "endExclusive": "2027-08-06",
+          "original": "2027-08-01 至 2027-08-05 · 官方日期，具体时刻未列明",
+          "source": "https://kdd2027.kdd.org/"
+        }
+      ],
+      "pending": "第二轮摘要、全文、回复与录用的具体日期待官方公布；不将其他赛道截止时间混入研究赛道。",
+      "ccfPage": 35,
+      "ccfArea": "数据库/数据挖掘/内容检索"
+    },
+    {
+      "id": "sigir2027",
+      "name": "SIGIR 2027",
+      "field": "检索与多模态学习",
+      "description": "适合多模态检索、跨模态表示、推荐与检索增强生成。以下投稿节点为长文赛道；会期采用首页列出的教程、主会和研讨会分段日期。",
+      "source": "https://sigir2027.org/pages/submit-tracks.html",
+      "location": "美国 · 圣何塞",
+      "locationSource": "https://sigir2027.org/",
+      "ccf": "A",
+      "aliases": [
+        "ACM SIGIR",
+        "RAG"
+      ],
+      "events": [
+        {
+          "id": "sigir2027-abstract",
+          "label": "长文摘要提交截止",
+          "kind": "deadline",
+          "at": "2027-01-14T23:59:00-12:00",
+          "original": "2027-01-14 23:59 AoE (UTC−12)"
+        },
+        {
+          "id": "sigir2027-paper",
+          "label": "长文全文提交截止",
+          "kind": "deadline",
+          "at": "2027-01-21T23:59:00-12:00",
+          "original": "2027-01-21 23:59 AoE (UTC−12)"
+        },
+        {
+          "id": "sigir2027-decision",
+          "label": "长文录用通知",
+          "kind": "date",
+          "start": "2027-04-05",
+          "endExclusive": "2027-04-06",
+          "original": "2027-04-05 · 官方日期，具体时刻未列明"
+        },
+        {
+          "id": "sigir2027-camera",
+          "label": "长文终稿提交截止",
+          "kind": "deadline",
+          "at": "2027-04-30T23:59:00-12:00",
+          "original": "2027-04-30 23:59 AoE (UTC−12)"
+        },
+        {
+          "id": "sigir2027-registration",
+          "label": "长文作者注册截止",
+          "kind": "deadline",
+          "at": "2027-04-30T23:59:00-12:00",
+          "original": "2027-04-30 23:59 AoE (UTC−12)"
+        },
+        {
+          "id": "sigir2027-tutorials",
+          "label": "教程举办",
+          "kind": "date",
+          "start": "2027-07-19",
+          "endExclusive": "2027-07-20",
+          "original": "2027-07-19 · 官方日期，具体时刻未列明",
+          "source": "https://sigir2027.org/"
+        },
+        {
+          "id": "sigir2027-main",
+          "label": "主会举办",
+          "kind": "date",
+          "start": "2027-07-20",
+          "endExclusive": "2027-07-23",
+          "original": "2027-07-20 至 2027-07-22 · 官方日期，具体时刻未列明",
+          "source": "https://sigir2027.org/"
+        },
+        {
+          "id": "sigir2027-workshops",
+          "label": "研讨会举办",
+          "kind": "date",
+          "start": "2027-07-23",
+          "endExclusive": "2027-07-24",
+          "original": "2027-07-23 · 官方日期，具体时刻未列明",
+          "source": "https://sigir2027.org/"
+        }
+      ],
+      "pending": "短文与产业赛道日期待公布；资源、复现、演示等赛道请查看官方投稿总览。",
+      "ccfPage": 35,
+      "ccfArea": "数据库/数据挖掘/内容检索"
+    },
+    {
+      "id": "www2027",
+      "name": "WWW 2027",
+      "field": "Web 与多模态智能",
+      "description": "The Web Conference，适合 Web 场景中的多模态检索、推荐、图学习与智能体研究。研究问题需明确与 Web 相关；长文与短文分开列出截止日期。",
+      "source": "https://www2027.thewebconf.org/important-dates/",
+      "location": "爱尔兰 · 都柏林",
+      "locationSource": "https://www2027.thewebconf.org/",
+      "ccf": "A",
+      "aliases": [
+        "The Web Conference",
+        "ACM Web",
+        "网络智能"
+      ],
+      "events": [
+        {
+          "id": "www2027-long-abstract",
+          "label": "研究长文摘要截止",
+          "kind": "deadline",
+          "at": "2026-10-18T23:59:00-12:00",
+          "original": "2026-10-18 23:59 AoE (UTC−12)"
+        },
+        {
+          "id": "www2027-long-paper",
+          "label": "研究长文全文截止",
+          "kind": "deadline",
+          "at": "2026-10-25T23:59:00-12:00",
+          "original": "2026-10-25 23:59 AoE (UTC−12)"
+        },
+        {
+          "id": "www2027-short-abstract",
+          "label": "短文摘要截止",
+          "kind": "deadline",
+          "at": "2026-11-09T23:59:00-12:00",
+          "original": "2026-11-09 23:59 AoE (UTC−12)"
+        },
+        {
+          "id": "www2027-short-paper",
+          "label": "短文全文截止",
+          "kind": "deadline",
+          "at": "2026-11-16T23:59:00-12:00",
+          "original": "2026-11-16 23:59 AoE (UTC−12)"
+        },
+        {
+          "id": "www2027-reviews",
+          "label": "研究长文评审结果发布",
+          "kind": "date",
+          "start": "2026-12-15",
+          "endExclusive": "2026-12-16",
+          "original": "2026-12-15 · 官方日期，具体时刻未列明"
+        },
+        {
+          "id": "www2027-rebuttal",
+          "label": "研究长文作者回复",
+          "kind": "date",
+          "start": "2026-12-15",
+          "endExclusive": "2026-12-21",
+          "original": "2026-12-15 至 2026-12-20 · 官方日期，具体时刻未列明"
+        },
+        {
+          "id": "www2027-decision",
+          "label": "研究长文 / 短文录用通知",
+          "kind": "date",
+          "start": "2027-01-04",
+          "endExclusive": "2027-01-05",
+          "original": "2027-01-04 · 官方日期，具体时刻未列明"
+        },
+        {
+          "id": "www2027-camera",
+          "label": "研究长文 / 短文终稿截止",
+          "kind": "deadline",
+          "at": "2027-01-31T23:59:00-12:00",
+          "original": "2027-01-31 23:59 AoE (UTC−12)"
+        },
+        {
+          "id": "www2027-workshops",
+          "label": "研讨会、教程与 Web4All",
+          "kind": "date",
+          "start": "2027-05-10",
+          "endExclusive": "2027-05-12",
+          "original": "2027-05-10 至 2027-05-11 · 官方日期，具体时刻未列明",
+          "source": "https://www2027.thewebconf.org/"
+        },
+        {
+          "id": "www2027-main",
+          "label": "主会举办",
+          "kind": "date",
+          "start": "2027-05-12",
+          "endExclusive": "2027-05-15",
+          "original": "2027-05-12 至 2027-05-14 · 官方日期，具体时刻未列明",
+          "source": "https://www2027.thewebconf.org/"
+        }
+      ],
+      "pending": null,
+      "ccfPage": 70,
+      "ccfArea": "交叉/综合/新兴"
     }
   ],
   "teams": [
@@ -1652,14 +1948,15 @@
         "多模态学习",
         "表征学习"
       ],
-      "scope": "机器学习方法与应用；2027 年日程页已公布会期，主会征稿正文尚未公布。",
+      "scope": "机器学习方法与应用；2027 年官方日程已公布摘要、全文与录用日期，征稿正文尚待公布。",
       "fit": "适合具有通用学习方法贡献的融合研究，建议用跨任务验证说明方法不局限于图像拼合。",
       "source": "https://icml.cc/Conferences/2027",
       "guide": null,
       "calendar": "icml2027",
       "articleVenue": "ICML",
       "guideNote": "2027 征稿细则待公布",
-      "relatedQuery": "ICML"
+      "relatedQuery": "ICML",
+      "verifiedAt": "2026-11-12"
     },
     {
       "id": "iclr",
@@ -2308,5 +2605,20 @@
     "sha256": "821a19ed0f65c610410ab7c0aa37f3d2a997f59487704c769ab72b9e7367f2cc",
     "updatedAt": "2026-11-11",
     "note": "一人一卡；前四位依用户指定，其余按学术资历、研究关联和同校归组形成编辑顺序，不作量化学术排名。"
-  }
+  },
+  "calendarVerifiedAt": "2026-11-12",
+  "calendarNotes": [
+    {
+      "id": "eccv",
+      "name": "ECCV · 届次说明",
+      "field": "计算机视觉",
+      "ccf": "B",
+      "location": "双数年举办 · 2027 无届次",
+      "description": "ECCV 官方明确每两年在双数年举办，因此没有 ECCV 2027。这里保留快捷入口与官方说明，便于查询后续届次；不生成不存在的投稿日期。",
+      "source": "https://eccv.ecva.net/",
+      "events": [],
+      "referenceOnly": true,
+      "notice": "ECCV 按本站采用的 CCF 第七版目录为 B 类。本卡为补充说明，不计入 2027 年 A 类会议或日历下载。"
+    }
+  ]
 }

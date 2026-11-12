@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//MMIFusion//Research Calendar//ZH
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:www2027-short-paper@mmifusion.github.io
+DTSTAMP:20261112T000000Z
+SUMMARY:WWW 2027 · 短文全文截止
+DTSTART:20261117T115900Z
+DTEND:20261117T120000Z
+DESCRIPTION:2026-11-16 23:59 AoE (UTC−12)\n官方来源：https://www2027
+ .thewebconf.org/important-dates/\n核对日期：2026-11-12
+URL:https://www2027.thewebconf.org/important-dates/
+END:VEVENT
+END:VCALENDAR

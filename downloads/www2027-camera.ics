@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//MMIFusion//Research Calendar//ZH
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:www2027-camera@mmifusion.github.io
+DTSTAMP:20261112T000000Z
+SUMMARY:WWW 2027 · 研究长文 / 短文终稿截止
+DTSTART:20270201T115900Z
+DTEND:20270201T120000Z
+DESCRIPTION:2027-01-31 23:59 AoE (UTC−12)\n官方来源：https://www2027
+ .thewebconf.org/important-dates/\n核对日期：2026-11-12
+URL:https://www2027.thewebconf.org/important-dates/
+END:VEVENT
+END:VCALENDAR

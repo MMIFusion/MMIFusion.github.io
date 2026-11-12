@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//MMIFusion//Research Calendar//ZH
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sigir2027-decision@mmifusion.github.io
+DTSTAMP:20261112T000000Z
+SUMMARY:SIGIR 2027 · 长文录用通知
+DTSTART;VALUE=DATE:20270405
+DTEND;VALUE=DATE:20270406
+DESCRIPTION:2027-04-05 · 官方日期，具体时刻未列明\n官方来
+ 源：https://sigir2027.org/pages/submit-tracks.html\n核对日期：2026-
+ 11-12
+URL:https://sigir2027.org/pages/submit-tracks.html
+END:VEVENT
+END:VCALENDAR

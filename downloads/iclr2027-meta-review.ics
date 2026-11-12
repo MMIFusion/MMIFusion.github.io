@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//MMIFusion//Research Calendar//ZH
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:iclr2027-meta-review@mmifusion.github.io
+DTSTAMP:20261112T000000Z
+SUMMARY:ICLR 2027 · 评审与领域主席讨论 / 元评审
+DTSTART;VALUE=DATE:20261119
+DTEND;VALUE=DATE:20261217
+DESCRIPTION:2026-11-19 至 2026-12-16 · AoE 日期，具体时刻未列明
+ \n官方来源：https://iclr.cc/Conferences/2027/CallForPapers\n核对日
+ 期：2026-11-12
+URL:https://iclr.cc/Conferences/2027/CallForPapers
+END:VEVENT
+END:VCALENDAR
