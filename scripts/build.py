@@ -17,6 +17,8 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'dist'
 SITE = json.loads((ROOT / 'data/site.json').read_text())
 DATA = json.loads((ROOT / 'data/articles.json').read_text())
+STATS = json.loads((ROOT / 'data/article-stats.json').read_text())
+ARTICLE_STATS = {r['id']:dict(r,snapshotDate=r.get('snapshotDate',STATS['snapshotDate'])) for r in STATS['records']}
 COMMUNITY = json.loads((ROOT / 'data/community.json').read_text())
 ARTICLES = DATA['articles']
 E = lambda v: html.escape(str(v), quote=True)
@@ -79,6 +81,8 @@ def footer(filename, title):
     return f'''<footer class="site-footer"><div class="wrap footer-main"><div><a class="brand" href="index.html"><img src="assets/avatar.png" width="40" height="40" alt=""><span><strong>多模态信息融合</strong><small>CONNECTING MODALITIES. SHARING KNOWLEDGE.</small></span></a><p>一起读论文、找资源，探索多模态研究。</p></div><div class="footer-links"><a href="papers.html">文章目录</a><a href="resources.html">学术资源</a><a href="about.html#connect" data-qr-open>扫码关注与交流</a><a href="about.html">关于我们</a><a href="{E(portal.feedback(SITE['url']+'/'+filename, title+'页面反馈'))}">反馈问题</a>{ext(SITE['github'],'GitHub')}</div></div><div class="wrap footer-bottom"><span>© 2026 公众号「多模态信息融合」</span><span>文章索引更新至 {DATA['latestArticleDate'].replace('-','.')} · <a href="about.html#sources">收录说明</a></span></div></footer>'''
 
 def page(filename, title, body, active='resources', description=None, extras=''):
+    if 'class="article-stat-wrap"' in body:
+        extras += '<link rel="stylesheet" href="assets/article-stats.css">'
     description=description or SITE['description']
     canonical=SITE['url']+'/' + ('' if filename=='index.html' else filename)
     doc=f'''<!doctype html><html lang="zh-CN" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{E(title)} · 多模态信息融合</title><meta name="description" content="{E(description)}"><meta name="theme-color" content="#11162e"><script>document.documentElement.classList.replace("no-js","js");try{{var motionPreference=localStorage.getItem("mmifusion-motion");document.documentElement.dataset.motion=motionPreference==="on"?"on":(motionPreference==="off"||matchMedia("(prefers-reduced-motion: reduce)").matches)?"off":"on"}}catch(e){{document.documentElement.dataset.motion=matchMedia("(prefers-reduced-motion: reduce)").matches?"off":"on"}}</script><link rel="canonical" href="{canonical}"><meta property="og:title" content="{E(title)} · 多模态信息融合"><meta property="og:description" content="{E(description)}"><meta property="og:type" content="website"><meta property="og:url" content="{canonical}"><meta property="og:image" content="{SITE['url']}/assets/avatar.png"><link rel="icon" href="assets/avatar.png" type="image/png"><link rel="apple-touch-icon" href="assets/avatar.png"><link rel="preload" href="assets/fonts/mmifusion-sans.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="assets/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="assets/style.css"><link rel="stylesheet" href="assets/portal.css"><link rel="stylesheet" href="assets/experience.css"><link rel="stylesheet" href="assets/community.css"><script src="assets/metrics-core.js" defer></script><script src="assets/app.js" defer></script><script src="assets/calendar-core.js" defer></script><script src="assets/portal.js" defer></script><script src="assets/experience.js" defer></script><script src="assets/community-core.js" defer></script><script src="assets/community.js" defer></script></head><body class="page-{filename.removesuffix('.html')}">{header(active, filename)}<main id="main">{body}</main>{footer(filename, title)}{qr_dialog()}{design.motion_controls()}{community.luck_dialog()}<div id="toast" role="status" aria-live="polite"></div></body></html>'''
@@ -94,8 +98,21 @@ def page(filename, title, body, active='resources', description=None, extras='')
 def modules():
     return '<div class="module-grid">'+''.join(f'''<a class="module" href="{E(url)}" {'target="_blank" rel="noopener noreferrer"' if url.startswith('https:') else ''}><div class="module-top">{icon(i)}<span class="module-number">0{n+1}</span></div><h3>{name}<span aria-hidden="true">↗</span></h3><p>{desc}</p><div class="module-foot"><span>{en}</span><small>{status}</small></div></a>''' for n,(i,name,en,desc,url,status) in enumerate(MODULES))+'</div>'
 
+def article_statistics(a):
+    record=ARTICLE_STATS.get(a['id'],{})
+    fields=[('reads','阅读量'),('likes','点赞量'),('watching','推荐'),('favorites','收藏')]
+    available=[(key,label) for key,label in fields if record.get(key) is not None]
+    if not available: return '',ext(a['url'],E(a['title']))
+    panel_id='article-stats-'+a['id']
+    cells=''.join(f'<div data-stat-metric="{key}"><dt'+(' title="原表在看数"' if key=='watching' else '')+f'>{label}</dt><dd>{record[key]:,}</dd></div>' for key,label in available)
+    date=record['snapshotDate'].replace('-','.')
+    panel=f'''<button type="button" class="article-stat-toggle" aria-controls="{panel_id}" aria-expanded="false">查看数据 <span aria-hidden="true">⌄</span></button><div class="article-stat-panel" id="{panel_id}" role="tooltip"><dl class="article-stat-values" style="--stat-count:{len(available)}">{cells}</dl><div class="article-stat-source"><span>公众号数据 · {date}</span><span>右侧星标为本站收藏</span></div></div>'''
+    title=ext(a['url'],E(a['title']),'article-title-link').replace(' target=',f' aria-describedby="{panel_id}" target=',1)
+    return panel,title
+
 def row(a):
-    return f'''<article class="article-row" data-article-id="{a['id']}"><div class="article-date"><time datetime="{a['date']}">{a['date'].replace('-','.')}</time><span>{E(a['section'])}</span></div><div class="article-body"><div class="article-tags">{''.join('<span>'+E(t)+'</span>' for t in a['topics'][:3])}</div><h3>{ext(a['url'],E(a['title']))}</h3></div><button class="bookmark-button" data-bookmark="{a['id']}" aria-pressed="false" aria-label="收藏文章">☆<span>收藏</span></button></article>'''
+    panel,title=article_statistics(a)
+    return f'''<article class="article-row" data-article-id="{a['id']}"><div class="article-date"><time datetime="{a['date']}">{a['date'].replace('-','.')}</time><span>{E(a['section'])}</span></div><div class="article-body"><div class="article-tags">{''.join('<span>'+E(t)+'</span>' for t in a['topics'][:3])}</div><div class="article-stat-wrap"><h3>{title}</h3>{panel}</div></div><button class="bookmark-button" data-bookmark="{a['id']}" aria-pressed="false" aria-label="收藏文章">☆<span>收藏</span></button></article>'''
 
 def collection(items, scope='all', filterable=True):
     sections=Counter(a['section'] for a in items)
@@ -106,7 +123,7 @@ def collection(items, scope='all', filterable=True):
         options=lambda entries: ''.join(f'<option value="{E(s)}">{E(s)}</option>' for s in entries)
         tabs=''.join(f'<button type="button" data-section="{E(s)}" aria-pressed="false">{E(s)} <span>{n}</span></button>' for s,n in sections.items())
         controls=f'''<div class="collection-controls"><div class="search-and-sort"><label class="search-input">{icon('search')}<input type="search" id="article-search" placeholder="搜索论文、方法、学校或关键词…" autocomplete="off" aria-label="搜索文章"><kbd>/</kbd></label><label class="select-label">排序<select id="sort-order"><option value="newest">最新发布</option><option value="oldest">最早发布</option></select></label></div><div class="filter-line"><label>研究方向<select id="topic-filter"><option value="">全部方向</option>{options(sorted(topic_counts))}</select></label><label>会议 / 期刊<select id="venue-filter"><option value="">全部会议期刊</option>{options(venues)}</select></label><label class="saved-filter"><input type="checkbox" id="saved-only">只看收藏</label><button class="reset-button" type="button" id="reset-filters">重置筛选 ↺</button></div><div class="section-tabs" aria-label="文章类型"><button type="button" data-section="" class="active" aria-pressed="true">全部 <span>{len(items)}</span></button>{tabs}</div></div>'''
-    return f'''<section class="collection" data-scope="{scope}" data-page-size="12">{controls}<div class="result-summary"><p id="result-count" role="status" aria-live="polite">共 {len(items)} 篇文章</p><span>标题直达公众号 · 收藏保存在当前浏览器</span></div><div id="article-list">{''.join(row(a) for a in items)}</div><div id="empty-results" class="empty-state" hidden>{icon('search')}<h3>没有找到匹配的文章</h3><p>试试方法名、研究方向，或缩短关键词。</p><button type="button" class="button secondary" data-reset>清除筛选</button></div><div class="pagination" id="pagination" hidden><button class="button secondary" id="prev-page">← 上一页</button><span id="page-info"></span><button class="button secondary" id="next-page">下一页 →</button></div></section>'''
+    return f'''<section class="collection" data-scope="{scope}" data-page-size="12">{controls}<div class="result-summary"><p id="result-count" role="status" aria-live="polite">共 {len(items)} 篇文章</p><span>标题直达公众号 · 右侧星标仅保存在当前浏览器</span></div><div id="article-list">{''.join(row(a) for a in items)}</div><div id="empty-results" class="empty-state" hidden>{icon('search')}<h3>没有找到匹配的文章</h3><p>试试方法名、研究方向，或缩短关键词。</p><button type="button" class="button secondary" data-reset>清除筛选</button></div><div class="pagination" id="pagination" hidden><button class="button secondary" id="prev-page">← 上一页</button><span id="page-info"></span><button class="button secondary" id="next-page">下一页 →</button></div></section>'''
 
 def title_block(en,title,desc,crumb='学术资源'):
     return f'<div class="page-heading wrap"><div class="breadcrumb"><a href="index.html">首页</a><span>/</span><a href="resources.html">{crumb}</a></div><p class="eyebrow">{en}</p><h1>{title}</h1><p class="page-description">{desc}</p></div>'
@@ -147,7 +164,7 @@ def about():
 <li>研究方向与文章类型依据标题辅助归类，会议和期刊字段也来自标题，不代表本站另行核验了录用信息。欢迎提出分类或信息勘误。</li>
 <li>数据资源栏目已整合原数据集目录，保留完整介绍、团队作者、原始示例图和来源链接。数据规模、许可及划分请查看原论文与官方说明。</li>
 <li>会议、团队、招生与投稿方向已收录首批官方来源，逐条标注核对日期。投稿建议为本站整理，不代表录用概率。</li>
-<li>公众号人气榜使用导出表中的阅读次数、点赞、在看和分享次数，按每篇文章最新可用的导出记录更新，统计日期见榜单卡片。两份表的收藏数据覆盖不完整，网站收藏仅保存在当前浏览器。</li>
+<li>公众号人气榜使用导出表中的阅读次数、点赞、在看和分享次数，按每篇文章最新可用的导出记录更新，统计日期见榜单卡片。文章列表按篇显示原表提供的收藏数，缺失项略去；推荐对应原表在看数，右侧星标仅保存在当前浏览器。</li>
 <li>本站访问次数（PV）由 <a href="https://busuanzi.ibruce.info/" target="_blank" rel="noopener noreferrer">不蒜子</a> 提供，从 2026-11-11 接入后累计；服务可能受网络或拦截设置影响，不代表独立访客数。</li>
 <li>投稿日历与接好运是科研趣味互动，不是传统黄历或录用预测。真实截止日期请查看会议日历。</li>
 <li>基础色板由本站搭配，不是从论文中提取；论文配色实例通过公众号文章提供。</li></ul><h2>一起完善这份资源</h2><p>欢迎分享论文、数据集、团队主页、招生信息，或指出已有内容中的错误。请附原始来源，方便核对和持续维护。</p><a href="contribute.html" class="button secondary">推荐资源 / 提交勘误 →</a></section><aside class="contact-card"><img src="assets/avatar.png" width="100" height="100" alt="多模态信息融合头像"><h2>多模态信息融合</h2><p>微信公众号 · MMIFusion</p><a href="about.html#connect" class="button primary" data-qr-open>扫码关注与交流</a><div class="contact-id"><span>交流微信</span><strong>{SITE['contact']}</strong><button class="text-link" data-copy="{SITE['contact']}">复制微信号</button></div><a href="#members" class="text-link">认识团队成员 →</a>{ext(SITE['github'],'GitHub · MMIFusion','text-link')}</aside></div>{connect_section()}'''

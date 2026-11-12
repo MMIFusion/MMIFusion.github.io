@@ -35,13 +35,17 @@ def main():
             else:
                 assert raw.isdigit(), (article['sourceRow'], label, raw)
                 values[key] = int(raw)
+        raw_favorites=row.get(columns.get('收藏数',''), '').strip()
+        assert not raw_favorites or raw_favorites.isdigit(), (article['sourceRow'],'收藏数',raw_favorites)
+        values['favorites']=int(raw_favorites) if raw_favorites else None
         records.append({'id': article['id'], 'sourceRow': article['sourceRow'], **values})
     result = {'sourceFile': args.workbook.name, 'sourceSheet': source['sourceSheet'],
               'snapshotDate': source['snapshotDate'], 'sourceColumns': {k: columns[v] for k, v in FIELDS.items()},
-              'favoritesAvailable': '收藏数' in columns, 'records': records}
-    assert not result['favoritesAvailable'], 'Review new favorite-count column before publishing.'
+              'favoritesAvailable': any(r['favorites'] is not None for r in records),
+              'favoritesComplete': all(r['favorites'] is not None for r in records),
+              'favoritesColumn': columns.get('收藏数'), 'records': records}
     (ROOT / 'data/article-stats.json').write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n')
-    print(f'Imported {len(records)} records; four original metrics; no favorite-count column.')
+    print(f'Imported {len(records)} records; missing favorite counts remain null.')
 
 if __name__ == '__main__':
     main()

@@ -93,7 +93,7 @@ def main():
     known = {a['id']: a for a in previous['articles']}
     old, new = read_source(args.old_workbook), read_source(args.new_workbook)
     assert old['rows'][1]['B'] == '文章标题' and new['rows'][2]['A'] == '标题'
-    assert all(new['rows'][2][c] == label for c, label in {'I':'阅读次数','U':'分享次数','AB':'在看数','AC':'点赞数'}.items())
+    assert all(new['rows'][2][c] == label for c, label in {'I':'阅读次数','U':'分享次数','AB':'在看数','AC':'点赞数','AA':'收藏数'}.items())
     sources = []
     for path, source, name, date, columns in [
         (args.old_workbook, old, args.old_name or args.old_workbook.name, args.old_date, {'reads':'J','likes':'K','watching':'N','shares':'O'}),
@@ -146,12 +146,14 @@ def main():
     merged.sort(key=lambda r:(r['publishedAt'],r['title']),reverse=True)
     articles=[public_article(r,known) for r in merged]
     records=[dict(id=a['id'],sourceFile=r['sourceFile'],sourceSheet=r['sourceSheet'],sourceRow=r['sourceRow'],
-                  snapshotDate=r['snapshotDate'],**r['metrics']) for a,r in zip(articles,merged)]
+                  snapshotDate=r['snapshotDate'],favorites=r['favorites'],**r['metrics']) for a,r in zip(articles,merged)]
     dates=sorted({r['snapshotDate'] for r in records})
     metadata=dict(sourceFile='合并文章索引',sourceSheet='合并文章',snapshotDate=args.new_date,sources=sources)
     payload=dict(metadata,latestArticleDate=max(a['date'] for a in articles),articles=articles)
-    stats=dict(metadata,snapshotDates=dates,favoritesAvailable=False,
-               favoritesNote='两份导出表的收藏字段覆盖不完整，未纳入网站统计。',records=records)
+    stats=dict(metadata,snapshotDates=dates,favoritesAvailable=any(r['favorites'] is not None for r in records),
+               favoritesComplete=all(r['favorites'] is not None for r in records),
+               favoritesNote='有值时按原表展示，缺失项目略去；公众号收藏数与本站浏览器收藏独立。',records=records)
+    stats['sources']=[dict(source,favoritesColumn='AA' if i==1 else None) for i,source in enumerate(sources)]
     for name,value in [('articles.json',payload),('article-stats.json',stats)]:
         (ROOT/'data'/name).write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n')
     private=dict(merged=merged,sources=sources,original=old,latest=new,matches=matches,excluded=excluded,

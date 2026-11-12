@@ -106,6 +106,25 @@
   const collection = $('.collection');
   if (!collection) return;
   const rows = [...collection.querySelectorAll('[data-article-id]')];
+  rows.forEach(row => {
+    const wrap = row.querySelector('.article-stat-wrap');
+    if (!wrap) return;
+    const button = wrap.querySelector('.article-stat-toggle');
+    button?.addEventListener('click', () => {
+      const open = wrap.classList.toggle('stats-open');
+      button.setAttribute('aria-expanded', String(open));
+    });
+    wrap.addEventListener('keydown', event => {
+      if (event.key !== 'Escape') return;
+      wrap.classList.add('stats-dismissed');
+      wrap.classList.remove('stats-open');
+      button?.setAttribute('aria-expanded', 'false');
+    });
+    wrap.addEventListener('mouseleave', () => wrap.classList.remove('stats-dismissed'));
+    wrap.addEventListener('focusout', event => {
+      if (!wrap.contains(event.relatedTarget)) wrap.classList.remove('stats-dismissed');
+    });
+  });
   const search = $('#article-search');
   const topic = $('#topic-filter');
   const venue = $('#venue-filter');

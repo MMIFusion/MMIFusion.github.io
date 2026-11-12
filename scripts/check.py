@@ -95,7 +95,9 @@ for palette in palette_data['basicPalettes']:
 # Historical WeChat engagement remains separate from live website PV and local saves.
 stats = json.loads((ROOT/'data/article-stats.json').read_text())
 assert stats['snapshotDate'] == json.loads((ROOT/'data/articles.json').read_text())['snapshotDate']
-assert stats['favoritesAvailable'] is False
+assert stats['favoritesAvailable'] == any(r.get('favorites') is not None for r in stats['records'])
+if 'favoritesComplete' in stats:
+    assert stats['favoritesComplete'] == all(r.get('favorites') is not None for r in stats['records'])
 if 'sources' in stats:
     assert all(set(source['sourceColumns']) == {'reads','likes','watching','shares'} for source in stats['sources'])
     source_dates = {source['sourceFile']:source['snapshotDate'] for source in stats['sources']}
@@ -106,8 +108,9 @@ else:
 assert len(stats['records']) == len(ids)
 assert {r['id'] for r in stats['records']} == set(ids)
 for record in stats['records']:
-    for metric in ('reads','likes','watching','shares'):
-        assert record[metric] is None or (type(record[metric]) is int and record[metric] >= 0)
+    for metric in ('reads','likes','watching','shares','favorites'):
+        value=record.get(metric)
+        assert value is None or (type(value) is int and value >= 0)
 assert len([r for r in stats['records'] if r['reads'] is not None]) >= 10
 
 # Calendar files must encode real UTC instants or explicit all-day dates,

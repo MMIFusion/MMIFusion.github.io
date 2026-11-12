@@ -13,7 +13,8 @@
         "likes": "K",
         "watching": "N",
         "shares": "O"
-      }
+      },
+      "favoritesColumn": null
     },
     {
       "sourceFile": "壹伴-图文分析导出-多模态信息融合.xlsx",
@@ -25,15 +26,16 @@
         "likes": "AC",
         "watching": "AB",
         "shares": "U"
-      }
+      },
+      "favoritesColumn": "AA"
     }
   ],
   "snapshotDates": [
     "2026-10-28",
     "2026-11-12"
   ],
-  "favoritesAvailable": false,
-  "favoritesNote": "两份导出表的收藏字段覆盖不完整，未纳入网站统计。",
+  "favoritesAvailable": true,
+  "favoritesNote": "有值时按原表展示，缺失项目略去；公众号收藏数与本站浏览器收藏独立。",
   "records": [
     {
       "id": "bb15984a3a4b",
@@ -44,7 +46,8 @@
       "reads": 1600,
       "likes": 13,
       "watching": 12,
-      "shares": 268
+      "shares": 268,
+      "favorites": 33
     },
     {
       "id": "f91913e0bec1",
@@ -55,7 +58,8 @@
       "reads": 682,
       "likes": 17,
       "watching": 14,
-      "shares": 93
+      "shares": 93,
+      "favorites": 16
     },
     {
       "id": "9047bd7761e6",
@@ -66,7 +70,8 @@
       "reads": 1051,
       "likes": 14,
       "watching": 7,
-      "shares": 169
+      "shares": 169,
+      "favorites": 18
     },
     {
       "id": "49a25a11adfb",
@@ -77,7 +82,8 @@
       "reads": 1311,
       "likes": 11,
       "watching": 9,
-      "shares": 229
+      "shares": 229,
+      "favorites": 36
     },
     {
       "id": "a37f4a433d20",
@@ -88,7 +94,8 @@
       "reads": 2545,
       "likes": 31,
       "watching": 17,
-      "shares": 378
+      "shares": 378,
+      "favorites": 52
     },
     {
       "id": "3ac8bfc2020f",
@@ -99,7 +106,8 @@
       "reads": 860,
       "likes": 8,
       "watching": 4,
-      "shares": 128
+      "shares": 128,
+      "favorites": 24
     },
     {
       "id": "65326b8100ba",
@@ -110,7 +118,8 @@
       "reads": 7052,
       "likes": 68,
       "watching": 37,
-      "shares": 932
+      "shares": 932,
+      "favorites": 113
     },
     {
       "id": "f2da1bf49bab",
@@ -121,7 +130,8 @@
       "reads": 1366,
       "likes": 16,
       "watching": 6,
-      "shares": 228
+      "shares": 228,
+      "favorites": 39
     },
     {
       "id": "3e775c82ccd1",
@@ -132,7 +142,8 @@
       "reads": 722,
       "likes": 8,
       "watching": 5,
-      "shares": 64
+      "shares": 64,
+      "favorites": 12
     },
     {
       "id": "538d8b3bb61f",
@@ -143,7 +154,8 @@
       "reads": 3229,
       "likes": 41,
       "watching": 23,
-      "shares": 309
+      "shares": 309,
+      "favorites": 70
     },
     {
       "id": "a24b9a8c3601",
@@ -154,7 +166,8 @@
       "reads": 504,
       "likes": 13,
       "watching": 9,
-      "shares": 70
+      "shares": 70,
+      "favorites": 10
     },
     {
       "id": "e1a369090a9b",
@@ -165,7 +178,8 @@
       "reads": 665,
       "likes": 10,
       "watching": 5,
-      "shares": 69
+      "shares": 69,
+      "favorites": 20
     },
     {
       "id": "6d5340fef766",
@@ -176,7 +190,8 @@
       "reads": 1537,
       "likes": 10,
       "watching": 7,
-      "shares": 229
+      "shares": 229,
+      "favorites": 37
     },
     {
       "id": "4812037ac800",
@@ -187,7 +202,8 @@
       "reads": 1761,
       "likes": 18,
       "watching": 5,
-      "shares": 219
+      "shares": 219,
+      "favorites": 24
     },
     {
       "id": "21aba88427c7",
@@ -198,7 +214,8 @@
       "reads": 1893,
       "likes": 59,
       "watching": 49,
-      "shares": 368
+      "shares": 368,
+      "favorites": 72
     },
     {
       "id": "51d6b3622980",
@@ -209,7 +226,8 @@
       "reads": 2863,
       "likes": 28,
       "watching": 15,
-      "shares": 349
+      "shares": 349,
+      "favorites": 74
     },
     {
       "id": "892ff5d355df",
@@ -220,7 +238,8 @@
       "reads": 2314,
       "likes": 17,
       "watching": 10,
-      "shares": 351
+      "shares": 351,
+      "favorites": 55
     },
     {
       "id": "e51ee6a0a6fb",
@@ -231,7 +250,8 @@
       "reads": 737,
       "likes": 7,
       "watching": 3,
-      "shares": 57
+      "shares": 57,
+      "favorites": 16
     },
     {
       "id": "3f0517385784",
@@ -242,7 +262,8 @@
       "reads": 2426,
       "likes": 16,
       "watching": 7,
-      "shares": 359
+      "shares": 359,
+      "favorites": 69
     },
     {
       "id": "55ec7f5f1637",
@@ -253,7 +274,8 @@
       "reads": 3200,
       "likes": 27,
       "watching": 15,
-      "shares": 642
+      "shares": 642,
+      "favorites": 97
     },
     {
       "id": "1d2c7a686200",
@@ -264,7 +286,8 @@
       "reads": 1122,
       "likes": 17,
       "watching": 16,
-      "shares": 159
+      "shares": 159,
+      "favorites": 27
     },
     {
       "id": "c0ba46bd407d",
@@ -275,7 +298,8 @@
       "reads": 2685,
       "likes": 13,
       "watching": 12,
-      "shares": 484
+      "shares": 484,
+      "favorites": 62
     },
     {
       "id": "0db9ae90782b",
@@ -286,7 +310,8 @@
       "reads": 2316,
       "likes": 17,
       "watching": 8,
-      "shares": 364
+      "shares": 364,
+      "favorites": 54
     },
     {
       "id": "81323af75c35",
@@ -297,7 +322,8 @@
       "reads": 1349,
       "likes": 16,
       "watching": 10,
-      "shares": 171
+      "shares": 171,
+      "favorites": 35
     },
     {
       "id": "8717e19cbb41",
@@ -308,7 +334,8 @@
       "reads": 994,
       "likes": 13,
       "watching": 7,
-      "shares": 137
+      "shares": 137,
+      "favorites": null
     },
     {
       "id": "a682739b5877",
@@ -319,7 +346,8 @@
       "reads": 2371,
       "likes": 29,
       "watching": 13,
-      "shares": 339
+      "shares": 339,
+      "favorites": null
     },
     {
       "id": "787b75bc198d",
@@ -330,7 +358,8 @@
       "reads": 136,
       "likes": 2,
       "watching": 1,
-      "shares": 4
+      "shares": 4,
+      "favorites": null
     },
     {
       "id": "93c7a20beeda",
@@ -341,7 +370,8 @@
       "reads": 711,
       "likes": 7,
       "watching": 5,
-      "shares": 65
+      "shares": 65,
+      "favorites": null
     },
     {
       "id": "cd7dc0320b57",
@@ -352,7 +382,8 @@
       "reads": 1328,
       "likes": 18,
       "watching": 6,
-      "shares": 153
+      "shares": 153,
+      "favorites": null
     },
     {
       "id": "5fbaa06c7abc",
@@ -363,7 +394,8 @@
       "reads": 1402,
       "likes": 13,
       "watching": 8,
-      "shares": 241
+      "shares": 241,
+      "favorites": null
     },
     {
       "id": "1494b18566be",
@@ -374,7 +406,8 @@
       "reads": 1332,
       "likes": 9,
       "watching": 1,
-      "shares": 207
+      "shares": 207,
+      "favorites": null
     },
     {
       "id": "069840f6c1b6",
@@ -385,7 +418,8 @@
       "reads": 1448,
       "likes": 26,
       "watching": 23,
-      "shares": 150
+      "shares": 150,
+      "favorites": null
     },
     {
       "id": "4b1537411c2a",
@@ -396,7 +430,8 @@
       "reads": 4186,
       "likes": 36,
       "watching": 27,
-      "shares": 685
+      "shares": 685,
+      "favorites": null
     },
     {
       "id": "62d692a29b52",
@@ -407,7 +442,8 @@
       "reads": 1093,
       "likes": 10,
       "watching": 5,
-      "shares": 155
+      "shares": 155,
+      "favorites": null
     },
     {
       "id": "389d69cf3caf",
@@ -418,7 +454,8 @@
       "reads": 1252,
       "likes": 14,
       "watching": 4,
-      "shares": 201
+      "shares": 201,
+      "favorites": null
     },
     {
       "id": "5627bfc752eb",
@@ -429,7 +466,8 @@
       "reads": 3335,
       "likes": 70,
       "watching": 58,
-      "shares": 618
+      "shares": 618,
+      "favorites": null
     },
     {
       "id": "fc2d6f046255",
@@ -440,7 +478,8 @@
       "reads": 1586,
       "likes": 21,
       "watching": 19,
-      "shares": 251
+      "shares": 251,
+      "favorites": null
     },
     {
       "id": "b8f3398c78b6",
@@ -451,7 +490,8 @@
       "reads": 910,
       "likes": 6,
       "watching": 2,
-      "shares": 104
+      "shares": 104,
+      "favorites": null
     },
     {
       "id": "30e05069d0a8",
@@ -462,7 +502,8 @@
       "reads": 422,
       "likes": 4,
       "watching": 4,
-      "shares": 48
+      "shares": 48,
+      "favorites": null
     },
     {
       "id": "d661514b6791",
@@ -473,7 +514,8 @@
       "reads": 451,
       "likes": 6,
       "watching": 6,
-      "shares": 47
+      "shares": 47,
+      "favorites": null
     },
     {
       "id": "70f67073586f",
@@ -484,7 +526,8 @@
       "reads": 2650,
       "likes": 14,
       "watching": 6,
-      "shares": 298
+      "shares": 298,
+      "favorites": null
     },
     {
       "id": "5a37997f28cd",
@@ -495,7 +538,8 @@
       "reads": 1318,
       "likes": 10,
       "watching": 6,
-      "shares": 247
+      "shares": 247,
+      "favorites": null
     },
     {
       "id": "4858e29dace9",
@@ -506,7 +550,8 @@
       "reads": 1037,
       "likes": 5,
       "watching": 3,
-      "shares": 150
+      "shares": 150,
+      "favorites": null
     },
     {
       "id": "dadad82e926f",
@@ -517,7 +562,8 @@
       "reads": 4130,
       "likes": 38,
       "watching": 26,
-      "shares": 516
+      "shares": 516,
+      "favorites": null
     },
     {
       "id": "382361103b5f",
@@ -528,7 +574,8 @@
       "reads": 1332,
       "likes": 25,
       "watching": 11,
-      "shares": 130
+      "shares": 130,
+      "favorites": null
     },
     {
       "id": "140abcdc243b",
@@ -539,7 +586,8 @@
       "reads": 1985,
       "likes": 14,
       "watching": 11,
-      "shares": 321
+      "shares": 321,
+      "favorites": null
     },
     {
       "id": "2972668acf7d",
@@ -550,7 +598,8 @@
       "reads": 1482,
       "likes": 18,
       "watching": 13,
-      "shares": 251
+      "shares": 251,
+      "favorites": null
     },
     {
       "id": "e1e1fe23a649",
@@ -561,7 +610,8 @@
       "reads": 1755,
       "likes": 14,
       "watching": 10,
-      "shares": 244
+      "shares": 244,
+      "favorites": null
     },
     {
       "id": "462185ad0d78",
@@ -572,7 +622,8 @@
       "reads": 1417,
       "likes": 11,
       "watching": 8,
-      "shares": 126
+      "shares": 126,
+      "favorites": null
     },
     {
       "id": "d483bafae13c",
@@ -583,7 +634,8 @@
       "reads": 1089,
       "likes": 14,
       "watching": 8,
-      "shares": 138
+      "shares": 138,
+      "favorites": null
     },
     {
       "id": "f0c370a9d046",
@@ -594,7 +646,8 @@
       "reads": 812,
       "likes": 8,
       "watching": 3,
-      "shares": 48
+      "shares": 48,
+      "favorites": null
     },
     {
       "id": "a26fd1f1dbaf",
@@ -605,7 +658,8 @@
       "reads": 1735,
       "likes": 28,
       "watching": 29,
-      "shares": 185
+      "shares": 185,
+      "favorites": null
     },
     {
       "id": "94d200893f1e",
@@ -616,7 +670,8 @@
       "reads": 1376,
       "likes": 16,
       "watching": 8,
-      "shares": 230
+      "shares": 230,
+      "favorites": null
     },
     {
       "id": "e9c0ce0f1991",
@@ -627,7 +682,8 @@
       "reads": 1775,
       "likes": 16,
       "watching": 9,
-      "shares": 258
+      "shares": 258,
+      "favorites": null
     },
     {
       "id": "a114ed4ae07e",
@@ -638,7 +694,8 @@
       "reads": 3726,
       "likes": 34,
       "watching": 18,
-      "shares": 475
+      "shares": 475,
+      "favorites": null
     },
     {
       "id": "80ac7592bd32",
@@ -649,7 +706,8 @@
       "reads": 1153,
       "likes": 12,
       "watching": 7,
-      "shares": 172
+      "shares": 172,
+      "favorites": null
     },
     {
       "id": "c81ae23679e4",
@@ -660,7 +718,8 @@
       "reads": 11056,
       "likes": 105,
       "watching": 65,
-      "shares": 1797
+      "shares": 1797,
+      "favorites": null
     },
     {
       "id": "f3d048f182c5",
@@ -671,7 +730,8 @@
       "reads": 1093,
       "likes": 10,
       "watching": 4,
-      "shares": 105
+      "shares": 105,
+      "favorites": null
     },
     {
       "id": "bee6c908c93e",
@@ -682,7 +742,8 @@
       "reads": 2604,
       "likes": 33,
       "watching": 22,
-      "shares": 344
+      "shares": 344,
+      "favorites": null
     },
     {
       "id": "2a11cfee1ebc",
@@ -693,7 +754,8 @@
       "reads": 660,
       "likes": 11,
       "watching": 1,
-      "shares": 35
+      "shares": 35,
+      "favorites": null
     },
     {
       "id": "c3a9519b2eab",
@@ -704,7 +766,8 @@
       "reads": 1879,
       "likes": 19,
       "watching": 13,
-      "shares": 328
+      "shares": 328,
+      "favorites": null
     },
     {
       "id": "63b945b4dde4",
@@ -715,7 +778,8 @@
       "reads": 2418,
       "likes": 10,
       "watching": 3,
-      "shares": 168
+      "shares": 168,
+      "favorites": null
     },
     {
       "id": "523140bbb606",
@@ -726,7 +790,8 @@
       "reads": 2199,
       "likes": 29,
       "watching": 12,
-      "shares": 360
+      "shares": 360,
+      "favorites": null
     },
     {
       "id": "b491d73d80a9",
@@ -737,7 +802,8 @@
       "reads": 1469,
       "likes": 16,
       "watching": 7,
-      "shares": 214
+      "shares": 214,
+      "favorites": null
     },
     {
       "id": "8c454e5abfa0",
@@ -748,7 +814,8 @@
       "reads": 916,
       "likes": 9,
       "watching": 10,
-      "shares": 125
+      "shares": 125,
+      "favorites": null
     },
     {
       "id": "b66cf6db6731",
@@ -759,7 +826,8 @@
       "reads": 257,
       "likes": 5,
       "watching": 4,
-      "shares": 24
+      "shares": 24,
+      "favorites": null
     },
     {
       "id": "2ba8e2d05309",
@@ -770,7 +838,8 @@
       "reads": 1486,
       "likes": 41,
       "watching": 24,
-      "shares": 207
+      "shares": 207,
+      "favorites": null
     },
     {
       "id": "136b5979843c",
@@ -781,7 +850,8 @@
       "reads": 1057,
       "likes": 13,
       "watching": 4,
-      "shares": 76
+      "shares": 76,
+      "favorites": null
     },
     {
       "id": "f59b12a8a626",
@@ -792,7 +862,8 @@
       "reads": 1002,
       "likes": 7,
       "watching": 3,
-      "shares": 50
+      "shares": 50,
+      "favorites": null
     },
     {
       "id": "753a89287b81",
@@ -803,7 +874,8 @@
       "reads": 1509,
       "likes": 8,
       "watching": 5,
-      "shares": 158
+      "shares": 158,
+      "favorites": null
     },
     {
       "id": "74ff21fcea40",
@@ -814,7 +886,8 @@
       "reads": 1858,
       "likes": 18,
       "watching": 15,
-      "shares": 187
+      "shares": 187,
+      "favorites": null
     },
     {
       "id": "1caa73adafb2",
@@ -825,7 +898,8 @@
       "reads": 9170,
       "likes": 84,
       "watching": 64,
-      "shares": 1202
+      "shares": 1202,
+      "favorites": null
     },
     {
       "id": "13cfa2727fea",
@@ -836,7 +910,8 @@
       "reads": 1382,
       "likes": 11,
       "watching": 9,
-      "shares": 143
+      "shares": 143,
+      "favorites": null
     },
     {
       "id": "9d477cbc832a",
@@ -847,7 +922,8 @@
       "reads": 4235,
       "likes": 46,
       "watching": 40,
-      "shares": 549
+      "shares": 549,
+      "favorites": null
     },
     {
       "id": "d30cd6b990ad",
@@ -858,7 +934,8 @@
       "reads": 1049,
       "likes": 17,
       "watching": 7,
-      "shares": 100
+      "shares": 100,
+      "favorites": null
     },
     {
       "id": "544a8bd5f7b4",
@@ -869,7 +946,8 @@
       "reads": 165,
       "likes": 6,
       "watching": 4,
-      "shares": 27
+      "shares": 27,
+      "favorites": null
     },
     {
       "id": "c0b39816c04e",
@@ -880,7 +958,8 @@
       "reads": 705,
       "likes": 4,
       "watching": 2,
-      "shares": 54
+      "shares": 54,
+      "favorites": null
     },
     {
       "id": "bd278a9db326",
@@ -891,7 +970,8 @@
       "reads": 1051,
       "likes": 22,
       "watching": 18,
-      "shares": 56
+      "shares": 56,
+      "favorites": null
     },
     {
       "id": "9cb79f39ccf5",
@@ -902,7 +982,8 @@
       "reads": 1687,
       "likes": 6,
       "watching": 3,
-      "shares": 227
+      "shares": 227,
+      "favorites": null
     },
     {
       "id": "cc29bbdab29b",
@@ -913,7 +994,8 @@
       "reads": 192,
       "likes": 4,
       "watching": 2,
-      "shares": 7
+      "shares": 7,
+      "favorites": null
     },
     {
       "id": "fac79a188e43",
@@ -924,7 +1006,8 @@
       "reads": 542,
       "likes": 4,
       "watching": 5,
-      "shares": 68
+      "shares": 68,
+      "favorites": null
     },
     {
       "id": "62eb672523bc",
@@ -935,7 +1018,8 @@
       "reads": 733,
       "likes": 5,
       "watching": 4,
-      "shares": 72
+      "shares": 72,
+      "favorites": null
     },
     {
       "id": "d36175a5b4f7",
@@ -946,7 +1030,8 @@
       "reads": 1168,
       "likes": 7,
       "watching": 5,
-      "shares": 150
+      "shares": 150,
+      "favorites": null
     },
     {
       "id": "cf847aa71a73",
@@ -957,7 +1042,8 @@
       "reads": 1151,
       "likes": 5,
       "watching": 4,
-      "shares": 174
+      "shares": 174,
+      "favorites": null
     },
     {
       "id": "fc7a23eaa626",
@@ -968,7 +1054,8 @@
       "reads": 856,
       "likes": 6,
       "watching": 3,
-      "shares": 41
+      "shares": 41,
+      "favorites": null
     },
     {
       "id": "d6cb26198f2b",
@@ -979,7 +1066,8 @@
       "reads": 1052,
       "likes": 9,
       "watching": 6,
-      "shares": 74
+      "shares": 74,
+      "favorites": null
     },
     {
       "id": "6fa5d12c11f1",
@@ -990,7 +1078,8 @@
       "reads": 1598,
       "likes": 18,
       "watching": 9,
-      "shares": 266
+      "shares": 266,
+      "favorites": null
     },
     {
       "id": "63502b0bb783",
@@ -1001,7 +1090,8 @@
       "reads": 1298,
       "likes": 16,
       "watching": 7,
-      "shares": 197
+      "shares": 197,
+      "favorites": null
     },
     {
       "id": "9aadcc093ad4",
@@ -1012,7 +1102,8 @@
       "reads": 1307,
       "likes": 14,
       "watching": 5,
-      "shares": 183
+      "shares": 183,
+      "favorites": null
     },
     {
       "id": "d2d6e98e660e",
@@ -1023,7 +1114,8 @@
       "reads": 219,
       "likes": 6,
       "watching": 5,
-      "shares": 17
+      "shares": 17,
+      "favorites": null
     },
     {
       "id": "7b3e4cfbc7f8",
@@ -1034,7 +1126,8 @@
       "reads": 2049,
       "likes": 19,
       "watching": 11,
-      "shares": 295
+      "shares": 295,
+      "favorites": null
     },
     {
       "id": "5b82c1b4fc60",
@@ -1045,7 +1138,8 @@
       "reads": 3994,
       "likes": 38,
       "watching": 30,
-      "shares": 535
+      "shares": 535,
+      "favorites": null
     },
     {
       "id": "b840ab9df06a",
@@ -1056,7 +1150,8 @@
       "reads": 1399,
       "likes": 26,
       "watching": 13,
-      "shares": 179
+      "shares": 179,
+      "favorites": null
     },
     {
       "id": "c7b1964f98d7",
@@ -1067,7 +1162,8 @@
       "reads": 536,
       "likes": 7,
       "watching": 4,
-      "shares": 38
+      "shares": 38,
+      "favorites": null
     },
     {
       "id": "eea6af86a3a0",
@@ -1078,7 +1174,8 @@
       "reads": 491,
       "likes": 8,
       "watching": 4,
-      "shares": 31
+      "shares": 31,
+      "favorites": null
     },
     {
       "id": "e9e91e8b8359",
@@ -1089,7 +1186,8 @@
       "reads": 305,
       "likes": 6,
       "watching": 3,
-      "shares": 20
+      "shares": 20,
+      "favorites": null
     },
     {
       "id": "0974fe9d94d1",
@@ -1100,7 +1198,8 @@
       "reads": 1075,
       "likes": 9,
       "watching": 4,
-      "shares": 134
+      "shares": 134,
+      "favorites": null
     },
     {
       "id": "2b711ac225f0",
@@ -1111,7 +1210,8 @@
       "reads": 1506,
       "likes": 11,
       "watching": 3,
-      "shares": 184
+      "shares": 184,
+      "favorites": null
     },
     {
       "id": "4ed946d43630",
@@ -1122,7 +1222,8 @@
       "reads": 1830,
       "likes": 29,
       "watching": 12,
-      "shares": 227
+      "shares": 227,
+      "favorites": null
     },
     {
       "id": "0b77ef3a2a32",
@@ -1133,7 +1234,8 @@
       "reads": 1017,
       "likes": 13,
       "watching": 4,
-      "shares": 96
+      "shares": 96,
+      "favorites": null
     },
     {
       "id": "f08c6990e476",
@@ -1144,7 +1246,8 @@
       "reads": 2429,
       "likes": 14,
       "watching": 10,
-      "shares": 319
+      "shares": 319,
+      "favorites": null
     },
     {
       "id": "7467da2877b0",
@@ -1155,7 +1258,8 @@
       "reads": 1471,
       "likes": 21,
       "watching": 9,
-      "shares": 157
+      "shares": 157,
+      "favorites": null
     },
     {
       "id": "44ce7fcaba27",
@@ -1166,7 +1270,8 @@
       "reads": 580,
       "likes": 5,
       "watching": 4,
-      "shares": 40
+      "shares": 40,
+      "favorites": null
     },
     {
       "id": "d4cbc58f0cfa",
@@ -1177,7 +1282,8 @@
       "reads": 781,
       "likes": 6,
       "watching": 1,
-      "shares": 43
+      "shares": 43,
+      "favorites": null
     },
     {
       "id": "d7c19354c2c3",
@@ -1188,7 +1294,8 @@
       "reads": 475,
       "likes": 7,
       "watching": 2,
-      "shares": 39
+      "shares": 39,
+      "favorites": null
     },
     {
       "id": "b6c3dac14102",
@@ -1199,7 +1306,8 @@
       "reads": 2216,
       "likes": 13,
       "watching": 6,
-      "shares": 307
+      "shares": 307,
+      "favorites": null
     },
     {
       "id": "2cfb13eaebdf",
@@ -1210,7 +1318,8 @@
       "reads": 1303,
       "likes": 23,
       "watching": 16,
-      "shares": 113
+      "shares": 113,
+      "favorites": null
     },
     {
       "id": "9c71313f11e3",
@@ -1221,7 +1330,8 @@
       "reads": 11681,
       "likes": 93,
       "watching": 60,
-      "shares": 1366
+      "shares": 1366,
+      "favorites": null
     },
     {
       "id": "481baac9f143",
@@ -1232,7 +1342,8 @@
       "reads": 2323,
       "likes": 19,
       "watching": 17,
-      "shares": 357
+      "shares": 357,
+      "favorites": null
     },
     {
       "id": "1e8d4035ac44",
@@ -1243,7 +1354,8 @@
       "reads": 1535,
       "likes": 14,
       "watching": 13,
-      "shares": 238
+      "shares": 238,
+      "favorites": null
     },
     {
       "id": "a4f3b036f602",
@@ -1254,7 +1366,8 @@
       "reads": 3331,
       "likes": 23,
       "watching": 19,
-      "shares": 212
+      "shares": 212,
+      "favorites": null
     },
     {
       "id": "f3e75eb2abbe",
@@ -1265,7 +1378,8 @@
       "reads": 1366,
       "likes": 15,
       "watching": 12,
-      "shares": 188
+      "shares": 188,
+      "favorites": null
     },
     {
       "id": "98773119302f",
@@ -1276,7 +1390,8 @@
       "reads": 511,
       "likes": 4,
       "watching": 2,
-      "shares": 34
+      "shares": 34,
+      "favorites": null
     },
     {
       "id": "2bc9bbf77f00",
@@ -1287,7 +1402,8 @@
       "reads": 765,
       "likes": 9,
       "watching": 6,
-      "shares": 44
+      "shares": 44,
+      "favorites": null
     },
     {
       "id": "db30be8688fd",
@@ -1298,7 +1414,8 @@
       "reads": 1259,
       "likes": 13,
       "watching": 7,
-      "shares": 123
+      "shares": 123,
+      "favorites": null
     },
     {
       "id": "a84a3cd96250",
@@ -1309,7 +1426,8 @@
       "reads": 1557,
       "likes": 23,
       "watching": 16,
-      "shares": 150
+      "shares": 150,
+      "favorites": null
     },
     {
       "id": "8678ff33830b",
@@ -1320,7 +1438,8 @@
       "reads": 2403,
       "likes": 22,
       "watching": 16,
-      "shares": 402
+      "shares": 402,
+      "favorites": null
     },
     {
       "id": "781d176c9ac3",
@@ -1331,7 +1450,8 @@
       "reads": 1284,
       "likes": 14,
       "watching": 5,
-      "shares": 150
+      "shares": 150,
+      "favorites": null
     },
     {
       "id": "e88a139c4829",
@@ -1342,7 +1462,8 @@
       "reads": 1859,
       "likes": 18,
       "watching": 10,
-      "shares": 290
+      "shares": 290,
+      "favorites": null
     },
     {
       "id": "e3776db54b21",
@@ -1353,7 +1474,8 @@
       "reads": 544,
       "likes": 10,
       "watching": 5,
-      "shares": 25
+      "shares": 25,
+      "favorites": null
     },
     {
       "id": "7dd75bb42420",
@@ -1364,7 +1486,8 @@
       "reads": 843,
       "likes": 5,
       "watching": 2,
-      "shares": 27
+      "shares": 27,
+      "favorites": null
     },
     {
       "id": "eaba304e1671",
@@ -1375,7 +1498,8 @@
       "reads": 1104,
       "likes": 13,
       "watching": 8,
-      "shares": 142
+      "shares": 142,
+      "favorites": null
     },
     {
       "id": "e2f88fc6929b",
@@ -1386,7 +1510,8 @@
       "reads": 1155,
       "likes": 9,
       "watching": 6,
-      "shares": 149
+      "shares": 149,
+      "favorites": null
     },
     {
       "id": "1d5b4665eeb7",
@@ -1397,7 +1522,8 @@
       "reads": 2650,
       "likes": 19,
       "watching": 22,
-      "shares": 344
+      "shares": 344,
+      "favorites": null
     },
     {
       "id": "c50f82b6c528",
@@ -1408,7 +1534,8 @@
       "reads": 739,
       "likes": 9,
       "watching": 5,
-      "shares": 77
+      "shares": 77,
+      "favorites": null
     },
     {
       "id": "01f9a32e8d22",
@@ -1419,7 +1546,8 @@
       "reads": 2492,
       "likes": 22,
       "watching": 19,
-      "shares": 328
+      "shares": 328,
+      "favorites": null
     },
     {
       "id": "20db777ee945",
@@ -1430,7 +1558,8 @@
       "reads": 1755,
       "likes": 15,
       "watching": 14,
-      "shares": 238
+      "shares": 238,
+      "favorites": null
     },
     {
       "id": "338cab4821c9",
@@ -1441,7 +1570,8 @@
       "reads": 871,
       "likes": 11,
       "watching": 9,
-      "shares": 59
+      "shares": 59,
+      "favorites": null
     },
     {
       "id": "0aa4bdbdb422",
@@ -1452,7 +1582,8 @@
       "reads": 491,
       "likes": 4,
       "watching": 2,
-      "shares": 39
+      "shares": 39,
+      "favorites": null
     },
     {
       "id": "a87d894ad11b",
@@ -1463,7 +1594,8 @@
       "reads": 2726,
       "likes": 19,
       "watching": 16,
-      "shares": 386
+      "shares": 386,
+      "favorites": null
     },
     {
       "id": "116345ee19b9",
@@ -1474,7 +1606,8 @@
       "reads": 2227,
       "likes": 15,
       "watching": 12,
-      "shares": 340
+      "shares": 340,
+      "favorites": null
     },
     {
       "id": "909e8ffcbdbf",
@@ -1485,7 +1618,8 @@
       "reads": 1367,
       "likes": 11,
       "watching": 6,
-      "shares": 120
+      "shares": 120,
+      "favorites": null
     },
     {
       "id": "948d0a9e32aa",
@@ -1496,7 +1630,8 @@
       "reads": 2063,
       "likes": 16,
       "watching": 10,
-      "shares": 367
+      "shares": 367,
+      "favorites": null
     },
     {
       "id": "c7f12a646a07",
@@ -1507,7 +1642,8 @@
       "reads": 6773,
       "likes": 77,
       "watching": 45,
-      "shares": 1070
+      "shares": 1070,
+      "favorites": null
     },
     {
       "id": "611221cca365",
@@ -1518,7 +1654,8 @@
       "reads": 388,
       "likes": 3,
       "watching": 2,
-      "shares": 39
+      "shares": 39,
+      "favorites": null
     },
     {
       "id": "6618a488444c",
@@ -1529,7 +1666,8 @@
       "reads": 364,
       "likes": 3,
       "watching": 2,
-      "shares": 45
+      "shares": 45,
+      "favorites": null
     },
     {
       "id": "821a13cf6a3b",
@@ -1540,7 +1678,8 @@
       "reads": 844,
       "likes": 9,
       "watching": 5,
-      "shares": 101
+      "shares": 101,
+      "favorites": null
     },
     {
       "id": "db486053c293",
@@ -1551,7 +1690,8 @@
       "reads": 433,
       "likes": 2,
       "watching": 1,
-      "shares": 40
+      "shares": 40,
+      "favorites": null
     },
     {
       "id": "8c9e41c03fd8",
@@ -1562,7 +1702,8 @@
       "reads": 208,
       "likes": 4,
       "watching": 4,
-      "shares": 22
+      "shares": 22,
+      "favorites": null
     },
     {
       "id": "3dbb061cfa17",
@@ -1573,7 +1714,8 @@
       "reads": 289,
       "likes": 5,
       "watching": 3,
-      "shares": 41
+      "shares": 41,
+      "favorites": null
     },
     {
       "id": "9170bb05ca8f",
@@ -1584,7 +1726,8 @@
       "reads": 781,
       "likes": 9,
       "watching": 8,
-      "shares": 146
+      "shares": 146,
+      "favorites": null
     },
     {
       "id": "417a8dda0155",
@@ -1595,7 +1738,8 @@
       "reads": 286,
       "likes": 5,
       "watching": 3,
-      "shares": 23
+      "shares": 23,
+      "favorites": null
     },
     {
       "id": "d7689eb14ab0",
@@ -1606,7 +1750,8 @@
       "reads": 312,
       "likes": 3,
       "watching": 1,
-      "shares": 24
+      "shares": 24,
+      "favorites": null
     },
     {
       "id": "79d0828a7daf",
@@ -1617,7 +1762,8 @@
       "reads": 1936,
       "likes": 10,
       "watching": 7,
-      "shares": 171
+      "shares": 171,
+      "favorites": null
     },
     {
       "id": "6e0d02d69021",
@@ -1628,7 +1774,8 @@
       "reads": 761,
       "likes": 5,
       "watching": 4,
-      "shares": 69
+      "shares": 69,
+      "favorites": null
     },
     {
       "id": "1af21cac8df6",
@@ -1639,7 +1786,8 @@
       "reads": 1556,
       "likes": 32,
       "watching": 29,
-      "shares": 179
+      "shares": 179,
+      "favorites": null
     },
     {
       "id": "1e55933f0403",
@@ -1650,7 +1798,8 @@
       "reads": 2871,
       "likes": 32,
       "watching": 21,
-      "shares": 358
+      "shares": 358,
+      "favorites": null
     },
     {
       "id": "79cf36a57ad9",
@@ -1661,7 +1810,8 @@
       "reads": 2657,
       "likes": 19,
       "watching": 24,
-      "shares": 481
+      "shares": 481,
+      "favorites": null
     },
     {
       "id": "2768828cfb97",
@@ -1672,7 +1822,8 @@
       "reads": 1180,
       "likes": 7,
       "watching": 4,
-      "shares": 151
+      "shares": 151,
+      "favorites": null
     },
     {
       "id": "630874cfdebd",
@@ -1683,7 +1834,8 @@
       "reads": 2127,
       "likes": 18,
       "watching": 12,
-      "shares": 165
+      "shares": 165,
+      "favorites": null
     },
     {
       "id": "84bcf7621ca0",
@@ -1694,7 +1846,8 @@
       "reads": 217,
       "likes": 2,
       "watching": 1,
-      "shares": 11
+      "shares": 11,
+      "favorites": null
     },
     {
       "id": "93596dc62eea",
@@ -1705,7 +1858,8 @@
       "reads": 248,
       "likes": 2,
       "watching": 1,
-      "shares": 8
+      "shares": 8,
+      "favorites": null
     },
     {
       "id": "699c331d2b94",
@@ -1716,7 +1870,8 @@
       "reads": 1512,
       "likes": 19,
       "watching": 11,
-      "shares": 183
+      "shares": 183,
+      "favorites": null
     },
     {
       "id": "e9d9b187c032",
@@ -1727,7 +1882,8 @@
       "reads": 1683,
       "likes": 12,
       "watching": 5,
-      "shares": 127
+      "shares": 127,
+      "favorites": null
     },
     {
       "id": "07ad0a56d41f",
@@ -1738,7 +1894,8 @@
       "reads": 1441,
       "likes": 11,
       "watching": 4,
-      "shares": 166
+      "shares": 166,
+      "favorites": null
     },
     {
       "id": "bdac766e91eb",
@@ -1749,7 +1906,8 @@
       "reads": 1906,
       "likes": 20,
       "watching": 8,
-      "shares": 199
+      "shares": 199,
+      "favorites": null
     },
     {
       "id": "406867df212a",
@@ -1760,7 +1918,8 @@
       "reads": 2903,
       "likes": 24,
       "watching": 18,
-      "shares": 320
+      "shares": 320,
+      "favorites": null
     },
     {
       "id": "4b4ef782a3ce",
@@ -1771,7 +1930,8 @@
       "reads": 1802,
       "likes": 10,
       "watching": 12,
-      "shares": 255
+      "shares": 255,
+      "favorites": null
     },
     {
       "id": "382d76defa04",
@@ -1782,7 +1942,8 @@
       "reads": 502,
       "likes": 10,
       "watching": 3,
-      "shares": 32
+      "shares": 32,
+      "favorites": null
     },
     {
       "id": "356d3cd999c3",
@@ -1793,7 +1954,8 @@
       "reads": 271,
       "likes": 4,
       "watching": 1,
-      "shares": 18
+      "shares": 18,
+      "favorites": null
     },
     {
       "id": "3ffb8166b60b",
@@ -1804,7 +1966,8 @@
       "reads": 246,
       "likes": 1,
       "watching": 1,
-      "shares": 19
+      "shares": 19,
+      "favorites": null
     },
     {
       "id": "e6162a6f3da3",
@@ -1815,7 +1978,8 @@
       "reads": 2143,
       "likes": 18,
       "watching": 15,
-      "shares": 297
+      "shares": 297,
+      "favorites": null
     },
     {
       "id": "8fe0b03b162f",
@@ -1826,7 +1990,8 @@
       "reads": 3914,
       "likes": 24,
       "watching": 19,
-      "shares": 618
+      "shares": 618,
+      "favorites": null
     },
     {
       "id": "2595eae5291f",
@@ -1837,7 +2002,8 @@
       "reads": 1848,
       "likes": 18,
       "watching": 4,
-      "shares": 182
+      "shares": 182,
+      "favorites": null
     },
     {
       "id": "73a3008d90d5",
@@ -1848,7 +2014,8 @@
       "reads": 1177,
       "likes": 22,
       "watching": 6,
-      "shares": 142
+      "shares": 142,
+      "favorites": null
     },
     {
       "id": "ebea6a05e0a1",
@@ -1859,7 +2026,8 @@
       "reads": 1091,
       "likes": 7,
       "watching": 5,
-      "shares": 127
+      "shares": 127,
+      "favorites": null
     },
     {
       "id": "7b0b33ea25f5",
@@ -1870,7 +2038,8 @@
       "reads": 844,
       "likes": 10,
       "watching": 10,
-      "shares": 137
+      "shares": 137,
+      "favorites": null
     },
     {
       "id": "0bcce0787159",
@@ -1881,7 +2050,8 @@
       "reads": 985,
       "likes": 10,
       "watching": 7,
-      "shares": 165
+      "shares": 165,
+      "favorites": null
     },
     {
       "id": "d49056734d3f",
@@ -1892,7 +2062,8 @@
       "reads": 3246,
       "likes": 34,
       "watching": 27,
-      "shares": 417
+      "shares": 417,
+      "favorites": null
     },
     {
       "id": "c21686c7629a",
@@ -1903,7 +2074,8 @@
       "reads": 456,
       "likes": 5,
       "watching": 5,
-      "shares": 30
+      "shares": 30,
+      "favorites": null
     },
     {
       "id": "11cf81b5b85e",
@@ -1914,7 +2086,8 @@
       "reads": 289,
       "likes": 5,
       "watching": 2,
-      "shares": 20
+      "shares": 20,
+      "favorites": null
     },
     {
       "id": "2148f3c1b7ec",
@@ -1925,7 +2098,8 @@
       "reads": 4192,
       "likes": 34,
       "watching": 25,
-      "shares": 722
+      "shares": 722,
+      "favorites": null
     },
     {
       "id": "7c8b2d3fa2e4",
@@ -1936,7 +2110,8 @@
       "reads": 1345,
       "likes": 18,
       "watching": 9,
-      "shares": 173
+      "shares": 173,
+      "favorites": null
     },
     {
       "id": "9a112ba2a473",
@@ -1947,7 +2122,8 @@
       "reads": 729,
       "likes": 8,
       "watching": 3,
-      "shares": 25
+      "shares": 25,
+      "favorites": null
     },
     {
       "id": "fa019559c4c5",
@@ -1958,7 +2134,8 @@
       "reads": 1957,
       "likes": 25,
       "watching": 17,
-      "shares": 280
+      "shares": 280,
+      "favorites": null
     },
     {
       "id": "5b1914cb5afd",
@@ -1969,7 +2146,8 @@
       "reads": 1552,
       "likes": 11,
       "watching": 11,
-      "shares": 208
+      "shares": 208,
+      "favorites": null
     },
     {
       "id": "1d34f51b5c43",
@@ -1980,7 +2158,8 @@
       "reads": 1012,
       "likes": 9,
       "watching": 5,
-      "shares": 121
+      "shares": 121,
+      "favorites": null
     },
     {
       "id": "f0b63161275a",
@@ -1991,7 +2170,8 @@
       "reads": 433,
       "likes": 3,
       "watching": 2,
-      "shares": 39
+      "shares": 39,
+      "favorites": null
     },
     {
       "id": "50de1c14d2a9",
@@ -2002,7 +2182,8 @@
       "reads": 6750,
       "likes": 39,
       "watching": 14,
-      "shares": 399
+      "shares": 399,
+      "favorites": null
     },
     {
       "id": "81717a2f7e44",
@@ -2013,7 +2194,8 @@
       "reads": 2102,
       "likes": 22,
       "watching": 14,
-      "shares": 323
+      "shares": 323,
+      "favorites": null
     },
     {
       "id": "ecb57bc972b5",
@@ -2024,7 +2206,8 @@
       "reads": 1191,
       "likes": 15,
       "watching": 6,
-      "shares": 149
+      "shares": 149,
+      "favorites": null
     },
     {
       "id": "077260068023",
@@ -2035,7 +2218,8 @@
       "reads": 4521,
       "likes": 37,
       "watching": 42,
-      "shares": 629
+      "shares": 629,
+      "favorites": null
     },
     {
       "id": "2bf571dacc8f",
@@ -2046,7 +2230,8 @@
       "reads": 1688,
       "likes": 14,
       "watching": 8,
-      "shares": 269
+      "shares": 269,
+      "favorites": null
     },
     {
       "id": "cde52a06899d",
@@ -2057,7 +2242,8 @@
       "reads": 1165,
       "likes": 34,
       "watching": 19,
-      "shares": 181
+      "shares": 181,
+      "favorites": null
     },
     {
       "id": "1ac44019da5a",
@@ -2068,7 +2254,8 @@
       "reads": 1168,
       "likes": 15,
       "watching": 5,
-      "shares": 101
+      "shares": 101,
+      "favorites": null
     },
     {
       "id": "bac041dcb607",
@@ -2079,7 +2266,8 @@
       "reads": 506,
       "likes": 6,
       "watching": 3,
-      "shares": 49
+      "shares": 49,
+      "favorites": null
     },
     {
       "id": "bb7f32df6e3e",
@@ -2090,7 +2278,8 @@
       "reads": 1452,
       "likes": 15,
       "watching": 6,
-      "shares": 177
+      "shares": 177,
+      "favorites": null
     },
     {
       "id": "637e45100c30",
@@ -2101,7 +2290,8 @@
       "reads": 8829,
       "likes": 131,
       "watching": 115,
-      "shares": 1249
+      "shares": 1249,
+      "favorites": null
     },
     {
       "id": "7071fc5748c0",
@@ -2112,7 +2302,8 @@
       "reads": 801,
       "likes": 2,
       "watching": 1,
-      "shares": 67
+      "shares": 67,
+      "favorites": null
     },
     {
       "id": "90171da02886",
@@ -2123,7 +2314,8 @@
       "reads": 802,
       "likes": 6,
       "watching": 5,
-      "shares": 93
+      "shares": 93,
+      "favorites": null
     },
     {
       "id": "a601aa86e400",
@@ -2134,7 +2326,8 @@
       "reads": 1924,
       "likes": 19,
       "watching": 8,
-      "shares": 327
+      "shares": 327,
+      "favorites": null
     },
     {
       "id": "2f7eab833f5e",
@@ -2145,7 +2338,8 @@
       "reads": 2255,
       "likes": 27,
       "watching": 24,
-      "shares": 363
+      "shares": 363,
+      "favorites": null
     },
     {
       "id": "f6f40b562cdf",
@@ -2156,7 +2350,8 @@
       "reads": 3340,
       "likes": 64,
       "watching": 24,
-      "shares": 442
+      "shares": 442,
+      "favorites": null
     },
     {
       "id": "36ffcccfa199",
@@ -2167,7 +2362,8 @@
       "reads": 318,
       "likes": 7,
       "watching": 0,
-      "shares": 40
+      "shares": 40,
+      "favorites": null
     },
     {
       "id": "dd104aedcf8e",
@@ -2178,7 +2374,8 @@
       "reads": 4267,
       "likes": 39,
       "watching": 32,
-      "shares": 545
+      "shares": 545,
+      "favorites": null
     },
     {
       "id": "568da2c932b8",
@@ -2189,7 +2386,8 @@
       "reads": 827,
       "likes": 5,
       "watching": 1,
-      "shares": 77
+      "shares": 77,
+      "favorites": null
     },
     {
       "id": "5c6b167ce31b",
@@ -2200,7 +2398,8 @@
       "reads": 618,
       "likes": 3,
       "watching": 2,
-      "shares": 83
+      "shares": 83,
+      "favorites": null
     },
     {
       "id": "6450a39b3154",
@@ -2211,7 +2410,8 @@
       "reads": 1307,
       "likes": 9,
       "watching": 5,
-      "shares": 196
+      "shares": 196,
+      "favorites": null
     },
     {
       "id": "2a2be4158eff",
@@ -2222,7 +2422,8 @@
       "reads": 474,
       "likes": 6,
       "watching": 2,
-      "shares": 45
+      "shares": 45,
+      "favorites": null
     },
     {
       "id": "15a15e26abd9",
@@ -2233,7 +2434,8 @@
       "reads": 414,
       "likes": 9,
       "watching": 6,
-      "shares": 54
+      "shares": 54,
+      "favorites": null
     },
     {
       "id": "6730886e6e98",
@@ -2244,7 +2446,8 @@
       "reads": 1146,
       "likes": 15,
       "watching": 8,
-      "shares": 138
+      "shares": 138,
+      "favorites": null
     },
     {
       "id": "338d1242b6b5",
@@ -2255,7 +2458,8 @@
       "reads": 506,
       "likes": 11,
       "watching": 7,
-      "shares": 79
+      "shares": 79,
+      "favorites": null
     },
     {
       "id": "3696f07fdd7a",
@@ -2266,7 +2470,8 @@
       "reads": 2559,
       "likes": 17,
       "watching": 17,
-      "shares": 421
+      "shares": 421,
+      "favorites": null
     },
     {
       "id": "a0d465f671e8",
@@ -2277,7 +2482,8 @@
       "reads": 739,
       "likes": 11,
       "watching": 4,
-      "shares": 90
+      "shares": 90,
+      "favorites": null
     },
     {
       "id": "6b39839ae6f9",
@@ -2288,7 +2494,8 @@
       "reads": 241,
       "likes": 6,
       "watching": 1,
-      "shares": 15
+      "shares": 15,
+      "favorites": null
     },
     {
       "id": "d1357fd00984",
@@ -2299,7 +2506,8 @@
       "reads": 332,
       "likes": 5,
       "watching": 2,
-      "shares": 35
+      "shares": 35,
+      "favorites": null
     },
     {
       "id": "6da754ccdc68",
@@ -2310,7 +2518,8 @@
       "reads": 2608,
       "likes": 30,
       "watching": 17,
-      "shares": 239
+      "shares": 239,
+      "favorites": null
     },
     {
       "id": "ebe1f86d9cd5",
@@ -2321,7 +2530,8 @@
       "reads": 517,
       "likes": 6,
       "watching": 6,
-      "shares": 73
+      "shares": 73,
+      "favorites": null
     },
     {
       "id": "f67f3bee950d",
@@ -2332,7 +2542,8 @@
       "reads": 1447,
       "likes": 24,
       "watching": 9,
-      "shares": 178
+      "shares": 178,
+      "favorites": null
     },
     {
       "id": "85a9489b2a2f",
@@ -2343,7 +2554,8 @@
       "reads": 1119,
       "likes": 6,
       "watching": 1,
-      "shares": 56
+      "shares": 56,
+      "favorites": null
     },
     {
       "id": "3c6ca0fce14d",
@@ -2354,7 +2566,8 @@
       "reads": 2385,
       "likes": 14,
       "watching": 10,
-      "shares": 361
+      "shares": 361,
+      "favorites": null
     },
     {
       "id": "0fd700eabcae",
@@ -2365,7 +2578,8 @@
       "reads": 1103,
       "likes": 9,
       "watching": 2,
-      "shares": 146
+      "shares": 146,
+      "favorites": null
     },
     {
       "id": "febad64a05cf",
@@ -2376,7 +2590,8 @@
       "reads": 1509,
       "likes": 18,
       "watching": 10,
-      "shares": 190
+      "shares": 190,
+      "favorites": null
     },
     {
       "id": "6e02ad5fb7b6",
@@ -2387,7 +2602,8 @@
       "reads": 884,
       "likes": 5,
       "watching": 5,
-      "shares": 55
+      "shares": 55,
+      "favorites": null
     },
     {
       "id": "120ce1a6edcd",
@@ -2398,7 +2614,8 @@
       "reads": 1349,
       "likes": 6,
       "watching": 2,
-      "shares": 77
+      "shares": 77,
+      "favorites": null
     },
     {
       "id": "1b274ce19689",
@@ -2409,7 +2626,8 @@
       "reads": 869,
       "likes": 14,
       "watching": 5,
-      "shares": 98
+      "shares": 98,
+      "favorites": null
     },
     {
       "id": "ba362f8544fb",
@@ -2420,7 +2638,8 @@
       "reads": 2355,
       "likes": 14,
       "watching": 11,
-      "shares": 306
+      "shares": 306,
+      "favorites": null
     },
     {
       "id": "25bce55a10d8",
@@ -2431,7 +2650,8 @@
       "reads": 1380,
       "likes": 10,
       "watching": 5,
-      "shares": 115
+      "shares": 115,
+      "favorites": null
     },
     {
       "id": "7e7eca9a9ad9",
@@ -2442,7 +2662,8 @@
       "reads": 2962,
       "likes": 51,
       "watching": 23,
-      "shares": 517
+      "shares": 517,
+      "favorites": null
     },
     {
       "id": "9de96f889a32",
@@ -2453,7 +2674,8 @@
       "reads": 1178,
       "likes": 13,
       "watching": 9,
-      "shares": 55
+      "shares": 55,
+      "favorites": null
     },
     {
       "id": "8f0a1c73b4b6",
@@ -2464,7 +2686,8 @@
       "reads": 1797,
       "likes": 13,
       "watching": 8,
-      "shares": 76
+      "shares": 76,
+      "favorites": null
     },
     {
       "id": "bb0060a87c0d",
@@ -2475,7 +2698,8 @@
       "reads": 3886,
       "likes": 30,
       "watching": 18,
-      "shares": 297
+      "shares": 297,
+      "favorites": null
     },
     {
       "id": "4e98185fded3",
@@ -2486,7 +2710,8 @@
       "reads": 1697,
       "likes": 10,
       "watching": 10,
-      "shares": 123
+      "shares": 123,
+      "favorites": null
     },
     {
       "id": "53ed48f6ead4",
@@ -2497,7 +2722,8 @@
       "reads": 4656,
       "likes": 32,
       "watching": 26,
-      "shares": 489
+      "shares": 489,
+      "favorites": null
     },
     {
       "id": "b73021e420d0",
@@ -2508,7 +2734,8 @@
       "reads": 1627,
       "likes": 16,
       "watching": 9,
-      "shares": 280
+      "shares": 280,
+      "favorites": null
     },
     {
       "id": "c8ee0616226b",
@@ -2519,7 +2746,8 @@
       "reads": 1617,
       "likes": 11,
       "watching": 10,
-      "shares": 147
+      "shares": 147,
+      "favorites": null
     },
     {
       "id": "e3d58e255ab9",
@@ -2530,7 +2758,8 @@
       "reads": 948,
       "likes": 10,
       "watching": 8,
-      "shares": 99
+      "shares": 99,
+      "favorites": null
     },
     {
       "id": "d1cc5f6ab7db",
@@ -2541,7 +2770,8 @@
       "reads": 5682,
       "likes": 63,
       "watching": 37,
-      "shares": 800
+      "shares": 800,
+      "favorites": null
     },
     {
       "id": "0b9a293efa27",
@@ -2552,7 +2782,8 @@
       "reads": 1132,
       "likes": 12,
       "watching": 9,
-      "shares": 171
+      "shares": 171,
+      "favorites": null
     },
     {
       "id": "dfa7bfdb8feb",
@@ -2563,7 +2794,8 @@
       "reads": 1243,
       "likes": 15,
       "watching": 20,
-      "shares": 131
+      "shares": 131,
+      "favorites": null
     },
     {
       "id": "538051ef835f",
@@ -2574,7 +2806,8 @@
       "reads": 546,
       "likes": 9,
       "watching": 7,
-      "shares": 76
+      "shares": 76,
+      "favorites": null
     },
     {
       "id": "6130c46110a1",
@@ -2585,7 +2818,8 @@
       "reads": 298,
       "likes": 5,
       "watching": 2,
-      "shares": 22
+      "shares": 22,
+      "favorites": null
     },
     {
       "id": "f48ceb9612f1",
@@ -2596,7 +2830,8 @@
       "reads": 541,
       "likes": 7,
       "watching": 4,
-      "shares": 63
+      "shares": 63,
+      "favorites": null
     },
     {
       "id": "ef3b7c610c85",
@@ -2607,7 +2842,8 @@
       "reads": 1136,
       "likes": 14,
       "watching": 12,
-      "shares": 179
+      "shares": 179,
+      "favorites": null
     },
     {
       "id": "4315f60383e3",
@@ -2618,7 +2854,8 @@
       "reads": 3257,
       "likes": 30,
       "watching": 14,
-      "shares": 519
+      "shares": 519,
+      "favorites": null
     },
     {
       "id": "b06d46b9775d",
@@ -2629,7 +2866,8 @@
       "reads": 1612,
       "likes": 15,
       "watching": 6,
-      "shares": 219
+      "shares": 219,
+      "favorites": null
     },
     {
       "id": "8d13eb75bd8a",
@@ -2640,7 +2878,8 @@
       "reads": 1718,
       "likes": 19,
       "watching": 19,
-      "shares": 234
+      "shares": 234,
+      "favorites": null
     },
     {
       "id": "9c9070e412ba",
@@ -2651,7 +2890,8 @@
       "reads": 2209,
       "likes": 25,
       "watching": 20,
-      "shares": 315
+      "shares": 315,
+      "favorites": null
     },
     {
       "id": "94ce886fe928",
@@ -2662,7 +2902,8 @@
       "reads": 468,
       "likes": 5,
       "watching": 2,
-      "shares": 55
+      "shares": 55,
+      "favorites": null
     },
     {
       "id": "7739aaf61928",
@@ -2673,7 +2914,8 @@
       "reads": 2724,
       "likes": 22,
       "watching": 15,
-      "shares": 439
+      "shares": 439,
+      "favorites": null
     },
     {
       "id": "e4661e64a72b",
@@ -2684,7 +2926,8 @@
       "reads": 5032,
       "likes": 46,
       "watching": 26,
-      "shares": 800
+      "shares": 800,
+      "favorites": null
     },
     {
       "id": "4a2fb06a4022",
@@ -2695,7 +2938,8 @@
       "reads": 2667,
       "likes": 27,
       "watching": 14,
-      "shares": 284
+      "shares": 284,
+      "favorites": null
     },
     {
       "id": "c4dd46d2a6a8",
@@ -2706,7 +2950,8 @@
       "reads": 2412,
       "likes": 22,
       "watching": 17,
-      "shares": 344
+      "shares": 344,
+      "favorites": null
     },
     {
       "id": "7803f54947bc",
@@ -2717,7 +2962,8 @@
       "reads": 2541,
       "likes": 22,
       "watching": 14,
-      "shares": 485
+      "shares": 485,
+      "favorites": null
     },
     {
       "id": "eecf23a7e99d",
@@ -2728,7 +2974,8 @@
       "reads": 910,
       "likes": 8,
       "watching": 8,
-      "shares": 86
+      "shares": 86,
+      "favorites": null
     },
     {
       "id": "ce9159352bc0",
@@ -2739,7 +2986,8 @@
       "reads": 449,
       "likes": 2,
       "watching": 2,
-      "shares": 48
+      "shares": 48,
+      "favorites": null
     },
     {
       "id": "212ec7813700",
@@ -2750,7 +2998,8 @@
       "reads": 1365,
       "likes": 13,
       "watching": 9,
-      "shares": 169
+      "shares": 169,
+      "favorites": null
     },
     {
       "id": "c5025ebfbbaa",
@@ -2761,7 +3010,8 @@
       "reads": 892,
       "likes": 6,
       "watching": 4,
-      "shares": 115
+      "shares": 115,
+      "favorites": null
     },
     {
       "id": "a06035dff0c5",
@@ -2772,7 +3022,8 @@
       "reads": 1122,
       "likes": 6,
       "watching": 1,
-      "shares": 81
+      "shares": 81,
+      "favorites": null
     },
     {
       "id": "54c0816aec63",
@@ -2783,7 +3034,8 @@
       "reads": 1385,
       "likes": 9,
       "watching": 8,
-      "shares": 163
+      "shares": 163,
+      "favorites": null
     },
     {
       "id": "d51f0befa704",
@@ -2794,7 +3046,8 @@
       "reads": 397,
       "likes": 3,
       "watching": 1,
-      "shares": 30
+      "shares": 30,
+      "favorites": null
     },
     {
       "id": "c608aba967ed",
@@ -2805,7 +3058,8 @@
       "reads": 2093,
       "likes": 11,
       "watching": 8,
-      "shares": 239
+      "shares": 239,
+      "favorites": null
     },
     {
       "id": "f6af49d14b37",
@@ -2816,7 +3070,8 @@
       "reads": 5295,
       "likes": 41,
       "watching": 29,
-      "shares": 564
+      "shares": 564,
+      "favorites": null
     },
     {
       "id": "9cfa041b0b08",
@@ -2827,7 +3082,8 @@
       "reads": 307,
       "likes": 3,
       "watching": 2,
-      "shares": 27
+      "shares": 27,
+      "favorites": null
     },
     {
       "id": "7fd107dfc51b",
@@ -2838,7 +3094,8 @@
       "reads": 2297,
       "likes": 17,
       "watching": 7,
-      "shares": 189
+      "shares": 189,
+      "favorites": null
     },
     {
       "id": "33e02fff742f",
@@ -2849,7 +3106,8 @@
       "reads": 1215,
       "likes": 9,
       "watching": 6,
-      "shares": 153
+      "shares": 153,
+      "favorites": null
     },
     {
       "id": "37e122565fd7",
@@ -2860,7 +3118,8 @@
       "reads": 3802,
       "likes": 20,
       "watching": 14,
-      "shares": 420
+      "shares": 420,
+      "favorites": null
     },
     {
       "id": "e5dd10719052",
@@ -2871,7 +3130,8 @@
       "reads": 4568,
       "likes": 48,
       "watching": 44,
-      "shares": 587
+      "shares": 587,
+      "favorites": null
     },
     {
       "id": "c81b25c19736",
@@ -2882,7 +3142,8 @@
       "reads": 15860,
       "likes": 164,
       "watching": 167,
-      "shares": 1585
+      "shares": 1585,
+      "favorites": null
     },
     {
       "id": "4a9b0884e189",
@@ -2893,7 +3154,8 @@
       "reads": 2307,
       "likes": 15,
       "watching": 6,
-      "shares": 309
+      "shares": 309,
+      "favorites": null
     },
     {
       "id": "40769bdff8c6",
@@ -2904,7 +3166,9 @@
       "reads": 651,
       "likes": 4,
       "watching": 2,
-      "shares": 46
+      "shares": 46,
+      "favorites": null
     }
-  ]
+  ],
+  "favoritesComplete": false
 }
