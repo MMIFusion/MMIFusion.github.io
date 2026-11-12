@@ -108,6 +108,8 @@ git config user.email 276543646+MMIFusion@users.noreply.github.com
 
 首页数据集图来自原数据资源目录资料，原图保存在 `assets/datasets/`，只作资源预览。论文卡片封面和融合首屏为本站原创概念设计，不是论文模型图或真实融合结果。
 
+首页四个精选阅读栏目共用 `scripts/cover_art.py` 与 `assets/reading-covers.css`。封面按文章 ID 保持固定的图形、配色与方法名称；已精选文章使用独立设计，其余条目按稳定 ID 选择主题图形。同一文章在不同栏目使用同一封面。阅读、点赞、转发数据直接取 `article-stats.json`，不计算或模拟新计数，并标明各篇统计日期。电脑悬停或键盘聚焦卡片时展示统计，触屏设备在封面进入可见区域后展示；离屏图形暂停动画，遵循全站动效开关。仅增加原创装饰图，不修改公众号标题、链接、数据或分类。
+
 ## 人气榜、访问统计与趣味互动
 
 `scripts/community.py` 生成首页榜单、状态栏、广告合作与趣味日历；`assets/community.css` / `community.js` 管理样式和交互，`community-core.js` 只包含北京时间日期及确定性的日签规则。

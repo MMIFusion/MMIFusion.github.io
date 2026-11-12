@@ -56,6 +56,22 @@
   }
 
   const readingTabs = $$('[data-reading-tab]'), groups = $$('[data-reading-group]');
+  const covers = $$('.editorial-cover');
+  const touchCovers = matchMedia('(hover:none), (pointer:coarse)');
+  if (covers.length && 'IntersectionObserver' in window) {
+    const coverVisibility = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        entry.target.classList.toggle('cover-offscreen', !entry.isIntersecting);
+        entry.target.classList.toggle('stats-in-view', touchCovers.matches && entry.intersectionRatio >= .55);
+      });
+    }, {threshold:[0,.55],rootMargin:'-140px 0px 0px 0px'});
+    covers.forEach(cover => coverVisibility.observe(cover));
+    touchCovers.addEventListener('change', () => {
+      covers.forEach(cover => { cover.classList.remove('stats-in-view'); coverVisibility.unobserve(cover); coverVisibility.observe(cover); });
+    });
+  } else if (touchCovers.matches) {
+    covers.forEach(cover => cover.classList.add('stats-in-view'));
+  }
   if (readingTabs.length) {
     const select = button => {
       readingTabs.forEach(b => b.setAttribute('aria-pressed', String(b === button)));

@@ -160,7 +160,7 @@ def main():
     shutil.copytree(ROOT/'downloads', OUT/'downloads')
     (OUT/'data').mkdir()
     for path in (ROOT/'data').glob('*.json'): shutil.copy2(path,OUT/'data'/path.name)
-    page('index.html','首页',home(),'home')
+    page('index.html','首页',home(),'home',extras='<link rel="stylesheet" href="assets/reading-covers.css">')
     page('resources.html','学术资源',resources())
     page('datasets.html','数据资源',title_block('DATASETS & BENCHMARKS','找到适合研究的数据。','从经典基准到多模态场景，按方向、任务、论文与团队探索完整资源目录。')+dataset_catalog.page(),'datasets',description=f'{len(dataset_catalog.ITEMS)} 项图像融合与多模态感知数据资源，支持研究方向与任务筛选、全文搜索、完整介绍、团队作者和原图查看。',extras='<link rel="stylesheet" href="assets/datasets.css"><script src="assets/datasets.js" defer></script>')
     page('papers.html','论文阅读',title_block('THE PAPER LIBRARY','读论文，也读懂问题。','检索公众号的论文解读、学术速递与研究资源。点击标题，继续阅读完整文章。','论文阅读')+f'<div class="wrap section compact-top">{collection(ARTICLES)}</div>','papers')
