@@ -96,7 +96,13 @@ for palette in palette_data['basicPalettes']:
 stats = json.loads((ROOT/'data/article-stats.json').read_text())
 assert stats['snapshotDate'] == json.loads((ROOT/'data/articles.json').read_text())['snapshotDate']
 assert stats['favoritesAvailable'] is False
-assert stats['sourceColumns'] == {'reads':'J','likes':'K','watching':'N','shares':'O'}
+if 'sources' in stats:
+    assert all(set(source['sourceColumns']) == {'reads','likes','watching','shares'} for source in stats['sources'])
+    source_dates = {source['sourceFile']:source['snapshotDate'] for source in stats['sources']}
+    assert all(record['snapshotDate'] == source_dates[record['sourceFile']] for record in stats['records'])
+    assert stats['snapshotDates'] == sorted({record['snapshotDate'] for record in stats['records']})
+else:
+    assert stats['sourceColumns'] == {'reads':'J','likes':'K','watching':'N','shares':'O'}
 assert len(stats['records']) == len(ids)
 assert {r['id'] for r in stats['records']} == set(ids)
 for record in stats['records']:

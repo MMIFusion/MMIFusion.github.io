@@ -1,9 +1,342 @@
 {
-  "sourceFile": "261028-多模态信息融合.xlsx",
-  "sourceSheet": "微信文章导出",
-  "snapshotDate": "2026-10-28",
-  "latestArticleDate": "2026-10-26",
+  "sourceFile": "合并文章索引",
+  "sourceSheet": "合并文章",
+  "snapshotDate": "2026-11-12",
+  "sources": [
+    {
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出",
+      "snapshotDate": "2026-10-28",
+      "sha256": "805abc576eb886a32b17a10cf94c6924920f5fadc599c762e1d0d1a1a0b2404c",
+      "sourceColumns": {
+        "reads": "J",
+        "likes": "K",
+        "watching": "N",
+        "shares": "O"
+      }
+    },
+    {
+      "sourceFile": "壹伴-图文分析导出-多模态信息融合.xlsx",
+      "sourceSheet": "Sheet1",
+      "snapshotDate": "2026-11-12",
+      "sha256": "7c42ac386cbe3afdd6e98d6030b3b497dacf08d843f6712d3d7d9007e37c77dd",
+      "sourceColumns": {
+        "reads": "I",
+        "likes": "AC",
+        "watching": "AB",
+        "shares": "U"
+      }
+    }
+  ],
+  "latestArticleDate": "2026-11-11",
   "articles": [
+    {
+      "id": "bb15984a3a4b",
+      "title": "INFFUS 2026｜郑州大学 THCMC：别再把“朋友”推远！混合对比学习让多模态融合更可信！",
+      "date": "2026-11-11",
+      "url": "https://mp.weixin.qq.com/s/-FWHywAN5D8PEpoD0aGd0Q",
+      "section": "论文解读",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "INFFUS",
+      "sourceFile": "壹伴-图文分析导出-多模态信息融合.xlsx",
+      "sourceSheet": "Sheet1",
+      "sourceRow": 3
+    },
+    {
+      "id": "f91913e0bec1",
+      "title": "跟着 CRT-HMAR 学习论文模型图及配色",
+      "date": "2026-11-11",
+      "url": "https://mp.weixin.qq.com/s/-I9UV9i2Um94KsJIwi7o9w",
+      "section": "配色与绘图",
+      "topics": [],
+      "venue": "",
+      "sourceFile": "壹伴-图文分析导出-多模态信息融合.xlsx",
+      "sourceSheet": "Sheet1",
+      "sourceRow": 4
+    },
+    {
+      "id": "9047bd7761e6",
+      "title": "INFFUS 2026｜ME-PMA：联合多视角嵌入与渐进式多尺度对齐，实现未配准图像融合",
+      "date": "2026-11-10",
+      "url": "https://mp.weixin.qq.com/s/eO4_GBanKK8heycQLpYXqw",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "图像配准"
+      ],
+      "venue": "INFFUS",
+      "sourceFile": "壹伴-图文分析导出-多模态信息融合.xlsx",
+      "sourceSheet": "Sheet1",
+      "sourceRow": 5
+    },
+    {
+      "id": "49a25a11adfb",
+      "title": "TIP 2026｜图像错位怎么融合？Hy-CycleAlign把红外–可见光配准带进双曲空间",
+      "date": "2026-11-09",
+      "url": "https://mp.weixin.qq.com/s/s9eD7MzI0t769mdDcGtkLA",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "图像融合",
+        "图像配准"
+      ],
+      "venue": "TIP",
+      "sourceFile": "壹伴-图文分析导出-多模态信息融合.xlsx",
+      "sourceSheet": "Sheet1",
+      "sourceRow": 6
+    },
+    {
+      "id": "a37f4a433d20",
+      "title": "TIP 2026｜大连理工+南京大学 SPRFusion：利用语义先验实现多曝光图像配准与融合",
+      "date": "2026-11-08",
+      "url": "https://mp.weixin.qq.com/s/5IHUbVMm6MteCczfaamS-A",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "图像配准",
+        "多曝光与多聚焦"
+      ],
+      "venue": "TIP",
+      "sourceFile": "壹伴-图文分析导出-多模态信息融合.xlsx",
+      "sourceSheet": "Sheet1",
+      "sourceRow": 7
+    },
+    {
+      "id": "3ac8bfc2020f",
+      "title": "IJCV 2026 | RASS：用语义约束恢复与参数适配，改善低质量图像语义分割",
+      "date": "2026-11-07",
+      "url": "https://mp.weixin.qq.com/s/gUIkwtcnMuHmBJAHonVYyg",
+      "section": "论文解读",
+      "topics": [
+        "图像恢复"
+      ],
+      "venue": "IJCV",
+      "sourceFile": "壹伴-图文分析导出-多模态信息融合.xlsx",
+      "sourceSheet": "Sheet1",
+      "sourceRow": 8
+    },
+    {
+      "id": "65326b8100ba",
+      "title": "NatureFusion：武汉大学马佳义团队重新定义红外与可见光图像融合",
+      "date": "2026-11-06",
+      "url": "https://mp.weixin.qq.com/s/exFKozPv0v2MXG556t9cpA",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "图像融合",
+        "研究团队"
+      ],
+      "venue": "",
+      "sourceFile": "壹伴-图文分析导出-多模态信息融合.xlsx",
+      "sourceSheet": "Sheet1",
+      "sourceRow": 9
+    },
+    {
+      "id": "f2da1bf49bab",
+      "title": "TPAMI 2026｜MGAF：基于多重引导与自适应融合的激光雷达—相机三维目标检测",
+      "date": "2026-11-05",
+      "url": "https://mp.weixin.qq.com/s/3jEYexzpaNPFEDUhXhlTOw",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "三维感知"
+      ],
+      "venue": "TPAMI",
+      "sourceFile": "壹伴-图文分析导出-多模态信息融合.xlsx",
+      "sourceSheet": "Sheet1",
+      "sourceRow": 10
+    },
+    {
+      "id": "3e775c82ccd1",
+      "title": "跟着 SpaSemSR 2026 学习论文模型图及配色",
+      "date": "2026-11-05",
+      "url": "https://mp.weixin.qq.com/s/a2foPuQ8pDqKvev2pu-SHg",
+      "section": "配色与绘图",
+      "topics": [],
+      "venue": "",
+      "sourceFile": "壹伴-图文分析导出-多模态信息融合.xlsx",
+      "sourceSheet": "Sheet1",
+      "sourceRow": 11
+    },
+    {
+      "id": "538d8b3bb61f",
+      "title": "跟着 CVPR 2026 学习论文模型图及配色",
+      "date": "2026-11-04",
+      "url": "https://mp.weixin.qq.com/s/eMONeC2tyv-vjBjn0RrATQ",
+      "section": "配色与绘图",
+      "topics": [],
+      "venue": "CVPR",
+      "sourceFile": "壹伴-图文分析导出-多模态信息融合.xlsx",
+      "sourceSheet": "Sheet1",
+      "sourceRow": 12
+    },
+    {
+      "id": "a24b9a8c3601",
+      "title": "谁在推进视觉与具身智能导航？46 个国内外研究单位与代表成果大盘点（2024—2026）",
+      "date": "2026-11-04",
+      "url": "https://mp.weixin.qq.com/s/H2oIAfU434DhZUdBHuW3VQ",
+      "section": "学术社区",
+      "topics": [
+        "研究团队"
+      ],
+      "venue": "",
+      "sourceFile": "壹伴-图文分析导出-多模态信息融合.xlsx",
+      "sourceSheet": "Sheet1",
+      "sourceRow": 13
+    },
+    {
+      "id": "e1a369090a9b",
+      "title": "跟着 UniRestore 学习论文模型图及配色",
+      "date": "2026-11-03",
+      "url": "https://mp.weixin.qq.com/s/SAOqtsrYP3-_8YeLYS0ftg",
+      "section": "配色与绘图",
+      "topics": [],
+      "venue": "",
+      "sourceFile": "壹伴-图文分析导出-多模态信息融合.xlsx",
+      "sourceSheet": "Sheet1",
+      "sourceRow": 14
+    },
+    {
+      "id": "6d5340fef766",
+      "title": "ACM MM 2026｜旋转等变也要“挑频率”？中南财RoES低频用 Mamba，高频用傅里叶注意力！",
+      "date": "2026-11-03",
+      "url": "https://mp.weixin.qq.com/s/7eBf_8p55pWsa9V5zJnd7A",
+      "section": "论文解读",
+      "topics": [],
+      "venue": "ACM MM",
+      "sourceFile": "壹伴-图文分析导出-多模态信息融合.xlsx",
+      "sourceSheet": "Sheet1",
+      "sourceRow": 15
+    },
+    {
+      "id": "4812037ac800",
+      "title": "NeurIPS 2026 | 武大 MemoryFusion：长短期记忆协同，让多模态视频融合更清晰连贯",
+      "date": "2026-11-02",
+      "url": "https://mp.weixin.qq.com/s/a2LVa99e1EiFjaF8T_I99A",
+      "section": "论文解读",
+      "topics": [
+        "图像融合",
+        "视频融合"
+      ],
+      "venue": "NeurIPS",
+      "sourceFile": "壹伴-图文分析导出-多模态信息融合.xlsx",
+      "sourceSheet": "Sheet1",
+      "sourceRow": 16
+    },
+    {
+      "id": "21aba88427c7",
+      "title": "科研必备！资源合集 | 一文览尽110+项多模态融合数据集！经典领衔，覆盖多模态、多场景、多任务，研究生入门的第一份收藏！",
+      "date": "2026-11-01",
+      "url": "https://mp.weixin.qq.com/s/ygUEl8rsOwjVFrlY5kdRDw",
+      "section": "综述与入门",
+      "topics": [
+        "图像融合",
+        "数据集与基准"
+      ],
+      "venue": "",
+      "sourceFile": "壹伴-图文分析导出-多模态信息融合.xlsx",
+      "sourceSheet": "Sheet1",
+      "sourceRow": 17
+    },
+    {
+      "id": "51d6b3622980",
+      "title": "学术速递 | CVPR 2026 图像恢复方向大盘点：可检索 21 篇相关论文",
+      "date": "2026-10-31",
+      "url": "https://mp.weixin.qq.com/s/rV0_Bl0FpTJm3Ciw1x9-MA",
+      "section": "论文速递",
+      "topics": [
+        "图像恢复"
+      ],
+      "venue": "CVPR",
+      "sourceFile": "壹伴-图文分析导出-多模态信息融合.xlsx",
+      "sourceSheet": "Sheet1",
+      "sourceRow": 18
+    },
+    {
+      "id": "892ff5d355df",
+      "title": "INFFUS 2027 | DA-IVIF：一个全新的红外与可见光融合数据集，面向真实退化场景",
+      "date": "2026-10-30",
+      "url": "https://mp.weixin.qq.com/s/6yz6tYBIII0_dJCR_IBptw",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "图像融合",
+        "图像恢复",
+        "数据集与基准"
+      ],
+      "venue": "INFFUS",
+      "sourceFile": "壹伴-图文分析导出-多模态信息融合.xlsx",
+      "sourceSheet": "Sheet1",
+      "sourceRow": 19
+    },
+    {
+      "id": "e51ee6a0a6fb",
+      "title": "跟着图像恢复学习论文模型图及配色",
+      "date": "2026-10-29",
+      "url": "https://mp.weixin.qq.com/s/5OXDZQcHvnFFekzQn_RBuw",
+      "section": "配色与绘图",
+      "topics": [
+        "图像恢复"
+      ],
+      "venue": "",
+      "sourceFile": "壹伴-图文分析导出-多模态信息融合.xlsx",
+      "sourceSheet": "Sheet1",
+      "sourceRow": 20
+    },
+    {
+      "id": "3f0517385784",
+      "title": "TPAMI 2026 | 北航 Thermal3D-GS：让热红外拥有3D视角，物理引导的三维高斯数据集",
+      "date": "2026-10-29",
+      "url": "https://mp.weixin.qq.com/s/D9wciomDcxh3QQ7olGI8XQ",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光",
+        "三维感知",
+        "数据集与基准"
+      ],
+      "venue": "TPAMI",
+      "sourceFile": "壹伴-图文分析导出-多模态信息融合.xlsx",
+      "sourceSheet": "Sheet1",
+      "sourceRow": 21
+    },
+    {
+      "id": "55ec7f5f1637",
+      "title": "TPAMI 2026｜模态越多反而越偏科？川大IBML不只调梯度，还要真正公平保留互补信息",
+      "date": "2026-10-28",
+      "url": "https://mp.weixin.qq.com/s/oGrrxVqrRHeUZ9Pdxa1gVQ",
+      "section": "论文解读",
+      "topics": [],
+      "venue": "TPAMI",
+      "sourceFile": "壹伴-图文分析导出-多模态信息融合.xlsx",
+      "sourceSheet": "Sheet1",
+      "sourceRow": 23
+    },
+    {
+      "id": "1d2c7a686200",
+      "title": "跟着 TaskIR 学习论文模型图及配色",
+      "date": "2026-10-27",
+      "url": "https://mp.weixin.qq.com/s/EvZbuRzcKeKx4-mtotF3qA",
+      "section": "配色与绘图",
+      "topics": [],
+      "venue": "",
+      "sourceFile": "壹伴-图文分析导出-多模态信息融合.xlsx",
+      "sourceSheet": "Sheet1",
+      "sourceRow": 24
+    },
+    {
+      "id": "c0ba46bd407d",
+      "title": "TPAMI 2026｜缺失模态能靠大模型补回来吗？北交AFM²先找证据，再生成验证",
+      "date": "2026-10-27",
+      "url": "https://mp.weixin.qq.com/s/HlvNmk_pxQRB04tVzWyyMg",
+      "section": "论文解读",
+      "topics": [],
+      "venue": "TPAMI",
+      "sourceFile": "壹伴-图文分析导出-多模态信息融合.xlsx",
+      "sourceSheet": "Sheet1",
+      "sourceRow": 25
+    },
     {
       "id": "0db9ae90782b",
       "title": "NeurIPS 2026｜保候选、修曝光、补细节：读懂北理工PCDFusion用贝叶斯决策做图像融合",
@@ -14,7 +347,12 @@
         "图像融合"
       ],
       "venue": "NeurIPS",
-      "sourceRow": 130
+      "sourceRow": 26,
+      "sourceFile": "壹伴-图文分析导出-多模态信息融合.xlsx",
+      "sourceSheet": "Sheet1",
+      "urlAliases": [
+        "https://mp.weixin.qq.com/s/WH5pM6kzVjlNx847h_niVw"
+      ]
     },
     {
       "id": "81323af75c35",
@@ -24,7 +362,12 @@
       "section": "配色与绘图",
       "topics": [],
       "venue": "CVPR",
-      "sourceRow": 181
+      "sourceRow": 27,
+      "sourceFile": "壹伴-图文分析导出-多模态信息融合.xlsx",
+      "sourceSheet": "Sheet1",
+      "urlAliases": [
+        "https://mp.weixin.qq.com/s/2RNBybNz3YxYYoGmuzr-HQ"
+      ]
     },
     {
       "id": "8717e19cbb41",
@@ -36,7 +379,9 @@
         "三维感知"
       ],
       "venue": "ECCV",
-      "sourceRow": 163
+      "sourceRow": 163,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "a682739b5877",
@@ -49,7 +394,9 @@
         "图像恢复"
       ],
       "venue": "Information Fusion",
-      "sourceRow": 49
+      "sourceRow": 49,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "787b75bc198d",
@@ -59,7 +406,9 @@
       "section": "学术社区",
       "topics": [],
       "venue": "",
-      "sourceRow": 240
+      "sourceRow": 240,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "93c7a20beeda",
@@ -71,7 +420,9 @@
         "图像融合"
       ],
       "venue": "",
-      "sourceRow": 190
+      "sourceRow": 190,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "cd7dc0320b57",
@@ -84,7 +435,9 @@
         "数据集与基准"
       ],
       "venue": "CVPR",
-      "sourceRow": 121
+      "sourceRow": 121,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "5fbaa06c7abc",
@@ -96,7 +449,9 @@
         "图像融合"
       ],
       "venue": "TIP",
-      "sourceRow": 108
+      "sourceRow": 108,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "1494b18566be",
@@ -109,7 +464,9 @@
         "医学影像"
       ],
       "venue": "ACM MM",
-      "sourceRow": 119
+      "sourceRow": 119,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "069840f6c1b6",
@@ -119,7 +476,9 @@
       "section": "配色与绘图",
       "topics": [],
       "venue": "ICML",
-      "sourceRow": 104
+      "sourceRow": 104,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "4b1537411c2a",
@@ -131,7 +490,9 @@
         "图像融合"
       ],
       "venue": "NeurIPS",
-      "sourceRow": 18
+      "sourceRow": 18,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "62d692a29b52",
@@ -143,7 +504,9 @@
         "红外与可见光"
       ],
       "venue": "ACM MM",
-      "sourceRow": 150
+      "sourceRow": 150,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "389d69cf3caf",
@@ -157,7 +520,9 @@
         "遥感与多光谱"
       ],
       "venue": "INFFUS",
-      "sourceRow": 129
+      "sourceRow": 129,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "5627bfc752eb",
@@ -169,7 +534,9 @@
         "图像融合"
       ],
       "venue": "",
-      "sourceRow": 26
+      "sourceRow": 26,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "fc2d6f046255",
@@ -183,7 +550,9 @@
         "医学影像"
       ],
       "venue": "NeurIPS",
-      "sourceRow": 90
+      "sourceRow": 90,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "b8f3398c78b6",
@@ -196,7 +565,9 @@
         "图像恢复"
       ],
       "venue": "ACM MM",
-      "sourceRow": 167
+      "sourceRow": 167,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "30e05069d0a8",
@@ -208,7 +579,9 @@
         "三维感知"
       ],
       "venue": "NeurIPS",
-      "sourceRow": 216
+      "sourceRow": 216,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "d661514b6791",
@@ -220,7 +593,9 @@
         "三维感知"
       ],
       "venue": "",
-      "sourceRow": 212
+      "sourceRow": 212,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "70f67073586f",
@@ -232,7 +607,9 @@
         "图像融合"
       ],
       "venue": "NeurIPS",
-      "sourceRow": 37
+      "sourceRow": 37,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "5a37997f28cd",
@@ -244,7 +621,9 @@
         "红外与可见光"
       ],
       "venue": "CVPR",
-      "sourceRow": 122
+      "sourceRow": 122,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "4858e29dace9",
@@ -257,7 +636,9 @@
         "多曝光与多聚焦"
       ],
       "venue": "TIP",
-      "sourceRow": 159
+      "sourceRow": 159,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "dadad82e926f",
@@ -269,7 +650,9 @@
         "图像融合"
       ],
       "venue": "ACM MM",
-      "sourceRow": 19
+      "sourceRow": 19,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "382361103b5f",
@@ -279,7 +662,9 @@
       "section": "配色与绘图",
       "topics": [],
       "venue": "TPAMI",
-      "sourceRow": 120
+      "sourceRow": 120,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "140abcdc243b",
@@ -292,7 +677,9 @@
         "三维感知"
       ],
       "venue": "NeurIPS",
-      "sourceRow": 65
+      "sourceRow": 65,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "2972668acf7d",
@@ -304,7 +691,9 @@
         "红外与可见光"
       ],
       "venue": "CVPR",
-      "sourceRow": 100
+      "sourceRow": 100,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "e1e1fe23a649",
@@ -317,7 +706,9 @@
         "图像配准"
       ],
       "venue": "TCSVT",
-      "sourceRow": 78
+      "sourceRow": 78,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "462185ad0d78",
@@ -332,7 +723,9 @@
         "研究团队"
       ],
       "venue": "GRSM",
-      "sourceRow": 107
+      "sourceRow": 107,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "d483bafae13c",
@@ -344,7 +737,9 @@
         "数据集与基准"
       ],
       "venue": "NeurIPS",
-      "sourceRow": 153
+      "sourceRow": 153,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "f0c370a9d046",
@@ -356,7 +751,9 @@
         "三维感知"
       ],
       "venue": "CVPR",
-      "sourceRow": 178
+      "sourceRow": 178,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "a26fd1f1dbaf",
@@ -366,7 +763,9 @@
       "section": "配色与绘图",
       "topics": [],
       "venue": "TPAMI",
-      "sourceRow": 80
+      "sourceRow": 80,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "94d200893f1e",
@@ -379,7 +778,9 @@
         "图像配准"
       ],
       "venue": "IJCV",
-      "sourceRow": 113
+      "sourceRow": 113,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "e9c0ce0f1991",
@@ -393,7 +794,9 @@
         "图像恢复"
       ],
       "venue": "TPAMI",
-      "sourceRow": 77
+      "sourceRow": 77,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "a114ed4ae07e",
@@ -406,7 +809,9 @@
         "医学影像"
       ],
       "venue": "",
-      "sourceRow": 24
+      "sourceRow": 24,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "80ac7592bd32",
@@ -418,7 +823,9 @@
         "红外与可见光"
       ],
       "venue": "ECCV",
-      "sourceRow": 141
+      "sourceRow": 141,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "c81ae23679e4",
@@ -431,7 +838,9 @@
         "图像配准"
       ],
       "venue": "TPAMI",
-      "sourceRow": 4
+      "sourceRow": 4,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "f3d048f182c5",
@@ -441,7 +850,9 @@
       "section": "论文解读",
       "topics": [],
       "venue": "CVPR",
-      "sourceRow": 151
+      "sourceRow": 151,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "bee6c908c93e",
@@ -456,7 +867,9 @@
         "遥感与多光谱"
       ],
       "venue": "TPAMI",
-      "sourceRow": 40
+      "sourceRow": 40,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "2a11cfee1ebc",
@@ -466,7 +879,9 @@
       "section": "论文解读",
       "topics": [],
       "venue": "CVPR",
-      "sourceRow": 192
+      "sourceRow": 192,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "c3a9519b2eab",
@@ -478,7 +893,9 @@
         "红外与可见光"
       ],
       "venue": "CVPR",
-      "sourceRow": 70
+      "sourceRow": 70,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "63b945b4dde4",
@@ -491,7 +908,9 @@
         "遥感与多光谱"
       ],
       "venue": "TPAMI",
-      "sourceRow": 45
+      "sourceRow": 45,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "523140bbb606",
@@ -505,7 +924,9 @@
         "视频融合"
       ],
       "venue": "TMM",
-      "sourceRow": 58
+      "sourceRow": 58,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "b491d73d80a9",
@@ -517,7 +938,9 @@
         "红外与可见光"
       ],
       "venue": "ECCV",
-      "sourceRow": 102
+      "sourceRow": 102,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "8c454e5abfa0",
@@ -530,7 +953,9 @@
         "图像恢复"
       ],
       "venue": "ECCV",
-      "sourceRow": 166
+      "sourceRow": 166,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "b66cf6db6731",
@@ -543,7 +968,9 @@
         "数据集与基准"
       ],
       "venue": "",
-      "sourceRow": 231
+      "sourceRow": 231,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "2ba8e2d05309",
@@ -553,19 +980,9 @@
       "section": "配色与绘图",
       "topics": [],
       "venue": "AAAI",
-      "sourceRow": 99
-    },
-    {
-      "id": "f59b12a8a626",
-      "title": "CVPR 2026 GeoID:几何内点判别LiDAR分割TTT",
-      "date": "2026-09-12",
-      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247491971&idx=1&sn=68077278dcdbcffd91f48c00a02f8eda",
-      "section": "论文解读",
-      "topics": [
-        "三维感知"
-      ],
-      "venue": "CVPR",
-      "sourceRow": 162
+      "sourceRow": 99,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "136b5979843c",
@@ -578,7 +995,23 @@
         "图像恢复"
       ],
       "venue": "AAAI",
-      "sourceRow": 155
+      "sourceRow": 155,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
+    },
+    {
+      "id": "f59b12a8a626",
+      "title": "CVPR 2026 GeoID:几何内点判别LiDAR分割TTT",
+      "date": "2026-09-12",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247491971&idx=1&sn=68077278dcdbcffd91f48c00a02f8eda",
+      "section": "论文解读",
+      "topics": [
+        "三维感知"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 162,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "753a89287b81",
@@ -592,7 +1025,9 @@
         "遥感与多光谱"
       ],
       "venue": "ACM MM",
-      "sourceRow": 96
+      "sourceRow": 96,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "74ff21fcea40",
@@ -605,7 +1040,9 @@
         "数据集与基准"
       ],
       "venue": "CVPR",
-      "sourceRow": 72
+      "sourceRow": 72,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "1caa73adafb2",
@@ -620,7 +1057,9 @@
         "数据集与基准"
       ],
       "venue": "CVPR",
-      "sourceRow": 5
+      "sourceRow": 5,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "13cfa2727fea",
@@ -633,7 +1072,9 @@
         "多曝光与多聚焦"
       ],
       "venue": "TIP",
-      "sourceRow": 111
+      "sourceRow": 111,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "9d477cbc832a",
@@ -647,7 +1088,24 @@
         "遥感与多光谱"
       ],
       "venue": "TPAMI",
-      "sourceRow": 16
+      "sourceRow": 16,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
+    },
+    {
+      "id": "d30cd6b990ad",
+      "title": "TPAMI 2026 自动驾驶的下一代多模态数据集",
+      "date": "2026-09-06",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247491735&idx=1&sn=d50035f65504ab144f02423a4314150b",
+      "section": "论文解读",
+      "topics": [
+        "三维感知",
+        "数据集与基准"
+      ],
+      "venue": "TPAMI",
+      "sourceRow": 158,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "544a8bd5f7b4",
@@ -662,7 +1120,9 @@
         "视频融合"
       ],
       "venue": "TIP",
-      "sourceRow": 239
+      "sourceRow": 239,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "c0b39816c04e",
@@ -674,20 +1134,9 @@
         "图像融合"
       ],
       "venue": "",
-      "sourceRow": 191
-    },
-    {
-      "id": "d30cd6b990ad",
-      "title": "TPAMI 2026 自动驾驶的下一代多模态数据集",
-      "date": "2026-09-06",
-      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247491735&idx=1&sn=d50035f65504ab144f02423a4314150b",
-      "section": "论文解读",
-      "topics": [
-        "三维感知",
-        "数据集与基准"
-      ],
-      "venue": "TPAMI",
-      "sourceRow": 158
+      "sourceRow": 191,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "bd278a9db326",
@@ -699,7 +1148,9 @@
         "图像融合"
       ],
       "venue": "RA-L",
-      "sourceRow": 157
+      "sourceRow": 157,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "9cb79f39ccf5",
@@ -713,7 +1164,9 @@
         "视频融合"
       ],
       "venue": "TIP",
-      "sourceRow": 84
+      "sourceRow": 84,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "cc29bbdab29b",
@@ -723,7 +1176,9 @@
       "section": "配色与绘图",
       "topics": [],
       "venue": "",
-      "sourceRow": 238
+      "sourceRow": 238,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "fac79a188e43",
@@ -735,7 +1190,9 @@
         "遥感与多光谱"
       ],
       "venue": "",
-      "sourceRow": 198
+      "sourceRow": 198,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "62eb672523bc",
@@ -745,7 +1202,9 @@
       "section": "论文解读",
       "topics": [],
       "venue": "TIP",
-      "sourceRow": 188
+      "sourceRow": 188,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "d36175a5b4f7",
@@ -757,7 +1216,9 @@
         "图像融合"
       ],
       "venue": "TIP",
-      "sourceRow": 137
+      "sourceRow": 137,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "cf847aa71a73",
@@ -771,7 +1232,9 @@
         "数据集与基准"
       ],
       "venue": "",
-      "sourceRow": 142
+      "sourceRow": 142,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "fc7a23eaa626",
@@ -783,7 +1246,9 @@
         "三维感知"
       ],
       "venue": "TPAMI",
-      "sourceRow": 173
+      "sourceRow": 173,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "d6cb26198f2b",
@@ -795,7 +1260,9 @@
         "三维感知"
       ],
       "venue": "CVPR",
-      "sourceRow": 156
+      "sourceRow": 156,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "6fa5d12c11f1",
@@ -808,7 +1275,9 @@
         "图像融合"
       ],
       "venue": "TIP",
-      "sourceRow": 89
+      "sourceRow": 89,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "63502b0bb783",
@@ -820,7 +1289,9 @@
         "图像融合"
       ],
       "venue": "",
-      "sourceRow": 126
+      "sourceRow": 126,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "9aadcc093ad4",
@@ -832,7 +1303,9 @@
         "图像融合"
       ],
       "venue": "ICML",
-      "sourceRow": 123
+      "sourceRow": 123,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "d2d6e98e660e",
@@ -845,7 +1318,9 @@
         "图像恢复"
       ],
       "venue": "TPAMI",
-      "sourceRow": 235
+      "sourceRow": 235,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "7b3e4cfbc7f8",
@@ -858,7 +1333,9 @@
         "图像恢复"
       ],
       "venue": "TPAMI",
-      "sourceRow": 64
+      "sourceRow": 64,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "5b82c1b4fc60",
@@ -870,19 +1347,21 @@
         "图像融合"
       ],
       "venue": "ECCV",
-      "sourceRow": 20
+      "sourceRow": 20,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
-      "id": "eea6af86a3a0",
-      "title": "TPAMI 2026 Bi3D++:双域主动学习跨域3D检测",
+      "id": "b840ab9df06a",
+      "title": "跟着IEEE TIP 和 TMM 学习论文模型图及配色",
       "date": "2026-08-23",
-      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247490803&idx=1&sn=7bc9e86b2817d193cf1e270b8c681794",
-      "section": "论文解读",
-      "topics": [
-        "三维感知"
-      ],
-      "venue": "TPAMI",
-      "sourceRow": 206
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247490847&idx=1&sn=dab93fe440617fb521c5bad3faaab970",
+      "section": "配色与绘图",
+      "topics": [],
+      "venue": "TIP",
+      "sourceRow": 109,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "c7b1964f98d7",
@@ -894,17 +1373,23 @@
         "图像融合"
       ],
       "venue": "",
-      "sourceRow": 200
+      "sourceRow": 200,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
-      "id": "b840ab9df06a",
-      "title": "跟着IEEE TIP 和 TMM 学习论文模型图及配色",
+      "id": "eea6af86a3a0",
+      "title": "TPAMI 2026 Bi3D++:双域主动学习跨域3D检测",
       "date": "2026-08-23",
-      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247490847&idx=1&sn=dab93fe440617fb521c5bad3faaab970",
-      "section": "配色与绘图",
-      "topics": [],
-      "venue": "TIP",
-      "sourceRow": 109
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247490803&idx=1&sn=7bc9e86b2817d193cf1e270b8c681794",
+      "section": "论文解读",
+      "topics": [
+        "三维感知"
+      ],
+      "venue": "TPAMI",
+      "sourceRow": 206,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "e9e91e8b8359",
@@ -917,7 +1402,9 @@
         "图像恢复"
       ],
       "venue": "CVPR",
-      "sourceRow": 225
+      "sourceRow": 225,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "0974fe9d94d1",
@@ -930,7 +1417,9 @@
         "图像恢复"
       ],
       "venue": "CVPR",
-      "sourceRow": 154
+      "sourceRow": 154,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "2b711ac225f0",
@@ -943,7 +1432,9 @@
         "图像配准"
       ],
       "venue": "TMM",
-      "sourceRow": 98
+      "sourceRow": 98,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "4ed946d43630",
@@ -958,7 +1449,9 @@
         "视频融合"
       ],
       "venue": "ECCV",
-      "sourceRow": 74
+      "sourceRow": 74,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "0b77ef3a2a32",
@@ -971,7 +1464,9 @@
         "三维感知"
       ],
       "venue": "ACM MM",
-      "sourceRow": 160
+      "sourceRow": 160,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "f08c6990e476",
@@ -984,19 +1479,9 @@
         "图像恢复"
       ],
       "venue": "TPAMI",
-      "sourceRow": 44
-    },
-    {
-      "id": "44ce7fcaba27",
-      "title": "学术速递｜2026年6月 arXiv 图像融合论文汇总（06.01–06.30）23 篇最新成果",
-      "date": "2026-08-16",
-      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247490370&idx=1&sn=999b49221b8131e43dd5be493d491c51",
-      "section": "论文速递",
-      "topics": [
-        "图像融合"
-      ],
-      "venue": "",
-      "sourceRow": 195
+      "sourceRow": 44,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "7467da2877b0",
@@ -1008,19 +1493,23 @@
         "图像恢复"
       ],
       "venue": "",
-      "sourceRow": 101
+      "sourceRow": 101,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
-      "id": "d7c19354c2c3",
-      "title": "CVPR 2026 SiD：结构-强度扩散雨雾雪LiDAR",
-      "date": "2026-08-15",
-      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247490369&idx=1&sn=d3e7a1487cba815f8bae60b5f7d4c831",
-      "section": "论文解读",
+      "id": "44ce7fcaba27",
+      "title": "学术速递｜2026年6月 arXiv 图像融合论文汇总（06.01–06.30）23 篇最新成果",
+      "date": "2026-08-16",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247490370&idx=1&sn=999b49221b8131e43dd5be493d491c51",
+      "section": "论文速递",
       "topics": [
-        "三维感知"
+        "图像融合"
       ],
-      "venue": "CVPR",
-      "sourceRow": 208
+      "venue": "",
+      "sourceRow": 195,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "d4cbc58f0cfa",
@@ -1032,7 +1521,23 @@
         "三维感知"
       ],
       "venue": "TPAMI",
-      "sourceRow": 182
+      "sourceRow": 182,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
+    },
+    {
+      "id": "d7c19354c2c3",
+      "title": "CVPR 2026 SiD：结构-强度扩散雨雾雪LiDAR",
+      "date": "2026-08-15",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247490369&idx=1&sn=d3e7a1487cba815f8bae60b5f7d4c831",
+      "section": "论文解读",
+      "topics": [
+        "三维感知"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 208,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "b6c3dac14102",
@@ -1044,7 +1549,9 @@
         "图像融合"
       ],
       "venue": "TIP",
-      "sourceRow": 56
+      "sourceRow": 56,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "2cfb13eaebdf",
@@ -1054,7 +1561,9 @@
       "section": "配色与绘图",
       "topics": [],
       "venue": "CVPR",
-      "sourceRow": 125
+      "sourceRow": 125,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "9c71313f11e3",
@@ -1066,7 +1575,9 @@
         "图像融合"
       ],
       "venue": "TPAMI",
-      "sourceRow": 3
+      "sourceRow": 3,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "481baac9f143",
@@ -1080,7 +1591,9 @@
         "数据集与基准"
       ],
       "venue": "TPAMI",
-      "sourceRow": 51
+      "sourceRow": 51,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "1e8d4035ac44",
@@ -1092,7 +1605,9 @@
         "图像恢复"
       ],
       "venue": "ACM MM",
-      "sourceRow": 94
+      "sourceRow": 94,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "a4f3b036f602",
@@ -1105,7 +1620,9 @@
         "医学影像"
       ],
       "venue": "ACM MM",
-      "sourceRow": 27
+      "sourceRow": 27,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "f3e75eb2abbe",
@@ -1118,7 +1635,9 @@
         "图像融合"
       ],
       "venue": "ACM MM",
-      "sourceRow": 115
+      "sourceRow": 115,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "98773119302f",
@@ -1131,7 +1650,9 @@
         "三维感知"
       ],
       "venue": "AAAI",
-      "sourceRow": 202
+      "sourceRow": 202,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "2bc9bbf77f00",
@@ -1143,7 +1664,9 @@
         "三维感知"
       ],
       "venue": "AAAI",
-      "sourceRow": 184
+      "sourceRow": 184,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "db30be8688fd",
@@ -1156,7 +1679,9 @@
         "遥感与多光谱"
       ],
       "venue": "CVPR",
-      "sourceRow": 128
+      "sourceRow": 128,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "a84a3cd96250",
@@ -1169,7 +1694,9 @@
         "医学影像"
       ],
       "venue": "PR",
-      "sourceRow": 91
+      "sourceRow": 91,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "8678ff33830b",
@@ -1184,7 +1711,9 @@
         "图像恢复"
       ],
       "venue": "",
-      "sourceRow": 47
+      "sourceRow": 47,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "781d176c9ac3",
@@ -1196,7 +1725,9 @@
         "图像恢复"
       ],
       "venue": "CVPR",
-      "sourceRow": 127
+      "sourceRow": 127,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "e88a139c4829",
@@ -1210,7 +1741,9 @@
         "图像恢复"
       ],
       "venue": "TIP",
-      "sourceRow": 71
+      "sourceRow": 71,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "e3776db54b21",
@@ -1222,7 +1755,9 @@
         "三维感知"
       ],
       "venue": "AAAI",
-      "sourceRow": 197
+      "sourceRow": 197,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "7dd75bb42420",
@@ -1234,7 +1769,9 @@
         "三维感知"
       ],
       "venue": "AAAI",
-      "sourceRow": 176
+      "sourceRow": 176,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "eaba304e1671",
@@ -1246,7 +1783,9 @@
         "图像融合"
       ],
       "venue": "TIP",
-      "sourceRow": 148
+      "sourceRow": 148,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "e2f88fc6929b",
@@ -1259,7 +1798,9 @@
         "图像融合"
       ],
       "venue": "CVPR",
-      "sourceRow": 140
+      "sourceRow": 140,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "1d5b4665eeb7",
@@ -1271,7 +1812,9 @@
         "数据集与基准"
       ],
       "venue": "ECCV",
-      "sourceRow": 38
+      "sourceRow": 38,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "c50f82b6c528",
@@ -1284,7 +1827,9 @@
         "多曝光与多聚焦"
       ],
       "venue": "ECCV",
-      "sourceRow": 186
+      "sourceRow": 186,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "01f9a32e8d22",
@@ -1296,7 +1841,9 @@
         "图像融合"
       ],
       "venue": "TIP",
-      "sourceRow": 43
+      "sourceRow": 43,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "20db777ee945",
@@ -1310,19 +1857,9 @@
         "视频融合"
       ],
       "venue": "ECCV",
-      "sourceRow": 79
-    },
-    {
-      "id": "0aa4bdbdb422",
-      "title": "AAAI 26 自适应LIDAR：时序预测驱动3D检测",
-      "date": "2026-07-25",
-      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247489637&idx=1&sn=6bd7f98e741fda6d87489dd92efb8431",
-      "section": "论文解读",
-      "topics": [
-        "三维感知"
-      ],
-      "venue": "AAAI",
-      "sourceRow": 207
+      "sourceRow": 79,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "338cab4821c9",
@@ -1334,7 +1871,23 @@
         "三维感知"
       ],
       "venue": "AAAI",
-      "sourceRow": 171
+      "sourceRow": 171,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
+    },
+    {
+      "id": "0aa4bdbdb422",
+      "title": "AAAI 26 自适应LIDAR：时序预测驱动3D检测",
+      "date": "2026-07-25",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247489637&idx=1&sn=6bd7f98e741fda6d87489dd92efb8431",
+      "section": "论文解读",
+      "topics": [
+        "三维感知"
+      ],
+      "venue": "AAAI",
+      "sourceRow": 207,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "a87d894ad11b",
@@ -1348,7 +1901,9 @@
         "视频融合"
       ],
       "venue": "ICML",
-      "sourceRow": 33
+      "sourceRow": 33,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "116345ee19b9",
@@ -1360,7 +1915,9 @@
         "遥感与多光谱"
       ],
       "venue": "TIP",
-      "sourceRow": 55
+      "sourceRow": 55,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "909e8ffcbdbf",
@@ -1373,7 +1930,9 @@
         "遥感与多光谱"
       ],
       "venue": "CVPR",
-      "sourceRow": 114
+      "sourceRow": 114,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "948d0a9e32aa",
@@ -1386,7 +1945,9 @@
         "图像融合"
       ],
       "venue": "TIP",
-      "sourceRow": 63
+      "sourceRow": 63,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "c7f12a646a07",
@@ -1399,41 +1960,9 @@
         "图像融合"
       ],
       "venue": "CVPR",
-      "sourceRow": 7
-    },
-    {
-      "id": "8c9e41c03fd8",
-      "title": "ICCV 2025 | 告别平台偏见！车、无人机、机器狗一套模型全搞定：首个跨平台3D检测大一统方案",
-      "date": "2026-07-19",
-      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247489505&idx=3&sn=06215d015201a972437416e251e9d921",
-      "section": "论文解读",
-      "topics": [
-        "三维感知"
-      ],
-      "venue": "ICCV",
-      "sourceRow": 237
-    },
-    {
-      "id": "3dbb061cfa17",
-      "title": "CVPR 2026 | SFS-DETR：小目标无处可藏，让无人机学会精准识别",
-      "date": "2026-07-19",
-      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247489505&idx=2&sn=be33c11b155772495cf867741e2bc2bf",
-      "section": "论文解读",
-      "topics": [],
-      "venue": "CVPR",
-      "sourceRow": 227
-    },
-    {
-      "id": "6618a488444c",
-      "title": "学术速递 | ICCV 2025 Accepted Papers For Image Fusion",
-      "date": "2026-07-19",
-      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247489505&idx=7&sn=a0c50b60123f9d6f4aeb5f5ababcbcfe",
-      "section": "论文速递",
-      "topics": [
-        "图像融合"
-      ],
-      "venue": "ICCV",
-      "sourceRow": 220
+      "sourceRow": 7,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "611221cca365",
@@ -1445,7 +1974,37 @@
         "图像融合"
       ],
       "venue": "ICML",
-      "sourceRow": 219
+      "sourceRow": 219,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
+    },
+    {
+      "id": "6618a488444c",
+      "title": "学术速递 | ICCV 2025 Accepted Papers For Image Fusion",
+      "date": "2026-07-19",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247489505&idx=7&sn=a0c50b60123f9d6f4aeb5f5ababcbcfe",
+      "section": "论文速递",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "ICCV",
+      "sourceRow": 220,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
+    },
+    {
+      "id": "821a13cf6a3b",
+      "title": "学术速递 | CVPR 2026 放榜！图像融合迎来大爆发，可检索 17 篇相关论文，全网首发！",
+      "date": "2026-07-19",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247489505&idx=4&sn=b38d7442dd2676352f4bacef7c8913e5",
+      "section": "论文速递",
+      "topics": [
+        "图像融合"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 174,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "db486053c293",
@@ -1457,7 +2016,35 @@
         "图像融合"
       ],
       "venue": "AAAI",
-      "sourceRow": 214
+      "sourceRow": 214,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
+    },
+    {
+      "id": "8c9e41c03fd8",
+      "title": "ICCV 2025 | 告别平台偏见！车、无人机、机器狗一套模型全搞定：首个跨平台3D检测大一统方案",
+      "date": "2026-07-19",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247489505&idx=3&sn=06215d015201a972437416e251e9d921",
+      "section": "论文解读",
+      "topics": [
+        "三维感知"
+      ],
+      "venue": "ICCV",
+      "sourceRow": 237,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
+    },
+    {
+      "id": "3dbb061cfa17",
+      "title": "CVPR 2026 | SFS-DETR：小目标无处可藏，让无人机学会精准识别",
+      "date": "2026-07-19",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247489505&idx=2&sn=be33c11b155772495cf867741e2bc2bf",
+      "section": "论文解读",
+      "topics": [],
+      "venue": "CVPR",
+      "sourceRow": 227,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "9170bb05ca8f",
@@ -1470,19 +2057,9 @@
         "图像配准"
       ],
       "venue": "CVPR",
-      "sourceRow": 183
-    },
-    {
-      "id": "821a13cf6a3b",
-      "title": "学术速递 | CVPR 2026 放榜！图像融合迎来大爆发，可检索 17 篇相关论文，全网首发！",
-      "date": "2026-07-19",
-      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247489505&idx=4&sn=b38d7442dd2676352f4bacef7c8913e5",
-      "section": "论文速递",
-      "topics": [
-        "图像融合"
-      ],
-      "venue": "CVPR",
-      "sourceRow": 174
+      "sourceRow": 183,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "417a8dda0155",
@@ -1494,7 +2071,9 @@
         "三维感知"
       ],
       "venue": "AAAI",
-      "sourceRow": 229
+      "sourceRow": 229,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "d7689eb14ab0",
@@ -1506,7 +2085,9 @@
         "三维感知"
       ],
       "venue": "AAAI",
-      "sourceRow": 223
+      "sourceRow": 223,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "79d0828a7daf",
@@ -1519,7 +2100,9 @@
         "多曝光与多聚焦"
       ],
       "venue": "ECCV",
-      "sourceRow": 67
+      "sourceRow": 67,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "6e0d02d69021",
@@ -1529,7 +2112,9 @@
       "section": "配色与绘图",
       "topics": [],
       "venue": "AAAI",
-      "sourceRow": 185
+      "sourceRow": 185,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "1af21cac8df6",
@@ -1539,7 +2124,9 @@
       "section": "配色与绘图",
       "topics": [],
       "venue": "ICML",
-      "sourceRow": 92
+      "sourceRow": 92,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "1e55933f0403",
@@ -1551,7 +2138,9 @@
         "三维感知"
       ],
       "venue": "ECCV",
-      "sourceRow": 32
+      "sourceRow": 32,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "79cf36a57ad9",
@@ -1564,7 +2153,9 @@
         "图像融合"
       ],
       "venue": "ICML",
-      "sourceRow": 36
+      "sourceRow": 36,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "2768828cfb97",
@@ -1577,7 +2168,9 @@
         "图像恢复"
       ],
       "venue": "ICCV",
-      "sourceRow": 134
+      "sourceRow": 134,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "630874cfdebd",
@@ -1591,7 +2184,9 @@
         "多曝光与多聚焦"
       ],
       "venue": "ECCV",
-      "sourceRow": 60
+      "sourceRow": 60,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "84bcf7621ca0",
@@ -1603,7 +2198,9 @@
         "三维感知"
       ],
       "venue": "ICML",
-      "sourceRow": 236
+      "sourceRow": 236,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "93596dc62eea",
@@ -1615,7 +2212,9 @@
         "三维感知"
       ],
       "venue": "AAAI",
-      "sourceRow": 232
+      "sourceRow": 232,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "699c331d2b94",
@@ -1627,7 +2226,9 @@
         "图像融合"
       ],
       "venue": "TPAMI",
-      "sourceRow": 95
+      "sourceRow": 95,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "e9d9b187c032",
@@ -1642,7 +2243,9 @@
         "研究团队"
       ],
       "venue": "ECCV",
-      "sourceRow": 85
+      "sourceRow": 85,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "07ad0a56d41f",
@@ -1655,7 +2258,9 @@
         "图像融合"
       ],
       "venue": "ICML",
-      "sourceRow": 106
+      "sourceRow": 106,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "bdac766e91eb",
@@ -1668,7 +2273,9 @@
         "多曝光与多聚焦"
       ],
       "venue": "CVPR",
-      "sourceRow": 69
+      "sourceRow": 69,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "406867df212a",
@@ -1680,7 +2287,9 @@
         "图像配准"
       ],
       "venue": "ECCV",
-      "sourceRow": 31
+      "sourceRow": 31,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "4b4ef782a3ce",
@@ -1694,19 +2303,9 @@
         "数据集与基准"
       ],
       "venue": "CVPR",
-      "sourceRow": 75
-    },
-    {
-      "id": "356d3cd999c3",
-      "title": "CVPR 2026 面向内参感知的单目3D检测",
-      "date": "2026-07-04",
-      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247488549&idx=1&sn=a13a078b50168a6365226a32bf890afa",
-      "section": "论文解读",
-      "topics": [
-        "三维感知"
-      ],
-      "venue": "CVPR",
-      "sourceRow": 230
+      "sourceRow": 75,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "382d76defa04",
@@ -1719,7 +2318,23 @@
         "数据集与基准"
       ],
       "venue": "AAAI",
-      "sourceRow": 205
+      "sourceRow": 205,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
+    },
+    {
+      "id": "356d3cd999c3",
+      "title": "CVPR 2026 面向内参感知的单目3D检测",
+      "date": "2026-07-04",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247488549&idx=1&sn=a13a078b50168a6365226a32bf890afa",
+      "section": "论文解读",
+      "topics": [
+        "三维感知"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 230,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "3ffb8166b60b",
@@ -1731,7 +2346,9 @@
         "图像融合"
       ],
       "venue": "",
-      "sourceRow": 233
+      "sourceRow": 233,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "e6162a6f3da3",
@@ -1743,7 +2360,9 @@
         "图像融合"
       ],
       "venue": "ICML",
-      "sourceRow": 59
+      "sourceRow": 59,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "8fe0b03b162f",
@@ -1755,7 +2374,9 @@
         "图像融合"
       ],
       "venue": "ICML",
-      "sourceRow": 21
+      "sourceRow": 21,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "2595eae5291f",
@@ -1767,7 +2388,9 @@
         "图像融合"
       ],
       "venue": "AAAI",
-      "sourceRow": 73
+      "sourceRow": 73,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "73a3008d90d5",
@@ -1779,7 +2402,9 @@
         "图像融合"
       ],
       "venue": "ICML",
-      "sourceRow": 136
+      "sourceRow": 136,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "ebea6a05e0a1",
@@ -1791,7 +2416,9 @@
         "图像融合"
       ],
       "venue": "AAAI",
-      "sourceRow": 152
+      "sourceRow": 152,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "7b0b33ea25f5",
@@ -1806,7 +2433,9 @@
         "研究团队"
       ],
       "venue": "",
-      "sourceRow": 175
+      "sourceRow": 175,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "0bcce0787159",
@@ -1818,7 +2447,9 @@
         "图像融合"
       ],
       "venue": "TIP",
-      "sourceRow": 164
+      "sourceRow": 164,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "d49056734d3f",
@@ -1830,7 +2461,9 @@
         "图像融合"
       ],
       "venue": "ECCV",
-      "sourceRow": 29
+      "sourceRow": 29,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "c21686c7629a",
@@ -1842,7 +2475,9 @@
         "三维感知"
       ],
       "venue": "CVPR",
-      "sourceRow": 211
+      "sourceRow": 211,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "11cf81b5b85e",
@@ -1854,7 +2489,9 @@
         "三维感知"
       ],
       "venue": "CVPR",
-      "sourceRow": 228
+      "sourceRow": 228,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "2148f3c1b7ec",
@@ -1866,7 +2503,23 @@
         "红外与可见光"
       ],
       "venue": "CVPR",
-      "sourceRow": 17
+      "sourceRow": 17,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
+    },
+    {
+      "id": "7c8b2d3fa2e4",
+      "title": "CVPR 2026 | 基于因果引导的红外小目标检测",
+      "date": "2026-06-24",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247488040&idx=1&sn=778dc072e40cc050ac47d0de001d52b6",
+      "section": "论文解读",
+      "topics": [
+        "红外与可见光"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 118,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "9a112ba2a473",
@@ -1879,19 +2532,9 @@
         "研究团队"
       ],
       "venue": "",
-      "sourceRow": 189
-    },
-    {
-      "id": "7c8b2d3fa2e4",
-      "title": "CVPR 2026 | 基于因果引导的红外小目标检测",
-      "date": "2026-06-24",
-      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247488040&idx=1&sn=778dc072e40cc050ac47d0de001d52b6",
-      "section": "论文解读",
-      "topics": [
-        "红外与可见光"
-      ],
-      "venue": "CVPR",
-      "sourceRow": 118
+      "sourceRow": 189,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "fa019559c4c5",
@@ -1904,7 +2547,9 @@
         "图像恢复"
       ],
       "venue": "TPAMI",
-      "sourceRow": 66
+      "sourceRow": 66,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "5b1914cb5afd",
@@ -1919,7 +2564,21 @@
         "医学影像"
       ],
       "venue": "ICCV",
-      "sourceRow": 93
+      "sourceRow": 93,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
+    },
+    {
+      "id": "1d34f51b5c43",
+      "title": "CVPR 2026 | 空频双选定制小目标无人机检测",
+      "date": "2026-06-21",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247487970&idx=1&sn=019fe0e875175acef4ce2568ebc5b474",
+      "section": "论文解读",
+      "topics": [],
+      "venue": "CVPR",
+      "sourceRow": 161,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "f0b63161275a",
@@ -1931,17 +2590,9 @@
         "三维感知"
       ],
       "venue": "CVPR",
-      "sourceRow": 215
-    },
-    {
-      "id": "1d34f51b5c43",
-      "title": "CVPR 2026 | 空频双选定制小目标无人机检测",
-      "date": "2026-06-21",
-      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247487970&idx=1&sn=019fe0e875175acef4ce2568ebc5b474",
-      "section": "论文解读",
-      "topics": [],
-      "venue": "CVPR",
-      "sourceRow": 161
+      "sourceRow": 215,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "50de1c14d2a9",
@@ -1953,7 +2604,9 @@
         "图像融合"
       ],
       "venue": "AAAI",
-      "sourceRow": 8
+      "sourceRow": 8,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "81717a2f7e44",
@@ -1966,7 +2619,9 @@
         "图像恢复"
       ],
       "venue": "TIP",
-      "sourceRow": 61
+      "sourceRow": 61,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "ecb57bc972b5",
@@ -1979,7 +2634,9 @@
         "图像恢复"
       ],
       "venue": "ICML",
-      "sourceRow": 133
+      "sourceRow": 133,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "077260068023",
@@ -1991,7 +2648,9 @@
         "图像融合"
       ],
       "venue": "CVPR",
-      "sourceRow": 14
+      "sourceRow": 14,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "2bf571dacc8f",
@@ -2003,7 +2662,9 @@
         "图像融合"
       ],
       "venue": "CVPR",
-      "sourceRow": 83
+      "sourceRow": 83,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "cde52a06899d",
@@ -2015,19 +2676,9 @@
         "图像恢复"
       ],
       "venue": "AAAI",
-      "sourceRow": 139
-    },
-    {
-      "id": "bac041dcb607",
-      "title": "CVPR 2026 | 3D检测鲁棒的不确定性量化校准",
-      "date": "2026-06-13",
-      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247487767&idx=1&sn=7d16837da5531a825878da8bf6c4fe71",
-      "section": "论文解读",
-      "topics": [
-        "三维感知"
-      ],
-      "venue": "CVPR",
-      "sourceRow": 203
+      "sourceRow": 139,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "1ac44019da5a",
@@ -2039,7 +2690,23 @@
         "三维感知"
       ],
       "venue": "CVPR",
-      "sourceRow": 138
+      "sourceRow": 138,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
+    },
+    {
+      "id": "bac041dcb607",
+      "title": "CVPR 2026 | 3D检测鲁棒的不确定性量化校准",
+      "date": "2026-06-13",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzYzMzIzOTk3MA%3D%3D&mid=2247487767&idx=1&sn=7d16837da5531a825878da8bf6c4fe71",
+      "section": "论文解读",
+      "topics": [
+        "三维感知"
+      ],
+      "venue": "CVPR",
+      "sourceRow": 203,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "bb7f32df6e3e",
@@ -2052,7 +2719,9 @@
         "数据集与基准"
       ],
       "venue": "CVPR",
-      "sourceRow": 103
+      "sourceRow": 103,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "637e45100c30",
@@ -2066,7 +2735,9 @@
         "数据集与基准"
       ],
       "venue": "CVPR",
-      "sourceRow": 6
+      "sourceRow": 6,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "7071fc5748c0",
@@ -2079,7 +2750,9 @@
         "多曝光与多聚焦"
       ],
       "venue": "CVPR",
-      "sourceRow": 180
+      "sourceRow": 180,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "90171da02886",
@@ -2092,7 +2765,9 @@
         "视频融合"
       ],
       "venue": "CVPR",
-      "sourceRow": 179
+      "sourceRow": 179,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "a601aa86e400",
@@ -2105,7 +2780,9 @@
         "图像恢复"
       ],
       "venue": "CVPR",
-      "sourceRow": 68
+      "sourceRow": 68,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "2f7eab833f5e",
@@ -2117,7 +2794,9 @@
         "图像恢复"
       ],
       "venue": "TPAMI",
-      "sourceRow": 54
+      "sourceRow": 54,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "f6f40b562cdf",
@@ -2129,7 +2808,9 @@
         "图像融合"
       ],
       "venue": "CVPR",
-      "sourceRow": 25
+      "sourceRow": 25,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "36ffcccfa199",
@@ -2142,7 +2823,9 @@
         "三维感知"
       ],
       "venue": "",
-      "sourceRow": 222
+      "sourceRow": 222,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "dd104aedcf8e",
@@ -2154,7 +2837,9 @@
         "图像融合"
       ],
       "venue": "TIP",
-      "sourceRow": 15
+      "sourceRow": 15,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "568da2c932b8",
@@ -2164,7 +2849,9 @@
       "section": "论文解读",
       "topics": [],
       "venue": "IJCV",
-      "sourceRow": 177
+      "sourceRow": 177,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "5c6b167ce31b",
@@ -2176,7 +2863,9 @@
         "图像融合"
       ],
       "venue": "ICCV",
-      "sourceRow": 194
+      "sourceRow": 194,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "6450a39b3154",
@@ -2188,7 +2877,9 @@
         "图像融合"
       ],
       "venue": "TPAMI",
-      "sourceRow": 124
+      "sourceRow": 124,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "2a2be4158eff",
@@ -2201,7 +2892,9 @@
         "三维感知"
       ],
       "venue": "CVPR",
-      "sourceRow": 209
+      "sourceRow": 209,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "15a15e26abd9",
@@ -2214,7 +2907,9 @@
         "三维感知"
       ],
       "venue": "CVPR",
-      "sourceRow": 217
+      "sourceRow": 217,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "6730886e6e98",
@@ -2226,7 +2921,9 @@
         "图像融合"
       ],
       "venue": "AAAI",
-      "sourceRow": 143
+      "sourceRow": 143,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "338d1242b6b5",
@@ -2240,7 +2937,9 @@
         "图像配准"
       ],
       "venue": "",
-      "sourceRow": 204
+      "sourceRow": 204,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "3696f07fdd7a",
@@ -2254,7 +2953,9 @@
         "评估与指标"
       ],
       "venue": "TPAMI",
-      "sourceRow": 41
+      "sourceRow": 41,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "a0d465f671e8",
@@ -2266,7 +2967,9 @@
         "图像融合"
       ],
       "venue": "TPAMI",
-      "sourceRow": 187
+      "sourceRow": 187,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "6b39839ae6f9",
@@ -2278,7 +2981,9 @@
         "三维感知"
       ],
       "venue": "ICLR",
-      "sourceRow": 234
+      "sourceRow": 234,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "d1357fd00984",
@@ -2291,7 +2996,9 @@
         "三维感知"
       ],
       "venue": "CVPR",
-      "sourceRow": 221
+      "sourceRow": 221,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "6da754ccdc68",
@@ -2306,7 +3013,9 @@
         "研究团队"
       ],
       "venue": "",
-      "sourceRow": 39
+      "sourceRow": 39,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "ebe1f86d9cd5",
@@ -2320,7 +3029,9 @@
         "评估与指标"
       ],
       "venue": "",
-      "sourceRow": 201
+      "sourceRow": 201,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "f67f3bee950d",
@@ -2332,7 +3043,9 @@
         "图像融合"
       ],
       "venue": "CVPR",
-      "sourceRow": 105
+      "sourceRow": 105,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "85a9489b2a2f",
@@ -2344,7 +3057,9 @@
         "三维感知"
       ],
       "venue": "CVPR",
-      "sourceRow": 147
+      "sourceRow": 147,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "3c6ca0fce14d",
@@ -2357,7 +3072,9 @@
         "图像恢复"
       ],
       "venue": "CVPR",
-      "sourceRow": 48
+      "sourceRow": 48,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "0fd700eabcae",
@@ -2369,7 +3086,9 @@
         "图像融合"
       ],
       "venue": "TPAMI",
-      "sourceRow": 149
+      "sourceRow": 149,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "febad64a05cf",
@@ -2381,7 +3100,9 @@
         "图像融合"
       ],
       "venue": "IJCV",
-      "sourceRow": 97
+      "sourceRow": 97,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "6e02ad5fb7b6",
@@ -2391,7 +3112,9 @@
       "section": "论文解读",
       "topics": [],
       "venue": "ICCV",
-      "sourceRow": 170
+      "sourceRow": 170,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "120ce1a6edcd",
@@ -2404,7 +3127,9 @@
         "三维感知"
       ],
       "venue": "CVPR",
-      "sourceRow": 117
+      "sourceRow": 117,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "1b274ce19689",
@@ -2416,7 +3141,9 @@
         "图像融合"
       ],
       "venue": "",
-      "sourceRow": 172
+      "sourceRow": 172,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "ba362f8544fb",
@@ -2429,7 +3156,9 @@
         "图像恢复"
       ],
       "venue": "CVPR",
-      "sourceRow": 50
+      "sourceRow": 50,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "25bce55a10d8",
@@ -2441,7 +3170,9 @@
         "图像恢复"
       ],
       "venue": "",
-      "sourceRow": 112
+      "sourceRow": 112,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "7e7eca9a9ad9",
@@ -2453,7 +3184,9 @@
         "图像融合"
       ],
       "venue": "TPAMI",
-      "sourceRow": 30
+      "sourceRow": 30,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "9de96f889a32",
@@ -2466,7 +3199,9 @@
         "数据集与基准"
       ],
       "venue": "AAAI",
-      "sourceRow": 135
+      "sourceRow": 135,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "8f0a1c73b4b6",
@@ -2479,7 +3214,9 @@
         "多曝光与多聚焦"
       ],
       "venue": "CVPRW",
-      "sourceRow": 76
+      "sourceRow": 76,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "bb0060a87c0d",
@@ -2492,7 +3229,9 @@
         "图像配准"
       ],
       "venue": "",
-      "sourceRow": 22
+      "sourceRow": 22,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "4e98185fded3",
@@ -2506,7 +3245,9 @@
         "视频融合"
       ],
       "venue": "",
-      "sourceRow": 82
+      "sourceRow": 82,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "53ed48f6ead4",
@@ -2519,7 +3260,9 @@
         "数据集与基准"
       ],
       "venue": "CVPR",
-      "sourceRow": 12
+      "sourceRow": 12,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "b73021e420d0",
@@ -2531,7 +3274,9 @@
         "图像融合"
       ],
       "venue": "CVPR",
-      "sourceRow": 86
+      "sourceRow": 86,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "c8ee0616226b",
@@ -2543,7 +3288,9 @@
         "三维感知"
       ],
       "venue": "AAAI",
-      "sourceRow": 87
+      "sourceRow": 87,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "e3d58e255ab9",
@@ -2553,7 +3300,9 @@
       "section": "论文解读",
       "topics": [],
       "venue": "CVPR",
-      "sourceRow": 165
+      "sourceRow": 165,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "d1cc5f6ab7db",
@@ -2565,7 +3314,9 @@
         "图像融合"
       ],
       "venue": "CVPR",
-      "sourceRow": 9
+      "sourceRow": 9,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "0b9a293efa27",
@@ -2578,7 +3329,9 @@
         "图像融合"
       ],
       "venue": "CVPR",
-      "sourceRow": 145
+      "sourceRow": 145,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "dfa7bfdb8feb",
@@ -2590,7 +3343,9 @@
         "三维感知"
       ],
       "venue": "ICCV",
-      "sourceRow": 131
+      "sourceRow": 131,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "538051ef835f",
@@ -2602,7 +3357,9 @@
         "图像融合"
       ],
       "venue": "",
-      "sourceRow": 196
+      "sourceRow": 196,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "6130c46110a1",
@@ -2612,7 +3369,9 @@
       "section": "学术社区",
       "topics": [],
       "venue": "",
-      "sourceRow": 226
+      "sourceRow": 226,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "f48ceb9612f1",
@@ -2622,7 +3381,9 @@
       "section": "论文解读",
       "topics": [],
       "venue": "CVPR",
-      "sourceRow": 199
+      "sourceRow": 199,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "ef3b7c610c85",
@@ -2634,7 +3395,9 @@
         "图像融合"
       ],
       "venue": "CVPR",
-      "sourceRow": 144
+      "sourceRow": 144,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "4315f60383e3",
@@ -2647,7 +3410,9 @@
         "图像配准"
       ],
       "venue": "CVPR",
-      "sourceRow": 28
+      "sourceRow": 28,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "b06d46b9775d",
@@ -2660,7 +3425,9 @@
         "遥感与多光谱"
       ],
       "venue": "CVPR",
-      "sourceRow": 88
+      "sourceRow": 88,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "8d13eb75bd8a",
@@ -2674,7 +3441,9 @@
         "数据集与基准"
       ],
       "venue": "CVPR",
-      "sourceRow": 81
+      "sourceRow": 81,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "9c9070e412ba",
@@ -2687,7 +3456,9 @@
         "图像配准"
       ],
       "venue": "CVPR",
-      "sourceRow": 57
+      "sourceRow": 57,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "94ce886fe928",
@@ -2700,7 +3471,9 @@
         "研究团队"
       ],
       "venue": "AAAI",
-      "sourceRow": 210
+      "sourceRow": 210,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "7739aaf61928",
@@ -2713,7 +3486,9 @@
         "图像融合"
       ],
       "venue": "CVPR",
-      "sourceRow": 34
+      "sourceRow": 34,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "e4661e64a72b",
@@ -2725,7 +3500,9 @@
         "图像融合"
       ],
       "venue": "TPAMI",
-      "sourceRow": 11
+      "sourceRow": 11,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "4a2fb06a4022",
@@ -2737,7 +3514,9 @@
         "图像融合"
       ],
       "venue": "ICCV",
-      "sourceRow": 35
+      "sourceRow": 35,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "c4dd46d2a6a8",
@@ -2753,7 +3532,9 @@
         "视频融合"
       ],
       "venue": "CVPR",
-      "sourceRow": 46
+      "sourceRow": 46,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "7803f54947bc",
@@ -2766,7 +3547,9 @@
         "图像融合"
       ],
       "venue": "TPAMI",
-      "sourceRow": 42
+      "sourceRow": 42,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "eecf23a7e99d",
@@ -2778,7 +3561,9 @@
         "图像融合"
       ],
       "venue": "",
-      "sourceRow": 168
+      "sourceRow": 168,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "ce9159352bc0",
@@ -2792,7 +3577,9 @@
         "视频融合"
       ],
       "venue": "NeurIPS",
-      "sourceRow": 213
+      "sourceRow": 213,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "212ec7813700",
@@ -2805,7 +3592,9 @@
         "图像融合"
       ],
       "venue": "TPAMI",
-      "sourceRow": 116
+      "sourceRow": 116,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "c5025ebfbbaa",
@@ -2817,7 +3606,9 @@
         "图像融合"
       ],
       "venue": "",
-      "sourceRow": 169
+      "sourceRow": 169,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "a06035dff0c5",
@@ -2829,7 +3620,9 @@
         "研究团队"
       ],
       "venue": "CVPR",
-      "sourceRow": 146
+      "sourceRow": 146,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "54c0816aec63",
@@ -2842,7 +3635,9 @@
         "图像融合"
       ],
       "venue": "NeurIPS",
-      "sourceRow": 110
+      "sourceRow": 110,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "d51f0befa704",
@@ -2854,7 +3649,9 @@
         "图像融合"
       ],
       "venue": "ICLR",
-      "sourceRow": 218
+      "sourceRow": 218,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "c608aba967ed",
@@ -2866,7 +3663,9 @@
         "图像融合"
       ],
       "venue": "NeurIPS",
-      "sourceRow": 62
+      "sourceRow": 62,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "f6af49d14b37",
@@ -2878,7 +3677,9 @@
         "图像融合"
       ],
       "venue": "TPAMI",
-      "sourceRow": 10
+      "sourceRow": 10,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "9cfa041b0b08",
@@ -2890,7 +3691,9 @@
         "三维感知"
       ],
       "venue": "TPAMI",
-      "sourceRow": 224
+      "sourceRow": 224,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "7fd107dfc51b",
@@ -2902,7 +3705,9 @@
         "图像融合"
       ],
       "venue": "",
-      "sourceRow": 53
+      "sourceRow": 53,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "33e02fff742f",
@@ -2914,7 +3719,9 @@
         "图像融合"
       ],
       "venue": "AAAI",
-      "sourceRow": 132
+      "sourceRow": 132,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "37e122565fd7",
@@ -2927,7 +3734,9 @@
         "研究团队"
       ],
       "venue": "IJCV",
-      "sourceRow": 23
+      "sourceRow": 23,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "e5dd10719052",
@@ -2939,7 +3748,9 @@
         "三维感知"
       ],
       "venue": "ICCV",
-      "sourceRow": 13
+      "sourceRow": 13,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "c81b25c19736",
@@ -2949,7 +3760,9 @@
       "section": "投稿参考",
       "topics": [],
       "venue": "",
-      "sourceRow": 2
+      "sourceRow": 2,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "4a9b0884e189",
@@ -2962,7 +3775,9 @@
         "图像融合"
       ],
       "venue": "Information Fusion",
-      "sourceRow": 52
+      "sourceRow": 52,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     },
     {
       "id": "40769bdff8c6",
@@ -2975,7 +3790,9 @@
         "图像融合"
       ],
       "venue": "",
-      "sourceRow": 193
+      "sourceRow": 193,
+      "sourceFile": "261028-多模态信息融合.xlsx",
+      "sourceSheet": "微信文章导出"
     }
   ]
 }

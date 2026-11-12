@@ -62,13 +62,14 @@ python3 -m http.server 8765 --directory dist
 ## 更新内容
 
 ```sh
-python3 scripts/import_articles.py '/path/to/微信文章导出.xlsx' --snapshot-date 2026-10-28
-python3 scripts/import_stats.py '/path/to/微信文章导出.xlsx'
+python3 scripts/merge_articles.py '/path/to/261028.xlsx' '/path/to/壹伴-图文分析导出-多模态信息融合.xlsx' \
+  --old-date 2026-10-28 --new-date 2026-11-12 --exclude-row 22 \
+  --workbook-data outputs/merge-data.json
 python3 scripts/build.py
 python3 scripts/check.py
 ```
 
-导入会重建文章目录，请使用包含全部待收录文章的完整导出表。原始表格保留在本机，不提交到公开仓库。经维护者明确要求，`import_stats.py` 只提取阅读、点赞、在看、转发四项计数，榜单标明快照日期；不发布其他运营字段。原表没有收藏数，本站收藏只存当前浏览器，不冒充公众号收藏统计。标题相同而微信文章标识不同的记录分别保留。微信链接使用 HTTPS，保留定位文章所需参数，移除会话和场景跟踪参数。
+当前合并版共 261 篇，新增 22 篇、更新 2 篇重复文章；第 22 行由维护者确认属于统计错误，以上排除行参数仅适用于本次源表。合并会重建目录，务必使用覆盖全部待收录文章的来源。壹伴链接从第一列标题的超链接读取，重复文章使用最新计数，不累加；原文章 ID 保持稳定。网站仅发布阅读、点赞、在看、转发四项统计，每篇标明统计日期。完整原始表格与合并工作簿保留本机，不提交公开仓库。收藏数据覆盖不完整，网站收藏仅存当前浏览器。链接统一 HTTPS，移除会话及场景参数。单一旧格式仍可使用 `import_articles.py` 和 `import_stats.py`，不要用部分导出覆盖完整目录。
 
 详细字段与维护流程见 [内容维护说明](docs/MAINTENANCE.md)；数据资源迁入记录、后续维护与链接约定见 [数据目录说明](docs/DATASETS.md)。融合团队收录 34 位研究者（每人独立建卡），支持机构/地区/方向筛选、展开资料和复制条目链接；来源与署名规则见 [团队目录维护说明](docs/TEAMS.md)。
 

@@ -26,7 +26,7 @@
 .rank-number{font:600 29px var(--display);line-height:1.1;color:#a49ab6;min-width:35px;margin-top:4px}
 .rank-number-1,.rank-number-2,.rank-number-3{color:#b67b48}.rank-number-1{color:#a96925}
 .rank-card:has(.rank-number-1){background:linear-gradient(120deg,#fffaf1,#fff 60%);border-color:#ead7bf}
-.rank-body{flex:1;min-width:0}.rank-meta{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:12px;color:#7a7289;margin-bottom:10px}
+.rank-body{flex:1;min-width:0}.rank-meta{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;font-size:12px;color:#7a7289;margin-bottom:10px}
 .rank-meta>span{color:#735697;font-weight:600}.rank-meta time{font-family:var(--display)}
 .rank-body h3{font-size:18px;line-height:1.75;letter-spacing:0;font-weight:650;min-height:94.5px}
 .rank-body h3 a{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}.rank-body h3 a:hover{color:#6940b4}
