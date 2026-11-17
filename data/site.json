@@ -16,11 +16,14 @@
   "members": [
     {
       "name": "汐萌",
-      "status": "active"
+      "status": "active",
+      "theme": "violet",
+      "quote": "热爱与坚持是前行的唯一方式！"
     },
     {
       "name": "囗〇",
-      "status": "active"
+      "status": "active",
+      "theme": "teal"
     },
     {
       "name": "木木彡",
@@ -29,6 +32,12 @@
     {
       "name": "蓝白红",
       "status": "departed"
+    },
+    {
+      "name": "Warren",
+      "status": "active",
+      "theme": "amber",
+      "quote": "Day day up"
     }
   ]
 }

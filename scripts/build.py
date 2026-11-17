@@ -183,7 +183,9 @@ def community_members():
         state=member['status']
         status='已激活' if state=='active' else '已退出'
         note='<p>感谢参与</p>' if state=='departed' else ''
-        cards.append(f'<li class="member-card member-{state}" data-member-state="{state}"><span class="member-avatar" aria-hidden="true">{E(member["name"][0])}</span><div><h3>{E(member["name"])}</h3>{note}</div><span class="member-status">{status}</span></li>')
+        quote=f'<p class="member-quote">{E(member["quote"])}</p>' if member.get('quote') else ''
+        theme=member.get('theme','violet') if state=='active' else 'departed'
+        cards.append(f'<li class="member-card member-{state}" data-member-state="{state}" data-member-theme="{E(theme)}"><span class="member-avatar" aria-hidden="true">{E(member["name"][0])}</span><div class="member-copy"><h3>{E(member["name"])}</h3>{quote}{note}</div><span class="member-status">{status}</span></li>')
     return '<section class="community-members" id="members" aria-labelledby="members-heading"><h2 id="members-heading">团队成员</h2><p>一起整理知识，也一起建设这个交流空间。</p><ol class="member-grid">'+''.join(cards)+'</ol></section>'
 
 def about():
