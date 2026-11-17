@@ -23,3 +23,4 @@
 .member-active .member-avatar{background:var(--member-avatar);color:var(--member-accent)}.member-active h3,.member-active .member-status{color:var(--member-accent)}.member-active .member-status:before{background:var(--member-accent)}.member-active:hover{border-color:var(--member-accent)}
 @media(max-width:640px){.member-copy{gap:12px}.about-copy .member-copy>p,.about-copy .member-card .member-quote{font-size:18px}.member-card{padding-top:32px}}
 @media(forced-colors:active){.member-activating h3{background:none;color:CanvasText}}
+.about-copy .member-departed .member-quote{color:#666f82}
