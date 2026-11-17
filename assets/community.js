@@ -81,73 +81,86 @@
   }
   updateClock(); setInterval(updateClock,1000);
 
-  // Provider-owned aggregate count. Never invent a total or count preview visits.
+  // Keep the confirmed history; only the provider can increment new visits.
   const count = $('[data-visit-count]'), status = $('[data-visit-state]');
   if (count && status) {
-    const meter = $('.visit-meter'), hint = $('[data-visit-hint]') || document.createElement('span');
-    if (!hint.isConnected) {hint.className = 'visit-hint';hint.dataset.visitHint = '';hint.hidden = true;meter.append(hint);}
+    const meter = $('.visit-meter'), hint = $('[data-visit-hint]');
+    const baseline = Number(meter.dataset.visitBaseline);
     const setState = (state, text, label = '') => {
       meter.dataset.visitStatus = state;status.textContent = text;meter.title = text;
       hint.textContent = label;hint.hidden = !label;
     };
     if (location.hostname.toLowerCase() !== 'mmifusion.github.io') {
+      count.textContent = '—';
       setState('preview','本地预览不计入网站访问量');
-    } else {
-      const cacheKey = 'mmifusion-site-pv-v1', source = $('#busuanzi_value_site_pv');
-      const saved = store.read(cacheKey,null);
-      const cached = saved && Number.isSafeInteger(saved.total) && saved.total >= 0 &&
-        Number.isSafeInteger(saved.at) && saved.at > 0 && saved.at <= Date.now() ? saved : null;
-      const cachedAt = cached ? new Intl.DateTimeFormat('zh-CN',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'}).format(new Date(cached.at)) : '';
-      let timeout, received = false;
-      if (cached) {
-        count.textContent = cached.total.toLocaleString('en-US');count.dataset.total = String(cached.total);
-        setState('cached',`正在更新访问统计；当前为 ${cachedAt} 上次同步的真实 PV，不是实时数据。`,'上次同步');
-      } else {
-        setState('loading','正在连接访问统计服务');
-      }
-      const unavailable = reason => {
-        if (received) return;
-        clearTimeout(timeout);
-        if (cached) {
-          setState('cached',`${reason}；当前显示 ${cachedAt} 上次同步的真实 PV，不是实时数据。`,'上次同步');
-        } else {
-          count.textContent = '—';
-          setState('unavailable',`${reason}；暂未取得访问次数，不影响阅读。`,'统计暂不可用');
+    } else if (Number.isSafeInteger(baseline) && baseline >= 0) {
+      const cacheKey = 'mmifusion-site-pv-v2', provider = 'bsz-saop-20261117';
+      const validCache = saved => saved && Number.isSafeInteger(saved.total) && saved.total >= baseline &&
+        Number.isSafeInteger(saved.at) && saved.at > 0 && saved.at <= Date.now();
+      const readCache = () => {
+        const current = store.read(cacheKey,null), legacy = store.read('mmifusion-site-pv-v1',null);
+        return [current?.provider === provider ? current : null,legacy].filter(validCache)
+          .sort((a,b) => b.total-a.total || b.at-a.at)[0] || null;
+      };
+      let cached = readCache();
+      const stamp = at => new Intl.DateTimeFormat('zh-CN',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'}).format(new Date(at));
+      const retain = reason => {
+        // Another tab may have synchronized a higher count in the meantime.
+        const latest = readCache();
+        if (latest && (!cached || latest.total >= cached.total)) cached = latest;
+        const total = cached ? cached.total : baseline;
+        count.textContent = total.toLocaleString('en-US');count.dataset.total = String(total);
+        const detail = cached ? `${stamp(cached.at)} 上次同步的 PV` : `迁移时确认保留的 ${baseline.toLocaleString('en-US')} 次历史访问`;
+        setState('cached',`${reason}；当前显示${detail}，不是实时数据。`,cached ? '上次同步' : '历史保留');
+      };
+      retain('访问统计将在页面加载完成后后台更新');
+      let started = false, controller, timeout, leaving = false;
+      window.addEventListener('pagehide',() => {
+        leaving = true;clearTimeout(timeout);controller?.abort();
+      },{once:true});
+      const sync = async () => {
+        if (started || leaving) return;
+        started = true;
+        // Fetch never delays window.load; abort cancels a stalled request/body.
+        controller = new AbortController();
+        timeout = setTimeout(() => controller.abort(),8000);
+        try {
+          const response = await fetch('https://bsz.saop.cc/api',{
+            method:'POST',credentials:'omit',cache:'no-store',referrerPolicy:'no-referrer',
+            headers:{'x-bsz-referer':'https://mmifusion.github.io/'},signal:controller.signal
+          });
+          if (!response.ok) throw new Error('统计服务暂不可用');
+          const result = await response.json(), raw = result?.data?.site_pv;
+          if (result?.success !== true || !Number.isSafeInteger(raw) || raw < 0 || raw > Number.MAX_SAFE_INTEGER-baseline) throw new Error('统计服务返回的数据无效');
+          if (controller.signal.aborted) throw new Error('统计请求已取消');
+          const total = baseline+raw, latest = readCache();
+          if (latest && (!cached || latest.total >= cached.total)) cached = latest;
+          if (total < (cached?.total ?? baseline)) {
+            retain('新统计结果尚未超过已保存次数');return;
+          }
+          const previous = Number(count.dataset.total) || baseline;
+          cached = {total,at:Date.now(),provider};store.write(cacheKey,cached);
+          count.dataset.total = String(total);
+          setState('live',`本站页面访问次数（PV），保留 ${baseline.toLocaleString('en-US')} 次历史基数，加上 BSZ 服务自 2026-11-17 起累计的新增访问；不代表独立人数。`);
+          meter.classList.add('visit-connected');
+          if (!motion()) {count.textContent = total.toLocaleString('en-US');return;}
+          const start = performance.now();
+          const tick = time => {
+            const progress = motion() ? Math.min(1,(time-start)/1100) : 1;
+            count.textContent = Math.round(previous+(total-previous)*(1-Math.pow(1-progress,3))).toLocaleString('en-US');
+            if (progress < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+        } catch {
+          retain(controller.signal.aborted ? '访问统计响应超时，已停止等待' : '访问统计暂时无法连接');
+        } finally {
+          clearTimeout(timeout);
         }
+        // No increment retry: an interrupted request may already have counted.
       };
-      // JSONP is a second script request: its errors do not reach the loader's onerror.
-      const resourceError = event => {
-        const target = event.target;
-        if (target?.tagName === 'SCRIPT' && /^https:\/\/busuanzi\.ibruce\.info\/busuanzi(?:[/?]|$)/.test(target.src)) unavailable('访问统计连接失败或被浏览器拦截');
-      };
-      window.addEventListener('error',resourceError,true);
-      const observer = new MutationObserver(() => {
-        const raw = source.textContent.trim();
-        if (!/^\d+$/.test(raw)) return;
-        const total = Number(raw); if (!Number.isSafeInteger(total)) return;
-        received = true;observer.disconnect();clearTimeout(timeout);
-        window.removeEventListener('error',resourceError,true);
-        const previous = cached ? cached.total : 0;
-        count.dataset.total = raw;store.write(cacheKey,{total,at:Date.now()});
-        setState('live','本站页面访问次数（PV），由不蒜子提供，从接入起累计；不代表独立人数。');
-        meter.classList.add('visit-connected');
-        if (!motion()) {count.textContent = total.toLocaleString('en-US');return;}
-        const start = performance.now();
-        const tick = time => {
-          const progress = motion() ? Math.min(1,(time-start)/1100) : 1;
-          count.textContent = Math.round(previous+(total-previous)*(1-Math.pow(1-progress,3))).toLocaleString('en-US');
-          if (progress < 1) requestAnimationFrame(tick);
-        };
-        requestAnimationFrame(tick);
-      });
-      observer.observe(source,{childList:true,subtree:true,characterData:true});
-      // Keep observing after a timeout so a late provider response can recover.
-      timeout = setTimeout(() => unavailable('访问统计响应超时'),15000);
-      const script = document.createElement('script');script.async = true;
-      script.src = 'https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js';
-      script.onerror = () => unavailable('访问统计脚本加载失败');
-      document.head.append(script);
-      // No automatic retries: this provider increments PV on each request.
+      const schedule = () => setTimeout(sync,0);
+      if (document.readyState === 'complete') schedule();
+      else window.addEventListener('load',schedule,{once:true});
     }
   }
 

@@ -195,7 +195,7 @@ def about():
 <li>数据资源栏目已整合原数据集目录，保留完整介绍、团队作者、原始示例图和来源链接。数据规模、许可及划分请查看原论文与官方说明。</li>
 <li>会议、团队、招生与投稿方向已收录首批官方来源，逐条标注核对日期。投稿建议为本站整理，不代表录用概率。</li>
 <li>公众号人气榜使用导出表中的阅读次数、点赞、在看和分享次数，按每篇文章最新可用的导出记录更新，统计日期见榜单卡片。文章列表按篇显示原表提供的收藏数，缺失项略去；推荐对应原表在看数，右侧星标仅保存在当前浏览器。</li>
-<li>本站访问次数（PV）由 <a href="https://busuanzi.ibruce.info/" target="_blank" rel="noopener noreferrer">不蒜子</a> 提供，从 2026-11-11 接入后累计；服务可能受网络或拦截设置影响，不代表独立访客数。</li>
+<li>本站访问次数（PV）保留迁移时确认的 1,100 次历史基数，2026-11-17 起新增访问由 <a href="https://bsz.saop.cc/" target="_blank" rel="noopener noreferrer">BSZ 统计服务</a> 累计。连接失败时显示本浏览器上次同步的次数；没有缓存时显示历史基数，并标注状态。统计不代表独立访客数。</li>
 <li>投稿日历与接好运是科研趣味互动，不是传统黄历或录用预测。真实截止日期请查看会议日历。</li>
 <li>基础色板由本站搭配，不是从论文中提取；论文配色实例通过公众号文章提供。</li></ul><h2>一起完善这份资源</h2><p>欢迎分享论文、数据集、团队主页、招生信息，或指出已有内容中的错误。请附原始来源，方便核对和持续维护。</p><a href="contribute.html" class="button secondary">推荐资源 / 提交勘误 →</a></section><aside class="contact-card"><img src="assets/avatar.png" width="100" height="100" alt="多模态信息融合头像"><h2>多模态信息融合</h2><p>微信公众号 · MMIFusion</p><a href="about.html#connect" class="button primary" data-qr-open>扫码关注与交流</a><div class="contact-id"><span>交流微信</span><strong>{SITE['contact']}</strong><button class="text-link" data-copy="{SITE['contact']}">复制微信号</button></div><a href="#members" class="text-link">认识团队成员 →</a>{ext(SITE['github'],'GitHub · MMIFusion','text-link')}</aside></div>{connect_section()}'''
 
