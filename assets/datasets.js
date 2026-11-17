@@ -15,6 +15,10 @@
     order:Number(node.dataset.order), searchable:norm(node.dataset.search)
   }));
   const byId = new Map(records.map(record => [record.id,record]));
+  records.forEach(record => {
+    record.profile = record.node.querySelector('.dataset-profile');
+    record.profile.remove();
+  });
   const pageSize = 12;
   const readState = () => {
     const params = new URLSearchParams(location.search), category = params.get('category') || '';
@@ -46,12 +50,10 @@
     const matches = records.filter(r => (!state.category || r.category === state.category) && (!state.task || r.task === state.task) && terms.every(term => r.searchable.includes(term)));
     matches.sort((a,b) => state.sort === 'name' ? a.name.localeCompare(b.name,'en',{numeric:true}) || a.order-b.order : state.sort === 'year' ? b.year-a.year || a.order-b.order : a.order-b.order);
     state.page = Math.min(state.page,Math.max(1,Math.ceil(matches.length/pageSize)));
-    const visible = matches.slice(0,state.page*pageSize), nodes = new Set(visible.map(r => r.node));
-    records.forEach(({node}) => {node.hidden = !nodes.has(node);});
-    const displayed = [...$('#dataset-results').children].filter(node => !node.hidden);
-    if (displayed.some((node,index) => node !== visible[index].node)) {
-      visible.forEach(({node}) => $('#dataset-results').append(node));
-    }
+    const visible = matches.slice(0,state.page*pageSize);
+    const displayed = [...$('#dataset-results').children];
+    if (displayed.length !== visible.length || displayed.some((node,index) => node !== visible[index].node)) $('#dataset-results').replaceChildren(...visible.map(r => r.node));
+    visible.forEach(({node}) => bindImageErrors(node));
     $('#dataset-empty').hidden = matches.length > 0;
     $('#dataset-result-count').textContent = `找到 ${matches.length} 项资源 / ${records.length} 项收录`;
     $('#dataset-load-status').textContent = matches.length ? `已显示 ${visible.length} / ${matches.length} 项资源` : '';
@@ -67,7 +69,7 @@
   sort.addEventListener('change', () => {state.sort=sort.value;state.page=1;render();});
   document.querySelectorAll('[data-dataset-reset]').forEach(button => button.addEventListener('click',reset));
   $('#dataset-more').addEventListener('click', () => {
-    const previous = new Set(records.filter(r => !r.node.hidden).map(r => r.node));
+    const previous = new Set($('#dataset-results').children);
     state.page++; render();
     const next = [...$('#dataset-results').children].find(node => !node.hidden && !previous.has(node));
     if (next) {
@@ -81,13 +83,14 @@
     }
   });
 
+  const boundImages = new WeakSet();
   const bindImageErrors = container => container.querySelectorAll('img').forEach(img => {
     const failed = () => {
       if (!img.isConnected) return;
       const note = document.createElement('span'); note.className='dataset-image-error';note.textContent='示例图暂不可用，完整说明与来源链接仍可查看。';
       img.replaceWith(note);
     };
-    img.addEventListener('error',failed,{once:true});
+    if (!boundImages.has(img)) {img.addEventListener('error',failed,{once:true});boundImages.add(img);}
     if (img.complete && !img.naturalWidth) failed();
   });
   let selected = null, opener = null, pushedByThisPage = false, closingFromHistory = false;
@@ -100,14 +103,14 @@
     if (trigger) opener = trigger;
     $('#dataset-dialog-title').textContent = record.name;
     $('#dataset-dialog-subtitle').textContent = record.title;
-    const profile = record.node.querySelector('.dataset-profile').cloneNode(true);
+    const profile = record.profile.cloneNode(true);
     $('#dataset-dialog-content').replaceChildren(profile);
     bindImageErrors(profile);
     if (push && hashId() !== id) {
       history.pushState(history.state,'',location.pathname+location.search+'#dataset='+encodeURIComponent(id));
       pushedByThisPage = true;
     }
-    if (!dialog.open) dialog.showModal();
+    if (!dialog.open) {closingFromHistory=false;dialog.showModal();}
     root.classList.add('dataset-modal-open');dialog.scrollTop=0;
     if (root.dataset.motion !== 'off' && dialog.animate) dialog.animate([{opacity:.4,transform:'translateY(10px)'},{opacity:1,transform:'translateY(0)'}],{duration:220,easing:'ease-out'});
     return true;
@@ -123,6 +126,9 @@
     if (event.clientX<r.left || event.clientX>r.right || event.clientY<r.top || event.clientY>r.bottom) dialog.close();
   });
   dialog.addEventListener('close', () => {
+    // A queued close event may arrive after another deep link has reopened the
+    // dialog. It must not erase the new selection, hash, or scroll lock.
+    if (dialog.open) return;
     root.classList.remove('dataset-modal-open');selected=null;
     const focusTarget = opener?.getClientRects().length ? opener : search;
     focusTarget.focus({preventScroll:true});

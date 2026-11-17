@@ -17,6 +17,8 @@ jobs:
         run: python scripts/build.py
       - name: Check content and links
         run: python scripts/check.py
+      - name: Check optimized assets and complete search metadata
+        run: python scripts/check_performance.py
       - name: Check image statistics against analytical fixtures
         run: node scripts/test_metrics.cjs
       - name: Check calendar dates and playful cards
@@ -26,4 +28,4 @@ jobs:
       - name: Check visit counter migration and offline fallback
         run: node scripts/test_visits.cjs
       - name: Check generated pages are up to date
-        run: git diff --exit-code -- '*.html' robots.txt sitemap.xml downloads
+        run: git diff --exit-code -- '*.html' robots.txt sitemap.xml downloads assets/site.css assets/site.js

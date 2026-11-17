@@ -74,7 +74,7 @@
   }
   function updateClock() {
     const now = new Date(), day = Core.dateKey(now), date = $('[data-live-date]'), clock = $('[data-live-clock]');
-    if (date) {date.textContent = dateFormat.format(now).replace('星期',' 星期');date.dateTime = day;}
+    if (date && date.dateTime !== day) {date.textContent = dateFormat.format(now).replace('星期',' 星期');date.dateTime = day;}
     if (clock) {paintClock(clock,clockFormat.format(now));clock.dateTime = now.toISOString();}
     if (knownDay && knownDay !== day) document.dispatchEvent(new CustomEvent('mmi-date-change',{detail:day}));
     knownDay = day;
@@ -84,11 +84,11 @@
   // Keep the confirmed history; only the provider can increment new visits.
   const count = $('[data-visit-count]'), status = $('[data-visit-state]');
   if (count && status) {
-    const meter = $('.visit-meter'), hint = $('[data-visit-hint]');
+    const meter = $('.visit-meter');
     const baseline = Number(meter.dataset.visitBaseline);
-    const setState = (state, text, label = '') => {
-      meter.dataset.visitStatus = state;status.textContent = text;meter.title = text;
-      hint.textContent = label;hint.hidden = !label;
+    const setState = (state, text) => {
+      // Keep connection/cache details available to assistive technology only.
+      meter.dataset.visitStatus = state;status.textContent = text;
     };
     if (location.hostname.toLowerCase() !== 'mmifusion.github.io') {
       count.textContent = '—';
@@ -111,7 +111,7 @@
         const total = cached ? cached.total : baseline;
         count.textContent = total.toLocaleString('en-US');count.dataset.total = String(total);
         const detail = cached ? `${stamp(cached.at)} 上次同步的 PV` : `迁移时确认保留的 ${baseline.toLocaleString('en-US')} 次历史访问`;
-        setState('cached',`${reason}；当前显示${detail}，不是实时数据。`,cached ? '上次同步' : '历史保留');
+        setState('cached',`${reason}；当前显示${detail}，不是实时数据。`);
       };
       retain('访问统计将在页面加载完成后后台更新');
       let started = false, controller, timeout, leaving = false;

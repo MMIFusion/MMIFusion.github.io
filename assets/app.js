@@ -35,8 +35,9 @@
       document.body.append($('#toast'));
     }
   }));
-  document.querySelectorAll('[data-copy]').forEach(button => {
-    button.addEventListener('click', async () => {
+  document.addEventListener('click', async event => {
+      const button = event.target.closest('button[data-copy]');
+      if (!button) return;
       const text = button.dataset.copy;
       try {
         await navigator.clipboard.writeText(text);
@@ -45,7 +46,6 @@
         // Keep the exact value accessible when clipboard permission is unavailable.
         window.prompt('请复制以下内容：', text);
       }
-    });
   });
 
   const qrDialog = $('#wechat-dialog');
@@ -183,9 +183,9 @@
     ).sort((a, b) => state.sort === 'oldest' ? a.article.date.localeCompare(b.article.date) : b.article.date.localeCompare(a.article.date));
     const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
     state.page = Math.min(state.page, totalPages);
-    rows.forEach(row => { row.hidden = true; });
     const selected = filtered.slice((state.page - 1) * pageSize, state.page * pageSize);
-    selected.forEach(({node}) => { node.hidden = false; $('#article-list').append(node); });
+    const list = $('#article-list'), displayed = [...list.children];
+    if (displayed.length !== selected.length || displayed.some((node,index) => node !== selected[index].node)) list.replaceChildren(...selected.map(record => record.node));
     $('#empty-results').hidden = filtered.length > 0;
     $('#empty-results h3').textContent = state.saved ? '当前筛选下暂无收藏' : '没有找到匹配的文章';
     $('#empty-results p').textContent = state.saved ? '点击文章旁的星标收藏，或清除其他筛选条件。收藏保存在当前浏览器。' : '试试方法名、研究方向，或缩短关键词。';
@@ -201,14 +201,14 @@
     state = {query:'',section:'',topic:'',venue:'',sort:'newest',page:1,saved:false};
     render();
   };
-  fetch('data/articles.json').then(response => {
-    if (!response.ok) throw new Error('Article data unavailable');
-    return response.json();
-  }).then(data => {
-    const byId = new Map(data.articles.map(article => [article.id, article]));
+  try {
+    // Search metadata travels with the original article rows, so filtering works
+    // immediately and offline without downloading the entire article JSON again.
     records = rows.map(node => {
-      const article = byId.get(node.dataset.articleId);
-      if (!article) throw new Error('Article index mismatch');
+      const article = {id:node.dataset.articleId,venue:node.dataset.articleVenue,
+        topics:JSON.parse(node.dataset.articleTopics),date:node.querySelector('time').dateTime,
+        section:node.querySelector('.article-date>span').textContent,
+        title:node.querySelector('h3 a').firstChild.textContent};
       return {node,article,searchable:norm([article.title,article.section,article.venue,...article.topics].join(' '))};
     });
     state = loadState();
@@ -236,13 +236,14 @@
         search?.focus();
       }
     });
-  }).catch(() => {
+  } catch {
     // The server-rendered complete article archive remains readable.
+    $('#article-list').replaceChildren(...rows);
     $('.collection-controls')?.setAttribute('hidden', '');
     $('#result-count').textContent = `共 ${rows.length} 篇文章 · 完整目录模式`;
     const message = document.createElement('p');
     message.className = 'small-note';
     message.textContent = '搜索暂时不可用，仍可浏览下方完整目录并点击阅读。刷新页面可重试。';
     $('.result-summary').after(message);
-  });
+  }
 })();

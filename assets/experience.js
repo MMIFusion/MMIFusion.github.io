@@ -111,11 +111,17 @@
     $$('.section-heading,.path-card,.dataset-preview,.dataset-overview,.catalog-card,.dataset-about,.venue-overview,.venue-spotlight,.team-overview,.community-members,.workbench-card,.module,.conference-card,.profile-card,.venue-card,.opportunity-card,.metric-definition,.download-card,.qr-card').filter(e => !e.closest('dialog')).forEach(e => reveal.observe(e));
   }
 
-  let scrollFrame;
+  const progressBar = $('.reading-progress>span'), backToTop = $('.back-to-top');
+  let scrollFrame, lastProgress;
   const progress = () => {
     const remaining = document.documentElement.scrollHeight - innerHeight;
-    root.style.setProperty('--reading-progress', remaining > 0 ? String(Math.min(1,scrollY / remaining)) : '0');
-    if ($('.back-to-top')) $('.back-to-top').hidden = scrollY < 650;
+    const value = remaining > 0 ? String(Math.min(1,scrollY / remaining)) : '0';
+    // Keep this inherited property off <html>: updating it there invalidates
+    // styles across every card and detail in the document on every scroll frame.
+    if (progressBar && value !== lastProgress) {
+      progressBar.style.setProperty('--reading-progress',value);lastProgress = value;
+    }
+    if (backToTop && backToTop.hidden !== (scrollY < 650)) backToTop.hidden = scrollY < 650;
     scrollFrame = null;
   };
   addEventListener('scroll', () => { if (!scrollFrame) scrollFrame = requestAnimationFrame(progress); }, {passive:true});

@@ -6,6 +6,7 @@ import re
 import portal
 import design
 import community
+import performance
 import datasets as dataset_catalog
 import json
 import shutil
@@ -87,9 +88,10 @@ def page(filename, title, body, active='resources', description=None, extras='')
         extras += '<link rel="stylesheet" href="assets/article-stats.css">'
     description=description or SITE['description']
     canonical=SITE['url']+'/' + ('' if filename=='index.html' else filename)
-    doc=f'''<!doctype html><html lang="zh-CN" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{E(title)} · 多模态信息融合</title><meta name="description" content="{E(description)}"><meta name="theme-color" content="#11162e"><script>document.documentElement.classList.replace("no-js","js");try{{var motionPreference=localStorage.getItem("mmifusion-motion");document.documentElement.dataset.motion=motionPreference==="on"?"on":(motionPreference==="off"||matchMedia("(prefers-reduced-motion: reduce)").matches)?"off":"on"}}catch(e){{document.documentElement.dataset.motion=matchMedia("(prefers-reduced-motion: reduce)").matches?"off":"on"}}</script><link rel="canonical" href="{canonical}"><meta property="og:title" content="{E(title)} · 多模态信息融合"><meta property="og:description" content="{E(description)}"><meta property="og:type" content="website"><meta property="og:url" content="{canonical}"><meta property="og:image" content="{SITE['url']}/assets/avatar.png"><link rel="icon" href="assets/avatar.png" type="image/png"><link rel="apple-touch-icon" href="assets/avatar.png"><link rel="preload" href="assets/fonts/mmifusion-sans.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="assets/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="assets/style.css"><link rel="stylesheet" href="assets/portal.css"><link rel="stylesheet" href="assets/experience.css"><link rel="stylesheet" href="assets/community.css"><script src="assets/metrics-core.js" defer></script><script src="assets/app.js" defer></script><script src="assets/calendar-core.js" defer></script><script src="assets/portal.js" defer></script><script src="assets/experience.js" defer></script><script src="assets/community-core.js" defer></script><script src="assets/community.js" defer></script></head><body class="page-{filename.removesuffix('.html')}">{header(active, filename)}<main id="main">{body}</main>{footer(filename, title)}{qr_dialog()}{design.motion_controls()}{community.luck_dialog()}<div id="toast" role="status" aria-live="polite"></div></body></html>'''
+    doc=f'''<!doctype html><html lang="zh-CN" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{E(title)} · 多模态信息融合</title><meta name="description" content="{E(description)}"><meta name="theme-color" content="#11162e"><script>document.documentElement.classList.replace("no-js","js");try{{var motionPreference=localStorage.getItem("mmifusion-motion");document.documentElement.dataset.motion=motionPreference==="on"?"on":(motionPreference==="off"||matchMedia("(prefers-reduced-motion: reduce)").matches)?"off":"on"}}catch(e){{document.documentElement.dataset.motion=matchMedia("(prefers-reduced-motion: reduce)").matches?"off":"on"}}</script><link rel="canonical" href="{canonical}"><meta property="og:title" content="{E(title)} · 多模态信息融合"><meta property="og:description" content="{E(description)}"><meta property="og:type" content="website"><meta property="og:url" content="{canonical}"><meta property="og:image" content="{SITE['url']}/assets/avatar.png"><link rel="icon" href="assets/avatar.png" type="image/png"><link rel="apple-touch-icon" href="assets/avatar.png"><link rel="preload" href="assets/fonts/mmifusion-sans.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="assets/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="assets/site.css"><script src="assets/site.js" defer></script></head><body class="page-{filename.removesuffix('.html')}">{header(active, filename)}<main id="main">{body}</main>{footer(filename, title)}{qr_dialog()}{design.motion_controls()}{community.luck_dialog()}<div id="toast" role="status" aria-live="polite"></div></body></html>'''
     doc=doc.replace('</head>', '<noscript><style>.collection-controls,.menu-toggle,.directory-toolbar,.calendar-tools label,.compare-check,.comparison-bar,.bookmark-button,.metric-lab,.contribution-form,.submission-preview{display:none}.hero-search,.calendar-view-options{display:none}@media(max-width:640px){.header-inner{height:auto;min-height:72px;flex-wrap:wrap;padding-block:12px}.header-inner nav{position:static;display:flex;flex-direction:row;flex-wrap:wrap;padding:0;box-shadow:none;border:0;margin:0}.header-inner nav a{font-size:12px;padding:8px}.header-inner nav a[aria-current]:after{bottom:2px}}</style></noscript></head>')
     doc=doc.replace('</head>', extras+'</head>')
+    doc=performance.images(doc)
     # Match each document to its exact JS/CSS, including across rolling Pages caches.
     doc=re.sub(r'((?:href|src)=")(?P<asset>assets/[^"?]+\.(?:css|js|woff2))"',
         lambda m: m.group(1)+m.group('asset')+'?v='+hashlib.sha256((ROOT/m.group('asset')).read_bytes()).hexdigest()[:12]+'"', doc)
@@ -114,7 +116,7 @@ def article_statistics(a):
 
 def row(a):
     panel,title=article_statistics(a)
-    return f'''<article class="article-row" data-article-id="{a['id']}"><div class="article-date"><time datetime="{a['date']}">{a['date'].replace('-','.')}</time><span>{E(a['section'])}</span></div><div class="article-body"><div class="article-tags">{''.join('<span>'+E(t)+'</span>' for t in a['topics'][:3])}</div><div class="article-stat-wrap"><h3>{title}</h3>{panel}</div></div><button class="bookmark-button" data-bookmark="{a['id']}" aria-pressed="false" aria-label="收藏文章">☆<span>收藏</span></button></article>'''
+    return f'''<article class="article-row" data-article-id="{a['id']}" data-article-venue="{E(a['venue'])}" data-article-topics="{E(json.dumps(a['topics'],ensure_ascii=False,separators=(',',':')))}"><div class="article-date"><time datetime="{a['date']}">{a['date'].replace('-','.')}</time><span>{E(a['section'])}</span></div><div class="article-body"><div class="article-tags">{''.join('<span>'+E(t)+'</span>' for t in a['topics'][:3])}</div><div class="article-stat-wrap"><h3>{title}</h3>{panel}</div></div><button class="bookmark-button" data-bookmark="{a['id']}" aria-pressed="false" aria-label="收藏文章">☆<span>收藏</span></button></article>'''
 
 def collection(items, scope='all', filterable=True):
     sections=Counter(a['section'] for a in items)
@@ -203,6 +205,7 @@ def main():
     if OUT.exists(): shutil.rmtree(OUT)
     OUT.mkdir()
     portal.build_downloads(COMMUNITY['palettes'],COMMUNITY['basicPalettes'])
+    performance.bundles()
     shutil.copytree(ROOT/'assets', OUT/'assets')
     shutil.copytree(ROOT/'downloads', OUT/'downloads')
     (OUT/'data').mkdir()

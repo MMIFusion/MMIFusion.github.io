@@ -16,7 +16,6 @@ function setup({legacy, saved, denied=false, hostname='mmifusion.github.io', rea
   const elements = {
     '[data-visit-count]': {textContent:'1,100',dataset:{total:'1100'}},
     '[data-visit-state]': {textContent:''},
-    '[data-visit-hint]': {textContent:'',hidden:false},
     '.visit-meter': {dataset:{visitBaseline:'1100'},classList:{add() {}}}
   };
   const storage = new Map([[legacyKey,legacy],[cacheKey,saved]]), events = new Map(), timers = new Map(), calls = [];
@@ -44,14 +43,13 @@ function setup({legacy, saved, denied=false, hostname='mmifusion.github.io', rea
     async success(raw) {await this.response({success:true,data:{site_pv:raw}});},
     count:()=>elements['[data-visit-count]'].textContent,
     state:()=>elements['.visit-meter'].dataset.visitStatus,
-    hint:()=>elements['[data-visit-hint]'].textContent,
     status:()=>elements['[data-visit-state]'].textContent
   };
 }
 
 (async()=>{
   const fresh=setup();
-  assert.equal(fresh.count(),'1,100');assert.equal(fresh.hint(),'历史保留');assert.equal(fresh.calls.length,0);
+  assert.equal(fresh.count(),'1,100');assert.equal(fresh.calls.length,0);
   await fresh.load();assert.equal(fresh.calls.length,1);
   assert.equal(fresh.calls[0].options.method,'POST');
   assert.equal(fresh.calls[0].options.credentials,'omit');
@@ -62,7 +60,7 @@ function setup({legacy, saved, denied=false, hostname='mmifusion.github.io', rea
 
   const legacy={total:1250,at:Date.now()-60000};
   const offline=setup({legacy});await offline.load();offline.calls[0].reject(new Error('offline'));await offline.settle();
-  assert.equal(offline.count(),'1,250');assert.equal(offline.hint(),'上次同步');assert.match(offline.status(),/不是实时数据/);
+  assert.equal(offline.count(),'1,250');assert.match(offline.status(),/不是实时数据/);
   assert.equal(offline.storage.get(legacyKey),legacy);
 
   const slow=setup();await slow.load();slow.runTimer(8000);await slow.settle();
