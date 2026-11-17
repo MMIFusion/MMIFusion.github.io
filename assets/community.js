@@ -84,34 +84,70 @@
   // Provider-owned aggregate count. Never invent a total or count preview visits.
   const count = $('[data-visit-count]'), status = $('[data-visit-state]');
   if (count && status) {
-    const setState = text => {status.textContent = text;$('.visit-meter').title = text;};
+    const meter = $('.visit-meter'), hint = $('[data-visit-hint]') || document.createElement('span');
+    if (!hint.isConnected) {hint.className = 'visit-hint';hint.dataset.visitHint = '';hint.hidden = true;meter.append(hint);}
+    const setState = (state, text, label = '') => {
+      meter.dataset.visitStatus = state;status.textContent = text;meter.title = text;
+      hint.textContent = label;hint.hidden = !label;
+    };
     if (location.hostname.toLowerCase() !== 'mmifusion.github.io') {
-      setState('本地预览不计入网站访问量');
+      setState('preview','本地预览不计入网站访问量');
     } else {
-      const source = $('#busuanzi_value_site_pv');
-      let timeout;
+      const cacheKey = 'mmifusion-site-pv-v1', source = $('#busuanzi_value_site_pv');
+      const saved = store.read(cacheKey,null);
+      const cached = saved && Number.isSafeInteger(saved.total) && saved.total >= 0 &&
+        Number.isSafeInteger(saved.at) && saved.at > 0 && saved.at <= Date.now() ? saved : null;
+      const cachedAt = cached ? new Intl.DateTimeFormat('zh-CN',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'}).format(new Date(cached.at)) : '';
+      let timeout, received = false;
+      if (cached) {
+        count.textContent = cached.total.toLocaleString('en-US');count.dataset.total = String(cached.total);
+        setState('cached',`正在更新访问统计；当前为 ${cachedAt} 上次同步的真实 PV，不是实时数据。`,'上次同步');
+      } else {
+        setState('loading','正在连接访问统计服务');
+      }
+      const unavailable = reason => {
+        if (received) return;
+        clearTimeout(timeout);
+        if (cached) {
+          setState('cached',`${reason}；当前显示 ${cachedAt} 上次同步的真实 PV，不是实时数据。`,'上次同步');
+        } else {
+          count.textContent = '—';
+          setState('unavailable',`${reason}；暂未取得访问次数，不影响阅读。`,'统计暂不可用');
+        }
+      };
+      // JSONP is a second script request: its errors do not reach the loader's onerror.
+      const resourceError = event => {
+        const target = event.target;
+        if (target?.tagName === 'SCRIPT' && /^https:\/\/busuanzi\.ibruce\.info\/busuanzi(?:[/?]|$)/.test(target.src)) unavailable('访问统计连接失败或被浏览器拦截');
+      };
+      window.addEventListener('error',resourceError,true);
       const observer = new MutationObserver(() => {
         const raw = source.textContent.trim();
         if (!/^\d+$/.test(raw)) return;
         const total = Number(raw); if (!Number.isSafeInteger(total)) return;
-        observer.disconnect(); clearTimeout(timeout); count.dataset.total = raw;
-        setState('本站页面访问次数（PV），由不蒜子提供，从接入起累计；不代表独立人数。');
-        $('.visit-meter').classList.add('visit-connected');
+        received = true;observer.disconnect();clearTimeout(timeout);
+        window.removeEventListener('error',resourceError,true);
+        const previous = cached ? cached.total : 0;
+        count.dataset.total = raw;store.write(cacheKey,{total,at:Date.now()});
+        setState('live','本站页面访问次数（PV），由不蒜子提供，从接入起累计；不代表独立人数。');
+        meter.classList.add('visit-connected');
         if (!motion()) {count.textContent = total.toLocaleString('en-US');return;}
         const start = performance.now();
         const tick = time => {
           const progress = motion() ? Math.min(1,(time-start)/1100) : 1;
-          count.textContent = Math.round(total*(1-Math.pow(1-progress,3))).toLocaleString('en-US');
+          count.textContent = Math.round(previous+(total-previous)*(1-Math.pow(1-progress,3))).toLocaleString('en-US');
           if (progress < 1) requestAnimationFrame(tick);
         };
         requestAnimationFrame(tick);
       });
       observer.observe(source,{childList:true,subtree:true,characterData:true});
-      timeout = setTimeout(() => {count.textContent = '—';setState('访问统计暂不可用，请稍后再试；不影响阅读。');},15000);
-      const script = document.createElement('script'); script.async = true;
+      // Keep observing after a timeout so a late provider response can recover.
+      timeout = setTimeout(() => unavailable('访问统计响应超时'),15000);
+      const script = document.createElement('script');script.async = true;
       script.src = 'https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js';
-      script.onerror = () => {clearTimeout(timeout);setState('访问统计服务暂不可用；不影响阅读。');};
+      script.onerror = () => unavailable('访问统计脚本加载失败');
       document.head.append(script);
+      // No automatic retries: this provider increments PV on each request.
     }
   }
 
