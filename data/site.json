@@ -18,16 +18,28 @@
       "name": "汐萌",
       "status": "active",
       "theme": "violet",
-      "quote": "热爱与坚持是前行的唯一方式！"
+      "quote": "热爱与坚持是前行的唯一方式！永远不要停下前进的脚步。"
     },
     {
       "name": "囗〇",
       "status": "active",
-      "theme": "teal"
+      "theme": "teal",
+      "quote": "从〇开始"
     },
     {
       "name": "木木彡",
       "status": "departed"
+    },
+    {
+      "name": "小甜橙",
+      "status": "active",
+      "theme": "orange",
+      "quote": "守住本心持续打磨，熬过这段时光，自有长风相伴"
+    },
+    {
+      "name": "YR",
+      "status": "activating",
+      "quote": ""
     },
     {
       "name": "蓝白红",

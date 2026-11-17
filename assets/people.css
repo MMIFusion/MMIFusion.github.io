@@ -12,10 +12,14 @@
 @media(max-width:1100px){.page-teams .directory-search{flex-basis:100%}}
 @media(max-width:640px){.page-teams .directory-toolbar label:last-of-type{grid-column:1/-1}}
 
-/* One member per row; personal colors apply only to active members. */
+/* Keep room above long messages for the status label at every screen width. */
+.member-card{padding-top:34px}
 .member-copy{min-width:0;flex:1;display:flex;align-items:center;gap:18px}.member-card h3{padding-right:0;flex:none;font-size:24px}.about-copy .member-copy>p{min-width:0;flex:1;margin:0;text-align:center;font-size:20px;line-height:1.75;font-weight:500}.about-copy .member-card .member-quote{font-size:20px;line-height:1.75;margin:0;color:var(--ink);overflow-wrap:anywhere}
 .member-active{--member-accent:#6846bc;--member-tint:#f2edff;--member-border:#ded7f3;--member-avatar:#e5dafb;background:linear-gradient(110deg,var(--member-tint),#fff);border-color:var(--member-border)}
 .member-active[data-member-theme=teal]{--member-accent:#23736e;--member-tint:#edf8f5;--member-border:#c7e5de;--member-avatar:#d7eee7}
 .member-active[data-member-theme=amber]{--member-accent:#936017;--member-tint:#fff6e8;--member-border:#eeddbd;--member-avatar:#f7e6c7}
+.member-active[data-member-theme=orange]{--member-accent:#ac541f;--member-tint:#fff0e5;--member-border:#efd2bd;--member-avatar:#ffdfc5}
+.member-activating{background:linear-gradient(100deg,#edf4ff 0 50%,#f7f8fb 50% 100%);border-color:#d7dfea}.member-activating .member-avatar{background:linear-gradient(90deg,#dbe8fc 0 50%,#e9ecf2 50% 100%);color:#60748b}.member-activating h3{background:linear-gradient(90deg,#416da8 0 50%,#7d8594 50% 100%);background-clip:text;-webkit-background-clip:text;color:transparent}.member-activating .member-status{color:#68788d}.member-activating .member-status:before{background:linear-gradient(90deg,#6a96d2 0 50%,#a3aabb 50% 100%)}
 .member-active .member-avatar{background:var(--member-avatar);color:var(--member-accent)}.member-active h3,.member-active .member-status{color:var(--member-accent)}.member-active .member-status:before{background:var(--member-accent)}.member-active:hover{border-color:var(--member-accent)}
 @media(max-width:640px){.member-copy{gap:12px}.about-copy .member-copy>p,.about-copy .member-card .member-quote{font-size:18px}.member-card{padding-top:32px}}
+@media(forced-colors:active){.member-activating h3{background:none;color:CanvasText}}
