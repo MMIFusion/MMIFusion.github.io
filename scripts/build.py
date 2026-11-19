@@ -189,7 +189,7 @@ def community_members():
         quote=f'<p class="member-quote">“{E(member["quote"])}”{thanks}</p>' if member.get('quote') else ''
         theme=member.get('theme','violet') if state=='active' else state
         cards.append(f'<li class="member-card member-{state}" data-member-state="{state}" data-member-theme="{E(theme)}"><span class="member-avatar" aria-hidden="true">{E(member["name"][0])}</span><div class="member-copy"><h3>{E(member["name"])}</h3>{quote}{note}</div><span class="member-status">{status}</span></li>')
-    return '<section class="community-members" id="members" aria-labelledby="members-heading"><h2 id="members-heading">团队成员</h2><p>一起整理知识，也一起建设这个交流空间。</p><ol class="member-grid">'+''.join(cards)+'</ol></section>'
+    return '<section class="community-members" id="members" aria-labelledby="members-heading"><h2 id="members-heading">团队成员</h2><p>我们是去中心化的管理，账号由多个学校的兴趣小组成员构成。微信公众号所有权由在坚持更新的全体成员共同拥有，享受一切权益。为读者提供更好的学术环境！</p><ol class="member-grid">'+''.join(cards)+'</ol></section>'
 
 def about():
     return title_block('ABOUT MMIFUSION','因为热爱，所以分享。','多模态信息融合，一个围绕论文阅读与学术资源的交流空间。')+f'''<div class="wrap about-layout section compact-top"><section class="about-copy"><h2>从公众号，到学术资源主页。</h2><p>我们关注图像融合、多模态感知与相关研究。通过论文解读、研究动态和资源整理，帮助读者从具体问题出发，理解方法，也找到继续探索的入口。</p><p>主站整合公众号文章与数据资源目录，并逐步完善评估指标、研究团队、会议日程、投稿参考、导师招生和论文配色等栏目。</p>{community_members()}<h2 id="sources">内容与收录说明</h2><ul class="prose-list"><li>当前文章索引已合并公众号导出表，更新于 {DATA['snapshotDate']}，共 {len(ARTICLES)} 条，最新文章日期为 {DATA['latestArticleDate']}。</li>
