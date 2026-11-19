@@ -36,7 +36,9 @@
       "name": "小甜橙",
       "status": "departed",
       "theme": "orange",
-      "quote": "守住本心持续打磨，熬过这段时光，自有长风相伴"
+      "quote": "守住本心持续打磨，熬过这段时光，自有长风相伴",
+      "thanks": true,
+      "thanksSeparator": " | "
     },
     {
       "name": "YR",
