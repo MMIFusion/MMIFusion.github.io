@@ -28,7 +28,9 @@
     },
     {
       "name": "木木彡",
-      "status": "departed"
+      "status": "departed",
+      "quote": "跨小步，不停步，每天都有小进步。",
+      "thanks": true
     },
     {
       "name": "小甜橙",
@@ -39,11 +41,13 @@
     {
       "name": "YR",
       "status": "activating",
-      "quote": ""
+      "quote": "好事多磨"
     },
     {
       "name": "蓝白红",
-      "status": "departed"
+      "status": "departed",
+      "quote": "宇宙很大，生活更大",
+      "thanks": true
     },
     {
       "name": "Warren",
