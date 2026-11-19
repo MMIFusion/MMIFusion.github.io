@@ -185,7 +185,7 @@ def community_members():
         state=member['status']
         status={'active':'已激活','activating':'激活中','departed':'已退出'}[state]
         note='<p>“感谢参与”</p>' if state=='departed' and not member.get('quote') else ''
-        thanks=E(member.get('thanksSeparator',' '))+'感谢参与' if member.get('thanks') else ''
+        thanks=' | 感谢参与' if member.get('thanks') else ''
         quote=f'<p class="member-quote">“{E(member["quote"])}”{thanks}</p>' if member.get('quote') else ''
         theme=member.get('theme','violet') if state=='active' else state
         cards.append(f'<li class="member-card member-{state}" data-member-state="{state}" data-member-theme="{E(theme)}"><span class="member-avatar" aria-hidden="true">{E(member["name"][0])}</span><div class="member-copy"><h3>{E(member["name"])}</h3>{quote}{note}</div><span class="member-status">{status}</span></li>')
