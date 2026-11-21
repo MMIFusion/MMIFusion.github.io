@@ -3,20 +3,28 @@
   'use strict';
   const $ = (selector) => document.querySelector(selector);
   const menu = $('.menu-toggle');
-  menu?.addEventListener('click', () => {
-    const open = menu.getAttribute('aria-expanded') !== 'true';
+  const header = $('.site-header');
+  const setMenuOpen = open => {
     menu.setAttribute('aria-expanded', String(open));
     menu.setAttribute('aria-label', open ? '关闭导航' : '打开导航');
     $('#primary-nav').classList.toggle('open', open);
+  };
+  const menuIsOpen = () => menu?.getAttribute('aria-expanded') === 'true';
+  menu?.addEventListener('click', () => setMenuOpen(!menuIsOpen()));
+  header?.addEventListener('focusout', event => {
+    if (menuIsOpen() && event.relatedTarget && !header.contains(event.relatedTarget)) setMenuOpen(false);
+  });
+  matchMedia('(max-width: 980px)').addEventListener('change', event => {
+    if (!event.matches && menuIsOpen()) setMenuOpen(false);
   });
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && menu?.getAttribute('aria-expanded') === 'true') {
-      menu.click();
+    if (event.key === 'Escape' && menuIsOpen()) {
+      setMenuOpen(false);
       menu.focus({preventScroll:true});
     }
   });
   document.addEventListener('pointerdown', event => {
-    if (menu?.getAttribute('aria-expanded') === 'true' && !event.target.closest('.site-header')) menu.click();
+    if (menuIsOpen() && !header.contains(event.target)) setMenuOpen(false);
   });
   let toastTimer;
   const toast = (message) => {
@@ -60,7 +68,7 @@
         if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
         event.preventDefault();
         qrOpener = link;
-        if (menu?.getAttribute('aria-expanded') === 'true') menu.click();
+        if (menuIsOpen()) setMenuOpen(false);
         qrDialog.showModal();
         document.documentElement.classList.add('qr-modal-open');
       });
@@ -84,6 +92,7 @@
   const bookmarkButtons = [...document.querySelectorAll('[data-bookmark]')];
   const syncBookmarks = () => bookmarkButtons.forEach(button => {
     const active = saved.has(button.dataset.bookmark);
+    if (button.getAttribute('aria-pressed') === String(active) && button.hasAttribute('aria-label')) return;
     button.setAttribute('aria-pressed', String(active));
     button.setAttribute('aria-label', active ? '取消收藏文章' : '收藏文章');
     button.innerHTML = active ? '★<span>已收藏</span>' : '☆<span>收藏</span>';
@@ -128,6 +137,11 @@
   const search = $('#article-search');
   const topic = $('#topic-filter');
   const venue = $('#venue-filter');
+  const venueByLabel = new Map();
+  for (const option of venue?.options || []) {
+    const labels = [option.value, ...(option.dataset.aliases || '').split(',')].filter(Boolean);
+    for (const label of labels) venueByLabel.set(label.toLowerCase(), {name:option.value, labels});
+  }
   const sort = $('#sort-order');
   const savedOnly = $('#saved-only');
   const buttons = [...collection.querySelectorAll('[data-section]')];
@@ -144,7 +158,7 @@
       saved: params.get('saved') === '1',
       section: validSection ? params.get('section') : '',
       topic: validOption(topic, params.get('topic')) ? params.get('topic') : '',
-      venue: validOption(venue, params.get('venue')) ? params.get('venue') : '',
+      venue: venueByLabel.get((params.get('venue') || '').toLowerCase())?.name || '',
       sort: params.get('sort') === 'oldest' ? 'oldest' : 'newest',
       page: Math.max(1, Number.parseInt(params.get('page'), 10) || 1),
     };
@@ -170,7 +184,8 @@
     if (state.sort !== 'newest') params.set('sort', state.sort);
     if (state.page > 1) params.set('page', String(state.page));
     const suffix = params.toString();
-    history.replaceState(null, '', location.pathname + (suffix ? `?${suffix}` : '') + location.hash);
+    const target = location.pathname + (suffix ? `?${suffix}` : '') + location.hash;
+    if (target !== location.pathname + location.search + location.hash) history.replaceState(history.state, '', target);
   };
   const render = (updateURL = true) => {
     const terms = norm(state.query).split(' ').filter(Boolean);
@@ -205,15 +220,26 @@
     // Search metadata travels with the original article rows, so filtering works
     // immediately and offline without downloading the entire article JSON again.
     records = rows.map(node => {
-      const article = {id:node.dataset.articleId,venue:node.dataset.articleVenue,
+      const journal = venueByLabel.get(node.dataset.articleVenue.toLowerCase());
+      const article = {id:node.dataset.articleId,venue:journal?.name || node.dataset.articleVenue,
         topics:JSON.parse(node.dataset.articleTopics),date:node.querySelector('time').dateTime,
         section:node.querySelector('.article-date>span').textContent,
         title:node.querySelector('h3 a').firstChild.textContent};
-      return {node,article,searchable:norm([article.title,article.section,article.venue,...article.topics].join(' '))};
+      return {node,article,searchable:norm([article.title,article.section,...(journal?.labels || [article.venue]),...article.topics].join(' '))};
     });
     state = loadState();
     render();
-    onBookmarkChange = () => render();
+    onBookmarkChange = () => {
+      if (!state.saved) return;
+      const focused = document.activeElement;
+      const priorIndex = [...$('#article-list').children].indexOf(focused.closest('.article-row'));
+      render();
+      if (priorIndex >= 0 && !focused.isConnected) {
+        const remaining = $('#article-list').children;
+        const next = remaining[Math.min(priorIndex, remaining.length-1)];
+        (next?.querySelector('[data-bookmark]') || savedOnly)?.focus();
+      }
+    };
     savedOnly?.addEventListener('change', () => { state.saved = savedOnly.checked; state.page = 1; render(); });
     search?.addEventListener('input', () => { state.query = search.value; state.page = 1; render(); });
     topic?.addEventListener('change', () => { state.topic = topic.value; state.page = 1; render(); });
@@ -221,17 +247,20 @@
     sort?.addEventListener('change', () => { state.sort = sort.value; state.page = 1; render(); });
     buttons.forEach(button => button.addEventListener('click', () => { state.section = button.dataset.section; state.page = 1; render(); }));
     $('#reset-filters')?.addEventListener('click', reset);
-    $('[data-reset]')?.addEventListener('click', reset);
+    $('[data-reset]')?.addEventListener('click', () => { reset(); search?.focus(); });
     for (const [id, step] of [['prev-page', -1], ['next-page', 1]]) {
       $(`#${id}`).addEventListener('click', () => {
         state.page += step;
         render();
-        $('.result-summary').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});
+        const summary = collection.querySelector('.result-summary');
+        summary.tabIndex = -1;
+        summary.focus({preventScroll:true});
+        summary.scrollIntoView({behavior:document.documentElement.dataset.motion === 'off'?'instant':'smooth',block:'start'});
       });
     }
     addEventListener('popstate', () => { state = loadState(); render(false); });
     document.addEventListener('keydown', (event) => {
-      if (event.key === '/' && !event.metaKey && !event.ctrlKey && !event.altKey && !/INPUT|TEXTAREA|SELECT/.test(document.activeElement?.tagName) && !document.activeElement?.isContentEditable) {
+      if (event.key === '/' && !event.isComposing && !event.metaKey && !event.ctrlKey && !event.altKey && !document.querySelector('dialog[open]') && !/INPUT|TEXTAREA|SELECT/.test(document.activeElement?.tagName) && !document.activeElement?.isContentEditable) {
         event.preventDefault();
         search?.focus();
       }

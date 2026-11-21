@@ -30,22 +30,28 @@
       page:Math.min(Math.ceil(records.length/pageSize),Math.max(1,Number.parseInt(params.get('page'),10)||1))};
   };
   let state = readState();
+  let lastCategory;
   const saveState = () => {
     const params = new URLSearchParams();
     for (const key of ['q','category','task']) if (state[key]) params.set(key,state[key]);
     if (state.sort !== 'source') params.set('sort',state.sort);
     if (state.page > 1) params.set('page',state.page);
-    history.replaceState(history.state,'',location.pathname+(params.size?'?'+params:'')+location.hash);
+    const target = location.pathname+(params.size?'?'+params:'')+location.hash;
+    if (target !== location.pathname+location.search+location.hash) history.replaceState(history.state,'',target);
   };
   const syncControls = () => {
     search.value = state.q; sort.value = state.sort;
-    const tasks = [...new Set(records.filter(r => !state.category || r.category === state.category).map(r => r.task))];
-    if (!tasks.includes(state.task)) state.task = '';
-    task.replaceChildren(new Option('全部任务',''),...tasks.map(value => new Option(value,value)));
+    if (state.category !== lastCategory) {
+      const tasks = [...new Set(records.filter(r => !state.category || r.category === state.category).map(r => r.task))];
+      if (!tasks.includes(state.task)) state.task = '';
+      task.replaceChildren(new Option('全部任务',''),...tasks.map(value => new Option(value,value)));
+      lastCategory = state.category;
+    }
     task.value = state.task;
     categories.forEach(button => button.setAttribute('aria-pressed',String(button.dataset.datasetCategory === state.category)));
   };
   const render = (save = true) => {
+    syncControls();
     const terms = norm(state.q).split(' ').filter(Boolean);
     const matches = records.filter(r => (!state.category || r.category === state.category) && (!state.task || r.task === state.task) && terms.every(term => r.searchable.includes(term)));
     matches.sort((a,b) => state.sort === 'name' ? a.name.localeCompare(b.name,'en',{numeric:true}) || a.order-b.order : state.sort === 'year' ? b.year-a.year || a.order-b.order : a.order-b.order);
@@ -58,16 +64,19 @@
     $('#dataset-result-count').textContent = `找到 ${matches.length} 项资源 / ${records.length} 项收录`;
     $('#dataset-load-status').textContent = matches.length ? `已显示 ${visible.length} / ${matches.length} 项资源` : '';
     $('#dataset-more').hidden = visible.length >= matches.length;
-    syncControls(); if (save) saveState();
+    if (save) saveState();
   };
   const reset = () => {state={q:'',category:'',task:'',sort:'source',page:1};render();};
   categories.forEach(button => button.addEventListener('click', () => {
-    state.category = button.dataset.datasetCategory; state.page = 1; syncControls(); render();
+    state.category = button.dataset.datasetCategory; state.page = 1; render();
   }));
   search.addEventListener('input', () => {state.q=search.value;state.page=1;render();});
   task.addEventListener('change', () => {state.task=task.value;state.page=1;render();});
   sort.addEventListener('change', () => {state.sort=sort.value;state.page=1;render();});
-  document.querySelectorAll('[data-dataset-reset]').forEach(button => button.addEventListener('click',reset));
+  document.querySelectorAll('[data-dataset-reset]').forEach(button => button.addEventListener('click', () => {
+    reset();
+    if (button.closest('#dataset-empty')) search.focus();
+  }));
   $('#dataset-more').addEventListener('click', () => {
     const previous = new Set($('#dataset-results').children);
     state.page++; render();
@@ -93,22 +102,21 @@
     if (!boundImages.has(img)) {img.addEventListener('error',failed,{once:true});boundImages.add(img);}
     if (img.complete && !img.naturalWidth) failed();
   });
-  let selected = null, opener = null, pushedByThisPage = false, closingFromHistory = false;
+  let selected = null, opener = null, closingFromHistory = false;
   const hashId = () => {try {return location.hash.startsWith('#dataset=') ? decodeURIComponent(location.hash.slice(9)) : null;} catch {return null;}};
   const openDetail = (id, push = false, trigger = null) => {
     const record = byId.get(id);
     if (!record) return false;
     if (dialog.open && selected?.id === id) return true;
     selected = record;
-    if (trigger) opener = trigger;
+    if (trigger || opener?.dataset.datasetOpen !== id) opener = trigger;
     $('#dataset-dialog-title').textContent = record.name;
     $('#dataset-dialog-subtitle').textContent = record.title;
     const profile = record.profile.cloneNode(true);
     $('#dataset-dialog-content').replaceChildren(profile);
     bindImageErrors(profile);
     if (push && hashId() !== id) {
-      history.pushState(history.state,'',location.pathname+location.search+'#dataset='+encodeURIComponent(id));
-      pushedByThisPage = true;
+      history.pushState({...history.state, datasetDetail:id},'',location.pathname+location.search+'#dataset='+encodeURIComponent(id));
     }
     if (!dialog.open) {closingFromHistory=false;dialog.showModal();}
     root.classList.add('dataset-modal-open');dialog.scrollTop=0;
@@ -133,7 +141,7 @@
     const focusTarget = opener?.getClientRects().length ? opener : search;
     focusTarget.focus({preventScroll:true});
     if (closingFromHistory) {closingFromHistory=false;return;}
-    if (pushedByThisPage) {pushedByThisPage=false;history.back();}
+    if (history.state?.datasetDetail && history.state.datasetDetail === hashId()) history.back();
     else if (location.hash.startsWith('#dataset=')) history.replaceState(history.state,'',location.pathname+location.search+'#catalog');
   });
   $('[data-dataset-copy]').addEventListener('click', async () => {
@@ -150,7 +158,7 @@
       message.textContent='没有找到这个数据条目，请通过名称、任务或作者搜索。';message.hidden=false;
     }
   };
-  addEventListener('popstate', () => {pushedByThisPage=false;state=readState();render(false);syncHash();});
+  addEventListener('popstate', () => {state=readState();render(false);syncHash();});
   addEventListener('hashchange', syncHash);
   render(false);
   library.classList.add('catalog-ready');

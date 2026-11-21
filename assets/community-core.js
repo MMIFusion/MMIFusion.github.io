@@ -18,8 +18,9 @@
     {label:'蓄力',title:'再打磨一下，也是在向前。',note:'今天适合认真核对。若已准备好且临近截止，请按时提交。',yes:'复查实验 · 精简表达 · 备份文件',avoid:'等待运气 · 错过真实截止'},
     {label:'大吉',title:'好日子，留给认真准备的你。',note:'给自己一个积极的开始，余下的交给扎实的工作。',yes:'完成检查 · 保存回执 · 好好休息',avoid:'遗漏确认邮件 · 上传后不检查'}
   ];
+  const beijingDate = new Intl.DateTimeFormat('en-CA', {timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit'});
   function dateKey(date = new Date()) {
-    const parts = new Intl.DateTimeFormat('en-CA', {timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(date);
+    const parts = beijingDate.formatToParts(date);
     const values = Object.fromEntries(parts.map(p => [p.type,p.value]));
     return `${values.year}-${values.month}-${values.day}`;
   }

@@ -10,35 +10,52 @@
   const upcoming = $('#calendar-upcoming'), refreshDirectories = [];
   if (upcoming) upcoming.checked = new URLSearchParams(location.search).get('upcoming') === '1';
   const calendarEvents = $$('[data-calendar-event]').map(node => ({node,event:JSON.parse(node.dataset.calendarEvent)}));
+  const teaserCards = $$('.deadline-teaser');
+  const teaserData = $('#calendar-teasers');
+  const teaserEvents = teaserData ? JSON.parse(teaserData.textContent) : [];
+  const countdown = status => {
+    if (status.ended) return '已截止';
+    const minutes = Math.floor(status.remaining / 60000);
+    if (minutes === 0) return '不足 1 分钟';
+    const hours = Math.floor(minutes / 60);
+    return `${Math.floor(hours / 24)} 天 ${hours % 24} 时 ${minutes % 60} 分`;
+  };
+  const setText = (node, value) => { if (node.textContent !== value) node.textContent = value; };
   const refreshEvents = () => {
     const now = new Date();
     calendarEvents.forEach(record => {
       record.status = window.MMIFusionCalendar.status(record.event,now);
-      const {node,event,status} = record;
+      const {node,status} = record;
       node.classList.toggle('event-ended',status.ended);
       node.classList.toggle('event-imminent',status.imminent);
-      if (node.classList.contains('event-row')) node.hidden = !!upcoming?.checked && status.ended;
+      node.hidden = !!upcoming?.checked && status.ended;
       const counter = node.querySelector('[data-countdown]');
       if (counter) {
-        const minutes = Math.floor(Math.max(0,status.remaining) / 60000), hours = Math.floor(minutes / 60);
-        counter.textContent = status.ended ? '已截止' : minutes === 0 ? '不足 1 分钟' : `${Math.floor(hours / 24)} 天 ${hours % 24} 时 ${minutes % 60} 分`;
+        setText(counter, countdown(status));
         counter.classList.toggle('expired',status.ended);
       }
       const dateLabel = node.querySelector('.date-only');
-      if (dateLabel) dateLabel.textContent = status.ended ? '日期已过' : '按官方日期显示';
-      const note = node.querySelector('small');
-      if (note && node.classList.contains('deadline-teaser') && event.kind === 'deadline') note.textContent = status.imminent ? '72 小时内截止 · 请留足上传时间' : '距离截止 · 实时更新';
+      if (dateLabel) setText(dateLabel, status.ended ? '日期已过' : '按官方日期显示');
     });
-    const teasers = calendarEvents.filter(({node}) => node.classList.contains('deadline-teaser'));
-    const selected = teasers.filter(r => !r.status.ended).sort((a,b) => a.status.order-b.status.order).slice(0,3);
-    const selectedNodes = selected.map(r => r.node);
-    teasers.forEach(({node}) => {node.hidden = !selectedNodes.includes(node);});
-    const displayed = $$('.deadline-teaser').filter(node => !node.hidden);
-    // Avoid detaching a focused link on each timer tick when its order is unchanged.
-    if (displayed.some((node,index) => node !== selectedNodes[index])) {
-      selectedNodes.forEach(node => $('.deadline-strip').append(node));
-    }
-    if ($('.deadline-empty')) $('.deadline-empty').hidden = selected.length > 0;
+    if (!teaserData) return;
+    const selected = teaserEvents.map(event => ({event, status:window.MMIFusionCalendar.status(event, now)}))
+      .filter(({status}) => !status.ended)
+      .sort((a,b) => a.status.order - b.status.order).slice(0,teaserCards.length);
+    teaserCards.forEach((card,index) => {
+      const record = selected[index];
+      card.hidden = !record;
+      if (!record) return;
+      const {event,status} = record;
+      const href = 'calendar.html#' + event.id;
+      if (card.getAttribute('href') !== href) card.setAttribute('href', href);
+      card.classList.toggle('event-imminent',status.imminent);
+      setText(card.querySelector('span'),event.title);
+      const deadline = event.kind === 'deadline';
+      setText(card.querySelector('strong'),deadline ? countdown(status) : event.start.replaceAll('-','.'));
+      const note = deadline ? (status.imminent ? '72 小时内截止 · 请留足上传时间' : '距离截止 · 实时更新') : '官方日期 · 具体时刻未列明';
+      setText(card.querySelector('small'),note);
+    });
+    $('.deadline-empty').hidden = selected.length > 0;
   };
   refreshEvents();
 
@@ -53,7 +70,8 @@
     let initialVenueHash = paginated ? location.hash.slice(1) : '';
     search.value = params.get('q') || '';
     selects.forEach(select => { const value = params.get(select.dataset.cardFilter); if ([...select.options].some(o => o.value === value)) select.value = value; });
-    const render = (save = true) => {
+    const isCalendar = directory.dataset.directory === 'calendar';
+    const render = (save = true, hash = paginated || isCalendar ? '' : location.hash) => {
       const terms = norm(search.value).split(/\s+/).filter(Boolean);
       const matches = [];
       cards.forEach(card => {
@@ -91,7 +109,11 @@
         selects.forEach(s => { if (s.value) query.set(s.dataset.cardFilter, s.value); });
         if (upcoming?.checked) query.set('upcoming','1');
         if (paginated && page > 1) query.set('page', page);
-        history.replaceState(null, '', location.pathname + (query.size ? '?' + query : '') + (paginated ? '' : location.hash));
+        history.replaceState(null, '', location.pathname + (query.size ? '?' + query : '') + hash);
+        if (isCalendar && !hash) {
+          directory.querySelector('[data-conference-jump][aria-current]')?.removeAttribute('aria-current');
+          directory.querySelector('.conference-current')?.classList.remove('conference-current');
+        }
       }
     };
     search.addEventListener('input', () => {page = 1; render();});
@@ -118,34 +140,53 @@
         try { target = document.getElementById(decodeURIComponent(hash.slice(1))); } catch { return; }
         const card = target?.closest('.conference-card');
         if (!card || !directory.contains(card)) return;
-        // A shortcut must still work after search, filtering or hiding ended nodes.
-        if (card.hidden || target.hidden || card.querySelector('.event-row[hidden]')) {
-          search.value = ''; selects.forEach(select => { select.value = ''; });
-          upcoming.checked = false; refreshEvents(); render();
+        // Keep applicable filters, even when some other event in this card has ended.
+        if (!norm(search.value).split(/\s+/).every(term => norm(card.dataset.search).includes(term))) search.value = '';
+        selects.forEach(select => {
+          if (select.value && !JSON.parse(card.dataset[select.dataset.cardFilter]).includes(select.value)) select.value = '';
+        });
+        render(false);
+        if (upcoming.checked && (target.hidden || card.hidden)) {
+          upcoming.checked = false;
+          refreshEvents();
         }
+        render(true,hash);
         shortcuts.forEach(link => {
           if (link.hash === '#' + card.id) link.setAttribute('aria-current','location');
           else link.removeAttribute('aria-current');
         });
         cards.forEach(item => item.classList.toggle('conference-current',item === card));
         if (scroll) {
-          card.focus({preventScroll:true});
+          target.tabIndex = -1;
+          target.focus({preventScroll:true});
           target.scrollIntoView({block:'start',behavior:document.documentElement.dataset.motion === 'off' ? 'instant' : 'smooth'});
         }
       };
       shortcuts.forEach(link => link.addEventListener('click', event => {
         if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
         event.preventDefault();
-        revealConference(link.hash);
         if (location.hash !== link.hash) history.pushState(null,'',location.pathname + location.search + link.hash);
+        revealConference(link.hash);
       }));
+      addEventListener('popstate', () => {
+        const restored = new URLSearchParams(location.search);
+        search.value = restored.get('q') || '';
+        selects.forEach(select => { select.value = restored.get(select.dataset.cardFilter) || ''; });
+        upcoming.checked = restored.get('upcoming') === '1';
+        refreshEvents();
+        render(false);
+        if (!location.hash) {
+          shortcuts.forEach(link => link.removeAttribute('aria-current'));
+          cards.forEach(card => card.classList.remove('conference-current'));
+        }
+      });
       addEventListener('hashchange', () => revealConference(location.hash));
       if (location.hash) requestAnimationFrame(() => revealConference(location.hash));
     }
   });
 
   const refreshCalendar = () => {refreshEvents();refreshDirectories.forEach(render => render());};
-  if (calendarEvents.length) {
+  if (calendarEvents.length || teaserEvents.length) {
     setInterval(refreshCalendar,30000);
     document.addEventListener('visibilitychange', () => {if (!document.hidden) refreshCalendar();});
   }
@@ -197,37 +238,99 @@
   if (lab) {
     const canvas = $('#metric-canvas'), ctx = canvas.getContext('2d', {willReadFrequently:true});
     const message = $('#metric-message'), exporter = $('#metric-export');
-    let latest, sequence = 0;
-    const calculate = name => {
-      latest = {name, width:canvas.width, height:canvas.height, ...window.FusionMetrics.evaluate(ctx.getImageData(0, 0, canvas.width, canvas.height).data, canvas.width, canvas.height)};
+    let latest, worker, sequence = 0;
+    const cancelPending = () => {
+      worker?.terminate();
+      worker = null;
+      return ++sequence;
+    };
+    const showResult = (name, width, height, values) => {
+      latest = {name, width, height, ...values};
       ['en', 'sd', 'sf'].forEach(k => $('#metric-' + k).textContent = latest[k].toFixed(4));
-      $('#metric-image-info').textContent = `${name} · ${canvas.width} × ${canvas.height} px`;
+      $('#metric-image-info').textContent = `${name} · ${width} × ${height} px`;
       exporter.disabled = false; message.textContent = '已完成 · 结果仅描述本图的统计特性';
     };
     const sample = kind => {
-      sequence++; canvas.width = 256; canvas.height = 192;
+      cancelPending(); canvas.width = 256; canvas.height = 192;
       const frame = ctx.createImageData(256, 192);
       for (let y = 0; y < 192; y++) for (let x = 0; x < 256; x++) {
         const i = (y * 256 + x) * 4;
         const value = kind === 'flat' ? 128 : kind === 'checker' ? ((Math.floor(x / 16) + Math.floor(y / 16)) % 2) * 255 : x;
         frame.data[i] = frame.data[i+1] = frame.data[i+2] = value; frame.data[i+3] = 255;
       }
-      ctx.putImageData(frame, 0, 0); calculate({flat:'纯灰示例', checker:'棋盘示例', gradient:'渐变示例'}[kind]);
+      ctx.putImageData(frame, 0, 0);
+      showResult({flat:'纯灰示例', checker:'棋盘示例', gradient:'渐变示例'}[kind],
+        frame.width, frame.height, window.FusionMetrics.evaluate(frame.data, frame.width, frame.height));
       $$('[data-metric-sample]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.metricSample === kind)));
       $('#metric-file').value = '';
     };
     $$('[data-metric-sample]').forEach(b => b.addEventListener('click', () => sample(b.dataset.metricSample)));
     $('#metric-file').addEventListener('change', async event => {
       const file = event.target.files[0]; if (!file) return;
-      const token = ++sequence;
+      const token = cancelPending();
+      exporter.disabled = !latest;
       if (file.size > 20 * 1024 * 1024 || !/^image\/(png|jpeg|webp|bmp|x-ms-bmp)$/.test(file.type)) { message.textContent = '请选择不超过 20 MB 的 PNG、JPEG、WebP 或 BMP 图片；当前结果未改变。'; return; }
-      const url = URL.createObjectURL(file), img = new Image(); message.textContent = '正在本地读取图片…';
+      const url = URL.createObjectURL(file), img = new Image();
+      exporter.disabled = true;
+      message.textContent = '正在本地读取图片…';
+      const fail = text => {
+        if (token !== sequence) return;
+        exporter.disabled = !latest;
+        message.textContent = text + '；当前结果未改变。';
+      };
       try {
-        img.src = url; await img.decode(); if (token !== sequence) return;
-        if (img.naturalWidth * img.naturalHeight > 16000000) throw new Error('图片超过 1600 万像素，请裁剪后重试');
-        canvas.width = img.naturalWidth; canvas.height = img.naturalHeight; ctx.drawImage(img, 0, 0);
-        calculate(file.name); $$('[data-metric-sample]').forEach(b => b.setAttribute('aria-pressed', 'false'));
-      } catch (error) { if (token === sequence) message.textContent = (error.message.startsWith('图片超过') ? error.message : '无法解码这张图片，请换一张图片重试') + '；当前结果未改变。'; }
+        img.src = url;
+        await img.decode();
+        if (token !== sequence) return;
+        const width = img.naturalWidth, height = img.naturalHeight;
+        if (width * height > 16000000) { fail('图片超过 1600 万像素，请裁剪后重试'); return; }
+        const finish = values => {
+          if (token !== sequence) return;
+          const scale = Math.min(1, 960 / Math.max(width, height));
+          canvas.width = Math.max(1, Math.round(width * scale));
+          canvas.height = Math.max(1, Math.round(height * scale));
+          ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+          showResult(file.name, width, height, values);
+          $$('[data-metric-sample]').forEach(b => b.setAttribute('aria-pressed', 'false'));
+        };
+        const fallback = () => {
+          if (token !== sequence) return;
+          try {
+            const surface = document.createElement('canvas');
+            surface.width = width;
+            surface.height = height;
+            finish(window.FusionMetrics.evaluateImage(surface, img));
+          } catch { fail('无法处理这张图片，请裁剪后重试'); }
+        };
+        message.textContent = '正在本地计算指标…';
+        if (!window.Worker || !window.createImageBitmap || !window.OffscreenCanvas) { fallback(); return; }
+        let bitmap;
+        try {
+          bitmap = await createImageBitmap(img);
+          if (token !== sequence) { bitmap.close(); return; }
+          worker = new Worker(lab.dataset.workerSrc);
+          worker.onmessage = ({data}) => {
+            if (token !== sequence) return;
+            worker.terminate();
+            worker = null;
+            finish(data);
+          };
+          worker.onerror = event => {
+            event.preventDefault();
+            if (token !== sequence) return;
+            worker.terminate();
+            worker = null;
+            fallback();
+          };
+          worker.postMessage(bitmap, [bitmap]);
+        } catch {
+          if (token !== sequence) return;
+          bitmap?.close();
+          worker?.terminate();
+          worker = null;
+          fallback();
+        }
+      } catch { fail('无法解码这张图片，请换一张图片重试'); }
       finally { URL.revokeObjectURL(url); }
     });
     exporter.addEventListener('click', () => {
@@ -264,6 +367,7 @@
     }
     source.addEventListener('input', () => source.setCustomValidity(''));
     form.addEventListener('input', () => {
+      $('#submission-text').hidden = true;
       $('#submission-actions').hidden = true;
       $('#submission-help').textContent = '内容已修改，请重新生成投稿预览。';
     });

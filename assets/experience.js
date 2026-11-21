@@ -115,7 +115,7 @@
   let scrollFrame, lastProgress;
   const progress = () => {
     const remaining = document.documentElement.scrollHeight - innerHeight;
-    const value = remaining > 0 ? String(Math.min(1,scrollY / remaining)) : '0';
+    const value = remaining > 0 ? String(Math.max(0, Math.min(1,scrollY / remaining))) : '0';
     // Keep this inherited property off <html>: updating it there invalidates
     // styles across every card and detail in the document on every scroll frame.
     if (progressBar && value !== lastProgress) {
@@ -124,8 +124,13 @@
     if (backToTop && backToTop.hidden !== (scrollY < 650)) backToTop.hidden = scrollY < 650;
     scrollFrame = null;
   };
-  addEventListener('scroll', () => { if (!scrollFrame) scrollFrame = requestAnimationFrame(progress); }, {passive:true});
-  addEventListener('resize', progress); progress();
+  const scheduleProgress = () => {
+    if (!scrollFrame) scrollFrame = requestAnimationFrame(progress);
+  };
+  addEventListener('scroll', scheduleProgress, {passive:true});
+  addEventListener('resize', scheduleProgress);
+  if ('ResizeObserver' in window) new ResizeObserver(scheduleProgress).observe(document.body);
+  progress();
   $('.back-to-top')?.addEventListener('click', () => scrollTo({top:0,behavior:motion?'smooth':'instant'}));
   $$('.resource-nav a').forEach(link => {
     if (new URL(link.href).pathname === location.pathname && !link.hash) link.setAttribute('aria-current','page');

@@ -23,9 +23,25 @@ def filterattrs(record,search,**filters):
     return f'data-directory-card data-search="{E(search)}" '+ ' '.join(f'data-{key}="{E(json.dumps(value,ensure_ascii=False))}"' for key,value in filters.items())
 
 def deadline_strip():
-    events=[(c,e) for c in P['conferences'] for e in c['events']]
-    items=''.join(f'<a href="calendar.html#{e["id"]}" class="deadline-teaser" data-calendar-event="{E(json.dumps(e))}"><span>{E(c["name"])} · {E(e["label"])}</span><strong '+(f'data-countdown="{e["at"]}"' if e['kind']=='deadline' else '')+'>'+(e['at'][:10].replace('-','.') if e['kind']=='deadline' else e['start'].replace('-','.'))+'</strong><small>'+('距离截止 · 实时更新' if e['kind']=='deadline' else '官方日期 · 具体时刻未列明')+'</small></a>' for c,e in events)
-    return '<section class="wrap deadline-strip" aria-label="近期学术节点"><div class="deadline-caption"><span class="red-dot"></span><strong>学术日历</strong><a href="calendar.html">查看全部 →</a></div>'+items+'<p class="deadline-empty" hidden>已收录的日程均已结束。<a href="calendar.html">查看往期节点 →</a></p></section>'
+    events = []
+    for conference in P['conferences']:
+        for event in conference['events']:
+            entry = {key: event[key] for key in ('id', 'kind', 'at', 'start', 'endExclusive') if key in event}
+            entry['title'] = conference['name'] + ' · ' + event['label']
+            events.append(entry)
+    # The static preview uses the catalog snapshot date so the build stays reproducible.
+    # Exact countdowns and the actual next three events are selected in the browser.
+    snapshot = P.get('calendarVerifiedAt', P['verifiedAt'])
+    def official_date(event):
+        return event.get('at', event.get('start'))[:10]
+    recent = sorted((event for event in events if official_date(event) >= snapshot), key=official_date)
+    preview = (recent + sorted((e for e in events if official_date(e) < snapshot), key=official_date, reverse=True))[:3]
+    cards = []
+    for event in preview:
+        date = official_date(event).replace('-', '.')
+        cards.append(f'<a href="calendar.html#{E(event["id"])}" class="deadline-teaser"><span>{E(event["title"])}</span><strong>{date}</strong><small>官方日期 · 查看节点详情</small></a>')
+    payload = json.dumps(events, ensure_ascii=False, separators=(',', ':')).replace('<', r'\u003c')
+    return '<section class="wrap deadline-strip" aria-label="近期学术节点"><div class="deadline-caption"><span class="red-dot"></span><strong>学术日历</strong><a href="calendar.html">查看全部 →</a></div>'+''.join(cards)+'<p class="deadline-empty" hidden>已收录的日程均已结束。<a href="calendar.html">查看往期节点 →</a></p><script type="application/json" id="calendar-teasers">'+payload+'</script></section>'
 
 def dataset_showcase():
     cards=''.join(f'<article class="dataset-preview"><a class="dataset-visual dataset-{d["id"]}" href="{E(d["catalog"])}"><img src="assets/datasets/{d["id"]}.png" alt="{E(d["name"])} 数据集红外与可见光图像示例" loading="lazy"><span>{E(d["label"])}<b>↗</b></span></a><div class="dataset-body"><p class="eyebrow">OPEN DATA / {E(d["id"].upper())}</p><h3>{E(d["name"])}</h3><p>{E(d["description"])}</p><div class="card-actions"><a class="text-link" href="{E(d["catalog"])}">查看数据档案 →</a>{link(d["source"],"原始项目")}</div></div></article>' for d in P['datasets'])
@@ -84,7 +100,8 @@ def opportunities():
         cards.append(f'<article class="opportunity-card" id="{o["id"]}" {attrs}><div class="opportunity-header"><div><p class="eyebrow">{E(o["institution"])} · {E(o["city"])}</p><h2>{E(o["title"])}</h2><p>{E(o["team"])}</p></div><span class="status-label open-status">{E(o["status"])}</span></div>{tags(o["types"])}<p>{E(o["description"])}</p><details><summary>申请准备与联系渠道</summary><p>{E(o["requirements"])}</p><p>请在官方主页查看联系方式。本站不代收申请材料。</p></details><div class="card-actions">{link(o["source"],"查看官方招募说明","button primary")}<a href="teams.html#{o["teamId"]}" class="text-link">了解团队 →</a><button class="text-link" data-copy-link="opportunities.html#{o["id"]}">复制条目链接</button></div>{source(o["source"])}</article>')
     return f'<section class="wrap section compact-top" data-directory="opportunities">{filterbar("opportunities","搜索学校、导师或研究方向",[("type","类别",["硕士","博士","博士后","科研助理"]),("city","城市",["大连"])])}<div class="opportunity-list">{"".join(cards)}</div>{empty()}<div class="directory-bottom"><p>长期招募按导师公开说明收录，不等同于保证当前名额。</p><a class="text-link" href="contribute.html?type=招生信息">提交招生信息 →</a></div></section>'
 
-def venues():
+def venues(articles):
+    indexed_venues = {a['venue'].casefold(): a['venue'] for a in articles if a['venue']}
     cards=[]
     for v in P['venues']:
         attrs=filterattrs(v,' '.join([v['name'],v['fullName'],v['scope'],v['fit'],*v['focus'],*v['tags'],*v.get('aliases',[])]),type=[v['type']],topic=v['tags'],ccf=[v['ccf']],focus=v['focus'])
@@ -93,9 +110,14 @@ def venues():
         gradecss=v['ccf'].lower() if v['ccf']!='未收录' else 'extra'
         guide=link(v['guide'],v.get('guideLabel','作者指南')) if v['guide'] else ''
         guide_note=f'<p class="venue-guide-note">{E(v["guideNote"])}</p>' if v.get('guideNote') else ''
-        reading='papers.html?'+urlencode({'venue':v['articleVenue']} if v['articleVenue'] else {'q':v['relatedQuery']})
+        candidates = [v['articleVenue'], v['name'], v['fullName'], v['relatedQuery'], *v.get('aliases', [])]
+        venue = next((indexed_venues[name.casefold()] for name in candidates if name and name.casefold() in indexed_venues), None)
+        reading = ''
+        if venue:
+            query = urlencode({'venue': venue})
+            reading = f'<a href="papers.html?{E(query)}">相关解读 →</a>'
         fullname=f'<p class="venue-fullname">{E(v["fullName"])}</p>' if v['fullName']!=v['name'] else ''
-        cards.append(f'<article class="venue-card" id="venue-{v["id"]}" {attrs}><div class="venue-top"><div><span class="ccf-badge ccf-{gradecss}">{grade}</span><span class="venue-type">{E(v["type"])}</span></div><label class="compare-check"><input type="checkbox" data-compare="{v["id"]}">加入对比</label></div><h2>{E(v["name"])}</h2>{fullname}{tags(v["tags"])}<p>{E(v["scope"])}</p><div class="fit-note"><strong>选刊思路</strong><p>{E(v["fit"])}</p></div><div class="card-actions">{link(v["source"],v.get("sourceLabel","征稿范围"))}{guide}<a href="{E(reading)}">相关解读 →</a>{calendarlink}</div>{guide_note}{source(v["source"],v.get("verifiedAt"))}</article>')
+        cards.append(f'<article class="venue-card" id="venue-{v["id"]}" {attrs}><div class="venue-top"><div><span class="ccf-badge ccf-{gradecss}">{grade}</span><span class="venue-type">{E(v["type"])}</span></div><label class="compare-check"><input type="checkbox" data-compare="{v["id"]}">加入对比</label></div><h2>{E(v["name"])}</h2>{fullname}{tags(v["tags"])}<p>{E(v["scope"])}</p><div class="fit-note"><strong>选刊思路</strong><p>{E(v["fit"])}</p></div><div class="card-actions">{link(v["source"],v.get("sourceLabel","征稿范围"))}{guide}{reading}{calendarlink}</div>{guide_note}{source(v["source"],v.get("verifiedAt"))}</article>')
     pagination='<nav class="venue-pagination" data-venue-pagination aria-label="投稿推荐分页" tabindex="-1" hidden><button type="button" class="button secondary" data-venue-prev>← 上一页</button><span data-venue-page-label aria-live="polite"></span><button type="button" class="button secondary" data-venue-next>下一页 →</button></nav>'
     spotlight=f'<aside class="venue-spotlight"><div><span class="eyebrow">JOURNAL SPOTLIGHT</span><h2>Information Fusion</h2><p>聚焦多源信息融合的期刊 · 图像融合与多模态研究</p></div><a class="button secondary" href="venues.html?type=期刊&amp;q=Information%20Fusion#venue-information-fusion">查看期刊档案 →</a></aside>'
     counts=''.join(f'<div><strong>{sum(v["ccf"]==rank for v in P["venues"])}</strong><span>{"CCF "+rank+" 类" if rank!="未收录" else "领域补充"}</span></div>' for rank in ['A','B','C','未收录'])
@@ -103,7 +125,7 @@ def venues():
 
 def metrics():
     cards=''.join(f'<article class="metric-definition"><span class="metric-code">{m["id"]}</span><h3>{E(m["name"])}</h3><code>{E(m["formula"])}</code><p>{E(m["description"])}</p><small>{E(m["caution"])}</small></article>' for m in P['metrics'])
-    return f'''<section class="wrap section compact-top"><div class="metric-lab" id="metric-lab"><div class="lab-heading"><div><p class="eyebrow">FUSION IMAGE LAB</p><h2>上传一张图，试算三个指标。</h2><p>图片在当前浏览器内计算，不上传服务器。</p></div><a class="text-link" href="downloads/fusion_metrics.py" download>下载 Python 实现 ↓</a></div><div class="lab-layout"><div class="lab-input"><div class="canvas-frame"><canvas id="metric-canvas" width="256" height="192" aria-label="待评估图像预览"></canvas></div><label class="button primary upload-button">选择本地图片<input type="file" id="metric-file" accept="image/png,image/jpeg,image/webp,image/bmp"></label><p class="small-note">PNG / JPEG / WebP / BMP · 最大 20 MB、1600 万像素</p><div class="sample-buttons"><span>试用示例</span><button data-metric-sample="gradient">渐变</button><button data-metric-sample="checker">棋盘</button><button data-metric-sample="flat">纯灰</button></div></div><div class="lab-results"><p id="metric-image-info">选择示例或上传图片</p><div class="metric-values" aria-live="polite"><div><span>EN · 信息熵</span><strong id="metric-en">—</strong><small>bit</small></div><div><span>SD · 标准差</span><strong id="metric-sd">—</strong><small>灰度值</small></div><div><span>SF · 空间频率</span><strong id="metric-sf">—</strong><small>灰度值</small></div></div><p id="metric-message" role="status"></p><button id="metric-export" class="button secondary" disabled>导出结果 CSV ↓</button><details class="metric-convention"><summary>查看计算约定</summary><p>彩色图按 round(0.299R + 0.587G + 0.114B) 转为 8 位灰度；透明像素先与白底合成。使用原始尺寸，不缩放。EN 使用 256 桶，SD 分母为 N，SF 各方向按有效相邻像素对归一化。浏览器解码与其他库可能有细微差异。</p></details></div></div></div><div class="metric-definitions">{cards}</div><div class="note-box"><strong>先固定评测协议，再比较方法。</strong><p>这三个指标描述图像统计特性，不是融合质量的完整结论。与论文数值比较时，需统一灰度转换、值域、裁剪与实现版本。{link(P['metricSource'],'查看完整融合评估工具箱')}</p></div></section>'''
+    return f'''<section class="wrap section compact-top"><div class="metric-lab" id="metric-lab" data-worker-src="assets/metrics-core.js"><div class="lab-heading"><div><p class="eyebrow">FUSION IMAGE LAB</p><h2>上传一张图，试算三个指标。</h2><p>图片在当前浏览器内计算，不上传服务器。</p></div><a class="text-link" href="downloads/fusion_metrics.py" download>下载 Python 实现 ↓</a></div><div class="lab-layout"><div class="lab-input"><div class="canvas-frame"><canvas id="metric-canvas" width="256" height="192" aria-label="待评估图像预览"></canvas></div><label class="button primary upload-button">选择本地图片<input type="file" id="metric-file" accept="image/png,image/jpeg,image/webp,image/bmp"></label><p class="small-note">PNG / JPEG / WebP / BMP · 最大 20 MB、1600 万像素</p><div class="sample-buttons"><span>试用示例</span><button data-metric-sample="gradient">渐变</button><button data-metric-sample="checker">棋盘</button><button data-metric-sample="flat">纯灰</button></div></div><div class="lab-results"><p id="metric-image-info">选择示例或上传图片</p><div class="metric-values" aria-live="polite"><div><span>EN · 信息熵</span><strong id="metric-en">—</strong><small>bit</small></div><div><span>SD · 标准差</span><strong id="metric-sd">—</strong><small>灰度值</small></div><div><span>SF · 空间频率</span><strong id="metric-sf">—</strong><small>灰度值</small></div></div><p id="metric-message" role="status"></p><button id="metric-export" class="button secondary" disabled>导出结果 CSV ↓</button><details class="metric-convention"><summary>查看计算约定</summary><p>彩色图按 round(0.299R + 0.587G + 0.114B) 转为 8 位灰度；透明像素先与白底合成。使用原始尺寸，不缩放。EN 使用 256 桶，SD 分母为 N，SF 各方向按有效相邻像素对归一化。浏览器解码与其他库可能有细微差异。</p></details></div></div></div><div class="metric-definitions">{cards}</div><div class="note-box"><strong>先固定评测协议，再比较方法。</strong><p>这三个指标描述图像统计特性，不是融合质量的完整结论。与论文数值比较时，需统一灰度转换、值域、裁剪与实现版本。{link(P['metricSource'],'查看完整融合评估工具箱')}</p></div></section>'''
 
 def downloads():
     return f'''<section class="wrap section compact-top"><div class="section-heading"><div><p class="eyebrow">READY FOR YOUR NEXT FIGURE</p><h2>下载后，就能开始画。</h2><p>本站原创基础模板，均可直接下载。示意数据仅用于演示排版。</p></div></div><div class="download-grid"><article class="download-card template-feature"><span class="file-type">SVG · 可编辑</span><h3>双模态融合框架图</h3><img src="downloads/fusion-diagram.svg" width="640" height="260" alt="可编辑双模态融合框架图示例"><p>包含两路输入、编码器、融合模块和输出。可在矢量编辑器中修改。</p><a class="button secondary" href="downloads/fusion-diagram.svg" download>下载框架图 ↓</a></article><article class="download-card"><span class="file-type">PYTHON · MATPLOTLIB</span><h3>论文折线图模板</h3><p>三组演示方法、明确的线型与标记，运行后导出 PDF 和 PNG。数据集中在脚本开头，便于替换。</p><div class="line-preview" aria-hidden="true"><span>——●—— 方法 A</span><span>– – ■ – – 方法 B</span><span>····▲···· 方法 C</span></div><a class="button secondary" href="downloads/plot_template.py" download>下载绘图脚本 ↓</a></article></div></section>'''

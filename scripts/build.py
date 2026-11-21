@@ -86,14 +86,16 @@ def page(filename, title, body, active='resources', description=None, extras='')
         extras += '<link rel="stylesheet" href="assets/calendar-nav.css">'
     if 'class="article-stat-wrap"' in body:
         extras += '<link rel="stylesheet" href="assets/article-stats.css">'
-    description=description or SITE['description']
+    if description is None:
+        intro = re.search(r'<p class="page-description">([^<]+)</p>', body)
+        description = html.unescape(intro.group(1)) if intro else SITE['description']
     canonical=SITE['url']+'/' + ('' if filename=='index.html' else filename)
-    doc=f'''<!doctype html><html lang="zh-CN" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{E(title)} · 多模态信息融合</title><meta name="description" content="{E(description)}"><meta name="theme-color" content="#11162e"><script>document.documentElement.classList.replace("no-js","js");try{{var motionPreference=localStorage.getItem("mmifusion-motion");document.documentElement.dataset.motion=motionPreference==="on"?"on":(motionPreference==="off"||matchMedia("(prefers-reduced-motion: reduce)").matches)?"off":"on"}}catch(e){{document.documentElement.dataset.motion=matchMedia("(prefers-reduced-motion: reduce)").matches?"off":"on"}}</script><link rel="canonical" href="{canonical}"><meta property="og:title" content="{E(title)} · 多模态信息融合"><meta property="og:description" content="{E(description)}"><meta property="og:type" content="website"><meta property="og:url" content="{canonical}"><meta property="og:image" content="{SITE['url']}/assets/avatar.png"><link rel="icon" href="assets/avatar.png" type="image/png"><link rel="apple-touch-icon" href="assets/avatar.png"><link rel="preload" href="assets/fonts/mmifusion-sans.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="assets/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="assets/site.css"><script src="assets/site.js" defer></script></head><body class="page-{filename.removesuffix('.html')}">{header(active, filename)}<main id="main">{body}</main>{footer(filename, title)}{qr_dialog()}{design.motion_controls()}{community.luck_dialog()}<div id="toast" role="status" aria-live="polite"></div></body></html>'''
+    doc=f'''<!doctype html><html lang="zh-CN" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{E(title)} · 多模态信息融合</title><meta name="description" content="{E(description)}"><meta name="theme-color" content="#11162e"><script>document.documentElement.classList.replace("no-js","js");try{{var motionPreference=localStorage.getItem("mmifusion-motion");document.documentElement.dataset.motion=motionPreference==="on"?"on":(motionPreference==="off"||matchMedia("(prefers-reduced-motion: reduce)").matches)?"off":"on"}}catch(e){{document.documentElement.dataset.motion=matchMedia("(prefers-reduced-motion: reduce)").matches?"off":"on"}}</script><link rel="canonical" href="{canonical}"><meta property="og:title" content="{E(title)} · 多模态信息融合"><meta property="og:description" content="{E(description)}"><meta property="og:type" content="website"><meta property="og:description" content="{E(description)}"><meta property="og:url" content="{canonical}"><meta property="og:image" content="{SITE['url']}/assets/avatar.png"><link rel="icon" href="assets/avatar.png" type="image/png"><link rel="apple-touch-icon" href="assets/avatar.png"><link rel="preload" href="assets/fonts/mmifusion-sans.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="assets/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="assets/site.css"><script src="assets/site.js" defer></script></head><body class="page-{filename.removesuffix('.html')}">{header(active, filename)}<main id="main">{body}</main>{footer(filename, title)}{qr_dialog()}{design.motion_controls()}{community.luck_dialog()}<div id="toast" role="status" aria-live="polite"></div></body></html>'''
     doc=doc.replace('</head>', '<noscript><style>.collection-controls,.menu-toggle,.directory-toolbar,.calendar-tools label,.compare-check,.comparison-bar,.bookmark-button,.metric-lab,.contribution-form,.submission-preview{display:none}.hero-search,.calendar-view-options{display:none}@media(max-width:640px){.header-inner{height:auto;min-height:72px;flex-wrap:wrap;padding-block:12px}.header-inner nav{position:static;display:flex;flex-direction:row;flex-wrap:wrap;padding:0;box-shadow:none;border:0;margin:0}.header-inner nav a{font-size:12px;padding:8px}.header-inner nav a[aria-current]:after{bottom:2px}}</style></noscript></head>')
     doc=doc.replace('</head>', extras+'</head>')
     doc=performance.images(doc)
     # Match each document to its exact JS/CSS, including across rolling Pages caches.
-    doc=re.sub(r'((?:href|src)=")(?P<asset>assets/[^"?]+\.(?:css|js|woff2))"',
+    doc=re.sub(r'((?:href|src|data-worker-src)=")(?P<asset>assets/[^"?]+\.(?:css|js|woff2))"',
         lambda m: m.group(1)+m.group('asset')+'?v='+hashlib.sha256((ROOT/m.group('asset')).read_bytes()).hexdigest()[:12]+'"', doc)
     if filename=='404.html':
         doc=doc.replace('<head>', '<head><base href="/"><meta name="robots" content="noindex">')
@@ -121,23 +123,35 @@ def row(a):
 def collection(items, scope='all', filterable=True):
     sections=Counter(a['section'] for a in items)
     topic_counts=Counter(t for a in items for t in a['topics'])
-    venues=sorted(set(a['venue'] for a in items if a['venue']))
+    # Both source labels occur in the archive. Keep the original title and metadata
+    # while offering one filter that also understands previously shared URLs.
+    venue_aliases={'Information Fusion':['INFFUS']}
+    canonical={alias:name for name,aliases in venue_aliases.items() for alias in aliases}
+    venues=sorted({canonical.get(a['venue'],a['venue']) for a in items if a['venue']})
+    venue_options=''.join(f'<option value="{E(name)}" data-aliases="{E(",".join(venue_aliases.get(name, [])))}">{E(name)}</option>' for name in venues)
     controls=''
     if filterable:
         options=lambda entries: ''.join(f'<option value="{E(s)}">{E(s)}</option>' for s in entries)
         tabs=''.join(f'<button type="button" data-section="{E(s)}" aria-pressed="false">{E(s)} <span>{n}</span></button>' for s,n in sections.items())
-        controls=f'''<div class="collection-controls"><div class="search-and-sort"><label class="search-input">{icon('search')}<input type="search" id="article-search" placeholder="搜索论文、方法、学校或关键词…" autocomplete="off" aria-label="搜索文章"><kbd>/</kbd></label><label class="select-label">排序<select id="sort-order"><option value="newest">最新发布</option><option value="oldest">最早发布</option></select></label></div><div class="filter-line"><label>研究方向<select id="topic-filter"><option value="">全部方向</option>{options(sorted(topic_counts))}</select></label><label>会议 / 期刊<select id="venue-filter"><option value="">全部会议期刊</option>{options(venues)}</select></label><label class="saved-filter"><input type="checkbox" id="saved-only">只看收藏</label><button class="reset-button" type="button" id="reset-filters">重置筛选 ↺</button></div><div class="section-tabs" aria-label="文章类型"><button type="button" data-section="" class="active" aria-pressed="true">全部 <span>{len(items)}</span></button>{tabs}</div></div>'''
+        controls=f'''<div class="collection-controls"><div class="search-and-sort"><label class="search-input">{icon('search')}<input type="search" id="article-search" placeholder="搜索论文、方法、学校或关键词…" autocomplete="off" aria-label="搜索文章"><kbd>/</kbd></label><label class="select-label">排序<select id="sort-order"><option value="newest">最新发布</option><option value="oldest">最早发布</option></select></label></div><div class="filter-line"><label>研究方向<select id="topic-filter"><option value="">全部方向</option>{options(sorted(topic_counts))}</select></label><label>会议 / 期刊<select id="venue-filter"><option value="">全部会议期刊</option>{venue_options}</select></label><label class="saved-filter"><input type="checkbox" id="saved-only">只看收藏</label><button class="reset-button" type="button" id="reset-filters">重置筛选 ↺</button></div><div class="section-tabs" aria-label="文章类型"><button type="button" data-section="" class="active" aria-pressed="true">全部 <span>{len(items)}</span></button>{tabs}</div></div>'''
     return f'''<section class="collection" data-scope="{scope}" data-page-size="12">{controls}<div class="result-summary"><p id="result-count" role="status" aria-live="polite">共 {len(items)} 篇文章</p><span>标题直达公众号 · 右侧星标仅保存在当前浏览器</span></div><div id="article-list">{''.join(row(a) for a in items)}</div><div id="empty-results" class="empty-state" hidden>{icon('search')}<h3>没有找到匹配的文章</h3><p>试试方法名、研究方向，或缩短关键词。</p><button type="button" class="button secondary" data-reset>清除筛选</button></div><div class="pagination" id="pagination" hidden><button class="button secondary" id="prev-page">← 上一页</button><span id="page-info"></span><button class="button secondary" id="next-page">下一页 →</button></div></section>'''
 
-def title_block(en,title,desc,crumb='学术资源'):
-    return f'<div class="page-heading wrap"><div class="breadcrumb"><a href="index.html">首页</a><span>/</span><a href="resources.html">{crumb}</a></div><p class="eyebrow">{en}</p><h1>{title}</h1><p class="page-description">{desc}</p></div>'
+def title_block(en, title, desc, current=None):
+    current = current or title
+    parents = [('index.html', '首页')]
+    if current not in ('学术资源', '关于我们', '推荐资源'):
+        parents.append(('resources.html', '学术资源'))
+    if current == '投稿日历':
+        parents.append(('calendar.html', '会议日历'))
+    trail = ''.join(f'<a href="{href}">{label}</a><span aria-hidden="true">/</span>' for href, label in parents)
+    return f'<div class="page-heading wrap"><nav class="breadcrumb" aria-label="面包屑导航">{trail}<span aria-current="page">{E(current)}</span></nav><p class="eyebrow">{en}</p><h1>{title}</h1><p class="page-description">{desc}</p></div>'
 
 def home():
-    stats=f'<div class="wrap community-stats"><div><strong>{len(ARTICLES)}<span>篇</span></strong><p>公众号文章，持续积累</p></div><div><strong>{len(MODULES):02d}<span>个</span></strong><p>栏目连接研究每一步</p></div><div><strong>03<span>类</span></strong><p>方向专题，从问题出发</p></div><a href="about.html#connect" data-qr-open><img src="assets/avatar.png" width="48" height="48" alt=""><span>一个热爱分享的研究社区<strong>认识多模态信息融合 ↗</strong></span></a></div>'
+    stats=f'<div class="wrap community-stats"><div><strong>{len(ARTICLES)}<span>篇</span></strong><p>公众号文章，持续积累</p></div><div><strong>{len(MODULES):02d}<span>个</span></strong><p>栏目连接研究每一步</p></div><div><strong>03<span>类</span></strong><p>方向专题，从问题出发</p></div><a href="about.html#members"><img src="assets/avatar.png" width="48" height="48" alt=""><span>一个热爱分享的研究社区<strong>认识多模态信息融合 ↗</strong></span></a></div>'
     return design.hero(len(ARTICLES))+stats+portal.deadline_strip()+community.fortune_teaser()+design.reading_room(ARTICLES)+design.research_paths(ARTICLES)+portal.dataset_showcase()+design.tool_spotlight()+community.ranking(ARTICLES)+f'<section class="wrap section" id="explore"><div class="section-heading"><div><p class="eyebrow">05 / YOUR RESEARCH COMPANION</p><h2>研究的每一步，都有一个入口。</h2><p>找论文、做实验、准备投稿，或认识下一位同行。</p></div><a class="text-link" href="resources.html">全部资源 ↗</a></div>{modules()}</section>'+connect_section()
 
 def resources():
-    return title_block('THE RESOURCE DIRECTORY','学术资源导航','围绕研究的每一步，整理值得反复使用的资源。')+f'<section class="wrap section compact-top">{modules()}</section>'
+    return title_block('THE RESOURCE DIRECTORY','学术资源导航','围绕研究的每一步，整理值得反复使用的资源。','学术资源')+f'<section class="wrap section compact-top">{modules()}</section>'
 
 def palette_cards(records, basic=False):
     from palette_library import color_detail
@@ -192,7 +206,7 @@ def community_members():
     return '<section class="community-members" id="members" aria-labelledby="members-heading"><h2 id="members-heading">团队成员</h2><p>我们是去中心化的管理，账号由多个学校的兴趣小组成员构成。微信公众号所有权由在坚持更新的全体成员共同拥有，享受一切权益。为读者提供更好的学术环境！</p><ol class="member-grid">'+''.join(cards)+'</ol></section>'
 
 def about():
-    return title_block('ABOUT MMIFUSION','因为热爱，所以分享。','多模态信息融合，一个围绕论文阅读与学术资源的交流空间。')+f'''<div class="wrap about-layout section compact-top"><section class="about-copy"><h2>从公众号，到学术资源主页。</h2><p>我们关注图像融合、多模态感知与相关研究。通过论文解读、研究动态和资源整理，帮助读者从具体问题出发，理解方法，也找到继续探索的入口。</p><p>主站整合公众号文章与数据资源目录，并逐步完善评估指标、研究团队、会议日程、投稿参考、导师招生和论文配色等栏目。</p>{community_members()}<h2 id="sources">内容与收录说明</h2><ul class="prose-list"><li>当前文章索引已合并公众号导出表，更新于 {DATA['snapshotDate']}，共 {len(ARTICLES)} 条，最新文章日期为 {DATA['latestArticleDate']}。</li>
+    return title_block('ABOUT MMIFUSION','因为热爱，所以分享。','多模态信息融合，一个围绕论文阅读与学术资源的交流空间。','关于我们')+f'''<div class="wrap about-layout section compact-top"><section class="about-copy"><h2>从公众号，到学术资源主页。</h2><p>我们关注图像融合、多模态感知与相关研究。通过论文解读、研究动态和资源整理，帮助读者从具体问题出发，理解方法，也找到继续探索的入口。</p><p>主站整合公众号文章与数据资源目录，并逐步完善评估指标、研究团队、会议日程、投稿参考、导师招生和论文配色等栏目。</p>{community_members()}<h2 id="sources">内容与收录说明</h2><ul class="prose-list"><li>当前文章索引已合并公众号导出表，更新于 {DATA['snapshotDate']}，共 {len(ARTICLES)} 条，最新文章日期为 {DATA['latestArticleDate']}。</li>
 <li>文章保留原始标题与发表日期。点击标题跳转公众号阅读原文；不同文章分别收录；经核对的重复文章合并，保留原有文章编号。</li>
 <li>研究方向与文章类型依据标题辅助归类，会议和期刊字段也来自标题，不代表本站另行核验了录用信息。欢迎提出分类或信息勘误。</li>
 <li>数据资源栏目已整合原数据集目录，保留完整介绍、团队作者、原始示例图和来源链接。数据规模、许可及划分请查看原论文与官方说明。</li>
@@ -213,15 +227,15 @@ def main():
     for path in (ROOT/'data').glob('*.json'): shutil.copy2(path,OUT/'data'/path.name)
     page('index.html','首页',home(),'home',extras='<link rel="stylesheet" href="assets/reading-covers.css">')
     page('resources.html','学术资源',resources())
-    page('datasets.html','数据资源',title_block('DATASETS & BENCHMARKS','找到适合研究的数据。','从经典基准到多模态场景，按方向、任务、论文与团队探索完整资源目录。')+dataset_catalog.page(),'datasets',description=f'{len(dataset_catalog.ITEMS)} 项图像融合与多模态感知数据资源，支持研究方向与任务筛选、全文搜索、完整介绍、团队作者和原图查看。',extras='<link rel="stylesheet" href="assets/datasets.css"><script src="assets/datasets.js" defer></script>')
+    page('datasets.html','数据资源',title_block('DATASETS & BENCHMARKS','找到适合研究的数据。','从经典基准到多模态场景，按方向、任务、论文与团队探索完整资源目录。','数据资源')+dataset_catalog.page(),'datasets',description=f'{len(dataset_catalog.ITEMS)} 项图像融合与多模态感知数据资源，支持研究方向与任务筛选、全文搜索、完整介绍、团队作者和原图查看。',extras='<link rel="stylesheet" href="assets/datasets.css"><script src="assets/datasets.js" defer></script>')
     page('papers.html','论文阅读',title_block('THE PAPER LIBRARY','读论文，也读懂问题。','检索公众号的论文解读、学术速递与研究资源。点击标题，继续阅读完整文章。','论文阅读')+f'<div class="wrap section compact-top">{collection(ARTICLES)}</div>','papers')
     metric_reading=[a for a in ARTICLES if '评估与指标' in a['topics']]
     page('metrics.html','评估指标',title_block('EVALUATION & BENCHMARKS','评估指标','读懂指标含义，试算图像统计，再建立一致的评测协议。')+portal.metrics()+f'<section class="wrap section compact-top"><div class="section-heading"><h2>继续阅读 · 融合质量评估</h2></div>{collection(metric_reading,"metrics")}</section>')
     page('teams.html','融合团队',title_block('PEOPLE BEHIND THE RESEARCH','融合团队','从研究方向认识同行，从公开主页继续探索。')+portal.teams(),extras='<link rel="stylesheet" href="assets/people.css">')
     page('calendar.html','会议日历',title_block('CONFERENCE CALENDAR','会议日历','把投稿节点放在一起，按自己的时区安排研究。')+'<div class="wrap calendar-fortune-link"><a href="fortune.html">✦ 想选个好日子？翻翻趣味投稿日历 →</a></div>'+portal.calendar(),extras='<link rel="stylesheet" href="assets/research.css">')
-    page('venues.html','投稿推荐',title_block('FIND YOUR RESEARCH COMMUNITY','投稿推荐','从研究问题出发，筛选方向、比较范围，找到合适的交流平台。')+portal.venues(),extras='<link rel="stylesheet" href="assets/research.css">')
+    page('venues.html','投稿推荐',title_block('FIND YOUR RESEARCH COMMUNITY','投稿推荐','从研究问题出发，筛选方向、比较范围，找到合适的交流平台。')+portal.venues(ARTICLES),extras='<link rel="stylesheet" href="assets/research.css">')
     page('opportunities.html','导师招生',title_block('RESEARCH OPPORTUNITIES','导师招生','连接研究兴趣、团队方向与公开招募信息。')+portal.opportunities())
-    page('contribute.html','推荐资源',title_block('BUILD THE COMMONS TOGETHER','一起完善这份资源。','推荐值得分享的研究资源，也欢迎指出已有内容中的错误。')+portal.contribute()+'<noscript><div class="wrap note-box"><p>启用 JavaScript 可生成投稿草稿，也可直接前往 <a href="https://github.com/MMIFusion/MMIFusion.github.io/issues/new">GitHub 提交资源</a>。</p></div></noscript>')
+    page('contribute.html','推荐资源',title_block('BUILD THE COMMONS TOGETHER','一起完善这份资源。','推荐值得分享的研究资源，也欢迎指出已有内容中的错误。','推荐资源')+portal.contribute()+'<noscript><div class="wrap note-box"><p>启用 JavaScript 可生成投稿草稿，也可直接前往 <a href="https://github.com/MMIFusion/MMIFusion.github.io/issues/new">GitHub 提交资源</a>。</p></div></noscript>')
     page('advertising.html','广告合作',title_block('PARTNERSHIPS & COLLABORATION','广告合作','让学术与科研相关的信息，被合适的人看见。')+community.advertising())
     page('fortune.html','投稿日历',title_block('A LITTLE LUCK, A LOT OF PREPARATION','投稿日历','挑个好日子，带着底气出发。')+community.fortune_page())
     page('palettes.html','配色模板',palettes(),extras='<link rel="stylesheet" href="assets/palettes.css"><script src="assets/palettes.js" defer></script>')

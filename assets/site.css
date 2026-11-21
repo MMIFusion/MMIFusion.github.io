@@ -122,6 +122,16 @@ html[data-motion=off] *,html[data-motion=off] *:before,html[data-motion=off] *:a
 /* Keep directory filters legible on narrow screens, including calendars. */
 @media(max-width:640px){.directory-toolbar{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.directory-toolbar .directory-search{grid-column:1/-1}.directory-toolbar label:not(.directory-search){min-width:0;width:100%;flex-direction:column;align-items:flex-start}.directory-toolbar select{min-width:0;width:100%;max-width:100%;font-size:16px}.directory-toolbar .reset-button{justify-self:start;min-height:44px}.directory-toolbar .directory-count{justify-self:end;text-align:right;margin:0}}
 
+/* Keep every menu item reachable on short landscape screens and at high zoom. */
+@media (max-width:980px) {
+  .header-inner nav.open {
+    max-height:calc(100vh - 100% - 8px);
+    max-height:calc(100dvh - 100% - 8px);
+    overflow-y:auto;
+    overscroll-behavior:contain;
+  }
+}
+
 /* Source: community.css */
 /* Larger section navigation and a warmer community layer. */
 .resource-nav-shell{position:sticky;top:88px;z-index:28;background:#faf9fff5;border-bottom:1px solid #ddd8ee;backdrop-filter:blur(18px);box-shadow:0 5px 18px #29214406}

@@ -5,20 +5,38 @@
   'use strict';
   function evaluate(rgba, width, height) {
     if (!Number.isInteger(width) || !Number.isInteger(height) || width < 1 || height < 1 || rgba.length !== width * height * 4) throw new Error('Invalid image dimensions');
-    const n = width * height, gray = new Uint8Array(n), hist = new Uint32Array(256);
-    let sum = 0, squares = 0, dx = 0, dy = 0;
+    const n = width * height, previousRow = new Uint8Array(width), hist = new Uint32Array(256);
+    let sum = 0, squares = 0, dx = 0, dy = 0, left = 0;
     for (let i = 0; i < n; i++) {
       const j = i * 4, alpha = rgba[j + 3] / 255;
       const value = Math.floor(0.299 * (rgba[j] * alpha + 255 * (1 - alpha)) + 0.587 * (rgba[j + 1] * alpha + 255 * (1 - alpha)) + 0.114 * (rgba[j + 2] * alpha + 255 * (1 - alpha)) + 0.5);
-      gray[i] = value; hist[value]++; sum += value; squares += value * value;
-      if (i % width) dx += (value - gray[i - 1]) ** 2;
-      if (i >= width) dy += (value - gray[i - width]) ** 2;
+      const column = i % width; hist[value]++; sum += value; squares += value * value;
+      if (column) dx += (value - left) ** 2;
+      if (i >= width) dy += (value - previousRow[column]) ** 2;
+      previousRow[column] = value;
+      left = value;
     }
     let en = 0;
     for (const count of hist) if (count) { const p = count / n; en -= p * Math.log2(p); }
     return {en, sd: Math.sqrt(Math.max(0, squares / n - (sum / n) ** 2)), sf: Math.sqrt((width > 1 ? dx / (height * (width - 1)) : 0) + (height > 1 ? dy / (width * (height - 1)) : 0))};
   }
-  root.FusionMetrics = {evaluate};
+  function evaluateImage(canvas, image) {
+    const context = canvas.getContext('2d', {willReadFrequently:true});
+    context.drawImage(image, 0, 0);
+    return evaluate(context.getImageData(0, 0, canvas.width, canvas.height).data, canvas.width, canvas.height);
+  }
+
+  root.FusionMetrics = {evaluate, evaluateImage};
+  if (typeof DedicatedWorkerGlobalScope !== 'undefined' && root instanceof DedicatedWorkerGlobalScope) {
+    root.onmessage = ({data: image}) => {
+      try {
+        const surface = new OffscreenCanvas(image.width, image.height);
+        root.postMessage(evaluateImage(surface, image));
+      } finally {
+        image.close();
+      }
+    };
+  }
   if (typeof module === 'object' && module.exports) module.exports = {evaluate};
 })(typeof window === 'object' ? window : globalThis);
 
@@ -29,20 +47,28 @@
   'use strict';
   const $ = (selector) => document.querySelector(selector);
   const menu = $('.menu-toggle');
-  menu?.addEventListener('click', () => {
-    const open = menu.getAttribute('aria-expanded') !== 'true';
+  const header = $('.site-header');
+  const setMenuOpen = open => {
     menu.setAttribute('aria-expanded', String(open));
     menu.setAttribute('aria-label', open ? '关闭导航' : '打开导航');
     $('#primary-nav').classList.toggle('open', open);
+  };
+  const menuIsOpen = () => menu?.getAttribute('aria-expanded') === 'true';
+  menu?.addEventListener('click', () => setMenuOpen(!menuIsOpen()));
+  header?.addEventListener('focusout', event => {
+    if (menuIsOpen() && event.relatedTarget && !header.contains(event.relatedTarget)) setMenuOpen(false);
+  });
+  matchMedia('(max-width: 980px)').addEventListener('change', event => {
+    if (!event.matches && menuIsOpen()) setMenuOpen(false);
   });
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && menu?.getAttribute('aria-expanded') === 'true') {
-      menu.click();
+    if (event.key === 'Escape' && menuIsOpen()) {
+      setMenuOpen(false);
       menu.focus({preventScroll:true});
     }
   });
   document.addEventListener('pointerdown', event => {
-    if (menu?.getAttribute('aria-expanded') === 'true' && !event.target.closest('.site-header')) menu.click();
+    if (menuIsOpen() && !header.contains(event.target)) setMenuOpen(false);
   });
   let toastTimer;
   const toast = (message) => {
@@ -86,7 +112,7 @@
         if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
         event.preventDefault();
         qrOpener = link;
-        if (menu?.getAttribute('aria-expanded') === 'true') menu.click();
+        if (menuIsOpen()) setMenuOpen(false);
         qrDialog.showModal();
         document.documentElement.classList.add('qr-modal-open');
       });
@@ -110,6 +136,7 @@
   const bookmarkButtons = [...document.querySelectorAll('[data-bookmark]')];
   const syncBookmarks = () => bookmarkButtons.forEach(button => {
     const active = saved.has(button.dataset.bookmark);
+    if (button.getAttribute('aria-pressed') === String(active) && button.hasAttribute('aria-label')) return;
     button.setAttribute('aria-pressed', String(active));
     button.setAttribute('aria-label', active ? '取消收藏文章' : '收藏文章');
     button.innerHTML = active ? '★<span>已收藏</span>' : '☆<span>收藏</span>';
@@ -154,6 +181,11 @@
   const search = $('#article-search');
   const topic = $('#topic-filter');
   const venue = $('#venue-filter');
+  const venueByLabel = new Map();
+  for (const option of venue?.options || []) {
+    const labels = [option.value, ...(option.dataset.aliases || '').split(',')].filter(Boolean);
+    for (const label of labels) venueByLabel.set(label.toLowerCase(), {name:option.value, labels});
+  }
   const sort = $('#sort-order');
   const savedOnly = $('#saved-only');
   const buttons = [...collection.querySelectorAll('[data-section]')];
@@ -170,7 +202,7 @@
       saved: params.get('saved') === '1',
       section: validSection ? params.get('section') : '',
       topic: validOption(topic, params.get('topic')) ? params.get('topic') : '',
-      venue: validOption(venue, params.get('venue')) ? params.get('venue') : '',
+      venue: venueByLabel.get((params.get('venue') || '').toLowerCase())?.name || '',
       sort: params.get('sort') === 'oldest' ? 'oldest' : 'newest',
       page: Math.max(1, Number.parseInt(params.get('page'), 10) || 1),
     };
@@ -196,7 +228,8 @@
     if (state.sort !== 'newest') params.set('sort', state.sort);
     if (state.page > 1) params.set('page', String(state.page));
     const suffix = params.toString();
-    history.replaceState(null, '', location.pathname + (suffix ? `?${suffix}` : '') + location.hash);
+    const target = location.pathname + (suffix ? `?${suffix}` : '') + location.hash;
+    if (target !== location.pathname + location.search + location.hash) history.replaceState(history.state, '', target);
   };
   const render = (updateURL = true) => {
     const terms = norm(state.query).split(' ').filter(Boolean);
@@ -231,15 +264,26 @@
     // Search metadata travels with the original article rows, so filtering works
     // immediately and offline without downloading the entire article JSON again.
     records = rows.map(node => {
-      const article = {id:node.dataset.articleId,venue:node.dataset.articleVenue,
+      const journal = venueByLabel.get(node.dataset.articleVenue.toLowerCase());
+      const article = {id:node.dataset.articleId,venue:journal?.name || node.dataset.articleVenue,
         topics:JSON.parse(node.dataset.articleTopics),date:node.querySelector('time').dateTime,
         section:node.querySelector('.article-date>span').textContent,
         title:node.querySelector('h3 a').firstChild.textContent};
-      return {node,article,searchable:norm([article.title,article.section,article.venue,...article.topics].join(' '))};
+      return {node,article,searchable:norm([article.title,article.section,...(journal?.labels || [article.venue]),...article.topics].join(' '))};
     });
     state = loadState();
     render();
-    onBookmarkChange = () => render();
+    onBookmarkChange = () => {
+      if (!state.saved) return;
+      const focused = document.activeElement;
+      const priorIndex = [...$('#article-list').children].indexOf(focused.closest('.article-row'));
+      render();
+      if (priorIndex >= 0 && !focused.isConnected) {
+        const remaining = $('#article-list').children;
+        const next = remaining[Math.min(priorIndex, remaining.length-1)];
+        (next?.querySelector('[data-bookmark]') || savedOnly)?.focus();
+      }
+    };
     savedOnly?.addEventListener('change', () => { state.saved = savedOnly.checked; state.page = 1; render(); });
     search?.addEventListener('input', () => { state.query = search.value; state.page = 1; render(); });
     topic?.addEventListener('change', () => { state.topic = topic.value; state.page = 1; render(); });
@@ -247,17 +291,20 @@
     sort?.addEventListener('change', () => { state.sort = sort.value; state.page = 1; render(); });
     buttons.forEach(button => button.addEventListener('click', () => { state.section = button.dataset.section; state.page = 1; render(); }));
     $('#reset-filters')?.addEventListener('click', reset);
-    $('[data-reset]')?.addEventListener('click', reset);
+    $('[data-reset]')?.addEventListener('click', () => { reset(); search?.focus(); });
     for (const [id, step] of [['prev-page', -1], ['next-page', 1]]) {
       $(`#${id}`).addEventListener('click', () => {
         state.page += step;
         render();
-        $('.result-summary').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});
+        const summary = collection.querySelector('.result-summary');
+        summary.tabIndex = -1;
+        summary.focus({preventScroll:true});
+        summary.scrollIntoView({behavior:document.documentElement.dataset.motion === 'off'?'instant':'smooth',block:'start'});
       });
     }
     addEventListener('popstate', () => { state = loadState(); render(false); });
     document.addEventListener('keydown', (event) => {
-      if (event.key === '/' && !event.metaKey && !event.ctrlKey && !event.altKey && !/INPUT|TEXTAREA|SELECT/.test(document.activeElement?.tagName) && !document.activeElement?.isContentEditable) {
+      if (event.key === '/' && !event.isComposing && !event.metaKey && !event.ctrlKey && !event.altKey && !document.querySelector('dialog[open]') && !/INPUT|TEXTAREA|SELECT/.test(document.activeElement?.tagName) && !document.activeElement?.isContentEditable) {
         event.preventDefault();
         search?.focus();
       }
@@ -310,35 +357,52 @@
   const upcoming = $('#calendar-upcoming'), refreshDirectories = [];
   if (upcoming) upcoming.checked = new URLSearchParams(location.search).get('upcoming') === '1';
   const calendarEvents = $$('[data-calendar-event]').map(node => ({node,event:JSON.parse(node.dataset.calendarEvent)}));
+  const teaserCards = $$('.deadline-teaser');
+  const teaserData = $('#calendar-teasers');
+  const teaserEvents = teaserData ? JSON.parse(teaserData.textContent) : [];
+  const countdown = status => {
+    if (status.ended) return '已截止';
+    const minutes = Math.floor(status.remaining / 60000);
+    if (minutes === 0) return '不足 1 分钟';
+    const hours = Math.floor(minutes / 60);
+    return `${Math.floor(hours / 24)} 天 ${hours % 24} 时 ${minutes % 60} 分`;
+  };
+  const setText = (node, value) => { if (node.textContent !== value) node.textContent = value; };
   const refreshEvents = () => {
     const now = new Date();
     calendarEvents.forEach(record => {
       record.status = window.MMIFusionCalendar.status(record.event,now);
-      const {node,event,status} = record;
+      const {node,status} = record;
       node.classList.toggle('event-ended',status.ended);
       node.classList.toggle('event-imminent',status.imminent);
-      if (node.classList.contains('event-row')) node.hidden = !!upcoming?.checked && status.ended;
+      node.hidden = !!upcoming?.checked && status.ended;
       const counter = node.querySelector('[data-countdown]');
       if (counter) {
-        const minutes = Math.floor(Math.max(0,status.remaining) / 60000), hours = Math.floor(minutes / 60);
-        counter.textContent = status.ended ? '已截止' : minutes === 0 ? '不足 1 分钟' : `${Math.floor(hours / 24)} 天 ${hours % 24} 时 ${minutes % 60} 分`;
+        setText(counter, countdown(status));
         counter.classList.toggle('expired',status.ended);
       }
       const dateLabel = node.querySelector('.date-only');
-      if (dateLabel) dateLabel.textContent = status.ended ? '日期已过' : '按官方日期显示';
-      const note = node.querySelector('small');
-      if (note && node.classList.contains('deadline-teaser') && event.kind === 'deadline') note.textContent = status.imminent ? '72 小时内截止 · 请留足上传时间' : '距离截止 · 实时更新';
+      if (dateLabel) setText(dateLabel, status.ended ? '日期已过' : '按官方日期显示');
     });
-    const teasers = calendarEvents.filter(({node}) => node.classList.contains('deadline-teaser'));
-    const selected = teasers.filter(r => !r.status.ended).sort((a,b) => a.status.order-b.status.order).slice(0,3);
-    const selectedNodes = selected.map(r => r.node);
-    teasers.forEach(({node}) => {node.hidden = !selectedNodes.includes(node);});
-    const displayed = $$('.deadline-teaser').filter(node => !node.hidden);
-    // Avoid detaching a focused link on each timer tick when its order is unchanged.
-    if (displayed.some((node,index) => node !== selectedNodes[index])) {
-      selectedNodes.forEach(node => $('.deadline-strip').append(node));
-    }
-    if ($('.deadline-empty')) $('.deadline-empty').hidden = selected.length > 0;
+    if (!teaserData) return;
+    const selected = teaserEvents.map(event => ({event, status:window.MMIFusionCalendar.status(event, now)}))
+      .filter(({status}) => !status.ended)
+      .sort((a,b) => a.status.order - b.status.order).slice(0,teaserCards.length);
+    teaserCards.forEach((card,index) => {
+      const record = selected[index];
+      card.hidden = !record;
+      if (!record) return;
+      const {event,status} = record;
+      const href = 'calendar.html#' + event.id;
+      if (card.getAttribute('href') !== href) card.setAttribute('href', href);
+      card.classList.toggle('event-imminent',status.imminent);
+      setText(card.querySelector('span'),event.title);
+      const deadline = event.kind === 'deadline';
+      setText(card.querySelector('strong'),deadline ? countdown(status) : event.start.replaceAll('-','.'));
+      const note = deadline ? (status.imminent ? '72 小时内截止 · 请留足上传时间' : '距离截止 · 实时更新') : '官方日期 · 具体时刻未列明';
+      setText(card.querySelector('small'),note);
+    });
+    $('.deadline-empty').hidden = selected.length > 0;
   };
   refreshEvents();
 
@@ -353,7 +417,8 @@
     let initialVenueHash = paginated ? location.hash.slice(1) : '';
     search.value = params.get('q') || '';
     selects.forEach(select => { const value = params.get(select.dataset.cardFilter); if ([...select.options].some(o => o.value === value)) select.value = value; });
-    const render = (save = true) => {
+    const isCalendar = directory.dataset.directory === 'calendar';
+    const render = (save = true, hash = paginated || isCalendar ? '' : location.hash) => {
       const terms = norm(search.value).split(/\s+/).filter(Boolean);
       const matches = [];
       cards.forEach(card => {
@@ -391,7 +456,11 @@
         selects.forEach(s => { if (s.value) query.set(s.dataset.cardFilter, s.value); });
         if (upcoming?.checked) query.set('upcoming','1');
         if (paginated && page > 1) query.set('page', page);
-        history.replaceState(null, '', location.pathname + (query.size ? '?' + query : '') + (paginated ? '' : location.hash));
+        history.replaceState(null, '', location.pathname + (query.size ? '?' + query : '') + hash);
+        if (isCalendar && !hash) {
+          directory.querySelector('[data-conference-jump][aria-current]')?.removeAttribute('aria-current');
+          directory.querySelector('.conference-current')?.classList.remove('conference-current');
+        }
       }
     };
     search.addEventListener('input', () => {page = 1; render();});
@@ -418,34 +487,53 @@
         try { target = document.getElementById(decodeURIComponent(hash.slice(1))); } catch { return; }
         const card = target?.closest('.conference-card');
         if (!card || !directory.contains(card)) return;
-        // A shortcut must still work after search, filtering or hiding ended nodes.
-        if (card.hidden || target.hidden || card.querySelector('.event-row[hidden]')) {
-          search.value = ''; selects.forEach(select => { select.value = ''; });
-          upcoming.checked = false; refreshEvents(); render();
+        // Keep applicable filters, even when some other event in this card has ended.
+        if (!norm(search.value).split(/\s+/).every(term => norm(card.dataset.search).includes(term))) search.value = '';
+        selects.forEach(select => {
+          if (select.value && !JSON.parse(card.dataset[select.dataset.cardFilter]).includes(select.value)) select.value = '';
+        });
+        render(false);
+        if (upcoming.checked && (target.hidden || card.hidden)) {
+          upcoming.checked = false;
+          refreshEvents();
         }
+        render(true,hash);
         shortcuts.forEach(link => {
           if (link.hash === '#' + card.id) link.setAttribute('aria-current','location');
           else link.removeAttribute('aria-current');
         });
         cards.forEach(item => item.classList.toggle('conference-current',item === card));
         if (scroll) {
-          card.focus({preventScroll:true});
+          target.tabIndex = -1;
+          target.focus({preventScroll:true});
           target.scrollIntoView({block:'start',behavior:document.documentElement.dataset.motion === 'off' ? 'instant' : 'smooth'});
         }
       };
       shortcuts.forEach(link => link.addEventListener('click', event => {
         if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
         event.preventDefault();
-        revealConference(link.hash);
         if (location.hash !== link.hash) history.pushState(null,'',location.pathname + location.search + link.hash);
+        revealConference(link.hash);
       }));
+      addEventListener('popstate', () => {
+        const restored = new URLSearchParams(location.search);
+        search.value = restored.get('q') || '';
+        selects.forEach(select => { select.value = restored.get(select.dataset.cardFilter) || ''; });
+        upcoming.checked = restored.get('upcoming') === '1';
+        refreshEvents();
+        render(false);
+        if (!location.hash) {
+          shortcuts.forEach(link => link.removeAttribute('aria-current'));
+          cards.forEach(card => card.classList.remove('conference-current'));
+        }
+      });
       addEventListener('hashchange', () => revealConference(location.hash));
       if (location.hash) requestAnimationFrame(() => revealConference(location.hash));
     }
   });
 
   const refreshCalendar = () => {refreshEvents();refreshDirectories.forEach(render => render());};
-  if (calendarEvents.length) {
+  if (calendarEvents.length || teaserEvents.length) {
     setInterval(refreshCalendar,30000);
     document.addEventListener('visibilitychange', () => {if (!document.hidden) refreshCalendar();});
   }
@@ -497,37 +585,99 @@
   if (lab) {
     const canvas = $('#metric-canvas'), ctx = canvas.getContext('2d', {willReadFrequently:true});
     const message = $('#metric-message'), exporter = $('#metric-export');
-    let latest, sequence = 0;
-    const calculate = name => {
-      latest = {name, width:canvas.width, height:canvas.height, ...window.FusionMetrics.evaluate(ctx.getImageData(0, 0, canvas.width, canvas.height).data, canvas.width, canvas.height)};
+    let latest, worker, sequence = 0;
+    const cancelPending = () => {
+      worker?.terminate();
+      worker = null;
+      return ++sequence;
+    };
+    const showResult = (name, width, height, values) => {
+      latest = {name, width, height, ...values};
       ['en', 'sd', 'sf'].forEach(k => $('#metric-' + k).textContent = latest[k].toFixed(4));
-      $('#metric-image-info').textContent = `${name} · ${canvas.width} × ${canvas.height} px`;
+      $('#metric-image-info').textContent = `${name} · ${width} × ${height} px`;
       exporter.disabled = false; message.textContent = '已完成 · 结果仅描述本图的统计特性';
     };
     const sample = kind => {
-      sequence++; canvas.width = 256; canvas.height = 192;
+      cancelPending(); canvas.width = 256; canvas.height = 192;
       const frame = ctx.createImageData(256, 192);
       for (let y = 0; y < 192; y++) for (let x = 0; x < 256; x++) {
         const i = (y * 256 + x) * 4;
         const value = kind === 'flat' ? 128 : kind === 'checker' ? ((Math.floor(x / 16) + Math.floor(y / 16)) % 2) * 255 : x;
         frame.data[i] = frame.data[i+1] = frame.data[i+2] = value; frame.data[i+3] = 255;
       }
-      ctx.putImageData(frame, 0, 0); calculate({flat:'纯灰示例', checker:'棋盘示例', gradient:'渐变示例'}[kind]);
+      ctx.putImageData(frame, 0, 0);
+      showResult({flat:'纯灰示例', checker:'棋盘示例', gradient:'渐变示例'}[kind],
+        frame.width, frame.height, window.FusionMetrics.evaluate(frame.data, frame.width, frame.height));
       $$('[data-metric-sample]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.metricSample === kind)));
       $('#metric-file').value = '';
     };
     $$('[data-metric-sample]').forEach(b => b.addEventListener('click', () => sample(b.dataset.metricSample)));
     $('#metric-file').addEventListener('change', async event => {
       const file = event.target.files[0]; if (!file) return;
-      const token = ++sequence;
+      const token = cancelPending();
+      exporter.disabled = !latest;
       if (file.size > 20 * 1024 * 1024 || !/^image\/(png|jpeg|webp|bmp|x-ms-bmp)$/.test(file.type)) { message.textContent = '请选择不超过 20 MB 的 PNG、JPEG、WebP 或 BMP 图片；当前结果未改变。'; return; }
-      const url = URL.createObjectURL(file), img = new Image(); message.textContent = '正在本地读取图片…';
+      const url = URL.createObjectURL(file), img = new Image();
+      exporter.disabled = true;
+      message.textContent = '正在本地读取图片…';
+      const fail = text => {
+        if (token !== sequence) return;
+        exporter.disabled = !latest;
+        message.textContent = text + '；当前结果未改变。';
+      };
       try {
-        img.src = url; await img.decode(); if (token !== sequence) return;
-        if (img.naturalWidth * img.naturalHeight > 16000000) throw new Error('图片超过 1600 万像素，请裁剪后重试');
-        canvas.width = img.naturalWidth; canvas.height = img.naturalHeight; ctx.drawImage(img, 0, 0);
-        calculate(file.name); $$('[data-metric-sample]').forEach(b => b.setAttribute('aria-pressed', 'false'));
-      } catch (error) { if (token === sequence) message.textContent = (error.message.startsWith('图片超过') ? error.message : '无法解码这张图片，请换一张图片重试') + '；当前结果未改变。'; }
+        img.src = url;
+        await img.decode();
+        if (token !== sequence) return;
+        const width = img.naturalWidth, height = img.naturalHeight;
+        if (width * height > 16000000) { fail('图片超过 1600 万像素，请裁剪后重试'); return; }
+        const finish = values => {
+          if (token !== sequence) return;
+          const scale = Math.min(1, 960 / Math.max(width, height));
+          canvas.width = Math.max(1, Math.round(width * scale));
+          canvas.height = Math.max(1, Math.round(height * scale));
+          ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+          showResult(file.name, width, height, values);
+          $$('[data-metric-sample]').forEach(b => b.setAttribute('aria-pressed', 'false'));
+        };
+        const fallback = () => {
+          if (token !== sequence) return;
+          try {
+            const surface = document.createElement('canvas');
+            surface.width = width;
+            surface.height = height;
+            finish(window.FusionMetrics.evaluateImage(surface, img));
+          } catch { fail('无法处理这张图片，请裁剪后重试'); }
+        };
+        message.textContent = '正在本地计算指标…';
+        if (!window.Worker || !window.createImageBitmap || !window.OffscreenCanvas) { fallback(); return; }
+        let bitmap;
+        try {
+          bitmap = await createImageBitmap(img);
+          if (token !== sequence) { bitmap.close(); return; }
+          worker = new Worker(lab.dataset.workerSrc);
+          worker.onmessage = ({data}) => {
+            if (token !== sequence) return;
+            worker.terminate();
+            worker = null;
+            finish(data);
+          };
+          worker.onerror = event => {
+            event.preventDefault();
+            if (token !== sequence) return;
+            worker.terminate();
+            worker = null;
+            fallback();
+          };
+          worker.postMessage(bitmap, [bitmap]);
+        } catch {
+          if (token !== sequence) return;
+          bitmap?.close();
+          worker?.terminate();
+          worker = null;
+          fallback();
+        }
+      } catch { fail('无法解码这张图片，请换一张图片重试'); }
       finally { URL.revokeObjectURL(url); }
     });
     exporter.addEventListener('click', () => {
@@ -564,6 +714,7 @@
     }
     source.addEventListener('input', () => source.setCustomValidity(''));
     form.addEventListener('input', () => {
+      $('#submission-text').hidden = true;
       $('#submission-actions').hidden = true;
       $('#submission-help').textContent = '内容已修改，请重新生成投稿预览。';
     });
@@ -706,7 +857,7 @@
   let scrollFrame, lastProgress;
   const progress = () => {
     const remaining = document.documentElement.scrollHeight - innerHeight;
-    const value = remaining > 0 ? String(Math.min(1,scrollY / remaining)) : '0';
+    const value = remaining > 0 ? String(Math.max(0, Math.min(1,scrollY / remaining))) : '0';
     // Keep this inherited property off <html>: updating it there invalidates
     // styles across every card and detail in the document on every scroll frame.
     if (progressBar && value !== lastProgress) {
@@ -715,8 +866,13 @@
     if (backToTop && backToTop.hidden !== (scrollY < 650)) backToTop.hidden = scrollY < 650;
     scrollFrame = null;
   };
-  addEventListener('scroll', () => { if (!scrollFrame) scrollFrame = requestAnimationFrame(progress); }, {passive:true});
-  addEventListener('resize', progress); progress();
+  const scheduleProgress = () => {
+    if (!scrollFrame) scrollFrame = requestAnimationFrame(progress);
+  };
+  addEventListener('scroll', scheduleProgress, {passive:true});
+  addEventListener('resize', scheduleProgress);
+  if ('ResizeObserver' in window) new ResizeObserver(scheduleProgress).observe(document.body);
+  progress();
   $('.back-to-top')?.addEventListener('click', () => scrollTo({top:0,behavior:motion?'smooth':'instant'}));
   $$('.resource-nav a').forEach(link => {
     if (new URL(link.href).pathname === location.pathname && !link.hash) link.setAttribute('aria-current','page');
@@ -745,8 +901,9 @@
     {label:'蓄力',title:'再打磨一下，也是在向前。',note:'今天适合认真核对。若已准备好且临近截止，请按时提交。',yes:'复查实验 · 精简表达 · 备份文件',avoid:'等待运气 · 错过真实截止'},
     {label:'大吉',title:'好日子，留给认真准备的你。',note:'给自己一个积极的开始，余下的交给扎实的工作。',yes:'完成检查 · 保存回执 · 好好休息',avoid:'遗漏确认邮件 · 上传后不检查'}
   ];
+  const beijingDate = new Intl.DateTimeFormat('en-CA', {timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit'});
   function dateKey(date = new Date()) {
-    const parts = new Intl.DateTimeFormat('en-CA', {timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(date);
+    const parts = beijingDate.formatToParts(date);
     const values = Object.fromEntries(parts.map(p => [p.type,p.value]));
     return `${values.year}-${values.month}-${values.day}`;
   }
@@ -796,7 +953,8 @@
   const nav = $('.resource-nav'), indicator = $('.resource-indicator');
   if (nav && indicator) {
     const links = [...nav.querySelectorAll('.resource-item')];
-    let active = links.find(a => a.hasAttribute('aria-current')) || null, displayed = active;
+    const active = links.find(a => a.hasAttribute('aria-current')) || null;
+    let displayed = active;
     const move = target => {
       displayed = target;
       links.forEach(a => a.classList.toggle('indicator-selected',a === target));
@@ -810,12 +968,6 @@
     links.forEach(link => {
       link.addEventListener('pointerenter', () => move(link));
       link.addEventListener('focus', () => move(link));
-      link.addEventListener('click', event => {
-        if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || link.target === '_blank') return;
-        if (!motion()) return;
-        event.preventDefault(); active = link; move(link);
-        setTimeout(() => location.assign(link.href),180);
-      });
     });
     nav.addEventListener('pointerleave', () => move(active));
     nav.addEventListener('focusout', event => {if (!nav.contains(event.relatedTarget)) move(active);});

@@ -19,7 +19,8 @@
   const nav = $('.resource-nav'), indicator = $('.resource-indicator');
   if (nav && indicator) {
     const links = [...nav.querySelectorAll('.resource-item')];
-    let active = links.find(a => a.hasAttribute('aria-current')) || null, displayed = active;
+    const active = links.find(a => a.hasAttribute('aria-current')) || null;
+    let displayed = active;
     const move = target => {
       displayed = target;
       links.forEach(a => a.classList.toggle('indicator-selected',a === target));
@@ -33,12 +34,6 @@
     links.forEach(link => {
       link.addEventListener('pointerenter', () => move(link));
       link.addEventListener('focus', () => move(link));
-      link.addEventListener('click', event => {
-        if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || link.target === '_blank') return;
-        if (!motion()) return;
-        event.preventDefault(); active = link; move(link);
-        setTimeout(() => location.assign(link.href),180);
-      });
     });
     nav.addEventListener('pointerleave', () => move(active));
     nav.addEventListener('focusout', event => {if (!nav.contains(event.relatedTarget)) move(active);});
